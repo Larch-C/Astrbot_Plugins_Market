@@ -61,6 +61,17 @@ jobs:
     - name: Update plugin cache
       if: steps.fetch-data.outputs.should_update == 'true'
       run: |
+        echo "=== 调试信息：更新前 ==="
+        echo "临时文件大小: $(wc -c < temp_plugin_cache.json) bytes"
+        echo "临时文件前100字符: $(head -c 100 temp_plugin_cache.json)"
+        
+        if [ -f plugin_cache.json ]; then
+          echo "原文件大小: $(wc -c < plugin_cache.json) bytes"
+          echo "原文件前100字符: $(head -c 100 plugin_cache.json)"
+        else
+          echo "原文件不存在"
+        fi
+        
         # 移动临时文件到目标位置
         mv temp_plugin_cache.json plugin_cache.json
         
@@ -69,27 +80,56 @@ jobs:
           jq . plugin_cache.json > temp.json && mv temp.json plugin_cache.json
         fi
         
-        echo "插件缓存已更新"
+        echo "=== 调试信息：更新后 ==="
+        echo "新文件大小: $(wc -c < plugin_cache.json) bytes"
+        echo "新文件前100字符: $(head -c 100 plugin_cache.json)"
+        echo "插件缓存文件已更新"
     
     - name: Check for changes
       if: steps.fetch-data.outputs.should_update == 'true'
       id: git-check
       run: |
-        echo "检查文件变化..."
+        echo "=== 检查文件变化 ==="
         
-        # 显示当前状态
+        # 显示工作目录状态
+        echo "当前工作目录: $(pwd)"
+        echo "文件列表:"
+        ls -la plugin_cache.json 2>/dev/null || echo "plugin_cache.json 文件不存在"
+        
+        # 显示Git状态
+        echo "Git状态:"
+        git status --porcelain
         git status
         
-        # 检查是否有变化，并正确设置输出
-        if git diff --exit-code plugin_cache.json; then
-          echo "文件没有变化"
-          echo "has_changes=false" >> $GITHUB_OUTPUT
+        # 检查文件是否已存在于仓库中
+        if git ls-files --error-unmatch plugin_cache.json >/dev/null 2>&1; then
+          echo "plugin_cache.json 已被Git跟踪（已存在于仓库）"
+          # 对于已跟踪的文件，检查是否有修改
+          if git diff --exit-code plugin_cache.json; then
+            echo "已跟踪文件无变化"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "已跟踪文件有变化"
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
         else
-          echo "检测到文件变化"
-          echo "has_changes=true" >> $GITHUB_OUTPUT
-          # 显示具体变化
-          git diff plugin_cache.json
+          echo "plugin_cache.json 未被Git跟踪（新文件）"
+          if [ -f plugin_cache.json ]; then
+            echo "文件存在但未跟踪，这是一个新文件，需要提交！"
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "文件不存在"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
         fi
+        
+        # 额外保险：检查 git status 中是否有未跟踪或修改的文件
+        if git status --porcelain | grep -E "^\?\?.*plugin_cache\.json|^.M.*plugin_cache\.json|^M.*plugin_cache\.json"; then
+          echo "git status 显示 plugin_cache.json 有变化（新文件或修改）"
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+        fi
+        
+        echo "最终决定 has_changes: $(git status --porcelain | grep plugin_cache || echo 'no changes')"
     
     - name: Commit and push changes
       if: steps.fetch-data.outputs.should_update == 'true' && steps.git-check.outputs.has_changes == 'true'
@@ -100,13 +140,31 @@ jobs:
         git config --local user.email "igcrystalcache@gmail.com"
         git config --local user.name "IGCrystal-Ghost"
         
-        # 添加文件并提交
-        git add plugin_cache.json
-        git commit -m "🔄 Update plugin cache - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+        # 强制添加文件（确保被跟踪）
+        git add -f plugin_cache.json
+        
+        # 检查是否真的有内容要提交
+        if git diff --cached --quiet; then
+          echo "警告：没有暂存的更改，但条件判断说有变化"
+          git status
+          git diff plugin_cache.json
+          exit 1
+        fi
+        
+        # 提交更改
+        git commit -m "🔄 Update plugin cache - $(date -u '+%Y-%m-%d %H:%M:%S UTC')" || {
+          echo "提交失败，显示详细信息："
+          git status
+          git diff --cached
+          exit 1
+        }
         
         # 推送到远程仓库
         echo "推送到远程仓库..."
-        git push origin HEAD:${{ github.ref_name }}
+        git push origin HEAD:${{ github.ref_name }} || {
+          echo "推送失败"
+          exit 1
+        }
         
         echo "✅ 已成功提交并推送更新"
     
