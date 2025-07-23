@@ -503,45 +503,33 @@ jobs:
         
         # 使用jq转换数据格式，增加容错处理
         jq --slurpfile repo_info repo_info.json '
-        {
-          data: (
-            to_entries | map({
-              key: .key,
-              value: (
-                .value + {
-                  # 保持原有字段
-                  desc: .value.desc,
-                  author: .value.author,
-                  repo: .value.repo,
-                  tags: (.value.tags // [])
-                } +
-                # 仅当social_link存在且不为空时添加
-                (if .value.social_link then { social_link: .value.social_link } else {} end) + 
-                # 添加新字段，从repo_info中获取
-                (if .value.repo and ($repo_info[0][.value.repo]) then
-                  ($repo_info[0][.value.repo] | {
-                    stars: .stars,
-                    updated_at: .updated_at,
-                    version: (if .version != "" then .version else "1.0.0" end),
-                    # 添加状态标识用于调试（可选）
-                    # repo_status: .status
-                  })
-                else
-                  {
-                    stars: 0,
-                    version: "1.0.0"
-                  }
-                end)
-              )
-            }) | from_entries
-          ),
-          # 添加元数据
-          meta: {
-            last_updated: (now | strftime("%Y-%m-%dT%H:%M:%SZ")),
-            total_plugins: (. | keys | length),
-            source: "https://raw.githubusercontent.com/AstrBotDevs/AstrBot_Plugins_Collection/main/plugins.json"
-          }
-        }' original_plugins.json > temp_plugin_cache_orginal.json
+        to_entries | map({
+          key: .key,
+          value: (
+            .value + {
+              # 保持原有字段
+              desc: .value.desc,
+              author: .value.author,
+              repo: .value.repo,
+              tags: (.value.tags // [])
+            } +
+            # 仅当social_link存在且不为空时添加
+            (if .value.social_link then { social_link: .value.social_link } else {} end) + 
+            # 添加新字段，从repo_info中获取
+            (if .value.repo and ($repo_info[0][.value.repo]) then
+              ($repo_info[0][.value.repo] | {
+                stars: .stars,
+                updated_at: .updated_at,
+                version: (if .version != "" then .version else "1.0.0" end)
+              })
+            else
+              {
+                stars: 0,
+                version: "1.0.0"
+              }
+            end)
+          )
+        }) | from_entries' original_plugins.json > temp_plugin_cache_orginal.json
         
         # 格式化JSON使其更易读
         jq . temp_plugin_cache_orginal.json > plugin_cache_orginal.json
@@ -550,7 +538,7 @@ jobs:
         
         # 显示转换统计
         original_count=$(jq 'keys | length' original_plugins.json)
-        new_count=$(jq '.data | keys | length' plugin_cache_orginal.json)
+        new_count=$(jq 'keys | length' plugin_cache_orginal.json)
         
         # 统计不同状态的仓库
         success_repos=$(jq '[.[] | select(.status == "success")] | length' repo_info.json)
@@ -708,7 +696,7 @@ jobs:
             
             # 显示详细统计
             if [ -f plugin_cache_orginal.json ]; then
-              total_plugins=$(jq '.data | keys | length' plugin_cache_orginal.json)
+              total_plugins=$(jq 'keys | length' plugin_cache_orginal.json)
               echo "📊 最终结果: $total_plugins 个插件已更新"
             fi
           else
