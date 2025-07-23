@@ -1580,8 +1580,8 @@
     ],
     "social_link": "https://github.com/Putarku",
     "stars": 0,
-    "updated_at": "2025-05-09T19:55:26Z",
-    "version": "v1.2"
+    "updated_at": "2025-07-23T15:04:13Z",
+    "version": "v1.3"
   },
   "astrbot_plugins_JMPlugins": {
     "author": "orchidsziyou",
@@ -2253,7 +2253,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 16,
-    "updated_at": "2025-07-23T11:22:37Z",
+    "updated_at": "2025-07-23T14:27:04Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3425,8 +3425,8 @@
       "功能"
     ],
     "social_link": "https://github.com/Zhalslar/astrbot_plugin_box",
-    "stars": 34,
-    "updated_at": "2025-07-21T01:47:34Z",
+    "stars": 35,
+    "updated_at": "2025-07-23T13:07:06Z",
     "version": "v1.1.4"
   },
   "astrbot_plugin_yuafeng": {
@@ -3927,8 +3927,8 @@
       "功能",
       "搬史"
     ],
-    "stars": 277,
-    "updated_at": "2025-07-23T12:26:02Z",
+    "stars": 278,
+    "updated_at": "2025-07-23T14:01:18Z",
     "version": "v0.912"
   },
   "astrbot_plugin_superpoke": {
