@@ -1,0 +1,265 @@
+name: Transform Plugin Data
+
+on:
+  schedule:
+    # 每小时执行一次 (UTC时间)
+    - cron: '0 * * * *'
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  transform-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.PAT_TOKEN }}
+    
+    - name: Fetch original plugin data
+      id: fetch-data
+      run: |
+        echo "开始获取原始插件数据..."
+        
+        # 创建临时文件存储响应和HTTP状态码
+        temp_response="temp_response.txt"
+        temp_headers="temp_headers.txt"
+        
+        # 获取GitHub原始文件内容
+        github_url="https://raw.githubusercontent.com/AstrBotDevs/AstrBot_Plugins_Collection/main/plugins.json"
+        
+        # 使用curl获取数据，同时保存HTTP状态码和响应头
+        http_code=$(curl -s --max-time 30 --retry 3 --retry-delay 5 \
+          -H "User-Agent: GitHub-Action-Plugin-Transformer" \
+          -H "Accept: application/json" \
+          -w "%{http_code}" \
+          -D "$temp_headers" \
+          -o "$temp_response" \
+          "$github_url")
+        
+        curl_exit_code=$?
+        
+        # 检查curl命令是否执行成功
+        if [ $curl_exit_code -ne 0 ]; then
+          echo "❌ 网络请求失败，curl退出码: $curl_exit_code"
+          case $curl_exit_code in
+            6) echo "无法解析主机名" ;;
+            7) echo "无法连接到服务器" ;;
+            28) echo "请求超时" ;;
+            35) echo "SSL连接错误" ;;
+            *) echo "其他网络错误" ;;
+          esac
+          echo "should_update=false" >> $GITHUB_OUTPUT
+          rm -f "$temp_response" "$temp_headers"
+          exit 0
+        fi
+        
+        echo "HTTP状态码: $http_code"
+        
+        # 检查HTTP状态码
+        if [ "$http_code" -ne 200 ]; then
+          echo "❌ GitHub返回非200状态码: $http_code"
+          case $http_code in
+            404) echo "文件不存在或仓库不可访问 (404 Not Found)" ;;
+            403) echo "访问被拒绝，可能是API限制 (403 Forbidden)" ;;
+            500) echo "GitHub服务器内部错误 (500 Internal Server Error)" ;;
+            *) echo "HTTP错误状态码: $http_code" ;;
+          esac
+          echo "should_update=false" >> $GITHUB_OUTPUT
+          rm -f "$temp_response" "$temp_headers"
+          exit 0
+        fi
+        
+        # 读取响应内容
+        if [ ! -f "$temp_response" ]; then
+          echo "❌ 响应文件不存在"
+          echo "should_update=false" >> $GITHUB_OUTPUT
+          exit 0
+        fi
+        
+        response=$(cat "$temp_response")
+        
+        # 检查响应是否为空
+        if [ -z "$response" ] || [ "$response" = "" ]; then
+          echo "❌ 获取到的响应为空，跳过更新"
+          echo "should_update=false" >> $GITHUB_OUTPUT
+          rm -f "$temp_response" "$temp_headers"
+          exit 0
+        fi
+        
+        # 检查响应大小
+        response_size=$(wc -c < "$temp_response")
+        if [ "$response_size" -lt 50 ]; then
+          echo "❌ 响应内容过小 ($response_size 字节)，可能是错误响应"
+          echo "should_update=false" >> $GITHUB_OUTPUT
+          rm -f "$temp_response" "$temp_headers"
+          exit 0
+        fi
+        
+        # 检查是否为有效的JSON
+        if ! echo "$response" | jq . > /dev/null 2>&1; then
+          echo "❌ 响应不是有效的JSON格式，跳过更新"
+          echo "should_update=false" >> $GITHUB_OUTPUT
+          rm -f "$temp_response" "$temp_headers"
+          exit 0
+        fi
+        
+        # 检查JSON是否为空对象或空数组
+        if [ "$response" = "{}" ] || [ "$response" = "[]" ] || [ "$response" = "null" ]; then
+          echo "❌ 获取到空的JSON数据，跳过更新"
+          echo "should_update=false" >> $GITHUB_OUTPUT
+          rm -f "$temp_response" "$temp_headers"
+          exit 0
+        fi
+        
+        # 保存原始数据到临时文件
+        echo "$response" > original_plugins.json
+        echo "should_update=true" >> $GITHUB_OUTPUT
+        echo "✅ 成功获取原始插件数据 ($response_size 字节)"
+        
+        # 清理临时文件
+        rm -f "$temp_response" "$temp_headers"
+    
+    - name: Get GitHub API info for repositories
+      if: steps.fetch-data.outputs.should_update == 'true'
+      id: get-repo-info
+      run: |
+        echo "开始获取仓库信息..."
+        
+        # 创建一个临时文件存储仓库信息
+        echo "{}" > repo_info.json
+        
+        # 从原始数据中提取所有仓库URL
+        jq -r 'to_entries[] | .value.repo // empty' original_plugins.json | while read -r repo_url; do
+          # 提取GitHub用户名和仓库名 (格式: https://github.com/user/repo)
+          if [[ "$repo_url" =~ https://github\.com/([^/]+)/([^/]+) ]]; then
+            owner="${BASH_REMATCH[1]}"
+            repo="${BASH_REMATCH[2]}"
+            
+            echo "获取仓库信息: $owner/$repo"
+            
+            # 调用GitHub API获取仓库信息
+            api_response=$(curl -s --max-time 10 \
+              -H "Accept: application/vnd.github.v3+json" \
+              -H "User-Agent: GitHub-Action-Plugin-Transformer" \
+              "https://api.github.com/repos/$owner/$repo" || echo "{}")
+            
+            # 检查API响应是否有效
+            if echo "$api_response" | jq -e '.stargazers_count' > /dev/null 2>&1; then
+              stars=$(echo "$api_response" | jq -r '.stargazers_count // 0')
+              updated_at=$(echo "$api_response" | jq -r '.updated_at // ""')
+              
+              # 获取最新的release版本
+              release_response=$(curl -s --max-time 10 \
+                -H "Accept: application/vnd.github.v3+json" \
+                -H "User-Agent: GitHub-Action-Plugin-Transformer" \
+                "https://api.github.com/repos/$owner/$repo/releases/latest" || echo "{}")
+              
+              version=""
+              if echo "$release_response" | jq -e '.tag_name' > /dev/null 2>&1; then
+                version=$(echo "$release_response" | jq -r '.tag_name')
+              fi
+              
+              # 将信息添加到repo_info.json
+              jq --arg url "$repo_url" --arg stars "$stars" --arg updated "$updated_at" --arg version "$version" \
+                '. + {($url): {stars: ($stars | tonumber), updated_at: $updated, version: $version}}' \
+                repo_info.json > temp_repo_info.json && mv temp_repo_info.json repo_info.json
+            else
+              echo "⚠️  无法获取 $owner/$repo 的信息"
+            fi
+            
+            # 添加延迟避免API限制
+            sleep 1
+          fi
+        done
+        
+        echo "✅ 仓库信息获取完成"
+    
+    - name: Transform plugin data
+      if: steps.fetch-data.outputs.should_update == 'true'
+      run: |
+        echo "开始转换插件数据格式..."
+        
+        # 使用jq转换数据格式
+        jq --slurpfile repo_info repo_info.json '
+        {
+          data: (
+            to_entries | map({
+              key: .key,
+              value: (
+                .value + {
+                  # 保持原有字段
+                  desc: .value.desc,
+                  author: .value.author,
+                  repo: .value.repo,
+                  tags: (.value.tags // []),
+                  social_link: .value.social_link
+                } + 
+                # 添加新字段，从repo_info中获取
+                (if .value.repo and ($repo_info[0][.value.repo]) then
+                  {
+                    stars: $repo_info[0][.value.repo].stars,
+                    updated_at: $repo_info[0][.value.repo].updated_at,
+                    version: (if $repo_info[0][.value.repo].version != "" then $repo_info[0][.value.repo].version else "1.0.0" end)
+                  }
+                else
+                  {
+                    version: "1.0.0"
+                  }
+                end)
+              )
+            }) | from_entries
+          )
+        }' original_plugins.json > temp_plugin_cache.json
+        
+        # 格式化JSON使其更易读
+        jq . temp_plugin_cache.json > plugin_cache.json
+        
+        echo "✅ 数据转换完成"
+        
+        # 显示转换统计
+        original_count=$(jq 'keys | length' original_plugins.json)
+        new_count=$(jq '.data | keys | length' plugin_cache.json)
+        echo "转换统计: $original_count 个插件 -> $new_count 个插件"
+    
+    - name: Check for changes
+      if: steps.fetch-data.outputs.should_update == 'true'
+      id: git-check
+      run: |
+        if [ -f plugin_cache.json ]; then
+          git diff --exit-code plugin_cache.json || echo "has_changes=true" >> $GITHUB_OUTPUT
+        else
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Commit and push changes
+      if: steps.fetch-data.outputs.should_update == 'true' && steps.git-check.outputs.has_changes == 'true'
+      run: |
+        git config --local user.email "igcrystalcache@gmail.com"
+        git config --local user.name "IGCrystal-Ghost"
+        
+        git add plugin_cache.json
+        git commit -m "🔄 Update transformed plugin cache - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+        git push
+        
+        echo "✅ 已提交并推送更新到main分支"
+    
+    - name: Clean up
+      if: always()
+      run: |
+        # 清理所有临时文件
+        rm -f temp_plugin_cache.json temp_response.txt temp_headers.txt original_plugins.json repo_info.json temp_repo_info.json
+    
+    - name: Summary
+      if: always()
+      run: |
+        if [ "${{ steps.fetch-data.outputs.should_update }}" = "true" ]; then
+          if [ "${{ steps.git-check.outputs.has_changes }}" = "true" ]; then
+            echo "✅ 插件数据已成功转换并提交"
+          else
+            echo "ℹ️ 数据获取和转换成功，但内容未发生变化"
+          fi
+        else
+          echo "❌ 由于网络问题、GitHub服务错误或数据异常，跳过了数据转换"
+          echo "请检查GitHub服务状态或查看上面的错误详情"
+        fi
