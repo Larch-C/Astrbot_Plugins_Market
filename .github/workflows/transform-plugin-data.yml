@@ -213,7 +213,7 @@ jobs:
         }' original_plugins.json > temp_plugin_cache.json
         
         # 格式化JSON使其更易读
-        jq . temp_plugin_cache.json > plugin_cache.json
+        jq . temp_plugin_cache.json > plugin_cache_orginal.json
         
         echo "✅ 数据转换完成"
         
