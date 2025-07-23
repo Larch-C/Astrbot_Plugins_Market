@@ -385,16 +385,32 @@ jobs:
                     
                     echo "  ✅ 成功 - Stars: $stars, 更新时间: $updated_at"
                     
-                    # 获取release版本
-                    release_response=$(curl -L -s --max-time 10 --max-redirs 3 \
-                      -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
-                      -H "Accept: application/vnd.github.v3+json" \
-                      -H "User-Agent: GitHub-Action-Plugin-Transformer" \
-                      "https://api.github.com/repos/$owner/$repo/releases/latest" 2>/dev/null || echo "{}")
-                    
-                    if echo "$release_response" | jq -e '.tag_name' > /dev/null 2>&1; then
-                      version=$(echo "$release_response" | jq -r '.tag_name')
-                    fi
+                    # 获取metadata版本
+                    for metadata_file in "metadata.yml" "metadata.yaml"; do
+                      metadata_response=$(curl -L -s --max-time 10 --max-redirs 3 \
+                        -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
+                        -H "Accept: application/vnd.github.v3.raw" \
+                        -H "User-Agent: GitHub-Action-Plugin-Transformer" \
+                        "https://api.github.com/repos/$owner/$repo/contents/$metadata_file" 2>/dev/null || echo "{}")
+                      
+                      if [[ ! "$metadata_response" =~ "Not Found" ]] && [[ ! "$metadata_response" =~ "Bad Gateway" ]]; then
+                        # 检查是否是base64编码的内容
+                        if echo "$metadata_response" | jq -e '.content' > /dev/null 2>&1; then
+                          metadata_content=$(echo "$metadata_response" | jq -r '.content' | base64 -d 2>/dev/null || echo "")
+                        else
+                          metadata_content="$metadata_response"
+                        fi
+                        
+                        # 尝试解析YAML并提取版本
+                        if [ ! -z "$metadata_content" ]; then
+                          parsed_version=$(echo "$metadata_content" | grep -E "^version:\s*['\"]?([^'\"]+)['\"]?" | sed -E "s/version:\s*['\"]?([^'\"]+)['\"]?/\1/" || echo "")
+                          if [ ! -z "$parsed_version" ]; then
+                            version="$parsed_version"
+                            break
+                          fi
+                        fi
+                      fi
+                    done
                   fi
                   ;;
                 301|302)
@@ -495,9 +511,10 @@ jobs:
                   desc: .value.desc,
                   author: .value.author,
                   repo: .value.repo,
-                  tags: (.value.tags // []),
-                  social_link: .value.social_link
-                } + 
+                  tags: (.value.tags // [])
+                } +
+                # 仅当social_link存在且不为空时添加
+                (if .value.social_link then { social_link: .value.social_link } else {} end) + 
                 # 添加新字段，从repo_info中获取
                 (if .value.repo and ($repo_info[0][.value.repo]) then
                   ($repo_info[0][.value.repo] | {
