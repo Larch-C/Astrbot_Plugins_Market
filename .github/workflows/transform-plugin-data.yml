@@ -6,6 +6,10 @@ on:
     - cron: '0 * * * *'
   workflow_dispatch: # 允许手动触发
 
+permissions:
+  contents: write
+  actions: read
+
 jobs:
   transform-data:
     runs-on: ubuntu-latest
@@ -15,6 +19,23 @@ jobs:
       uses: actions/checkout@v4
       with:
         token: ${{ secrets.PAT_TOKEN }}
+        fetch-depth: 0
+    
+    - name: Test PAT Token
+      run: |
+        echo "Testing PAT Token permissions..."
+        response=$(curl -s -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
+          -H "User-Agent: GitHub-Action-Plugin-Transformer" \
+          "https://api.github.com/user")
+        
+        if echo "$response" | jq -e '.login' > /dev/null 2>&1; then
+          username=$(echo "$response" | jq -r '.login')
+          echo "✅ PAT Token authenticated as: $username"
+        else
+          echo "❌ PAT Token authentication failed"
+          echo "Response: $response"
+          exit 1
+        fi
     
     - name: Fetch original plugin data
       id: fetch-data
@@ -28,8 +49,9 @@ jobs:
         # 获取GitHub原始文件内容
         github_url="https://raw.githubusercontent.com/AstrBotDevs/AstrBot_Plugins_Collection/main/plugins.json"
         
-        # 使用curl获取数据，同时保存HTTP状态码和响应头
+        # 使用curl获取数据，添加PAT_TOKEN认证
         http_code=$(curl -s --max-time 30 --retry 3 --retry-delay 5 \
+          -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
           -H "User-Agent: GitHub-Action-Plugin-Transformer" \
           -H "Accept: application/json" \
           -w "%{http_code}" \
@@ -160,7 +182,7 @@ jobs:
             
             echo "[$total_repos] 获取仓库信息: $owner/$repo"
             
-            # 调用GitHub API获取仓库信息，增加重试机制
+            # 调用GitHub API获取仓库信息，增加重试机制和PAT_TOKEN认证
             api_response=""
             http_code=""
             retry_count=0
@@ -168,6 +190,7 @@ jobs:
             
             while [ $retry_count -lt $max_retries ]; do
               api_response=$(curl -s --max-time 15 --retry 2 --retry-delay 2 \
+                -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
                 -H "Accept: application/vnd.github.v3+json" \
                 -H "User-Agent: GitHub-Action-Plugin-Transformer" \
                 -w "HTTPSTATUS:%{http_code}" \
@@ -215,8 +238,9 @@ jobs:
               
               echo "  ✅ 成功 - Stars: $stars, 更新时间: $updated_at"
               
-              # 获取最新的release版本（失败不影响主流程）
+              # 获取最新的release版本（失败不影响主流程），也使用PAT_TOKEN
               release_response=$(curl -s --max-time 10 \
+                -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
                 -H "Accept: application/vnd.github.v3+json" \
                 -H "User-Agent: GitHub-Action-Plugin-Transformer" \
                 "https://api.github.com/repos/$owner/$repo/releases/latest" 2>/dev/null || echo "{}")
@@ -259,8 +283,8 @@ jobs:
                '. + {($url): {stars: ($stars | tonumber), updated_at: $updated, version: $version, status: $status}}' \
                repo_info.json > temp_repo_info.json && mv temp_repo_info.json repo_info.json
             
-            # 添加延迟避免API限制
-            sleep 1.5
+            # 添加延迟避免API限制（使用PAT_TOKEN时可以稍微减少延迟）
+            sleep 1
           fi
         done
         
@@ -283,6 +307,30 @@ jobs:
         fi
         
         echo "✅ 仓库信息获取完成"
+        
+        # 显示API使用情况（使用PAT_TOKEN查询）
+        echo ""
+        echo "📊 API使用情况:"
+        rate_limit_info=$(curl -s -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
+          -H "User-Agent: GitHub-Action-Plugin-Transformer" \
+          "https://api.github.com/rate_limit")
+        
+        if echo "$rate_limit_info" | jq -e '.rate' > /dev/null 2>&1; then
+          remaining=$(echo "$rate_limit_info" | jq -r '.rate.remaining')
+          limit=$(echo "$rate_limit_info" | jq -r '.rate.limit')
+          reset_time=$(echo "$rate_limit_info" | jq -r '.rate.reset')
+          reset_date=$(date -d "@$reset_time" '+%Y-%m-%d %H:%M:%S UTC' 2>/dev/null || echo "Unknown")
+          
+          echo "  剩余请求: $remaining/$limit"
+          echo "  重置时间: $reset_date"
+          
+          # 如果剩余请求数很少，给出警告
+          if [ "$remaining" -lt 100 ]; then
+            echo "  ⚠️  警告: API请求配额不足，可能影响后续执行"
+          fi
+        else
+          echo "  无法获取API使用情况"
+        fi
     
     - name: Transform plugin data
       if: steps.fetch-data.outputs.should_update == 'true'
@@ -331,7 +379,7 @@ jobs:
         }' original_plugins.json > temp_plugin_cache.json
         
         # 格式化JSON使其更易读
-        jq . temp_plugin_cache.json > plugin_cache_orginal.json
+        jq . temp_plugin_cache.json > plugin_cache.json
         
         echo "✅ 数据转换完成"
         
@@ -371,29 +419,64 @@ jobs:
       if: steps.fetch-data.outputs.should_update == 'true'
       id: git-check
       run: |
+        # 配置Git（使用PAT_TOKEN进行认证）
+        git config --local user.email "igcrystalcache@gmail.com"
+        git config --local user.name "IGCrystal-Ghost"
+        
+        # 检查是否有变更
         if [ -f plugin_cache.json ]; then
-          git diff --exit-code plugin_cache.json || echo "has_changes=true" >> $GITHUB_OUTPUT
+          if git diff --exit-code plugin_cache.json; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "ℹ️ 文件内容没有变化"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "✅ 检测到文件变更"
+          fi
         else
           echo "has_changes=true" >> $GITHUB_OUTPUT
+          echo "✅ 新文件需要提交"
         fi
     
     - name: Commit and push changes
       if: steps.fetch-data.outputs.should_update == 'true' && steps.git-check.outputs.has_changes == 'true'
       run: |
-        git config --local user.email "igcrystalcache@gmail.com"
-        git config --local user.name "IGCrystal-Ghost"
+        # Git配置已在上一步设置
         
+        # 验证认证状态
+        echo "验证Git认证状态..."
+        if git ls-remote origin HEAD > /dev/null 2>&1; then
+          echo "✅ Git认证成功"
+        else
+          echo "❌ Git认证失败，检查PAT_TOKEN权限"
+          exit 1
+        fi
+        
+        # 添加和提交文件
         git add plugin_cache.json
-        git commit -m "🔄 Update transformed plugin cache - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
-        git push
         
-        echo "✅ 已提交并推送更新到main分支"
+        # 获取统计信息用于提交信息
+        total_plugins=$(jq '.data | keys | length' plugin_cache.json 2>/dev/null || echo "0")
+        success_repos=$(jq '[.[] | select(.status == "success")] | length' repo_info.json 2>/dev/null || echo "0")
+        
+        commit_message="🔄 Update plugin cache: $total_plugins plugins, $success_repos fresh updates - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+        
+        git commit -m "$commit_message"
+        
+        # 推送更改
+        echo "推送更改到远程仓库..."
+        if git push origin HEAD; then
+          echo "✅ 成功推送到远程仓库"
+        else
+          echo "❌ 推送失败，可能是权限问题"
+          exit 1
+        fi
     
     - name: Clean up
       if: always()
       run: |
         # 清理所有临时文件
         rm -f temp_plugin_cache.json temp_response.txt temp_headers.txt original_plugins.json repo_info.json temp_repo_info.json existing_cache.json
+        echo "🧹 临时文件清理完成"
     
     - name: Summary
       if: always()
@@ -414,6 +497,13 @@ jobs:
           echo "❌ 由于网络问题、GitHub服务错误或数据异常，跳过了数据转换"
           echo "请检查GitHub服务状态或查看上面的错误详情"
         fi
+        
+        echo ""
+        echo "🔐 认证增强说明:"
+        echo "  - 所有GitHub API请求都使用PAT_TOKEN认证"
+        echo "  - 提高了API访问限制（5000/小时 vs 60/小时）"
+        echo "  - 增强了对私有仓库的访问能力"
+        echo "  - 添加了API使用情况监控"
         
         echo ""
         echo "💡 容错机制说明:"
