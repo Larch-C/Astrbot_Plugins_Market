@@ -404,8 +404,10 @@ jobs:
                         # 尝试解析YAML并提取版本
                         if [ ! -z "$metadata_content" ]; then
                           parsed_version=$(echo "$metadata_content" | grep -E "^version:\s*['\"]?([^'\"]+)['\"]?" | sed -E "s/version:\s*['\"]?([^'\"]+)['\"]?/\1/" || echo "")
-                          if [ ! -z "$parsed_version" ]; then
-                            version="$parsed_version"
+                          # 去除注释和多余的空白字符
+                          cleaned_version=$(echo "$parsed_version" | sed -E 's/[#].*$//' | sed -E 's/\r$//' | xargs)
+                          if [ ! -z "$cleaned_version" ]; then
+                            version="$cleaned_version"
                             break
                           fi
                         fi
