@@ -1,0 +1,103 @@
+name: Update Plugin Cache
+
+on:
+  schedule:
+    # 每小时执行一次 (UTC时间)
+    - cron: '0 * * * *'
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  update-cache:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Fetch plugin data
+      id: fetch-data
+      run: |
+        echo "开始获取插件数据..."
+        
+        # 设置超时和重试
+        response=$(curl -s --max-time 30 --retry 3 --retry-delay 5 \
+          -H "User-Agent: GitHub-Action-Plugin-Cache" \
+          "https://api.soulter.top/astrbot/plugins")
+        
+        # 检查响应是否为空
+        if [ -z "$response" ]; then
+          echo "获取到的响应为空，跳过更新"
+          echo "should_update=false" >> $GITHUB_OUTPUT
+          exit 0
+        fi
+        
+        # 检查是否为有效的JSON
+        if ! echo "$response" | jq . > /dev/null 2>&1; then
+          echo "响应不是有效的JSON格式，跳过更新"
+          echo "should_update=false" >> $GITHUB_OUTPUT
+          exit 0
+        fi
+        
+        # 检查JSON是否为空对象或空数组
+        if [ "$response" = "{}" ] || [ "$response" = "[]" ] || [ "$response" = "null" ]; then
+          echo "获取到空的JSON数据，跳过更新"
+          echo "should_update=false" >> $GITHUB_OUTPUT
+          exit 0
+        fi
+        
+        # 保存响应到临时文件
+        echo "$response" > temp_plugin_cache.json
+        echo "should_update=true" >> $GITHUB_OUTPUT
+        echo "成功获取插件数据"
+    
+    - name: Update plugin cache
+      if: steps.fetch-data.outputs.should_update == 'true'
+      run: |
+        # 移动临时文件到目标位置
+        mv temp_plugin_cache.json plugin_cache.json
+        
+        # 格式化JSON（可选，使其更易读）
+        if command -v jq &> /dev/null; then
+          jq . plugin_cache.json > temp.json && mv temp.json plugin_cache.json
+        fi
+        
+        echo "插件缓存已更新"
+    
+    - name: Check for changes
+      if: steps.fetch-data.outputs.should_update == 'true'
+      id: git-check
+      run: |
+        git diff --exit-code plugin_cache.json || echo "has_changes=true" >> $GITHUB_OUTPUT
+    
+    - name: Commit and push changes
+      if: steps.fetch-data.outputs.should_update == 'true' && steps.git-check.outputs.has_changes == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        git add plugin_cache.json
+        git commit -m "🔄 Update plugin cache - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+        git push
+        
+        echo "已提交并推送更新到main分支"
+    
+    - name: Clean up
+      if: always()
+      run: |
+        # 清理临时文件
+        rm -f temp_plugin_cache.json temp.json
+    
+    - name: Summary
+      if: always()
+      run: |
+        if [ "${{ steps.fetch-data.outputs.should_update }}" = "true" ]; then
+          if [ "${{ steps.git-check.outputs.has_changes }}" = "true" ]; then
+            echo "✅ 插件缓存已成功更新并提交"
+          else
+            echo "ℹ️ 数据获取成功，但内容未发生变化"
+          fi
+        else
+          echo "⚠️ 由于网络问题或数据为空，跳过了缓存更新"
+        fi
