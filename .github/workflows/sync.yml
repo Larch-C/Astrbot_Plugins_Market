@@ -1,10 +1,14 @@
 name: Update Plugin Cache
-
 on:
   schedule:
     # 每小时执行一次 (UTC时间)
-    - cron: '0 * * * *'
+    - cron: '0 * * * *'  # 修复了cron表达式
   workflow_dispatch: # 允许手动触发
+
+# 添加权限声明
+permissions:
+  contents: write
+  actions: read
 
 jobs:
   update-cache:
@@ -71,19 +75,40 @@ jobs:
       if: steps.fetch-data.outputs.should_update == 'true'
       id: git-check
       run: |
-        git diff --exit-code plugin_cache.json || echo "has_changes=true" >> $GITHUB_OUTPUT
+        echo "检查文件变化..."
+        
+        # 显示当前状态
+        git status
+        
+        # 检查是否有变化，并正确设置输出
+        if git diff --exit-code plugin_cache.json; then
+          echo "文件没有变化"
+          echo "has_changes=false" >> $GITHUB_OUTPUT
+        else
+          echo "检测到文件变化"
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+          # 显示具体变化
+          git diff plugin_cache.json
+        fi
     
     - name: Commit and push changes
       if: steps.fetch-data.outputs.should_update == 'true' && steps.git-check.outputs.has_changes == 'true'
       run: |
+        echo "准备提交变更..."
+        
+        # 配置Git用户信息
         git config --local user.email "igcrystalcache@gmail.com"
         git config --local user.name "IGCrystal-Ghost"
         
+        # 添加文件并提交
         git add plugin_cache.json
         git commit -m "🔄 Update plugin cache - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
-        git push
         
-        echo "已提交并推送更新到main分支"
+        # 推送到远程仓库
+        echo "推送到远程仓库..."
+        git push origin HEAD:${{ github.ref_name }}
+        
+        echo "✅ 已成功提交并推送更新"
     
     - name: Clean up
       if: always()
@@ -94,11 +119,15 @@ jobs:
     - name: Summary
       if: always()
       run: |
+        echo "=== 执行总结 ==="
+        echo "should_update: ${{ steps.fetch-data.outputs.should_update }}"
+        echo "has_changes: ${{ steps.git-check.outputs.has_changes }}"
+        
         if [ "${{ steps.fetch-data.outputs.should_update }}" = "true" ]; then
           if [ "${{ steps.git-check.outputs.has_changes }}" = "true" ]; then
             echo "✅ 插件缓存已成功更新并提交"
           else
-            echo "ℹ️ 数据获取成功，但内容未发生变化"
+            echo "ℹ️ 数据获取成功，但内容未发生变化，无需提交"
           fi
         else
           echo "⚠️ 由于网络问题或数据为空，跳过了缓存更新"
