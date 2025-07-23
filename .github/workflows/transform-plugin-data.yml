@@ -470,7 +470,7 @@ jobs:
       id: git-check
       run: |
         # 配置Git（使用PAT_TOKEN进行认证）
-        git config --local user.email "igcrystalcache@gmail.com"
+        git config --local user.email "cacheigcrystal@gmail.com"
         git config --local user.name "IGCrystal-Ghost"
         
         # 检查是否有变更
