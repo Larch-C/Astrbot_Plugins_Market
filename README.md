@@ -1,6 +1,6 @@
 # AstrBot 插件市场
 
-插件数据采集，用于 **插件市场** 或者 `AstrBot Landing Page` 插件市场导航页插件展示
+插件数据采集，可用于 **插件市场** 或者 `AstrBot Landing Page` 插件市场导航页插件展示
 
 ## 提交插件
 
