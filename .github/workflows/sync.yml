@@ -137,7 +137,7 @@ jobs:
         echo "准备提交变更..."
         
         # 配置Git用户信息
-        git config --local user.email "igcrystalcache@gmail.com"
+        git config --local user.email "cacheigcrystal@gmail.com"
         git config --local user.name "IGCrystal-Ghost"
         
         # 强制添加文件（确保被跟踪）
