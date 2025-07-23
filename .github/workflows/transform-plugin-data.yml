@@ -120,6 +120,20 @@ jobs:
         # 清理临时文件
         rm -f "$temp_response" "$temp_headers"
     
+    - name: Load existing cache for fallback
+      if: steps.fetch-data.outputs.should_update == 'true'
+      id: load-cache
+      run: |
+        echo "检查现有缓存文件..."
+        if [ -f plugin_cache.json ]; then
+          echo "发现现有缓存文件，将用作回退数据"
+          cp plugin_cache.json existing_cache.json
+          echo "has_existing_cache=true" >> $GITHUB_OUTPUT
+        else
+          echo "没有现有缓存文件"
+          echo "has_existing_cache=false" >> $GITHUB_OUTPUT
+        fi
+
     - name: Get GitHub API info for repositories
       if: steps.fetch-data.outputs.should_update == 'true'
       id: get-repo-info
@@ -129,49 +143,144 @@ jobs:
         # 创建一个临时文件存储仓库信息
         echo "{}" > repo_info.json
         
+        # 初始化统计计数器
+        total_repos=0
+        success_count=0
+        failed_count=0
+        deleted_count=0
+        network_error_count=0
+        
         # 从原始数据中提取所有仓库URL
         jq -r 'to_entries[] | .value.repo // empty' original_plugins.json | while read -r repo_url; do
           # 提取GitHub用户名和仓库名 (格式: https://github.com/user/repo)
           if [[ "$repo_url" =~ https://github\.com/([^/]+)/([^/]+) ]]; then
             owner="${BASH_REMATCH[1]}"
             repo="${BASH_REMATCH[2]}"
+            total_repos=$((total_repos + 1))
             
-            echo "获取仓库信息: $owner/$repo"
+            echo "[$total_repos] 获取仓库信息: $owner/$repo"
             
-            # 调用GitHub API获取仓库信息
-            api_response=$(curl -s --max-time 10 \
-              -H "Accept: application/vnd.github.v3+json" \
-              -H "User-Agent: GitHub-Action-Plugin-Transformer" \
-              "https://api.github.com/repos/$owner/$repo" || echo "{}")
+            # 调用GitHub API获取仓库信息，增加重试机制
+            api_response=""
+            http_code=""
+            retry_count=0
+            max_retries=3
             
-            # 检查API响应是否有效
-            if echo "$api_response" | jq -e '.stargazers_count' > /dev/null 2>&1; then
+            while [ $retry_count -lt $max_retries ]; do
+              api_response=$(curl -s --max-time 15 --retry 2 --retry-delay 2 \
+                -H "Accept: application/vnd.github.v3+json" \
+                -H "User-Agent: GitHub-Action-Plugin-Transformer" \
+                -w "HTTPSTATUS:%{http_code}" \
+                "https://api.github.com/repos/$owner/$repo" 2>/dev/null || echo "CURL_ERROR")
+              
+              if [[ "$api_response" != "CURL_ERROR" ]]; then
+                # 分离HTTP状态码和响应体
+                http_code=$(echo "$api_response" | grep -o "HTTPSTATUS:[0-9]*" | cut -d: -f2)
+                api_response=$(echo "$api_response" | sed 's/HTTPSTATUS:[0-9]*$//')
+                break
+              fi
+              
+              retry_count=$((retry_count + 1))
+              echo "  重试 $retry_count/$max_retries..."
+              sleep 2
+            done
+            
+            # 处理不同的响应情况
+            stars=0
+            updated_at=""
+            version=""
+            status="unknown"
+            
+            if [[ "$api_response" == "CURL_ERROR" ]]; then
+              echo "  ❌ 网络错误: 无法连接到GitHub API"
+              network_error_count=$((network_error_count + 1))
+              status="network_error"
+              
+            elif [ "$http_code" = "404" ]; then
+              echo "  🗑️  仓库已删除或不可访问 (404)"
+              deleted_count=$((deleted_count + 1))
+              status="deleted"
+              
+            elif [ "$http_code" = "403" ]; then
+              echo "  ⚠️  API限制或访问被拒绝 (403)"
+              failed_count=$((failed_count + 1))
+              status="api_limit"
+              
+            elif [ "$http_code" = "200" ] && echo "$api_response" | jq -e '.stargazers_count' > /dev/null 2>&1; then
+              # 成功获取仓库信息
               stars=$(echo "$api_response" | jq -r '.stargazers_count // 0')
               updated_at=$(echo "$api_response" | jq -r '.updated_at // ""')
+              success_count=$((success_count + 1))
+              status="success"
               
-              # 获取最新的release版本
+              echo "  ✅ 成功 - Stars: $stars, 更新时间: $updated_at"
+              
+              # 获取最新的release版本（失败不影响主流程）
               release_response=$(curl -s --max-time 10 \
                 -H "Accept: application/vnd.github.v3+json" \
                 -H "User-Agent: GitHub-Action-Plugin-Transformer" \
-                "https://api.github.com/repos/$owner/$repo/releases/latest" || echo "{}")
+                "https://api.github.com/repos/$owner/$repo/releases/latest" 2>/dev/null || echo "{}")
               
-              version=""
               if echo "$release_response" | jq -e '.tag_name' > /dev/null 2>&1; then
                 version=$(echo "$release_response" | jq -r '.tag_name')
               fi
               
-              # 将信息添加到repo_info.json
-              jq --arg url "$repo_url" --arg stars "$stars" --arg updated "$updated_at" --arg version "$version" \
-                '. + {($url): {stars: ($stars | tonumber), updated_at: $updated, version: $version}}' \
-                repo_info.json > temp_repo_info.json && mv temp_repo_info.json repo_info.json
             else
-              echo "⚠️  无法获取 $owner/$repo 的信息"
+              echo "  ❌ 未知错误 (HTTP: $http_code)"
+              failed_count=$((failed_count + 1))
+              status="unknown_error"
             fi
             
+            # 如果有现有缓存，尝试从缓存中获取回退数据
+            if [ "$status" != "success" ] && [ "${{ steps.load-cache.outputs.has_existing_cache }}" = "true" ]; then
+              cached_data=$(jq -r --arg url "$repo_url" '.data // {} | to_entries[] | select(.value.repo == $url) | .value | {stars: .stars, updated_at: .updated_at, version: .version}' existing_cache.json 2>/dev/null || echo "{}")
+              
+              if [ "$cached_data" != "{}" ] && [ "$cached_data" != "" ]; then
+                cached_stars=$(echo "$cached_data" | jq -r '.stars // 0')
+                cached_updated=$(echo "$cached_data" | jq -r '.updated_at // ""')
+                cached_version=$(echo "$cached_data" | jq -r '.version // ""')
+                
+                if [ "$cached_stars" != "0" ] || [ "$cached_updated" != "" ]; then
+                  echo "  🔄 使用缓存数据: Stars: $cached_stars"
+                  stars="$cached_stars"
+                  updated_at="$cached_updated"
+                  version="$cached_version"
+                  status="cached"
+                fi
+              fi
+            fi
+            
+            # 将信息添加到repo_info.json
+            jq --arg url "$repo_url" \
+               --arg stars "$stars" \
+               --arg updated "$updated_at" \
+               --arg version "$version" \
+               --arg status "$status" \
+               '. + {($url): {stars: ($stars | tonumber), updated_at: $updated, version: $version, status: $status}}' \
+               repo_info.json > temp_repo_info.json && mv temp_repo_info.json repo_info.json
+            
             # 添加延迟避免API限制
-            sleep 1
+            sleep 1.5
           fi
         done
+        
+        echo ""
+        echo "📊 仓库信息获取统计:"
+        echo "  总计: $total_repos 个仓库"
+        echo "  ✅ 成功: $success_count"
+        echo "  🔄 使用缓存: $(jq '[.[] | select(.status == "cached")] | length' repo_info.json)"
+        echo "  🗑️  已删除: $deleted_count"
+        echo "  🌐 网络错误: $network_error_count"
+        echo "  ❌ 其他失败: $failed_count"
+        echo ""
+        
+        # 如果大部分仓库都失败了，可能是网络问题
+        if [ $total_repos -gt 0 ] && [ $((success_count * 100 / total_repos)) -lt 30 ]; then
+          echo "⚠️  警告: 成功率过低 ($((success_count * 100 / total_repos))%)，可能存在网络问题"
+          if [ "${{ steps.load-cache.outputs.has_existing_cache }}" = "true" ]; then
+            echo "将主要依赖现有缓存数据"
+          fi
+        fi
         
         echo "✅ 仓库信息获取完成"
     
@@ -180,7 +289,7 @@ jobs:
       run: |
         echo "开始转换插件数据格式..."
         
-        # 使用jq转换数据格式
+        # 使用jq转换数据格式，增加容错处理
         jq --slurpfile repo_info repo_info.json '
         {
           data: (
@@ -197,19 +306,28 @@ jobs:
                 } + 
                 # 添加新字段，从repo_info中获取
                 (if .value.repo and ($repo_info[0][.value.repo]) then
-                  {
-                    stars: $repo_info[0][.value.repo].stars,
-                    updated_at: $repo_info[0][.value.repo].updated_at,
-                    version: (if $repo_info[0][.value.repo].version != "" then $repo_info[0][.value.repo].version else "1.0.0" end)
-                  }
+                  ($repo_info[0][.value.repo] | {
+                    stars: .stars,
+                    updated_at: .updated_at,
+                    version: (if .version != "" then .version else "1.0.0" end),
+                    # 添加状态标识用于调试（可选）
+                    # repo_status: .status
+                  })
                 else
                   {
+                    stars: 0,
                     version: "1.0.0"
                   }
                 end)
               )
             }) | from_entries
-          )
+          ),
+          # 添加元数据
+          meta: {
+            last_updated: (now | strftime("%Y-%m-%dT%H:%M:%SZ")),
+            total_plugins: (. | keys | length),
+            source: "https://raw.githubusercontent.com/AstrBotDevs/AstrBot_Plugins_Collection/main/plugins.json"
+          }
         }' original_plugins.json > temp_plugin_cache.json
         
         # 格式化JSON使其更易读
@@ -220,7 +338,34 @@ jobs:
         # 显示转换统计
         original_count=$(jq 'keys | length' original_plugins.json)
         new_count=$(jq '.data | keys | length' plugin_cache.json)
-        echo "转换统计: $original_count 个插件 -> $new_count 个插件"
+        
+        # 统计不同状态的仓库
+        success_repos=$(jq '[.[] | select(.status == "success")] | length' repo_info.json)
+        cached_repos=$(jq '[.[] | select(.status == "cached")] | length' repo_info.json)
+        deleted_repos=$(jq '[.[] | select(.status == "deleted")] | length' repo_info.json)
+        failed_repos=$(jq '[.[] | select(.status != "success" and .status != "cached")] | length' repo_info.json)
+        
+        echo ""
+        echo "📊 转换统计:"
+        echo "  插件数量: $original_count -> $new_count"
+        echo "  ✅ 实时数据: $success_repos 个仓库"
+        echo "  🔄 缓存数据: $cached_repos 个仓库"
+        echo "  🗑️  已删除: $deleted_repos 个仓库"
+        echo "  ❌ 无数据: $failed_repos 个仓库"
+        
+        # 列出已删除的仓库
+        if [ "$deleted_repos" -gt 0 ]; then
+          echo ""
+          echo "🗑️  已删除的仓库列表:"
+          jq -r 'to_entries[] | select(.value.status == "deleted") | "  - " + .key' repo_info.json
+        fi
+        
+        # 列出完全失败的仓库
+        if [ "$failed_repos" -gt 0 ]; then
+          echo ""
+          echo "❌ 无法获取数据的仓库:"
+          jq -r 'to_entries[] | select(.value.status != "success" and .value.status != "cached" and .value.status != "deleted") | "  - " + .key + " (" + .value.status + ")"' repo_info.json
+        fi
     
     - name: Check for changes
       if: steps.fetch-data.outputs.should_update == 'true'
@@ -248,7 +393,7 @@ jobs:
       if: always()
       run: |
         # 清理所有临时文件
-        rm -f temp_plugin_cache.json temp_response.txt temp_headers.txt original_plugins.json repo_info.json temp_repo_info.json
+        rm -f temp_plugin_cache.json temp_response.txt temp_headers.txt original_plugins.json repo_info.json temp_repo_info.json existing_cache.json
     
     - name: Summary
       if: always()
@@ -256,6 +401,12 @@ jobs:
         if [ "${{ steps.fetch-data.outputs.should_update }}" = "true" ]; then
           if [ "${{ steps.git-check.outputs.has_changes }}" = "true" ]; then
             echo "✅ 插件数据已成功转换并提交"
+            
+            # 显示详细统计
+            if [ -f plugin_cache.json ]; then
+              total_plugins=$(jq '.data | keys | length' plugin_cache.json)
+              echo "📊 最终结果: $total_plugins 个插件已更新"
+            fi
           else
             echo "ℹ️ 数据获取和转换成功，但内容未发生变化"
           fi
@@ -263,3 +414,10 @@ jobs:
           echo "❌ 由于网络问题、GitHub服务错误或数据异常，跳过了数据转换"
           echo "请检查GitHub服务状态或查看上面的错误详情"
         fi
+        
+        echo ""
+        echo "💡 容错机制说明:"
+        echo "  - 删库/404: 继续处理其他仓库，使用缓存数据（如果有）"
+        echo "  - 网络错误: 自动重试3次，失败后使用缓存数据"
+        echo "  - API限制: 使用缓存数据，延长请求间隔"
+        echo "  - 成功率低: 主要依赖现有缓存，确保服务稳定性"
