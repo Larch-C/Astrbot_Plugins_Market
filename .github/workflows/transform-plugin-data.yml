@@ -8,7 +8,7 @@ on:
 
 permissions:
   contents: write
-  actions: read
+  actions: write
 
 jobs:
   transform-data:
@@ -588,19 +588,27 @@ jobs:
         git config --local user.name "IGCrystal-Ghost"
         
         # 检查是否有变更
+        # 如果文件存在
         if [ -f plugin_cache_orginal.json ]; then
-          # 文件存在，检查是否有变更
-          if git diff --exit-code plugin_cache_orginal.json > /dev/null 2>&1; then
-            echo "has_changes=false" >> $GITHUB_OUTPUT
-            echo "ℹ️ 文件内容没有变化"
+          # 判断文件是否被 Git 跟踪
+          if git ls-files --error-unmatch plugin_cache_orginal.json > /dev/null 2>&1; then
+            # 已跟踪，检测内容变更
+            if git diff --exit-code plugin_cache_orginal.json > /dev/null 2>&1; then
+              echo "has_changes=false" >> $GITHUB_OUTPUT
+              echo "ℹ️ 文件内容没有变化"
+            else
+              echo "has_changes=true" >> $GITHUB_OUTPUT
+              echo "✅ 检测到文件内容变更"
+            fi
           else
+            # 未跟踪，视为新文件需提交
             echo "has_changes=true" >> $GITHUB_OUTPUT
-            echo "✅ 检测到文件变更"
+            echo "✅ 新文件需要提交"
           fi
         else
-          # 文件不存在（首次运行），直接标记为有变更
-          echo "has_changes=true" >> $GITHUB_OUTPUT
-          echo "✅ 新文件需要提交（首次运行）"
+          # 文件不存在
+          echo "has_changes=false" >> $GITHUB_OUTPUT
+          echo "ℹ️ 未生成 plugin_cache_orginal.json，跳过提交"
         fi
     
     - name: Commit and push changes
