@@ -475,7 +475,8 @@ jobs:
         
         # 检查是否有变更
         if [ -f plugin_cache_orginal.json ]; then
-          if git diff --exit-code plugin_cache_orginal.json; then
+          # 文件存在，检查是否有变更
+          if git diff --exit-code plugin_cache_orginal.json > /dev/null 2>&1; then
             echo "has_changes=false" >> $GITHUB_OUTPUT
             echo "ℹ️ 文件内容没有变化"
           else
@@ -483,8 +484,9 @@ jobs:
             echo "✅ 检测到文件变更"
           fi
         else
+          # 文件不存在（首次运行），直接标记为有变更
           echo "has_changes=true" >> $GITHUB_OUTPUT
-          echo "✅ 新文件需要提交"
+          echo "✅ 新文件需要提交（首次运行）"
         fi
     
     - name: Commit and push changes
