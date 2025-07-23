@@ -582,7 +582,7 @@ jobs:
         git config --local user.name "IGCrystal-Ghost"
         
         echo "检查远程仓库是否存在 plugin_cache_orginal.json..."
-        if git ls-remote --exit-code origin refs/heads/main:plugin_cache_orginal.json > /dev/null 2>&1; then
+        if git ls-tree --name-only -r origin/main | grep -q "^plugin_cache_orginal.json$"; then
           echo "文件在远程仓库中已存在"
           remote_exists="true"
         else
@@ -601,6 +601,11 @@ jobs:
             echo "has_changes=false" >> $GITHUB_OUTPUT
             exit 1
           fi
+        else
+          echo "❌ 本地文件不存在"
+          echo "has_changes=false" >> $GITHUB_OUTPUT
+          exit 1
+        fi
         
         # 检查是否有变更
         if [ -f plugin_cache_orginal.json ]; then
