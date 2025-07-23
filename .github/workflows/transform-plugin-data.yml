@@ -41,6 +41,13 @@ jobs:
       id: fetch-data
       run: |
         echo "开始获取原始插件数据..."
+        echo "当前工作目录: $(pwd)"
+        echo "PAT_TOKEN 权限检查..."
+        if [ -n "${{ secrets.PAT_TOKEN }}" ]; then
+          echo "✓ PAT_TOKEN 已设置"
+        else
+          echo "✗ PAT_TOKEN 未设置"
+        fi
         
         # 创建临时文件存储响应和HTTP状态码
         temp_response="temp_response.txt"
@@ -567,6 +574,15 @@ jobs:
       if: steps.fetch-data.outputs.should_update == 'true'
       id: git-check
       run: |
+        echo "检查文件状态..."
+        ls -la
+        echo "检查 plugin_cache_orginal.json 是否存在..."
+        if [ -f plugin_cache_orginal.json ]; then
+          echo "文件存在，大小: $(wc -c < plugin_cache_orginal.json) bytes"
+        else
+          echo "文件不存在!"
+        fi
+        
         # 配置Git（使用PAT_TOKEN进行认证）
         git config --local user.email "cacheigcrystal@gmail.com"
         git config --local user.name "IGCrystal-Ghost"
