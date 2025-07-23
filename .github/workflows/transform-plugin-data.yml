@@ -164,9 +164,9 @@ jobs:
       id: load-cache
       run: |
         echo "检查现有缓存文件..."
-        if [ -f plugin_cache.json ]; then
+        if [ -f plugin_cache_orginal.json ]; then
           echo "发现现有缓存文件，将用作回退数据"
-          cp plugin_cache.json existing_cache.json
+          cp plugin_cache_orginal.json existing_cache.json
           echo "has_existing_cache=true" >> $GITHUB_OUTPUT
         else
           echo "没有现有缓存文件"
@@ -417,16 +417,16 @@ jobs:
             total_plugins: (. | keys | length),
             source: "https://raw.githubusercontent.com/AstrBotDevs/AstrBot_Plugins_Collection/main/plugins.json"
           }
-        }' original_plugins.json > temp_plugin_cache.json
+        }' original_plugins.json > temp_plugin_cache_orginal.json
         
         # 格式化JSON使其更易读
-        jq . temp_plugin_cache.json > plugin_cache.json
+        jq . temp_plugin_cache_orginal.json > plugin_cache_orginal.json
         
         echo "✅ 数据转换完成"
         
         # 显示转换统计
         original_count=$(jq 'keys | length' original_plugins.json)
-        new_count=$(jq '.data | keys | length' plugin_cache.json)
+        new_count=$(jq '.data | keys | length' plugin_cache_orginal.json)
         
         # 统计不同状态的仓库
         success_repos=$(jq '[.[] | select(.status == "success")] | length' repo_info.json)
@@ -474,8 +474,8 @@ jobs:
         git config --local user.name "IGCrystal-Ghost"
         
         # 检查是否有变更
-        if [ -f plugin_cache.json ]; then
-          if git diff --exit-code plugin_cache.json; then
+        if [ -f plugin_cache_orginal.json ]; then
+          if git diff --exit-code plugin_cache_orginal.json; then
             echo "has_changes=false" >> $GITHUB_OUTPUT
             echo "ℹ️ 文件内容没有变化"
           else
@@ -502,10 +502,10 @@ jobs:
         fi
         
         # 添加和提交文件
-        git add plugin_cache.json
+        git add plugin_cache_orginal.json
         
         # 获取统计信息用于提交信息
-        total_plugins=$(jq '.data | keys | length' plugin_cache.json 2>/dev/null || echo "0")
+        total_plugins=$(jq '.data | keys | length' plugin_cache_orginal.json 2>/dev/null || echo "0")
         success_repos=$(jq '[.[] | select(.status == "success")] | length' repo_info.json 2>/dev/null || echo "0")
         
         commit_message="🔄 Update plugin cache: $total_plugins plugins, $success_repos fresh updates - $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
@@ -525,7 +525,7 @@ jobs:
       if: always()
       run: |
         # 清理所有临时文件
-        rm -f temp_plugin_cache.json temp_response.txt temp_headers.txt original_plugins.json repo_info.json temp_repo_info.json existing_cache.json temp_api_headers_*.txt
+        rm -f temp_plugin_cache_orginal.json temp_response.txt temp_headers.txt original_plugins.json repo_info.json temp_repo_info.json existing_cache.json temp_api_headers_*.txt
         echo "🧹 临时文件清理完成"
     
     - name: Summary
@@ -536,8 +536,8 @@ jobs:
             echo "✅ 插件数据已成功转换并提交"
             
             # 显示详细统计
-            if [ -f plugin_cache.json ]; then
-              total_plugins=$(jq '.data | keys | length' plugin_cache.json)
+            if [ -f plugin_cache_orginal.json ]; then
+              total_plugins=$(jq '.data | keys | length' plugin_cache_orginal.json)
               echo "📊 最终结果: $total_plugins 个插件已更新"
             fi
           else
