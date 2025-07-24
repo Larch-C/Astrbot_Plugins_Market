@@ -504,11 +504,10 @@ jobs:
         # 使用jq转换数据格式，增加容错处理，并过滤掉404的仓库
         jq --slurpfile repo_info repo_info.json '
         to_entries | 
-        # 先过滤掉404和其他失效的仓库
+        # 只过滤掉确认已删除(404)的仓库，保留网络错误的仓库
         map(select(
           if .value.repo and ($repo_info[0][.value.repo]) then
-            ($repo_info[0][.value.repo].status != "deleted" and 
-             $repo_info[0][.value.repo].status != "network_error")
+            ($repo_info[0][.value.repo].status != "deleted")
           else
             true
           end
@@ -568,13 +567,20 @@ jobs:
         echo "  🔄 缓存数据: $cached_repos 个仓库"
         echo "  🔄 重定向: $redirected_repos 个仓库"
         echo "  🗑️  已删除(已移除): $deleted_repos 个仓库"
-        echo "  ❌ 网络错误(已移除): $failed_repos 个仓库"
+        echo "  ❌ 网络错误(已保留): $failed_repos 个仓库"
         
         # 列出被移除的仓库
         if [ $removed_count -gt 0 ]; then
           echo ""
           echo "🗑️  以下仓库已从缓存中移除:"
-          jq -r 'to_entries[] | select(.value.status == "deleted" or .value.status == "network_error") | "  - " + .key + " (" + .value.status + ")"' repo_info.json
+          jq -r 'to_entries[] | select(.value.status == "deleted") | "  - " + .key + " (404 Not Found)"' repo_info.json
+        fi
+        
+        # 列出网络错误的仓库（保留但使用缓存数据）
+        if [ "$failed_repos" -gt 0 ]; then
+          echo ""
+          echo "❌ 网络错误的仓库（已保留，使用缓存数据）:"
+          jq -r 'to_entries[] | select(.value.status != "success" and .value.status != "cached" and .value.status != "redirected" and .value.status != "deleted") | "  - " + .key + " (" + .value.status + ")"' repo_info.json
         fi
         
         # 列出重定向的仓库（保留但标记）
