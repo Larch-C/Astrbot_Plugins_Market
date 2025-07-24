@@ -2253,7 +2253,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-23T21:25:16Z",
+    "updated_at": "2025-07-23T23:25:33Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3969,7 +3969,7 @@
       "图床"
     ],
     "stars": 65,
-    "updated_at": "2025-07-20T11:15:07Z",
+    "updated_at": "2025-07-24T00:45:29Z",
     "version": "v3.12"
   },
   "mccloud_command": {
@@ -4248,7 +4248,7 @@
     "repo": "https://github.com/zouyonghe/astrbot_plugin_SDGen",
     "tags": [],
     "stars": 15,
-    "updated_at": "2025-07-02T13:27:21Z",
+    "updated_at": "2025-07-24T01:39:20Z",
     "version": "v1.1.2"
   },
   "astrbot_plugin_sysinfo": {
@@ -4437,8 +4437,8 @@
     "repo": "https://github.com/zgojin/astrbot_plugin_RG",
     "tags": [],
     "stars": 2,
-    "updated_at": "2025-07-19T15:47:31Z",
-    "version": "v1.3.2"
+    "updated_at": "2025-07-23T23:00:24Z",
+    "version": "v1.3.3"
   },
   "astrbot_plugin_token_calculator": {
     "desc": "计算并显示每次对话消耗的token，部分provider可用",
