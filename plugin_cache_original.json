@@ -1602,8 +1602,8 @@
       "fish"
     ],
     "stars": 24,
-    "updated_at": "2025-07-23T17:10:57Z",
-    "version": "1.4.0"
+    "updated_at": "2025-07-24T02:58:02Z",
+    "version": "1.4.1"
   },
   "astrbot_plugin_bilibili_live": {
     "author": "Raven95676",
@@ -2253,7 +2253,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-23T23:25:33Z",
+    "updated_at": "2025-07-24T02:06:36Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3969,7 +3969,7 @@
       "图床"
     ],
     "stars": 65,
-    "updated_at": "2025-07-24T00:45:29Z",
+    "updated_at": "2025-07-24T02:23:17Z",
     "version": "v3.12"
   },
   "mccloud_command": {
