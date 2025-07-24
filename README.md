@@ -12,7 +12,3 @@
 ## 部署
 
 项目使用 GitHub Actions 自动部署到 GitHub Pages。每次推送到 `astrbot-plugins-market` 分支时会自动触发构建和部署流程。
-
-## 许可证
-
-[MIT License](LICENSE)
