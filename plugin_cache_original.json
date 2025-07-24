@@ -58,8 +58,8 @@
       "工具"
     ],
     "social_link": "https://github.com/EIA2024",
-    "stars": 2,
-    "updated_at": "2025-07-23T05:37:13Z",
+    "stars": 3,
+    "updated_at": "2025-07-24T10:28:02Z",
     "version": "v1.0"
   },
   "astrbot_plugin_deer_check": {
@@ -113,16 +113,6 @@
     "social_link": "https://magstic.art/",
     "stars": 1,
     "updated_at": "2025-07-16T05:14:15Z",
-    "version": "1.0.0"
-  },
-  "astrbot_plugin_welcome": {
-    "name": "astrbot_plugin_welcome",
-    "desc": "[仅 aiocqhttp] 入群欢迎插件，自动艾特新成员并发送自定义消息（支持文本和本地图片，可在控制台修改配置）",
-    "author": "piexian",
-    "repo": "https://github.com/piexian/astrbot_plugin_welcome",
-    "tags": [],
-    "stars": 0,
-    "updated_at": "",
     "version": "1.0.0"
   },
   "astrbot_plugin_eat_history": {
@@ -239,8 +229,8 @@
     ],
     "author": null,
     "stars": 6,
-    "updated_at": "2025-07-22T15:46:57Z",
-    "version": "2.1.0--webui"
+    "updated_at": "2025-07-24T09:32:45Z",
+    "version": "2.2.0--webui"
   },
   "astrbot_plugin_group_sign": {
     "name": "group_sign",
@@ -455,8 +445,8 @@
     "desc": "通过调用 AnimeTrace 网站提供的 API 进行动漫识图",
     "tags": [],
     "stars": 1,
-    "updated_at": "2025-06-29T16:28:17Z",
-    "version": "v1.0"
+    "updated_at": "2025-07-24T10:21:32Z",
+    "version": "v1.1"
   },
   "astrbot_plugin_cheru": {
     "author": "irs",
@@ -593,8 +583,8 @@
       "排行榜"
     ],
     "stars": 2,
-    "updated_at": "2025-07-15T15:09:47Z",
-    "version": "2.2.1"
+    "updated_at": "2025-07-24T08:01:48Z",
+    "version": "2.1.2"
   },
   "astrbot_plugin_kook_adapter": {
     "author": "wuyan1003",
@@ -617,8 +607,8 @@
       "web search"
     ],
     "social_link": "https://github.com/lxfight",
-    "stars": 15,
-    "updated_at": "2025-06-29T16:27:31Z",
+    "stars": 16,
+    "updated_at": "2025-07-24T08:47:00Z",
     "version": "0.1.0"
   },
   "astrbot_plugin_textadventure": {
@@ -716,19 +706,6 @@
     "stars": 0,
     "updated_at": "2025-06-18T07:04:06Z",
     "version": "v1.0.0"
-  },
-  "astrbot_plugin_StarMonitor": {
-    "author": "Jason.Joestar",
-    "repo": "https://github.com/advent259141/astrbot_plugin_StarMonitor",
-    "desc": "用于监控指定 Github 仓库的 Star 数变化",
-    "tags": [
-      "Github",
-      "数据跟踪"
-    ],
-    "social_link": "https://github.com/advent259141",
-    "stars": 0,
-    "updated_at": "",
-    "version": "1.0.0"
   },
   "astrbot_plugin_github_analyzer": {
     "author": "lxfight",
@@ -950,18 +927,6 @@
     "stars": 0,
     "updated_at": "2025-06-25T12:24:34Z",
     "version": "v1.2"
-  },
-  "astrbot_plugin_InitiativeDialogue_for_group": {
-    "author": "Jason.Joestar",
-    "desc": "[仅QQ] 群聊长时间没有人发言时机器人主动发起对话的插件（InitiativeDialogue）",
-    "tags": [
-      "主动对话",
-      "闹鬼"
-    ],
-    "repo": "https://github.com/advent259141/astrbot_plugin_InitiativeDialogue_for_group",
-    "stars": 0,
-    "updated_at": "",
-    "version": "1.0.0"
   },
   "astrbot_plugin_message_bottle": {
     "author": "Flartiny",
@@ -1789,19 +1754,6 @@
     "updated_at": "2025-07-22T13:54:43Z",
     "version": "v3.3.5"
   },
-  "astrbot_plugin_maodie": {
-    "author": "Jason.Joestar",
-    "desc": "使用“哈个气”获得可爱耄耋涩图",
-    "repo": "https://github.com/advent259141/astrbot_plugin_maodie",
-    "tags": [
-      "哈气",
-      "耄耋"
-    ],
-    "social_link": "https://github.com/advent259141",
-    "stars": 0,
-    "updated_at": "",
-    "version": "1.0.0"
-  },
   "astrbot_plugin_napdog_cleaner": {
     "author": "anka",
     "desc": "[仅 NapCat] napdog, 把napcat拉的史全部吃光光, 自动监控并清理 NapCat 产生的缓存文件, 注意docker需要额外配置!",
@@ -2150,19 +2102,6 @@
     "updated_at": "2025-07-22T14:14:43Z",
     "version": "v1.2.2"
   },
-  "astrbot_plugin_Minesweeper": {
-    "author": "Jason.Joestar",
-    "desc": "简单的扫雷小游戏",
-    "repo": "https://github.com/advent259141/astrbot_plugin_Minesweeper",
-    "tags": [
-      "扫雷",
-      "娱乐"
-    ],
-    "social_link": "https://github.com/advent259141",
-    "stars": 0,
-    "updated_at": "",
-    "version": "1.0.0"
-  },
   "astrbot_plugin_uptime_kuma_puller": {
     "author": "Henry_Du / bananaxiao2333",
     "desc": "拉取UptimeKuma监控面板中的服务器状态",
@@ -2194,18 +2133,6 @@
     "stars": 2,
     "updated_at": "2025-04-28T10:16:36Z",
     "version": "v1.0.0"
-  },
-  "astrbot_plugin_llmgo": {
-    "author": "Jason.Joestar",
-    "desc": "这是一个围棋插件，允许用户与 LLM 进行围棋对弈",
-    "repo": "https://github.com/advent259141/astrbot_plugin_llmgo",
-    "tags": [
-      "围棋"
-    ],
-    "social_link": "https://github.com/advent259141",
-    "stars": 0,
-    "updated_at": "",
-    "version": "1.0.0"
   },
   "astrbot_plugin_fuck": {
     "author": "vmoranv",
@@ -2253,7 +2180,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-24T05:30:04Z",
+    "updated_at": "2025-07-24T10:28:24Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -2333,8 +2260,8 @@
     "tags": [
       "pixiv"
     ],
-    "stars": 19,
-    "updated_at": "2025-07-18T00:38:56Z",
+    "stars": 20,
+    "updated_at": "2025-07-24T10:28:36Z",
     "version": "1.2.6"
   },
   "astrbot_plugin_gotify": {
@@ -2774,28 +2701,6 @@
     "updated_at": "2025-07-15T14:33:07Z",
     "version": "1.3.6"
   },
-  "astrbot_plugin_SessionFaker": {
-    "desc": "一个用于AstrBot的QQ消息伪造插件，可以创建包含多个用户发言的伪造转发消息，支持自动获取QQ昵称",
-    "author": "Jason.Joestar",
-    "repo": "https://github.com/advent259141/astrbot_plugin_SessionFaker",
-    "tags": [
-      "消息伪造"
-    ],
-    "stars": 0,
-    "updated_at": "",
-    "version": "1.0.0"
-  },
-  "astrbot_plugin_aishit": {
-    "desc": "【QQ】AI 全自动造史插件",
-    "author": "Jason.Joestar",
-    "tags": [
-      "造史"
-    ],
-    "repo": "https://github.com/advent259141/astrbot_plugin_aishit",
-    "stars": 0,
-    "updated_at": "",
-    "version": "1.0.0"
-  },
   "astrbot_plugin_douniuniu": {
     "desc": "QQ 群小游戏，培养你的牛牛，然后塔塔开！",
     "author": "laozhu",
@@ -3009,18 +2914,6 @@
     "stars": 1,
     "updated_at": "2025-04-16T01:06:09Z",
     "version": "v1.0"
-  },
-  "astrbot_plugin_timedtask": {
-    "desc": "一个简单易用的群聊定时任务提醒插件，可以设置每日定时提醒.初次使用请查看readme。",
-    "author": "Jason.Joestar",
-    "repo": "https://github.com/advent259141/astrbot_plugin_timedtask",
-    "tags": [
-      "定时",
-      "通知"
-    ],
-    "stars": 0,
-    "updated_at": "",
-    "version": "1.0.0"
   },
   "astrbot_plugin_doro_today": {
     "desc": "[仅测试QQ]一个AstrBot插件，从Doro结局图片中随机抽取一张并发送给用户，同时@发送者。",
@@ -3756,15 +3649,6 @@
     "updated_at": "2025-03-11T06:02:59Z",
     "version": "v1.0.1"
   },
-  "astrbot_plugin_CS_5E": {
-    "desc": "基于5E赛事数据中心的CS赛事数据查询插件，菜单为 /5e_help。",
-    "author": "Jason.Joestar",
-    "repo": "https://github.com/advent259141/astrbot_plugin_CS_5E",
-    "tags": [],
-    "stars": 0,
-    "updated_at": "",
-    "version": "1.0.0"
-  },
   "astrbot_plugin_mp_sub": {
     "desc": "配合 MoviePilot 订阅影片",
     "author": "NEST",
@@ -3784,15 +3668,6 @@
     "stars": 3,
     "updated_at": "2025-05-03T17:43:56Z",
     "version": "v1.1.0"
-  },
-  "astrbot_plugin_niuniuplus": {
-    "desc": "原牛牛插件的升级版，卸载原插件并安装即可，数据通用",
-    "author": "Jason.Joestar",
-    "repo": "https://github.com/advent259141/astrbot_plugin_niuniuplus",
-    "tags": [],
-    "stars": 0,
-    "updated_at": "",
-    "version": "1.0.0"
   },
   "astrbot_plugin_random_vtb": {
     "desc": "随机推送正在直播的管人直播间",
@@ -3893,19 +3768,6 @@
     "stars": 13,
     "updated_at": "2025-07-14T11:21:25Z",
     "version": "1.0.2"
-  },
-  "astrbot_plugin_hltv": {
-    "desc": "这是基于 HLTV 网站数据的 CS 赛事查询插件",
-    "author": "Jason",
-    "repo": "https://github.com/advent259141/astrbot_plugin_hltv",
-    "tags": [
-      "功能",
-      "游戏",
-      "数据查询"
-    ],
-    "stars": 0,
-    "updated_at": "",
-    "version": "1.0.0"
   },
   "astrbot_plugin_moyuren": {
     "desc": "每天定时推送摸鱼人日历",
