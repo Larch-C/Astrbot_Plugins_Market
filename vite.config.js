@@ -3,5 +3,5 @@ import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
   plugins: [vue()],
-  base: '/Astrbot_Plugins_Market/',  // 添加正确的基础路径
+  base: './',  // 使用相对路径，这样本地和 GitHub Pages 都能正常工作
 })
