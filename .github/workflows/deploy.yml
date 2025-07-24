@@ -28,7 +28,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-        # 去掉 cache: 'npm'
 
       - name: Cache npm modules
         uses: actions/cache@v3
@@ -46,9 +45,8 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Upload Pages artifact
-        id: upload-artifact
-        uses: actions/upload-pages-artifact@v2
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
