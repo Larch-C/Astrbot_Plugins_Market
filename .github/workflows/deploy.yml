@@ -2,15 +2,14 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "astrbot-plugins-market" ]  # 设置要触发部署的分支
-  workflow_dispatch:      # 允许手动触发部署
+    branches: [ "astrbot-plugins-market" ]
+  workflow_dispatch:
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# 允许一次只能进行一次部署
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -29,6 +28,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+        # 去掉 cache: 'npm'
 
       - name: Cache npm modules
         uses: actions/cache@v3
@@ -54,10 +54,10 @@ jobs:
 
   deploy:
     needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
 
     steps:
       - name: Deploy to GitHub Pages
@@ -65,4 +65,4 @@ jobs:
         uses: actions/deploy-pages@v2
 
       - name: Show published URL
-        run: echo "Successfully published at ${{ steps.deployment.outputs.page_url }}"
+        run: echo "✅ Successfully published at ${{ steps.deployment.outputs.page_url }}"
