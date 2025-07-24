@@ -38,8 +38,12 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Create .nojekyll file
-        run: touch dist/.nojekyll
+      - name: Prepare for deployment
+        run: |
+          cd dist
+          touch .nojekyll
+          echo "astrbot_plugins_market" > .nojekyll
+          cd ..
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
@@ -47,5 +51,3 @@ jobs:
           branch: gh-pages
           folder: dist
           clean: true
-          clean-exclude: |
-            .nojekyll
