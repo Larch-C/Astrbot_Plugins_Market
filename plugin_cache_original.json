@@ -1069,8 +1069,8 @@
     ],
     "social_link": "https://github.com/BB0813",
     "stars": 3,
-    "updated_at": "2025-07-10T10:23:18Z",
-    "version": "v1.0.3"
+    "updated_at": "2025-07-24T13:25:19Z",
+    "version": "v1.0.4"
   },
   "astrbot_dg_lab_plugin": {
     "author": "RC-CHN",
@@ -1138,7 +1138,7 @@
     ],
     "social_link": "https://github.com/BB0813",
     "stars": 1,
-    "updated_at": "2025-06-03T15:11:13Z",
+    "updated_at": "2025-07-24T13:25:33Z",
     "version": "v1.0.0"
   },
   "astrbot_plugin_chouqunyou": {
@@ -1972,8 +1972,8 @@
       "api"
     ],
     "social_link": "https://github.com/Zhalslar/astrbot_plugin_apis",
-    "stars": 49,
-    "updated_at": "2025-07-22T19:24:46Z",
+    "stars": 50,
+    "updated_at": "2025-07-24T13:38:57Z",
     "version": "v1.0.7"
   },
   "astrbot_plugin_help": {
@@ -2180,7 +2180,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-24T11:22:36Z",
+    "updated_at": "2025-07-24T12:54:07Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3318,8 +3318,8 @@
       "功能"
     ],
     "social_link": "https://github.com/Zhalslar/astrbot_plugin_box",
-    "stars": 35,
-    "updated_at": "2025-07-23T13:07:06Z",
+    "stars": 36,
+    "updated_at": "2025-07-24T13:11:41Z",
     "version": "v1.1.4"
   },
   "astrbot_plugin_yuafeng": {
