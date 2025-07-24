@@ -85,8 +85,8 @@
       "趣味",
       "宠物"
     ],
-    "stars": 3,
-    "updated_at": "2025-07-19T11:07:56Z",
+    "stars": 4,
+    "updated_at": "2025-07-24T05:42:02Z",
     "version": "v1.1"
   },
   "astrbot_plugin_error_monitor": {
@@ -1602,8 +1602,8 @@
       "fish"
     ],
     "stars": 24,
-    "updated_at": "2025-07-24T04:07:14Z",
-    "version": "1.4.1"
+    "updated_at": "2025-07-24T04:47:46Z",
+    "version": "1.4.2"
   },
   "astrbot_plugin_bilibili_live": {
     "author": "Raven95676",
@@ -2253,7 +2253,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-24T04:01:38Z",
+    "updated_at": "2025-07-24T05:30:04Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
