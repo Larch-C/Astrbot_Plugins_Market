@@ -1,0 +1,23 @@
+{
+  "name": "astrbot-plugins-market",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vicons/ionicons5": "^0.13.0",
+    "axios": "^1.4.0",
+    "naive-ui": "^2.34.4",
+    "pinia": "^3.0.3",
+    "vfonts": "^0.0.3",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "vite": "^4.4.5"
+  }
+}
