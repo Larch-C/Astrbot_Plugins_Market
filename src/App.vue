@@ -2,6 +2,7 @@
   <n-config-provider :theme="theme" :theme-overrides="themeOverrides">
     <n-message-provider>
       <div class="app-container" :class="{ dark: isDarkMode }">
+        <back-to-top />
         <n-layout class="main-layout">
           <app-header
             v-model="isDarkMode"
@@ -23,6 +24,7 @@
             v-model="currentPage"
             :total-pages="totalPages"
           />
+          <app-footer />
         </n-layout>
       </div>
     </n-message-provider>
@@ -36,6 +38,8 @@ import { darkTheme, NConfigProvider, NMessageProvider, NLayout } from 'naive-ui'
 import AppHeader from './components/AppHeader.vue'
 import PluginCard from './components/PluginCard.vue'
 import AppPagination from './components/AppPagination.vue'
+import BackToTop from './components/BackToTop.vue'
+import AppFooter from './components/AppFooter.vue'
 import { themeOverrides } from './config/theme'
 import { usePluginStore } from './stores/plugins'
 
