@@ -183,27 +183,43 @@ onMounted(() => {
 
 .third-party-tag {
   display: inline-block;
-  background: rgba(255, 206, 0, 0.25);
+  background: var(--primary-color);
   padding: 4px 8px;
   border-radius: 10px;
   font-size: 14px;
-  color: #ffd700;
-  font-weight: 500;
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 206, 0, 0.4);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  color: var(--text-tag);
+  font-weight: 600;
+  text-shadow: none;
   margin-left: 5px;
   transform: translateY(-4px);
   vertical-align: middle;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@font-face {
+  font-family: 'Lexend';
+  src: url('/font/lexend.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lexend';
+  src: url('/font/lexend-v25-latin-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
 }
 
 .app-header h1 {
   margin: 0;
   color: var(--header-text-color);
   font-size: 2.75em;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.5px;
   transition: all 0.3s ease;
+  font-family: 'Lexend', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* 主题切换按钮样式 */

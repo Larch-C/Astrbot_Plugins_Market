@@ -2,8 +2,16 @@
   <n-card class="plugin-card" :bordered="false" :style="{ borderRadius: '16px' }" :content-style="{ padding: '20px' }">
     <template #header>
       <div class="card-header">
-        <h3 class="plugin-name">{{ plugin.name }}</h3>
-        <n-tag type="success" size="small">
+        <div class="plugin-name-container" ref="nameContainer">
+          <h3 
+            class="plugin-name" 
+            :class="{ 'marquee': isTextOverflow }"
+            ref="pluginNameEl"
+          >
+            <span class="plugin-name-text" ref="nameTextEl">{{ plugin.name }}</span>
+          </h3>
+        </div>
+        <n-tag type="success" size="small" :bordered="false" class="version-tag">
           {{ plugin.version.startsWith('v') ? plugin.version : 'v' + plugin.version }}
         </n-tag>
       </div>
@@ -17,6 +25,7 @@
             :key="tag"
             size="small"
             :bordered="false"
+            type="info"
             class="plugin-tag"
           >
             {{ tag }}
@@ -52,6 +61,7 @@
 </template>
 
 <script setup>
+import { ref, onMounted, nextTick, onUnmounted } from 'vue'
 import {
   NCard,
   NSpace,
@@ -61,10 +71,63 @@ import {
 } from 'naive-ui'
 import { StarSharp } from '@vicons/ionicons5'
 
-defineProps({
+const props = defineProps({
   plugin: {
     type: Object,
     required: true
+  }
+})
+
+const isTextOverflow = ref(false)
+const nameContainer = ref(null)
+const nameTextEl = ref(null)
+const pluginNameEl = ref(null)
+const resizeObserver = ref(null)
+
+const checkTextOverflow = () => {
+  nextTick(() => {
+    if (nameContainer.value && nameTextEl.value) {
+      const containerWidth = nameContainer.value.clientWidth
+      const textWidth = nameTextEl.value.scrollWidth
+      const wasOverflow = isTextOverflow.value
+      
+      isTextOverflow.value = textWidth > containerWidth
+      
+      // 如果溢出状态改变，更新CSS变量
+      if (isTextOverflow.value && (wasOverflow !== isTextOverflow.value)) {
+        updateMarqueeAnimation(containerWidth, textWidth)
+      }
+    }
+  })
+}
+
+const updateMarqueeAnimation = (containerWidth, textWidth) => {
+  if (pluginNameEl.value) {
+    const translateDistance = textWidth - containerWidth + 20 // 额外20px的缓冲
+    pluginNameEl.value.style.setProperty('--translate-distance', `-${translateDistance}px`)
+  }
+}
+
+onMounted(() => {
+  checkTextOverflow()
+  
+  // 使用ResizeObserver监听容器大小变化，比window resize更精确
+  if (nameContainer.value && window.ResizeObserver) {
+    resizeObserver.value = new ResizeObserver(() => {
+      checkTextOverflow()
+    })
+    resizeObserver.value.observe(nameContainer.value)
+  } else {
+    // 降级方案：使用window resize
+    window.addEventListener('resize', checkTextOverflow)
+  }
+})
+
+onUnmounted(() => {
+  if (resizeObserver.value) {
+    resizeObserver.value.disconnect()
+  } else {
+    window.removeEventListener('resize', checkTextOverflow)
   }
 })
 
@@ -103,33 +166,144 @@ const openUrl = (url) => {
   border-bottom: 1px solid var(--border-base);
   background: var(--bg-card);
   border-radius: 15px 15px 0 0;
-  min-height: 70px; /* 固定头部高度 */
+  min-height: 70px;
+}
+
+@font-face {
+  font-family: 'Lexend';
+  src: url('/font/lexend.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lexend';
+  src: url('/font/lexend-v25-latin-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+.plugin-name-container {
+  max-width: 70%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 只有在需要走马灯时才添加边缘过渡效果 */
+.plugin-name-container:has(.plugin-name.marquee) {
+  mask: linear-gradient(to right, 
+    transparent 0%, 
+    black 10px, 
+    black calc(100% - 10px), 
+    transparent 100%);
+  -webkit-mask: linear-gradient(to right, 
+    transparent 0%, 
+    black 10px, 
+    black calc(100% - 10px), 
+    transparent 100%);
 }
 
 .card-header h3 {
   margin: 0;
   font-size: 1.25em;
   font-weight: 600;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  max-width: 70%;
   color: var(--text-primary);
   letter-spacing: -0.3px;
+  font-family: 'Lexend', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  white-space: nowrap;
+  --translate-distance: 0px;
+}
+
+.plugin-name-text {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.plugin-name.marquee .plugin-name-text {
+  animation: marqueeSlide 6s ease-in-out infinite;
+}
+
+.plugin-name.marquee:hover .plugin-name-text {
+  animation-play-state: paused;
+}
+
+/* 优化后的走马灯动画 */
+@keyframes marqueeSlide {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(var(--translate-distance));
+  }
+  70% {
+    transform: translateX(var(--translate-distance));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* 媒体查询优化不同屏幕尺寸 */
+@media (max-width: 768px) {
+  .plugin-name-container {
+    max-width: 65%;
+  }
+  
+  @keyframes marqueeSlide {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(var(--translate-distance));
+    }
+    75% {
+      transform: translateX(var(--translate-distance));
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .plugin-name-container {
+    max-width: 60%;
+  }
+  
+  .card-header h3 {
+    font-size: 1.1em;
+  }
+}
+
+.version-tag {
+  background-color: var(--bg-n-tag) !important;
+  color: var(--text-n-tag) !important;
+  border: none !important;
+  padding: 2px 10px !important;
+  font-weight: 600;
+  flex-shrink: 0;
 }
 
 .card-content {
   display: flex;
   flex-direction: column;
   height: 100%;
-  min-height: 280px; /* 固定内容区域最小高度 */
+  min-height: 280px;
 }
 
 .description {
   margin: 12px 0;
   line-height: 1.7;
   font-size: 0.95em;
-  height: 5.1em; /* 固定描述高度 - 3行文本 */
+  height: 5.1em;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -141,7 +315,7 @@ const openUrl = (url) => {
 
 .tags-container {
   margin: 12px 0;
-  min-height: 40px; /* 固定标签区域高度 */
+  min-height: 40px;
   display: flex;
   align-items: flex-start;
 }
@@ -152,12 +326,17 @@ const openUrl = (url) => {
 }
 
 .plugin-tag {
-  transition: transform 0.2s ease;
-  margin-bottom: 4px; /* 标签换行时的间距 */
+  transition: all 0.2s ease;
+  margin-bottom: 4px;
+  background-color: var(--primary-color) !important;
+  color: var(--text-tag) !important;
+  border: none !important;
+  padding: 2px 10px !important;
 }
 
 .plugin-tag:hover {
   transform: scale(1.05);
+  opacity: 0.9;
 }
 
 .plugin-meta {
@@ -169,7 +348,7 @@ const openUrl = (url) => {
   margin: 0px 0;
   border-top: 1px solid var(--border-base);
   color: var(--text-tertiary);
-  min-height: 50px; /* 固定元信息高度 */
+  min-height: 50px;
 }
 
 .author {
@@ -189,13 +368,12 @@ const openUrl = (url) => {
 }
 
 .plugin-links {
-  margin-top: 8px; /* 减小顶部间距但保持按钮在底部 */
-  min-height: 40px; /* 固定按钮区域高度 */
+  margin-top: 8px;
+  min-height: 40px;
   display: flex;
   align-items: center;
 }
 
-/* 确保父容器网格布局中卡片等高 */
 :deep(.n-card) {
   height: 100%;
 }
@@ -206,15 +384,24 @@ const openUrl = (url) => {
   flex-direction: column;
 }
 
-/* 针对没有标签的情况，确保标签区域仍占位 */
 .tags-container:empty::before {
   content: '';
   display: block;
   height: 40px;
 }
 
-/* 针对没有社交链接按钮的情况，确保按钮区域对齐 */
 .plugin-links :deep(.n-space-item:only-child) {
   margin-right: auto;
+}
+
+/* 添加预加载动画优化 */
+.plugin-name-text {
+  will-change: transform;
+}
+
+/* 减少动画时的性能消耗 */
+.plugin-name.marquee .plugin-name-text {
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 </style>
