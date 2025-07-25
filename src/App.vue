@@ -16,7 +16,7 @@
           <main class="plugins-grid">
             <plugin-card
               v-for="(plugin, index) in paginatedPlugins"
-              :key="plugin.name"
+              :key="`${plugin.name}-${filterKey}`"
               :plugin="plugin"
               :index="index"
             />
@@ -62,6 +62,11 @@ const {
 
 // 计算属性
 const theme = computed(() => (isDarkMode.value ? darkTheme : null))
+
+// 创建筛选键，当筛选条件改变时这个值也会改变，强制Vue重新创建组件
+const filterKey = computed(() => {
+  return `${searchQuery.value}-${selectedTag.value}-${sortBy.value}-${currentPage.value}`
+})
 
 // 方法
 const handlePageChange = (page) => {

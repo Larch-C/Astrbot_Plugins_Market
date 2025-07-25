@@ -61,7 +61,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, nextTick, onUnmounted } from 'vue'
+import { ref, onMounted, nextTick, onUnmounted, watch } from 'vue'
 import {
   NCard,
   NSpace,
@@ -113,11 +113,6 @@ const updateMarqueeAnimation = (containerWidth, textWidth) => {
 }
 
 onMounted(() => {
-  // 设置卡片的加载动画延迟
-  if (pluginNameEl.value) {
-    pluginNameEl.value.style.setProperty('--card-index', props.index.toString())
-  }
-  
   checkTextOverflow()
   
   // 使用ResizeObserver监听容器大小变化，比window resize更精确
@@ -131,6 +126,19 @@ onMounted(() => {
     window.addEventListener('resize', checkTextOverflow)
   }
 })
+
+watch(() => props.index, (newIndex) => {
+  if (pluginNameEl.value) {
+    // 先移除动画
+    pluginNameEl.value.style.animation = 'none'
+    // 更新 index
+    pluginNameEl.value.style.setProperty('--card-index', newIndex.toString())
+    // 强制重排
+    pluginNameEl.value.offsetHeight
+    // 重新应用动画
+    pluginNameEl.value.style.animation = ''
+  }
+}, { immediate: true })
 
 onUnmounted(() => {
   if (resizeObserver.value) {
