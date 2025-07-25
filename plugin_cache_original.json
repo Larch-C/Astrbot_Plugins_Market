@@ -101,8 +101,8 @@
     ],
     "social_link": "https://github.com/zhewang448",
     "stars": 4,
-    "updated_at": "2025-07-22T16:51:44Z",
-    "version": "v1.0.2"
+    "updated_at": "2025-07-25T12:17:05Z",
+    "version": "v1.1.0"
   },
   "astrbot_plugin_Heartflow": {
     "desc": "基于简单的心流机制的群聊主动回复插件，带来更生动的主动回复体验",
@@ -623,7 +623,7 @@
     ],
     "social_link": "https://github.com/zhewang448",
     "stars": 1,
-    "updated_at": "2025-07-23T09:19:37Z",
+    "updated_at": "2025-07-25T12:39:00Z",
     "version": "v1.1.8"
   },
   "astrbot_plugin_shutup": {
@@ -772,8 +772,8 @@
       "调教"
     ],
     "social_link": "https://github.com/oyxning",
-    "stars": 13,
-    "updated_at": "2025-07-22T11:06:59Z",
+    "stars": 14,
+    "updated_at": "2025-07-25T11:57:08Z",
     "version": "v3.0.0"
   },
   "astrbot_plugin_alistfile": {
@@ -2261,7 +2261,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-25T10:28:57Z",
+    "updated_at": "2025-07-25T11:21:52Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3559,8 +3559,8 @@
       "bilibili"
     ],
     "social_link": "https://github.com/miaoxutao123/",
-    "stars": 24,
-    "updated_at": "2025-07-25T11:22:41Z",
+    "stars": 26,
+    "updated_at": "2025-07-25T11:58:08Z",
     "version": "v0.2.8"
   },
   "astrbot_plugin_sjzb": {
