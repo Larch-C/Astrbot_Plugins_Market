@@ -1,4 +1,85 @@
 {
+  "LiteBridge": {
+    "name": "LiteBridge",
+    "desc": "基于WebSocket的Minecraft群服互通插件",
+    "author": "Asurin219",
+    "repo": "https://github.com/Asurin219/astrbot_plugin_lite_bridge",
+    "tags": [
+      "Minecraft",
+      "群服互通"
+    ],
+    "social_link": "QQ: 824907403",
+    "stars": 0,
+    "updated_at": "2025-07-21T20:26:56Z",
+    "version": "v1.0.2"
+  },
+  "cngal_morning_report": {
+    "desc": "CnGal 每日晨报",
+    "author": "YaoYue",
+    "repo": "https://github.com/yaoyuesuzu/astrbot_plugin_cngal_morning_report",
+    "tags": [
+      "cngal",
+      "晨报",
+      "Galgame"
+    ],
+    "social_link": "https://github.com/yaoyuesuzu",
+    "stars": 0,
+    "updated_at": "2025-07-22T09:54:23Z",
+    "version": "v1.6.0"
+  },
+  "astrbot_plugin_url_2_knowledge_base": {
+    "desc": "通过 URL 提取内容，并经过处理、聚类和总结后，生成知识库文件。",
+    "author": "RC-CHN",
+    "repo": "https://github.com/RC-CHN/astrbot_plugin_url_2_knowledge_base",
+    "tags": [],
+    "stars": 3,
+    "updated_at": "2025-07-25T01:47:13Z",
+    "version": "v1.0.0"
+  },
+  "astrbot_plugin_plea_mercy": {
+    "name": "astrbot_plugin_plea_mercy",
+    "desc": "当被禁言时，向管理员私聊求情。",
+    "author": "qa296",
+    "repo": "https://github.com/qa296/astrbot_plugin_plea_mercy",
+    "tags": [
+      "防禁言",
+      "拟人",
+      "LLM",
+      "aiocqhttp"
+    ],
+    "social_link": "https://github.com/qa296/",
+    "stars": 0,
+    "updated_at": "2025-07-23T06:58:22Z",
+    "version": "1.0.0"
+  },
+  "astrbot_plugin_server_status_nickname": {
+    "name": "astrbot_plugin_server_status_nickname",
+    "desc": "通过群昵称动态显示服务器状态的插件，并提供状态历史图生成",
+    "author": "DITF16",
+    "repo": "https://github.com/DITF16/astrbot_plugin_server_status_nickname",
+    "tags": [
+      "工具",
+      "服务器",
+      "监控"
+    ],
+    "stars": 0,
+    "updated_at": "2025-07-22T08:25:06Z",
+    "version": "v1.1"
+  },
+  "astrbot_plugin_scheduler": {
+    "desc": "功能强大的通用定时任务调度插件，支持 Cron 表达式、间隔执行、条件执行等多种调度方式。提供可视化配置界面和任务创建向导。",
+    "author": "Couei",
+    "repo": "https://github.com/xpnobug/astrbot_plugin_scheduler",
+    "tags": [
+      "定时任务",
+      "自动化",
+      "Cron"
+    ],
+    "social_link": "QQ: 2877406366",
+    "stars": 0,
+    "updated_at": "2025-07-24T12:49:31Z",
+    "version": "v2.0"
+  },
   "astrbot_plugin_battlefield_tool": {
     "desc": "战地风云战绩查询插件",
     "author": "SHOOTING_STAR_C",
@@ -50,7 +131,7 @@
     "updated_at": "2025-07-17T01:19:44Z",
     "version": "v1.6.0"
   },
-  "Trans": {
+  "astrbot_plugin_Trans": {
     "desc": "哦齁噢喔～语翻译器，基于https://msbt.seku.su提出的的编码解码功能",
     "author": "EIA",
     "repo": "https://github.com/EIA2024/astrbot_plugin_Trans",
@@ -1566,8 +1647,8 @@
       "game",
       "fish"
     ],
-    "stars": 24,
-    "updated_at": "2025-07-25T08:33:17Z",
+    "stars": 25,
+    "updated_at": "2025-07-25T11:19:05Z",
     "version": "1.4.3"
   },
   "astrbot_plugin_bilibili_live": {
@@ -2180,7 +2261,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-25T09:29:34Z",
+    "updated_at": "2025-07-25T10:28:57Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3479,7 +3560,7 @@
     ],
     "social_link": "https://github.com/miaoxutao123/",
     "stars": 24,
-    "updated_at": "2025-07-25T09:46:08Z",
+    "updated_at": "2025-07-25T11:22:41Z",
     "version": "v0.2.8"
   },
   "astrbot_plugin_sjzb": {
