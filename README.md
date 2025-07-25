@@ -1,6 +1,6 @@
 # 简陋的 [AstrBot 插件市场](https://igcrystal-neo.github.io/Astrbot_Plugins_Market/)
 
-一个简单的 AstrBot 插件市场页面，用于展示 AstrBot 框架的插件。算第三方吧？
+一个简单的 AstrBot 插件市场页面，用于展示 AstrBot 框架的插件。算个 `demo` 吧？
 
 ## 功能特点
 
