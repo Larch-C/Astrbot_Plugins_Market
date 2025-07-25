@@ -495,13 +495,28 @@ onMounted(() => {
   }
 }
 
-/* 手机设备 (最大 768px) */
+/* 平板和手机通用样式 (最大 768px) */
 @media (max-width: 768px) {
+  .app-header {
+    margin-bottom: 24px;
+    padding: 20px 16px;
+    border-radius: 0 0 24px 24px;
+  }
+
+  .search-container {
+    max-width: 90%;
+    margin: 0 auto 12px;
+  }
+}
+
+/* 仅手机设备 (最大 480px) */
+@media (max-width: 480px) {
   .search-wrapper {
     flex-direction: column;
     gap: 8px;
+    align-items: center;
   }
-  
+
   .sort-select {
     width: 100%;
   }
@@ -674,7 +689,8 @@ onMounted(() => {
   }
   
   .search-container {
-    padding: 0 4px;
+    padding: 0;
+    max-width: 85%;
   }
   
   .custom-search-box {
@@ -713,6 +729,10 @@ onMounted(() => {
   .header-logo {
     width: 50px;
     height: 50px;
+  }
+
+  .search-container {
+    max-width: 80%;
   }
   
   .custom-search-box {
