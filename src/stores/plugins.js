@@ -11,6 +11,7 @@ export const usePluginStore = defineStore('plugins', () => {
   const pageSize = ref(12)
   const isDarkMode = ref(false)
   const isLoading = ref(true)
+  const sortBy = ref('default') // 默认使用原始顺序
 
   // 计算属性
   const allTags = computed(() => {
@@ -32,7 +33,7 @@ export const usePluginStore = defineStore('plugins', () => {
   const filteredPlugins = computed(() => {
     if (!plugins.value) return []
     
-    return plugins.value.filter(plugin => {
+    let filtered = plugins.value.filter(plugin => {
       const searchValue = searchQuery.value ? searchQuery.value.toLowerCase() : ''
       if (!searchValue && !selectedTag.value) return true
       
@@ -46,6 +47,28 @@ export const usePluginStore = defineStore('plugins', () => {
       
       return matchesSearch && matchesTag
     })
+
+    // 根据排序选项对结果进行排序
+    if (sortBy.value === 'stars') {
+      // 按照 stars 数量排序
+      filtered.sort((a, b) => (b.stars || 0) - (a.stars || 0))
+    } else if (sortBy.value === 'updated') {
+      // 按照更新时间排序
+      filtered.sort((a, b) => {
+        const dateA = a.updated_at ? new Date(a.updated_at) : new Date(0)
+        const dateB = b.updated_at ? new Date(b.updated_at) : new Date(0)
+        return dateB - dateA
+      })
+    } else {
+      // 默认使用原始顺序，不进行排序
+      filtered.sort((a, b) => {
+        const indexA = plugins.value.findIndex(p => p.name === a.name)
+        const indexB = plugins.value.findIndex(p => p.name === b.name)
+        return indexA - indexB
+      })
+    }
+
+    return filtered
   })
 
   const totalPages = computed(() => Math.ceil(filteredPlugins.value.length / pageSize.value))
@@ -90,6 +113,12 @@ export const usePluginStore = defineStore('plugins', () => {
     currentPage.value = page
   }
 
+  function setSortBy(value) {
+    sortBy.value = value
+    // 重置到第一页
+    currentPage.value = 1
+  }
+
   return {
     // 状态
     plugins,
@@ -97,6 +126,7 @@ export const usePluginStore = defineStore('plugins', () => {
     selectedTag,
     currentPage,
     isDarkMode,
+    sortBy,
     // 计算属性
     allTags,
     tagOptions,
@@ -108,6 +138,7 @@ export const usePluginStore = defineStore('plugins', () => {
     setDarkMode,
     setSearchQuery,
     setSelectedTag,
-    setCurrentPage
+    setCurrentPage,
+    setSortBy
   }
 })

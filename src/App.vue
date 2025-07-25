@@ -9,6 +9,7 @@
             v-model:search-query="searchQuery"
             v-model:selected-tag="selectedTag"
             v-model:current-page="currentPage"
+            v-model:sort-by="sortBy"
             :tag-options="tagOptions"
             :total-pages="totalPages"
           />
@@ -52,6 +53,7 @@ const {
   searchQuery,
   selectedTag,
   currentPage,
+  sortBy,
   tagOptions,
   totalPages,
   paginatedPlugins

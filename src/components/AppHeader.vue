@@ -21,13 +21,29 @@
       </div>
     </div>
     <div class="search-container">
-      <div class="custom-search-box">
-        <n-icon class="search-icon"><search /></n-icon>
-        <input
-          :value="searchQuery"
-          @input="(e) => $emit('update:searchQuery', e.target.value)"
-          placeholder="搜索插件"
-          class="search-input"
+      <div class="search-wrapper">
+        <div class="custom-search-box">
+          <n-icon class="search-icon"><search /></n-icon>
+          <input
+            :value="searchQuery"
+            @input="handleSearchInput"
+            placeholder="搜索插件"
+            class="search-input"
+          />
+          <n-icon 
+            v-if="searchQuery"
+            class="clear-icon"
+            @click="handleClearSearch"
+          >
+            <close-circle />
+          </n-icon>
+        </div>
+        <n-select
+          v-model:value="sortBy"
+          :options="sortOptions"
+          @update:value="handleSortChange"
+          size="medium"
+          class="sort-select"
         />
       </div>
     </div>
@@ -44,18 +60,19 @@
 </template>
 
 <script setup>
-import { computed, onMounted, nextTick } from 'vue'
-import { NSpace, NSwitch, NInput, NPagination, NIcon } from 'naive-ui'
-import { Search, MoonSharp, SunnySharp } from '@vicons/ionicons5'
+import { computed, onMounted, nextTick, ref } from 'vue'
+import { NSpace, NSwitch, NInput, NPagination, NIcon, NSelect } from 'naive-ui'
+import { Search, MoonSharp, SunnySharp, CloseCircle } from '@vicons/ionicons5'
 
 const props = defineProps({
   modelValue: Boolean,
   searchQuery: String,
   currentPage: Number,
-  totalPages: Number
+  totalPages: Number,
+  sortBy: String
 })
 
-const emit = defineEmits(['update:modelValue', 'update:searchQuery', 'update:currentPage'])
+const emit = defineEmits(['update:modelValue', 'update:searchQuery', 'update:currentPage', 'update:sortBy'])
 
 const handleThemeChange = (value) => {
   emit('update:modelValue', value)
@@ -74,13 +91,42 @@ const railStyle = ({ focused, checked }) => {
   return style
 }
 
+const sortOptions = [
+  { label: '默认排序', value: 'default' },
+  { label: '按更新时间', value: 'updated' },
+  { label: '按 Star 数量', value: 'stars' }
+]
+
+const sortBy = ref(props.sortBy)
+
+const handleSortChange = (value) => {
+  emit('update:sortBy', value)
+}
+
 const onPageChange = (page) => {
   emit('update:currentPage', page)
   window.scrollTo({ top: 0, behavior: 'instant' })
 }
 
+const handleSearchInput = (e) => {
+  const value = e.target.value
+  emit('update:searchQuery', value)
+  // 如果当前页不是第一页，自动重置到第一页
+  if (props.currentPage > 1) {
+    emit('update:currentPage', 1)
+  }
+}
+
+const handleClearSearch = () => {
+  emit('update:searchQuery', '')
+  // 重置到第一页
+  if (props.currentPage > 1) {
+    emit('update:currentPage', 1)
+  }
+}
+
 onMounted(() => {
-  // 移除了下拉菜单样式的动态更新，现在使用 CSS 变量控制
+  // 移除了下拉菜单样式的动态更新
 })
 </script>
 
@@ -203,6 +249,91 @@ onMounted(() => {
   z-index: 1;
 }
 
+.search-wrapper {
+  display: flex;
+  width: 100%;
+  gap: 12px;
+  align-items: center;
+}
+
+/* 排序选择器样式 */
+.sort-select {
+  width: 140px;
+  flex-shrink: 0;
+}
+
+:deep(.sort-select .n-base-selection) {
+  background: transparent !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+  height: 44px !important;
+  border-radius: 30px !important;
+  box-shadow: var(--shadow-sm) !important;
+  padding: 0 0px !important;
+}
+
+:deep(.sort-select .n-base-selection-overlay) {
+  background: var(--input-bg) !important;
+  border-radius: 30px !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: all 0.3s ease !important;
+}
+
+:deep(.sort-select .n-base-selection-overlay:hover) {
+  background: var(--input-bg-hover) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+:deep(.sort-select .n-base-selection:focus-within .n-base-selection-overlay) {
+  background: var(--input-bg-focus) !important;
+  box-shadow: var(--shadow-md), 0 0 0 3px rgba(96, 165, 250, 0.2) !important;
+}
+
+:deep(.sort-select .n-base-selection-label) {
+  color: var(--input-text) !important;
+  height: 44px !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 0px !important;
+  font-weight: 500 !important;
+  opacity: 0.6;
+}
+
+:deep(.sort-select .n-base-selection-placeholder) {
+  color: var(--input-placeholder) !important;
+  font-weight: 400 !important;
+}
+
+:deep(.sort-select .n-base-selection__border) {
+  display: none !important;
+}
+
+:deep(.sort-select .n-base-selection__state-border) {
+  display: none !important;
+}
+
+/* 下拉菜单样式统一 */
+:deep(.n-base-select-menu) {
+  border-radius: 16px !important;
+  padding: 8px !important;
+  box-shadow: var(--shadow-lg) !important;
+  border: none !important;
+  background: var(--input-bg) !important;
+  color: var(--input-text) !important;
+}
+
+:deep(.n-base-select-option) {
+  border-radius: 12px !important;
+  margin: 2px 0 !important;
+  padding: 8px 12px !important;
+  transition: all 0.2s ease !important;
+  color: var(--input-text) !important;
+}
+
+:deep(.n-base-select-option:hover) {
+  background: var(--input-bg-hover) !important;
+}
+
 /* 自定义搜索框 - 简洁的单层结构 */
 .custom-search-box {
   display: flex;
@@ -242,6 +373,26 @@ onMounted(() => {
 .custom-search-box:focus-within .search-icon {
   color: var(--primary-color);
   opacity: 1;
+}
+
+/* 清除按钮 */
+.clear-icon {
+  color: var(--input-text);
+  font-size: 18px;
+  flex-shrink: 0;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clear-icon:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+.clear-icon:active {
+  opacity: 1;
+  transform: scale(0.95);
 }
 
 /* 搜索输入框 */
@@ -346,6 +497,23 @@ onMounted(() => {
 
 /* 手机设备 (最大 768px) */
 @media (max-width: 768px) {
+  .search-wrapper {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .sort-select {
+    width: 100%;
+  }
+
+  :deep(.sort-select .n-base-selection) {
+    height: 40px !important;
+    max-width: 120px;
+  }
+
+  :deep(.sort-select .n-base-selection-label) {
+    height: 40px !important;
+  }
   .app-header {
     margin-bottom: 24px;
     padding: 20px 16px;
