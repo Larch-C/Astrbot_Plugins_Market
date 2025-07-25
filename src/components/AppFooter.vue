@@ -10,13 +10,17 @@
       <div class="footer-links">
         <div class="links-group">
           <h4>相关链接</h4>
+          <a href="https://astrbot.app/" target="_blank" class="footer-link">
+            <n-icon><star-outline /></n-icon>
+            项目主站
+          </a>
           <a href="https://github.com/AstrBotDevs/AstrBot" target="_blank" class="footer-link">
             <n-icon><logo-github /></n-icon>
             项目仓库
           </a>
-          <a href="https://github.com/Soulter/AstrBot/issues/new?template=PLUGIN_PUBLISH.yml" target="_blank" class="footer-link">
-            <n-icon><git-branch /></n-icon>
-            提交插件
+          <a href="https://docs.astrbot.app/" target="_blank" class="footer-link">
+            <n-icon><document-outline /></n-icon>
+            项目文档
           </a>
         </div>
         <div class="links-group">
@@ -24,6 +28,10 @@
           <a href="https://docs.astrbot.app/dev/star/plugin.html" target="_blank" class="footer-link">
             <n-icon><document-text /></n-icon>
             开发文档
+          </a>
+          <a href="https://github.com/Soulter/AstrBot/issues/new?template=PLUGIN_PUBLISH.yml" target="_blank" class="footer-link">
+            <n-icon><git-branch /></n-icon>
+            提交插件
           </a>
           <a href="https://github.com/IGCrystal-NEO/Astrbot_Plugins_Market" target="_blank" class="footer-link">
             <n-icon><code-slash /></n-icon>
@@ -51,7 +59,9 @@ import {
   GitBranch, 
   DocumentText, 
   CodeSlash,
-  Heart
+  Heart,
+  StarOutline,
+  DocumentOutline
 } from '@vicons/ionicons5'
 
 const currentYear = computed(() => new Date().getFullYear())
