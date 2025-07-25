@@ -59,10 +59,6 @@ const emit = defineEmits(['update:modelValue', 'update:searchQuery', 'update:cur
 
 const handleThemeChange = (value) => {
   emit('update:modelValue', value)
-  // 延迟执行样式更新
-  nextTick(() => {
-    setTimeout(updateDropdownStyles, 50)
-  })
 }
 
 const railStyle = ({ focused, checked }) => {
@@ -83,56 +79,8 @@ const onPageChange = (page) => {
   window.scrollTo({ top: 0, behavior: 'instant' })
 }
 
-// 动态更新下拉菜单样式
-const updateDropdownStyles = () => {
-  const dropdowns = document.querySelectorAll('.n-base-select-menu')
-  
-  dropdowns.forEach(dropdown => {
-    // 设置下拉菜单背景和边框
-    dropdown.style.setProperty('background-color', 'var(--dropdown-bg)', 'important')
-    dropdown.style.setProperty('border-color', 'var(--dropdown-border)', 'important')
-    dropdown.style.setProperty('box-shadow', 'var(--shadow-lg)', 'important')
-    
-    // 设置选项文字颜色
-    const options = dropdown.querySelectorAll('.n-base-select-option')
-    options.forEach(option => {
-      const content = option.querySelector('.n-base-select-option__content')
-      if (content) {
-        content.style.setProperty('color', 'var(--dropdown-text)', 'important')
-      }
-    })
-    
-    // 设置悬停状态
-    const hoverOptions = dropdown.querySelectorAll('.n-base-select-option:hover')
-    hoverOptions.forEach(option => {
-      option.style.setProperty('background-color', 'var(--bg-hover)', 'important')
-      const content = option.querySelector('.n-base-select-option__content')
-      if (content) {
-        content.style.setProperty('color', 'var(--primary-color)', 'important')
-      }
-    })
-    
-    // 设置选中项样式
-    const selectedOptions = dropdown.querySelectorAll('.n-base-select-option--selected')
-    selectedOptions.forEach(option => {
-      option.style.setProperty('background-color', 'var(--primary-light)', 'important')
-      const content = option.querySelector('.n-base-select-option__content')
-      if (content) {
-        content.style.setProperty('color', 'var(--primary-color)', 'important')
-      }
-    })
-  })
-}
-
 onMounted(() => {
-  const observer = new MutationObserver(() => {
-    updateDropdownStyles()
-  })
-  
-  observer.observe(document.body, {
-    childList: true,
-    subtree: true
-  })
+  // 移除了下拉菜单样式的动态更新，现在使用 CSS 变量控制
 })
 </script>
 
@@ -332,7 +280,7 @@ onMounted(() => {
 :deep(.top-pagination-wrapper .n-pagination-item) {
   color: rgba(255, 255, 255, 0.85) !important;
   background-color: rgba(255, 255, 255, 0.08) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border: none !important;
   transition: all 0.3s ease !important;
   backdrop-filter: blur(8px);
   min-width: 32px;
@@ -344,17 +292,12 @@ onMounted(() => {
 :deep(.top-pagination-wrapper .n-pagination-item--active) {
   color: white !important;
   background-color: rgba(255, 255, 255, 0.25) !important;
-  border-color: rgba(255, 255, 255, 0.5) !important;
   font-weight: 600;
-  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.2);
 }
 
 :deep(.top-pagination-wrapper .n-pagination-item--clickable:hover) {
   color: white !important;
   background-color: rgba(255, 255, 255, 0.18) !important;
-  border-color: rgba(255, 255, 255, 0.4) !important;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.15);
 }
 
 :deep(.top-pagination-wrapper .n-pagination-prefix),
@@ -381,12 +324,12 @@ onMounted(() => {
   }
   
   .header-logo {
-    width: 44px;
-    height: 44px;
+    width: 54px;
+    height: 54px;
   }
   
   .title-wrapper {
-    height: 44px;
+    height: 54px;
   }
   
   /* 顶部分页器平板优化 */
@@ -417,11 +360,11 @@ onMounted(() => {
   }
   
   .header-logo {
-    width: 40px;
-    height: 40px;
+    width: 55px;
+    height: 55px;
     order: -1; /* logo 在上方 */
   }
-  
+
   .title-wrapper {
     height: auto;
     text-align: center;
@@ -467,25 +410,34 @@ onMounted(() => {
   }
   
   :deep(.top-pagination-wrapper .n-pagination) {
-    gap: 6px;
+    gap: 4px;
     flex-wrap: wrap;
     justify-content: center;
   }
   
   :deep(.top-pagination-wrapper .n-pagination-item) {
-    min-width: 36px !important;
-    height: 36px !important;
-    font-size: 14px !important;
-    border-radius: 8px !important;
+    min-width: 32px !important;
+    height: 32px !important;
+    font-size: 13px !important;
+    border-radius: 6px !important;
     /* 增强在深色背景下的可见性 */
     background-color: rgba(255, 255, 255, 0.12) !important;
     backdrop-filter: blur(12px) !important;
   }
   
+  /* 隐藏部分页码，只显示当前页附近的页码 */
+  :deep(.n-pagination .n-pagination-item:not(.n-pagination-item--active):not(.n-pagination-item--button):not(.n-pagination-item.n-pagination-item--disabled)) {
+    display: none;
+  }
+  
+  /* 确保显示第一页和最后一页 */
+  :deep(.n-pagination .n-pagination-item:first-of-type),
+  :deep(.n-pagination .n-pagination-item:last-of-type) {
+    display: flex !important;
+  }
+  
   :deep(.top-pagination-wrapper .n-pagination-item--active) {
     background-color: rgba(255, 255, 255, 0.3) !important;
-    border-color: rgba(255, 255, 255, 0.6) !important;
-    box-shadow: 0 2px 16px rgba(255, 255, 255, 0.25) !important;
   }
   
   :deep(.top-pagination-wrapper .n-pagination-item--button) {
@@ -543,10 +495,10 @@ onMounted(() => {
   }
   
   .header-logo {
-    width: 36px;
-    height: 36px;
+    width: 60px;
+    height: 60px;
   }
-  
+
   .third-party-tag {
     font-size: 11px;
     padding: 2px 5px;
@@ -569,8 +521,14 @@ onMounted(() => {
   
   /* 分页在小屏幕上的特殊处理 */
   :deep(.top-pagination-wrapper .n-pagination) {
-    transform: scale(0.9);
+    transform: scale(0.95);
     transform-origin: center;
+  }
+  
+  :deep(.top-pagination-wrapper .n-pagination-item) {
+    min-width: 28px !important;
+    height: 28px !important;
+    font-size: 12px !important;
   }
 }
 
@@ -585,8 +543,8 @@ onMounted(() => {
   }
   
   .header-logo {
-    width: 32px;
-    height: 32px;
+    width: 50px;
+    height: 50px;
   }
   
   .custom-search-box {
@@ -605,14 +563,14 @@ onMounted(() => {
   
   /* 进一步缩小顶部分页 */
   :deep(.top-pagination-wrapper .n-pagination) {
-    transform: scale(0.85);
+    transform: scale(0.9);
     transform-origin: center;
   }
   
   :deep(.top-pagination-wrapper .n-pagination-item) {
-    min-width: 32px !important;
-    height: 32px !important;
-    font-size: 12px !important;
+    min-width: 26px !important;
+    height: 26px !important;
+    font-size: 11px !important;
   }
 }
 
@@ -644,10 +602,6 @@ onMounted(() => {
 
 /* 触摸设备优化 */
 @media (hover: none) and (pointer: coarse) {
-  .custom-search-box {
-    /* 移除hover效果，避免在触摸设备上的问题 */
-  }
-  
   .custom-search-box:hover {
     background: var(--input-bg);
     border-color: var(--input-border);
@@ -685,7 +639,6 @@ onMounted(() => {
   }
   
   .custom-search-box {
-    /* 在高分辨率屏幕上使用更精细的边框 */
     border-width: 0.5px;
   }
 }

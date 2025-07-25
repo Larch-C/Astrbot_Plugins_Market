@@ -34,9 +34,10 @@
     </div>
     <div class="footer-bottom">
       <p class="copyright">
-        © {{ currentYear }} Astrbot Plugin Market. Made with 
-        <n-icon class="heart-icon"><heart /></n-icon>
-        by Community
+        © {{ currentYear }} Astrbot Plugin Market
+        <span class="made-with">
+          Made with <n-icon class="heart-icon"><heart /></n-icon> by Community
+        </span>
       </p>
     </div>
   </footer>
@@ -141,6 +142,12 @@ const currentYear = computed(() => new Date().getFullYear())
   gap: 6px;
 }
 
+.made-with {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .heart-icon {
   color: #ff4d4f;
   font-size: 16px;
@@ -172,7 +179,7 @@ const currentYear = computed(() => new Date().getFullYear())
   }
 
   .footer-section {
-    text-align: center;
+    text-align: left;
     gap: 12px;
   }
 
@@ -187,7 +194,7 @@ const currentYear = computed(() => new Date().getFullYear())
   }
 
   .links-group {
-    text-align: center;
+    text-align: left;
   }
 
   .links-group h4 {
@@ -196,7 +203,7 @@ const currentYear = computed(() => new Date().getFullYear())
   }
 
   .footer-link {
-    justify-content: center;
+    justify-content: flex-start;
     margin-bottom: 10px;
     padding: 8px 0;
   }
@@ -214,7 +221,8 @@ const currentYear = computed(() => new Date().getFullYear())
   .copyright {
     font-size: 0.85em;
     line-height: 1.4;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 8px;
   }
 }
 

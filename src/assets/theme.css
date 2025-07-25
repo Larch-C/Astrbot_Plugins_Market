@@ -37,7 +37,7 @@
   --input-bg-hover: rgba(255, 255, 255, 0.25);
   --input-bg-focus: rgba(255, 255, 255, 0.3);
   --input-text: rgba(255, 255, 255, 0.95);
-  --input-placeholder: rgba(28, 28, 28, 0.65);
+  --input-placeholder: rgba(242, 252, 252, 0.812);
   --input-border: rgba(255, 255, 255, 0.2);
   --input-border-hover: rgba(255, 255, 255, 0.3);
   --input-border-focus: rgba(255, 255, 255, 0.4);
@@ -49,7 +49,6 @@
 
   --header-text-color: rgba(255, 255, 255, 0.95);
   --header-text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  --input-text: rgba(0, 50, 85, 0.95);
 }
 
 /* 暗色主题 */
@@ -96,4 +95,7 @@
   --dropdown-bg: #1e293b;
   --dropdown-text: #f1f5f9;
   --dropdown-border: #334155;
+
+  --header-text-color: rgba(255, 255, 255, 0.95);
+  --header-text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }

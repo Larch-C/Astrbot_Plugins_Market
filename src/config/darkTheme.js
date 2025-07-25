@@ -1,13 +1,13 @@
-export const themeOverrides = {
+export const darkThemeOverrides = {
   'common': { 
     duration: '0.2s',
     borderRadius: '8px',
     primaryColor: '#3b82f6',
     primaryColorHover: '#60a5fa',
     primaryColorPressed: '#2563eb',
-    baseColor: '#fff',
-    textColor2: '#666',
-    textColor3: '#999'
+    baseColor: '#1e293b',
+    textColor2: '#f1f5f9',
+    textColor3: '#cbd5e1'
   },
   'Pagination': {
     itemTextColor: '#fff',
@@ -32,7 +32,7 @@ export const themeOverrides = {
   },
   'Card': {
     borderRadius: '16px',
-    color: 'var(--n-color)',
-    colorModal: 'var(--n-color-modal)'
+    color: '#1e293b',
+    colorModal: '#1e293b'
   }
 }
