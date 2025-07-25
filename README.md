@@ -1,4 +1,4 @@
-# AstrBot 插件市场
+# [AstrBot 插件市场](https://igcrystal-neo.github.io/Astrbot_Plugins_Market/)
 
 插件数据采集，可用于 **插件市场** 或者 `AstrBot Landing Page` 插件市场导航页插件展示
 
