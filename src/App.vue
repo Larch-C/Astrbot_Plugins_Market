@@ -15,9 +15,10 @@
           />
           <main class="plugins-grid">
             <plugin-card
-              v-for="plugin in paginatedPlugins"
+              v-for="(plugin, index) in paginatedPlugins"
               :key="plugin.name"
               :plugin="plugin"
+              :index="index"
             />
           </main>
           <app-pagination
@@ -93,6 +94,15 @@ body {
   flex-direction: column;
 }
 
+@keyframes gridAppear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .plugins-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -102,6 +112,9 @@ body {
   min-height: calc(100vh - 64px); /* 减去头部高度 */
   margin: 0 auto;
   flex: 1;
+  animation: gridAppear 0.3s ease-out;
+  animation-delay: 0.7s;
+  animation-fill-mode: backwards;
 }
 
 @media (max-width: 768px) {

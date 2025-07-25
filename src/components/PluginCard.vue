@@ -75,6 +75,10 @@ const props = defineProps({
   plugin: {
     type: Object,
     required: true
+  },
+  index: {
+    type: Number,
+    default: 0
   }
 })
 
@@ -109,6 +113,11 @@ const updateMarqueeAnimation = (containerWidth, textWidth) => {
 }
 
 onMounted(() => {
+  // 设置卡片的加载动画延迟
+  if (pluginNameEl.value) {
+    pluginNameEl.value.style.setProperty('--card-index', props.index.toString())
+  }
+  
   checkTextOverflow()
   
   // 使用ResizeObserver监听容器大小变化，比window resize更精确
@@ -139,6 +148,17 @@ const openUrl = (url) => {
 </script>
 
 <style scoped>
+@keyframes cardAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .plugin-card {
   position: relative;
   overflow: visible;
@@ -150,6 +170,9 @@ const openUrl = (url) => {
   display: flex;
   flex-direction: column;
   min-width: 100%;
+  animation: cardAppear 0.5s cubic-bezier(0.23, 1, 0.32, 1) backwards;
+  /* 在 header 动画进行到一半时开始加载卡片，每个卡片间隔 0.08s */
+  animation-delay: calc(0.4s + (var(--card-index, 0) * 0.08s));
 }
 
 .plugin-card:hover {

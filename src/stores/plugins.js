@@ -1,17 +1,25 @@
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { defineStore } from 'pinia'
 import axios from 'axios'
 
 export const usePluginStore = defineStore('plugins', () => {
+  // 从 localStorage 获取主题偏好
+  const savedTheme = localStorage.getItem('theme-preference')
+  
   // 状态
   const plugins = ref(null)
   const searchQuery = ref('')
   const selectedTag = ref(null)
   const currentPage = ref(1)
   const pageSize = ref(12)
-  const isDarkMode = ref(false)
+  const isDarkMode = ref(savedTheme === 'dark')
   const isLoading = ref(true)
   const sortBy = ref('default') // 默认使用原始顺序
+  
+  // 监听主题变化并保存到 localStorage
+  watch(isDarkMode, (newValue) => {
+    localStorage.setItem('theme-preference', newValue ? 'dark' : 'light')
+  })
 
   // 计算属性
   const allTags = computed(() => {

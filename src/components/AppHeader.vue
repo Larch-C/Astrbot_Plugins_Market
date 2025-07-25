@@ -131,6 +131,20 @@ onMounted(() => {
 </script>
 
 <style scoped>
+@keyframes header-slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .app-header {
   text-align: center;
   margin-bottom: 40px;
@@ -141,6 +155,8 @@ onMounted(() => {
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+  animation: header-slide-down 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  transform-origin: top;
 }
 
 .app-header::before {
