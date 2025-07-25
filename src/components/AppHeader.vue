@@ -17,7 +17,7 @@
     <div class="header-title">
       <img src="/logo.png" alt="Astrbot Logo" class="header-logo">
       <div class="title-wrapper">
-        <h1>Astrbot 插件市场 <span class="third-party-tag">第三方</span></h1>
+        <h1>Astrbot 插件市场 <span class="third-party-tag">demo</span></h1>
       </div>
     </div>
     <div class="search-container">
