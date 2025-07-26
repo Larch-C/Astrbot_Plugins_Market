@@ -10,8 +10,8 @@
     ],
     "social_link": "QQ: 824907403",
     "stars": 0,
-    "updated_at": "2025-07-21T20:26:56Z",
-    "version": "v1.0.2"
+    "updated_at": "2025-07-26T16:51:44Z",
+    "version": "v1.0.3"
   },
   "cngal_morning_report": {
     "desc": "CnGal 每日晨报",
@@ -259,7 +259,7 @@
     "repo": "https://github.com/0d00-Ciallo-0721/astrbot_plugin_RecallGuard",
     "tags": [],
     "stars": 0,
-    "updated_at": "2025-07-10T16:13:09Z",
+    "updated_at": "2025-07-26T16:22:49Z",
     "version": "v1.0"
   },
   "astrbot_plugin_reply_directly": {
@@ -2252,7 +2252,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-26T15:24:37Z",
+    "updated_at": "2025-07-26T16:29:10Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
