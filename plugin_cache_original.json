@@ -323,15 +323,6 @@
     "updated_at": "2025-07-10T16:45:39Z",
     "version": "v1.0.0"
   },
-  "astrbot_plugin_linbot": {
-    "desc": "LinBot - AstrBot 游戏系统插件，集成外部插件帮助中心、服务器监控和完整经济游戏系统（含 PVP 抢劫与失败惩罚机制）",
-    "author": "linjianyan0229",
-    "repo": "https://github.com/linjianyan0229/astrbot_plugin_linbot",
-    "tags": [],
-    "stars": 2,
-    "updated_at": "2025-07-20T10:05:34Z",
-    "version": "1.6.1"
-  },
   "astrbot_plugin_balance": {
     "desc": "一个简单的 LLM API 余额查询与 IP 查询小插件, 支持硅基流动，DeepSeek 与 OpenAI 余额查询及 IP 地址查询功能",
     "author": "Chris",
@@ -1809,8 +1800,8 @@
       "表情包"
     ],
     "social_link": "https://github.com/Zhalslar",
-    "stars": 26,
-    "updated_at": "2025-07-26T03:31:27Z",
+    "stars": 27,
+    "updated_at": "2025-07-26T09:55:33Z",
     "version": "v2.0.6"
   },
   "astrbot_plugin_voiceprint": {
@@ -2261,7 +2252,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-26T08:30:50Z",
+    "updated_at": "2025-07-26T09:25:09Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
