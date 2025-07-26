@@ -153,8 +153,8 @@
       "健康",
       "娱乐"
     ],
-    "stars": 0,
-    "updated_at": "2025-07-18T07:59:24Z",
+    "stars": 1,
+    "updated_at": "2025-07-26T01:38:42Z",
     "version": "v1.2"
   },
   "astrbot_plugin_pet": {
@@ -273,8 +273,8 @@
       "主动回复",
       "沉浸式"
     ],
-    "stars": 8,
-    "updated_at": "2025-07-22T16:19:19Z",
+    "stars": 9,
+    "updated_at": "2025-07-26T01:38:39Z",
     "version": "1.4.4"
   },
   "astrbot_plugin_choulaopo": {
@@ -2261,7 +2261,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-25T23:24:41Z",
+    "updated_at": "2025-07-26T02:02:48Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
