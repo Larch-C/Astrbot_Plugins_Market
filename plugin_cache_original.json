@@ -1639,8 +1639,8 @@
       "fish"
     ],
     "stars": 25,
-    "updated_at": "2025-07-25T11:19:05Z",
-    "version": "1.4.3"
+    "updated_at": "2025-07-26T10:59:30Z",
+    "version": "1.4.4"
   },
   "astrbot_plugin_bilibili_live": {
     "author": "Raven95676",
@@ -2252,7 +2252,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-26T09:25:09Z",
+    "updated_at": "2025-07-26T10:25:22Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -2261,7 +2261,7 @@
     "repo": "https://github.com/tinkerbellqwq/astrbot_plugin_status-pro",
     "tags": [],
     "stars": 6,
-    "updated_at": "2025-07-01T04:35:54Z",
+    "updated_at": "2025-07-26T10:59:25Z",
     "version": "v1.5"
   },
   "astrbot_plugin_group_sum_ai": {
