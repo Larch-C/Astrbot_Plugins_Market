@@ -2252,7 +2252,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-26T12:49:06Z",
+    "updated_at": "2025-07-26T13:34:58Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3903,8 +3903,8 @@
       "图床"
     ],
     "stars": 66,
-    "updated_at": "2025-07-25T06:45:04Z",
-    "version": "v3.12"
+    "updated_at": "2025-07-26T14:07:35Z",
+    "version": "v3.13"
   },
   "mccloud_command": {
     "desc": "用于修改插件命令的工具，支持备份和恢复，仅限管理员使用。/cmd 查看帮助",
