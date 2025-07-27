@@ -1639,7 +1639,7 @@
       "fish"
     ],
     "stars": 25,
-    "updated_at": "2025-07-27T04:27:56Z",
+    "updated_at": "2025-07-27T05:20:27Z",
     "version": "1.4.5"
   },
   "astrbot_plugin_bilibili_live": {
@@ -4695,7 +4695,7 @@
     "repo": "https://github.com/zgojin/astrbot_plugin_thinkTags",
     "tags": [],
     "stars": 1,
-    "updated_at": "2025-06-30T06:12:23Z",
+    "updated_at": "2025-07-27T05:23:52Z",
     "version": "v1.2"
   }
 }
