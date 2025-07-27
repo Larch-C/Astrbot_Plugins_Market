@@ -274,8 +274,8 @@
       "沉浸式"
     ],
     "stars": 10,
-    "updated_at": "2025-07-26T05:02:19Z",
-    "version": "1.4.4"
+    "updated_at": "2025-07-27T14:58:46Z",
+    "version": "1.4.5"
   },
   "astrbot_plugin_choulaopo": {
     "name": "抽老婆",
@@ -2252,7 +2252,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-27T13:33:53Z",
+    "updated_at": "2025-07-27T14:22:20Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -2758,8 +2758,8 @@
     "tags": [
       "QQ群管"
     ],
-    "stars": 31,
-    "updated_at": "2025-07-19T15:23:44Z",
+    "stars": 32,
+    "updated_at": "2025-07-27T14:44:46Z",
     "version": "v3.0.7"
   },
   "astrbot_plugin_liars_bar": {
