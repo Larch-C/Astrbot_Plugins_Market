@@ -91,7 +91,7 @@ export const usePluginStore = defineStore('plugins', () => {
   async function loadPlugins() {
     isLoading.value = true
     try {
-      const response = await axios.get('https://raw.githubusercontent.com/IGCrystal-NEO/Astrbot_Plugins_Market/main/plugin_cache_original.json')
+      const response = await axios.get('https://api.wenturc.com/astrbot/plugins/')
       const data = response.data
       plugins.value = Object.entries(data).map(([name, details]) => ({
         name,
