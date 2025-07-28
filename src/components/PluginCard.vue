@@ -40,14 +40,23 @@
         </n-space>
       </div>
       <n-space justify="space-between" class="plugin-links">
-        <n-button
-          type="primary"
-          secondary
-          @click="openUrl(plugin.repo)"
-          :style="{ borderRadius: '8px' }"
-        >
-          查看仓库
-        </n-button>
+        <n-space>
+          <n-button
+            type="primary"
+            secondary
+            @click="openUrl(plugin.repo)"
+            :style="{ borderRadius: '8px' }"
+          >
+            查看仓库
+          </n-button>
+          <n-button
+            secondary
+            @click="copyRepoUrl"
+            :style="{ borderRadius: '8px' }"
+          >
+            复制仓库链接
+          </n-button>
+        </n-space>
         <n-button
           v-if="plugin.social_link"
           @click="openUrl(plugin.social_link)"
@@ -68,6 +77,7 @@ import {
   NTag,
   NButton,
   NIcon,
+  useMessage,
 } from 'naive-ui'
 import { StarSharp } from '@vicons/ionicons5'
 
@@ -148,9 +158,22 @@ onUnmounted(() => {
   }
 })
 
+const message = useMessage()
+
 const openUrl = (url) => {
   if (url) {
     window.open(url, '_blank')
+  }
+}
+
+const copyRepoUrl = async () => {
+  if (props.plugin.repo) {
+    try {
+      await navigator.clipboard.writeText(props.plugin.repo)
+      message.success('仓库链接已复制到剪贴板')
+    } catch (err) {
+      message.error('复制失败，请手动复制')
+    }
   }
 }
 </script>
