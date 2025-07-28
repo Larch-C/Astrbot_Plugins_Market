@@ -39,32 +39,52 @@
           <span>{{ plugin.stars }}</span>
         </n-space>
       </div>
-      <n-space justify="space-between" class="plugin-links">
-        <n-space>
+      <!-- 优化后的按钮区域 -->
+      <div class="plugin-links">
+        <div class="button-group">
           <n-button
             type="primary"
             secondary
+            size="small"
             @click="openUrl(plugin.repo)"
-            :style="{ borderRadius: '8px' }"
+            class="main-button"
           >
             查看仓库
           </n-button>
-          <n-button
-            secondary
-            @click="copyRepoUrl"
-            :style="{ borderRadius: '8px' }"
-          >
-            复制仓库链接
-          </n-button>
-        </n-space>
-        <n-button
-          v-if="plugin.social_link"
-          @click="openUrl(plugin.social_link)"
-          :style="{ borderRadius: '8px' }"
-        >
-          作者主页
-        </n-button>
-      </n-space>
+          <div class="icon-buttons">
+            <n-tooltip placement="top" trigger="hover">
+              <template #trigger>
+                <n-button
+                  secondary
+                  size="small"
+                  circle
+                  @click="copyRepoUrl"
+                >
+                  <n-icon size="18">
+                    <link-outline />
+                  </n-icon>
+                </n-button>
+              </template>
+              复制仓库链接
+            </n-tooltip>
+            <n-tooltip v-if="plugin.social_link" placement="top" trigger="hover">
+              <template #trigger>
+                <n-button
+                  secondary
+                  size="small"
+                  circle
+                  @click="openUrl(plugin.social_link)"
+                >
+                  <n-icon size="18">
+                    <person-outline />
+                  </n-icon>
+                </n-button>
+              </template>
+              访问作者主页
+            </n-tooltip>
+          </div>
+        </div>
+      </div>
     </n-space>
   </n-card>
 </template>
@@ -78,8 +98,9 @@ import {
   NButton,
   NIcon,
   useMessage,
+  NTooltip
 } from 'naive-ui'
-import { StarSharp } from '@vicons/ionicons5'
+import { StarSharp, LinkOutline, PersonOutline } from '@vicons/ionicons5'
 
 const props = defineProps({
   plugin: {
@@ -421,11 +442,74 @@ const copyRepoUrl = async () => {
   gap: 6px;
 }
 
+/* 优化后的按钮区域样式 */
 .plugin-links {
   margin-top: 8px;
   min-height: 40px;
   display: flex;
+}
+
+.button-group {
+  display: flex;
   align-items: center;
+  gap: 12px;
+}
+
+.icon-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.button-group :deep(.main-button) {
+  border-radius: 8px;
+  height: 32px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-buttons :deep(.n-button) {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  background-color: var(--bg-hover);
+  border: 1px solid var(--border-base);
+  transition: all 0.2s ease;
+  border-radius: 8px;
+}
+
+.icon-buttons :deep(.n-button:hover) {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  background-color: var(--primary-light);
+  transform: translateY(-1px);
+}
+
+/* 响应式按钮布局 */
+@media (max-width: 480px) {
+  .button-group :deep(.n-button) {
+    font-size: 0.9em;
+    height: 28px;
+  }
+  
+  .button-group :deep(.main-button) {
+    padding: 0 12px;
+  }
+  
+  .icon-buttons :deep(.n-button) {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .icon-buttons :deep(.n-button .n-icon) {
+    font-size: 16px;
+  }
 }
 
 :deep(.n-card) {
@@ -442,10 +526,6 @@ const copyRepoUrl = async () => {
   content: '';
   display: block;
   height: 40px;
-}
-
-.plugin-links :deep(.n-space-item:only-child) {
-  margin-right: auto;
 }
 
 /* 添加预加载动画优化 */

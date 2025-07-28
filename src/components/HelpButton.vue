@@ -4,7 +4,7 @@
       <div class="help-button-container">
         <div class="help-text-container">
           <div class="help-text" :class="{ 'help-text--show': showHelpText }">
-            安装插件遇到问题？来看看我吧！
+            有疑问？来看看呗！
           </div>
         </div>
         <div 
@@ -174,22 +174,22 @@ const openPanelUrl = () => {
   align-items: center;
   justify-content: center;
   color: white;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--n-box-shadow-2, 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05));
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
 }
 
 .help-button__inner {
-  background: var(--info-color, #2080f0);
+  background: var(--n-primary-color, #2080f0);
 }
 
 .float-button:hover .float-button__inner {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--n-box-shadow-3, 0 6px 16px -8px rgba(0, 0, 0, 0.08), 0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03));
 }
 
 .help-button:hover .help-button__inner {
-  background: var(--info-hover, #4098fc);
+  background: var(--n-primary-color-hover, #4098fc);
 }
 
 .float-button:active .float-button__inner {
@@ -267,28 +267,47 @@ const openPanelUrl = () => {
   overflow: hidden;
   display: flex;
   align-items: center;
+  padding: 0 8px;
+  margin: 0 -8px;
 }
 
 .help-text {
   background: var(--bg-card);
   padding: 0 12px;
+  border: 2px solid transparent;
   border-radius: 28px;
   font-size: 14px;
   height: 40px;
   line-height: 40px;
-  color: var(--text-secondary);
+  color: var(--text-tag);
   white-space: nowrap;
   margin-right: -56px;
-  transform: translateX(-100%);
+  transform: translateX(100%);
   opacity: 0;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: var(--shadow-sm);
+  background-clip: padding-box;
+  position: relative;
+}
+
+.help-text::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  background: var(--header-gradient);
+  border-radius: inherit;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+  opacity: 0.6;
 }
 
 .help-text--show {
   transform: translateX(0);
   opacity: 1;
-  margin-right: 12px;
+  margin-right: 16px;
 }
 
 @media (max-width: 768px) {
@@ -340,20 +359,21 @@ const openPanelUrl = () => {
 }
 
 .help-card {
-  background: var(--bg-card) !important;
+  background: var(--n-color) !important;
+  color: var(--n-text-color) !important;
 }
 
 .help-modal__header {
   padding: 0 var(--modal-padding);
   margin: calc(-1 * var(--modal-padding)) calc(-1 * var(--modal-padding)) 0;
   padding-top: var(--modal-padding);
-  background: var(--bg-card);
-  border-bottom: 1px solid var(--border-base);
+  background: var(--n-color) !important;
+  border-bottom: 1px solid var(--n-border-color) !important;
 }
 
 .help-modal__title {
   margin: 0;
-  color: var(--text-primary);
+  color: var(--n-text-color) !important;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -361,7 +381,7 @@ const openPanelUrl = () => {
 }
 
 .help-modal__icon {
-  color: var(--primary-color);
+  color: var(--n-primary-color) !important;
 }
 
 .help-modal__content {
@@ -380,12 +400,12 @@ const openPanelUrl = () => {
 }
 
 .help-modal__content::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-color, rgba(0, 0, 0, 0.2));
+  background: var(--n-scrollbar-color, rgba(128, 128, 128, 0.3)) !important;
   border-radius: 4px;
 }
 
 .help-modal__content::-webkit-scrollbar-thumb:hover {
-  background: var(--scrollbar-color-hover, rgba(0, 0, 0, 0.3));
+  background: var(--n-scrollbar-color-hover, rgba(128, 128, 128, 0.5)) !important;
 }
 
 .help-section {
@@ -395,7 +415,7 @@ const openPanelUrl = () => {
 }
 
 .help-section:hover {
-  background: var(--bg-hover);
+  background: var(--n-card-color-hover) !important;
 }
 
 .help-section__header {
@@ -404,12 +424,12 @@ const openPanelUrl = () => {
 
 .help-section :deep(h3) {
   margin: 0;
-  color: var(--text-primary);
+  color: var(--n-text-color) !important;
   font-size: 1.1em;
 }
 
 .markdown-content {
-  color: var(--text-secondary);
+  color: var(--n-text-color-2) !important;
   line-height: 1.6;
   font-size: 0.95em;
 }
@@ -422,14 +442,17 @@ const openPanelUrl = () => {
 
 .markdown-content :deep(li) {
   margin: 4px 0;
+  color: var(--n-text-color-2) !important;
 }
 
 .markdown-content :deep(p) {
   margin: 8px 0;
+  color: var(--n-text-color-2) !important;
 }
 
 .markdown-content :deep(code) {
-  background: var(--code-bg, rgba(0, 0, 0, 0.04));
+  background: var(--n-code-color, rgba(128, 128, 128, 0.12)) !important;
+  color: var(--n-text-color) !important;
   padding: 2px 6px;
   border-radius: 4px;
   font-family: monospace;
@@ -437,7 +460,8 @@ const openPanelUrl = () => {
 }
 
 .markdown-content :deep(pre) {
-  background: var(--code-block-bg, rgba(0, 0, 0, 0.04));
+  background: var(--n-code-color, rgba(128, 128, 128, 0.12)) !important;
+  color: var(--n-text-color) !important;
   padding: 16px;
   border-radius: 8px;
   overflow-x: auto;
@@ -445,7 +469,8 @@ const openPanelUrl = () => {
 }
 
 .markdown-content :deep(pre code) {
-  background: none;
+  background: none !important;
+  color: inherit !important;
   padding: 0;
   border-radius: 0;
 }
@@ -453,12 +478,12 @@ const openPanelUrl = () => {
 .markdown-content :deep(blockquote) {
   margin: 12px 0;
   padding-left: 16px;
-  border-left: 4px solid var(--primary-color);
-  color: var(--text-tertiary);
+  border-left: 4px solid var(--n-primary-color);
+  color: var(--n-text-color-3) !important;
 }
 
 .markdown-content :deep(a) {
-  color: var(--primary-color);
+  color: var(--n-primary-color) !important;
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
@@ -486,7 +511,7 @@ const openPanelUrl = () => {
   align-items: center;
   gap: 12px;
   padding: 12px 16px;
-  background: var(--bg-card-hover, rgba(0, 0, 0, 0.02));
+  background: var(--n-card-color-hover) !important;
   border-radius: 8px;
   flex-wrap: wrap;
 }
