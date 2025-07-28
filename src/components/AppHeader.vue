@@ -253,21 +253,37 @@ onMounted(() => {
   height: 24px !important;
   position: relative;
   z-index: 3;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 :deep(.n-switch .n-switch__rail) {
   height: 24px !important;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 :deep(.n-switch .n-switch__button) {
   height: 20px !important;
   width: 20px !important;
   top: 2px !important;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 :deep(.n-switch .n-switch__button-icon) {
   font-size: 14px;
   color: var(--primary-color);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* ===== 响应式设计优化 ===== */
