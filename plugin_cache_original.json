@@ -17,7 +17,7 @@
       "图片反搜"
     ],
     "stars": 0,
-    "updated_at": "2025-07-25T20:45:48Z",
+    "updated_at": "2025-07-28T11:43:45Z",
     "version": "2.3"
   },
   "astrbot_plugin_LLMTempBan": {
@@ -1787,8 +1787,8 @@
       "禁漫"
     ],
     "social_link": "https://github.com/GEMILUXVII",
-    "stars": 14,
-    "updated_at": "2025-07-26T21:06:17Z",
+    "stars": 15,
+    "updated_at": "2025-07-28T12:34:13Z",
     "version": "1.0.7"
   },
   "astrbot_plugin_combine-messages": {
@@ -2310,7 +2310,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-28T10:28:40Z",
+    "updated_at": "2025-07-28T11:22:38Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
