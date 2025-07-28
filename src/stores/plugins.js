@@ -93,10 +93,18 @@ export const usePluginStore = defineStore('plugins', () => {
     try {
       const response = await axios.get('https://api.wenturc.com/astrbot/plugins/')
       const data = response.data
-      plugins.value = Object.entries(data).map(([name, details]) => ({
-        name,
-        ...details
-      }))
+      plugins.value = Object.entries(data).map(([name, details]) => {
+        // 确保 tags 始终是数组
+        const tags = details.tags ? 
+          (Array.isArray(details.tags) ? details.tags : [details.tags]) 
+          : []
+          
+        return {
+          name,
+          ...details,
+          tags
+        }
+      })
     } catch (error) {
       console.error('Error loading plugins:', error)
       plugins.value = []
