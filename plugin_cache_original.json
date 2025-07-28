@@ -17,7 +17,7 @@
       "图片反搜"
     ],
     "stars": 0,
-    "updated_at": "2025-07-28T11:43:45Z",
+    "updated_at": "2025-07-28T18:01:19Z",
     "version": "2.3"
   },
   "astrbot_plugin_LLMTempBan": {
@@ -1440,19 +1440,6 @@
     "updated_at": "2025-06-15T06:50:58Z",
     "version": "0.0.4"
   },
-  "astrbot_plugin_baike": {
-    "author": "明日香奈",
-    "desc": "输入【/百科 要搜索的词条】即可查询百度百科简略内容",
-    "repo": "https://github.com/mingrixiangnai/astrbot_plugin_baike",
-    "tags": [
-      "百科",
-      "信息"
-    ],
-    "social_link": "https://github.com/mingrixiangnai/astrbot_plugin_baike",
-    "stars": 1,
-    "updated_at": "2025-06-26T00:26:20Z",
-    "version": "1.0"
-  },
   "astrbot_plugin_LatexPlotter": {
     "author": "xunxi",
     "desc": "本插件为 AstrBot 设计，旨在提供强大的 LaTeX 数学公式渲染功能。它可以将用户输入的 LaTeX 字符串渲染成高质量的图片，并支持通过逗号分隔实现多行、分步骤的公式展示。插件具有高度的可配置性，允许用户调整渲染效果，如DPI、字体大小、颜色、行间距等。",
@@ -1959,7 +1946,7 @@
     ],
     "social_link": "https://github.com/mingrixiangnai/0721galgame",
     "stars": 2,
-    "updated_at": "2025-06-26T21:59:25Z",
+    "updated_at": "2025-07-28T18:23:58Z",
     "version": "1.0"
   },
   "astrbot_plugin_terminal": {
@@ -2310,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-28T16:34:00Z",
+    "updated_at": "2025-07-28T17:25:38Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
