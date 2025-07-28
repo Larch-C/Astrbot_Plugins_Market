@@ -495,7 +495,7 @@ const copyRepoUrl = async () => {
 
 .icon-buttons :deep(.n-button:hover) {
   color: var(--primary-color);
-  border-color: var(--primary-color);
+  border-color: transparent;
   background-color: var(--primary-light);
   transform: translateY(-1px);
 }
