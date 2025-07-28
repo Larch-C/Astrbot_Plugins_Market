@@ -61,11 +61,16 @@
                   @click="copyRepoUrl"
                 >
                   <n-icon size="18">
-                    <link-outline />
+                    <template v-if="isCopied">
+                      <checkmark-outline />
+                    </template>
+                    <template v-else>
+                      <link-outline />
+                    </template>
                   </n-icon>
                 </n-button>
               </template>
-              复制仓库链接
+              {{ isCopied ? '已复制链接！' : '复制仓库链接' }}
             </n-tooltip>
             <n-tooltip v-if="plugin.social_link" placement="top" trigger="hover">
               <template #trigger>
@@ -100,7 +105,7 @@ import {
   useMessage,
   NTooltip
 } from 'naive-ui'
-import { StarSharp, LinkOutline, PersonOutline } from '@vicons/ionicons5'
+import { StarSharp, LinkOutline, PersonOutline, CheckmarkOutline } from '@vicons/ionicons5'
 
 const props = defineProps({
   plugin: {
@@ -180,6 +185,7 @@ onUnmounted(() => {
 })
 
 const message = useMessage()
+const isCopied = ref(false)
 
 const openUrl = (url) => {
   if (url) {
@@ -191,7 +197,10 @@ const copyRepoUrl = async () => {
   if (props.plugin.repo) {
     try {
       await navigator.clipboard.writeText(props.plugin.repo)
-      message.success('仓库链接已复制到剪贴板')
+      isCopied.value = true
+      setTimeout(() => {
+        isCopied.value = false
+      }, 2000) // 2秒后恢复原始图标
     } catch (err) {
       message.error('复制失败，请手动复制')
     }
