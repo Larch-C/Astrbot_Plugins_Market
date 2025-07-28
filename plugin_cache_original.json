@@ -193,8 +193,8 @@
     ],
     "social_link": "https://magstic.art/",
     "stars": 1,
-    "updated_at": "2025-07-16T05:14:15Z",
-    "version": "1.0.0"
+    "updated_at": "2025-07-28T05:30:52Z",
+    "version": "1.0.1"
   },
   "astrbot_plugin_eat_history": {
     "desc": "自动保存转发的消息记录，随时查看",
@@ -763,8 +763,8 @@
       "调教"
     ],
     "social_link": "https://github.com/oyxning",
-    "stars": 15,
-    "updated_at": "2025-07-27T06:50:20Z",
+    "stars": 16,
+    "updated_at": "2025-07-28T05:49:42Z",
     "version": "v3.0.0"
   },
   "astrbot_plugin_alistfile": {
@@ -1347,7 +1347,7 @@
       "知识库"
     ],
     "stars": 42,
-    "updated_at": "2025-07-27T13:33:22Z",
+    "updated_at": "2025-07-28T05:41:39Z",
     "version": "v0.5.8"
   },
   "astrbot_uptime_kuma_webhook_plugin": {
@@ -2044,8 +2044,8 @@
       "api"
     ],
     "social_link": "https://github.com/Zhalslar/astrbot_plugin_apis",
-    "stars": 52,
-    "updated_at": "2025-07-25T05:39:16Z",
+    "stars": 53,
+    "updated_at": "2025-07-28T06:24:16Z",
     "version": "v1.0.7"
   },
   "astrbot_plugin_help": {
@@ -2252,7 +2252,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-28T04:08:27Z",
+    "updated_at": "2025-07-28T05:32:42Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
