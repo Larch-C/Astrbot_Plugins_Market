@@ -491,35 +491,55 @@ const openPanelUrl = () => {
   margin: 0 calc(-1 * var(--modal-padding));
   margin-top: calc(-1 * var(--modal-padding));
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;  /* 改为居中对齐 */
 }
 
 .help-modal__footer-content {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 100%;  /* 让内容占满宽度 */
+  max-width: 600px;  /* 限制最大宽度 */
 }
 
 .panel-link {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
   padding: 12px 16px;
   background: var(--n-card-color-hover) !important;
   border-radius: 8px;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .panel-input-group {
   display: flex;
   align-items: center;
   gap: 12px;
-  flex: 1;
+  width: 100%;
+  min-width: 0; /* 允许在较窄屏幕上缩小 */
+  flex-wrap: wrap; /* 允许按钮换行 */
 }
 
 .panel-input {
   flex: 1;
   min-width: 200px;
+}
+
+@media (max-width: 480px) {
+  .panel-input-group {
+    flex-direction: column;
+    align-items: flex-end;  /* 改为右对齐 */
+  }
+  
+  .panel-input {
+    width: 100%;
+  }
+
+  .panel-input-group .n-button {
+    width: auto;  /* 让按钮宽度自适应内容 */
+    min-width: 120px;  /* 设置最小宽度 */
+  }
 }
 
 .help-modal__close-btn {

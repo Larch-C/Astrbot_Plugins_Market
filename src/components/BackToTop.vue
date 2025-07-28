@@ -17,7 +17,6 @@
         </div>
       </div>
     </transition>
-
     <help-button />
   </div>
 </template>
