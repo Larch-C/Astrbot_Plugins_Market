@@ -1,7 +1,65 @@
 {
+  "astrbot_plugin_lanzoucloud": {
+    "desc": "蓝奏云文件解析插件，支持自动检测和手动解析蓝奏云分享链接",
+    "author": "BB0813",
+    "repo": "https://github.com/BB0813/astrbot_plugin_lanzoucloud",
+    "tags": "文件解析",
+    "social_link": "https://qm.qq.com/q/d4lwUp9ap4",
+    "stars": 0,
+    "updated_at": "2025-07-27T17:06:12Z",
+    "version": "v1.0.0"
+  },
+  "astrbot_plugin_img_rev_seacher": {
+    "desc": "图片反搜项目，以图搜图，找出处",
+    "author": "drdon1234",
+    "repo": "https://github.com/drdon1234/astrbot_plugin_img_rev_seacher",
+    "tags": [
+      "图片反搜"
+    ],
+    "stars": 0,
+    "updated_at": "2025-07-25T20:45:48Z",
+    "version": "2.3"
+  },
+  "astrbot_plugin_LLMTempBan": {
+    "desc": "让 Bot 学会主动拉黑或者通过管理员指令拉黑。",
+    "author": "长安某",
+    "repo": "https://github.com/zgojin/astrbot_plugin_LLMTempBan",
+    "tags": [
+      "工具"
+    ],
+    "social_link": "https://astrbot.uk",
+    "stars": 2,
+    "updated_at": "2025-07-24T09:47:56Z",
+    "version": "v1.0"
+  },
+  "astrbot_proactive_reply": {
+    "desc": "一个支持聊天附带用户信息和定时主动发送消息的 AstrBot 插件",
+    "author": "AstraSolis",
+    "repo": "https://github.com/AstraSolis/astrbot_proactive_reply",
+    "tags": [
+      "聊天增强",
+      "定时任务",
+      "用户信息",
+      "主动回复"
+    ],
+    "stars": 0,
+    "updated_at": "2025-07-24T11:10:34Z",
+    "version": "v1.0.1"
+  },
+  "treasure_bag_plugin": {
+    "desc": "一个为 AstrBot 设计的多功能插件，包含多种实用和娱乐功能。",
+    "author": "祁筱欣",
+    "repo": "https://github.com/xiaomizhoubaobei/astrbot_plugin_treasure_bag",
+    "tags": [
+      "娱乐"
+    ],
+    "stars": 1,
+    "updated_at": "2025-07-24T17:24:48Z",
+    "version": "0.0.2"
+  },
   "LiteBridge": {
     "name": "LiteBridge",
-    "desc": "基于WebSocket的Minecraft群服互通插件",
+    "desc": "基于 WebSocket 的 Minecraft 群服互通插件",
     "author": "Asurin219",
     "repo": "https://github.com/Asurin219/astrbot_plugin_lite_bridge",
     "tags": [
@@ -2252,7 +2310,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-28T08:36:39Z",
+    "updated_at": "2025-07-28T09:33:26Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
