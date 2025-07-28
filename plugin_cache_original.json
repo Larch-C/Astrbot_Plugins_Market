@@ -1428,8 +1428,8 @@
     ],
     "social_link": "https://space.bilibili.com/447591776",
     "stars": 2,
-    "updated_at": "2025-07-27T16:45:12Z",
-    "version": "v1.1.0"
+    "updated_at": "2025-07-28T01:43:07Z",
+    "version": "v1.1.1"
   },
   "astrbot_plugin_embedding_adapter": {
     "author": "AnYan",
@@ -2252,7 +2252,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-27T22:23:54Z",
+    "updated_at": "2025-07-27T23:24:47Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
