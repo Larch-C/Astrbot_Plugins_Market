@@ -1,7 +1,5 @@
 <template>
   <div class="float-buttons">
-    <help-button />
-    
     <!-- 返回顶部按钮 -->
     <transition name="back-to-top-fade">
       <div 
@@ -19,6 +17,8 @@
         </div>
       </div>
     </transition>
+
+    <help-button />
   </div>
 </template>
 
@@ -36,10 +36,27 @@ const checkScroll = () => {
 }
 
 const scrollToTop = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  })
+  const currentPosition = window.pageYOffset
+  const duration = 500 // 滚动持续时间（毫秒）
+  const startTime = performance.now()
+
+  function animation(currentTime) {
+    const timeElapsed = currentTime - startTime
+    const progress = Math.min(timeElapsed / duration, 1)
+    
+    // easeInOutQuad 缓动函数
+    const easing = progress => progress < 0.5
+      ? 2 * progress * progress
+      : 1 - Math.pow(-2 * progress + 2, 2) / 2
+
+    window.scrollTo(0, currentPosition * (1 - easing(progress)))
+
+    if (progress < 1) {
+      requestAnimationFrame(animation)
+    }
+  }
+
+  requestAnimationFrame(animation)
 }
 
 onMounted(() => {
@@ -90,7 +107,6 @@ onUnmounted(() => {
 }
 
 .float-button:hover .float-button__inner {
-  transform: translateY(-3px) scale(1.05);
   box-shadow: var(--shadow-lg);
 }
 
@@ -99,18 +115,13 @@ onUnmounted(() => {
 }
 
 .float-button:active .float-button__inner {
-  transform: translateY(-1px) scale(0.95);
+  transform: scale(0.95);
   transition-duration: 0.1s;
 }
 
 .float-button__icon {
   position: relative;
   z-index: 2;
-  transition: transform 0.3s ease;
-}
-
-.float-button:hover .float-button__icon {
-  transform: translateY(-2px);
 }
 
 .float-button__ripple {

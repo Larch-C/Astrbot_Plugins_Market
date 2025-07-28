@@ -180,31 +180,25 @@ const openPanelUrl = () => {
 }
 
 .help-button__inner {
-  background: var(--n-primary-color, #2080f0);
+  background: var(--primary-color);
 }
 
 .float-button:hover .float-button__inner {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: var(--n-box-shadow-3, 0 6px 16px -8px rgba(0, 0, 0, 0.08), 0 9px 28px 0 rgba(0, 0, 0, 0.05), 0 12px 48px 16px rgba(0, 0, 0, 0.03));
+  box-shadow: var(--shadow-lg);
 }
 
 .help-button:hover .help-button__inner {
-  background: var(--n-primary-color-hover, #4098fc);
+  background: var(--primary-hover);
 }
 
 .float-button:active .float-button__inner {
-  transform: translateY(-1px) scale(0.95);
+  transform: scale(0.95);
   transition-duration: 0.1s;
 }
 
 .float-button__icon {
   position: relative;
   z-index: 2;
-  transition: transform 0.3s ease;
-}
-
-.float-button:hover .float-button__icon {
-  transform: translateY(-2px);
 }
 
 .float-button__ripple {
