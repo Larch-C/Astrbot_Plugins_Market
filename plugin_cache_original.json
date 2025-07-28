@@ -259,8 +259,8 @@
     "repo": "https://github.com/0d00-Ciallo-0721/astrbot_plugin_RecallGuard",
     "tags": [],
     "stars": 0,
-    "updated_at": "2025-07-26T16:22:49Z",
-    "version": "v1.0"
+    "updated_at": "2025-07-28T07:04:17Z",
+    "version": "v2.0"
   },
   "astrbot_plugin_reply_directly": {
     "name": "astrbot_plugin_reply_directly",
@@ -2252,7 +2252,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-28T05:32:42Z",
+    "updated_at": "2025-07-28T06:40:22Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
