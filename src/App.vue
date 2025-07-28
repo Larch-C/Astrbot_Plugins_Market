@@ -13,6 +13,12 @@
             :tag-options="tagOptions"
             :total-pages="totalPages"
           />
+        <app-pagination
+          v-if="totalPages > 1"
+          v-model="currentPage"
+          :total-pages="totalPages"
+          class="top-pagination"
+        />
           <main class="plugins-grid">
             <plugin-card
               v-for="(plugin, index) in paginatedPlugins"

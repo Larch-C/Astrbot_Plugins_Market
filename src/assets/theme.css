@@ -1,101 +1,102 @@
 :root {
-  /* 主色调 */
-  --primary-color: #3b82f6;
-  --primary-hover: #60a5fa;
-  --primary-active: #2563eb;
-  --primary-light: rgba(59, 130, 246, 0.1);
+  /* 主色调 - 钢蓝色系 */
+  --primary-color: #4682b4;
+  --primary-hover: #5a9bd4;
+  --primary-active: #336699;
+  --primary-light: rgba(70, 130, 180, 0.1);
 
-  /* 背景色 */
-  --bg-base: #ffffff;
+  /* 背景色 - 增加层次感 */
+  --bg-base: #fafbfc;
   --bg-card: #ffffff;
-  --bg-hover: #f8fafc;
-  --bg-n-tag: #e3ffd2;
+  --bg-hover: #f0f4f8;
+  --bg-n-tag: #e0f2fe;
+  --bg-header: #b3d4fc;
 
-  /* 文本颜色 */
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
-  --text-tertiary: #94a3b8;
-  --text-tag: #fff;
-  --text-n-tag: #006e12;
+  /* 文本颜色 - 提升对比度 */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+  --text-tag: #ffffff;
+  --text-n-tag: #0277bd;
+  --pagination-text: #000;
 
   /* 边框颜色 */
   --border-base: #e2e8f0;
-  --border-hover: #3b82f6;
+  --border-hover: #4682b4;
 
-  /* 阴影 */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+  /* 阴影 - 更自然的阴影效果 */
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
 
-  /* Header专用CSS变量 */
-  --header-gradient: linear-gradient(135deg, var(--primary-color), #9acdff);
+  /* Header专用CSS变量 - 钢蓝色渐变 */
+  --header-gradient: linear-gradient(135deg, #4682b4 0%, #2c5aa0 50%, #1e3a8a 100%);
   --header-overlay: radial-gradient(circle at top right, rgba(255,255,255,0.1), transparent);
-  --header-text-color: white;
-  --header-text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --header-text-color: rgba(255, 255, 255, 0.95);
+  --header-text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   --search-bg: rgba(255, 255, 255, 0.15);
   --input-bg: rgba(255, 255, 255, 0.2);
   --input-bg-hover: rgba(255, 255, 255, 0.25);
   --input-bg-focus: rgba(255, 255, 255, 0.3);
   --input-text: rgba(255, 255, 255, 0.95);
-  --input-placeholder: rgba(242, 252, 252, 0.812);
+  --input-placeholder: rgba(255, 255, 255, 0.7);
   --input-border: rgba(255, 255, 255, 0.2);
   --input-border-hover: rgba(255, 255, 255, 0.3);
   --input-border-focus: rgba(255, 255, 255, 0.4);
   
   /* 下拉菜单变量 */
   --dropdown-bg: #ffffff;
-  --dropdown-text: #1e293b;
+  --dropdown-text: #0f172a;
   --dropdown-border: #e2e8f0;
-
-  --header-text-color: rgba(255, 255, 255, 0.95);
-  --header-text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* 暗色主题 */
 .dark {
-  --primary-color: #60a5fa;
-  --primary-hover: #3b82f6;
-  --primary-active: #2563eb;
-  --primary-light: rgba(96, 165, 250, 0.1);
+  /* 主色调 - 暗色模式下的钢蓝色 */
+  --primary-color: #5a9bd4;
+  --primary-hover: #7bb3e0;
+  --primary-active: #4682b4;
+  --primary-light: rgba(90, 155, 212, 0.15);
 
-  --bg-base: #1e293b;
+  /* 背景色 - 现代暗色背景 */
+  --bg-base: #0f172a;
   --bg-card: #1e293b;
   --bg-hover: #334155;
-  --bg-n-tag: #d9ffc2b1;
+  --bg-n-tag: #0c4a6e;
 
-  --text-primary: #f1f5f9;
+  /* 文本颜色 - 暗色模式下的高对比度 */
+  --text-primary: #f8fafc;
   --text-secondary: #cbd5e1;
   --text-tertiary: #94a3b8;
-  --text-n-tag: #008416;
+  --text-n-tag: #38bdf8;
+  --pagination-text: #fff;
 
+  /* 边框颜色 */
   --border-base: #334155;
-  --border-hover: #60a5fa;
+  --border-hover: #5a9bd4;
 
-  /* 暗色主题下阴影稍微淡一些 */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.25);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.3);
+  /* 阴影 - 暗色模式下的阴影 */
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
 
-  /* Header专用CSS变量 */
-  --header-gradient: linear-gradient(135deg, #002850, #0c2737);
-  --header-overlay: radial-gradient(circle at top right, rgba(255,255,255,0.05), transparent);
+  /* Header专用CSS变量 - 暗色模式钢蓝渐变 */
+  --header-gradient: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #1e293b 100%);
+  --header-overlay: radial-gradient(circle at top right, rgba(90, 155, 212, 0.1), transparent);
   --header-text-color: rgba(255, 255, 255, 0.95);
-  --header-text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  --search-bg: rgba(0, 0, 0, 0.25);
-  --input-bg: rgba(0, 0, 0, 0.3);
-  --input-bg-hover: rgba(0, 0, 0, 0.4);
-  --input-bg-focus: rgba(0, 0, 0, 0.5);
+  --header-text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  --search-bg: rgba(0, 0, 0, 0.3);
+  --input-bg: rgba(0, 0, 0, 0.4);
+  --input-bg-hover: rgba(0, 0, 0, 0.5);
+  --input-bg-focus: rgba(0, 0, 0, 0.6);
   --input-text: rgba(255, 255, 255, 0.95);
   --input-placeholder: rgba(255, 255, 255, 0.6);
   --input-border: rgba(255, 255, 255, 0.15);
-  --input-border-hover: rgba(255, 255, 255, 0.2);
-  --input-border-focus: rgba(255, 255, 255, 0.3);
+  --input-border-hover: rgba(255, 255, 255, 0.25);
+  --input-border-focus: rgba(90, 155, 212, 0.5);
   
   /* 下拉菜单变量 */
   --dropdown-bg: #1e293b;
-  --dropdown-text: #f1f5f9;
+  --dropdown-text: #f8fafc;
   --dropdown-border: #334155;
-
-  --header-text-color: rgba(255, 255, 255, 0.95);
-  --header-text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }

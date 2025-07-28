@@ -1,14 +1,16 @@
 <template>
   <footer class="pagination-wrapper" v-if="totalPages > 1">
-    <n-pagination
-      :page="modelValue"
-      :page-count="totalPages"
-      @update:page="handlePageChange"
-      :size="size"
-      :show-size-picker="false"
-      :show-quick-jumper="showQuickJumper"
-      :page-slot="pageSlot"
-    />
+    <div class="pagination-container">
+      <n-pagination
+        :page="modelValue"
+        :page-count="totalPages"
+        @update:page="handlePageChange"
+        :size="size"
+        :show-size-picker="false"
+        :show-quick-jumper="showQuickJumper"
+        :page-slot="pageSlot"
+      />
+    </div>
   </footer>
 </template>
 
@@ -54,10 +56,6 @@ const pageSlot = computed(() => {
 // 处理分页变化
 const handlePageChange = (page) => {
   emit('update:modelValue', page)
-  // 小屏幕下滚动到顶部
-  if (screenWidth.value <= 768) {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
 }
 
 // 监听屏幕尺寸变化
@@ -78,24 +76,40 @@ onUnmounted(() => {
 .pagination-wrapper {
   display: flex;
   justify-content: center;
-  margin: 2rem 0;
-  padding: 1rem 0;
+  margin: 2rem auto;
+  padding: 0;
   position: relative;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  padding: 12px 20px;
+  position: relative;
+  z-index: 1;
+  border-radius: 50px;
+  background: var(--pagination-bg, rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(10px);
+  width: fit-content;
+  min-width: 300px;
+  box-shadow: var(--shadow-sm);
 }
 
 /* 基础分页样式 */
 :deep(.n-pagination) {
-  --n-item-border-radius: 6px;
-  --n-item-padding: 0 14px;
-  --n-item-size: 32px;
-  --n-item-font-size: 14px;
   gap: 4px;
 }
 
 :deep(.n-pagination .n-pagination-item) {
-  color: var(--text-secondary) !important;
-  background-color: var(--bg-primary) !important;
-  border: 1px solid var(--border-light) !important;
+  color: var(--pagination-text, rgba(0, 0, 0, 0.85)) !important;
+  background: var(--pagination-item-bg, rgba(255, 255, 255, 0.08)) !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+  backdrop-filter: blur(8px);
+  min-width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  font-weight: 500;
   transition: all 0.3s ease !important;
   min-width: 32px;
   height: 32px;

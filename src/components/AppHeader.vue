@@ -1,5 +1,12 @@
 <template>
   <header class="app-header">
+    <!-- 背景装饰元素 -->
+    <div class="header-bg-decoration">
+      <div class="floating-circle circle-1"></div>
+      <div class="floating-circle circle-2"></div>
+      <div class="floating-circle circle-3"></div>
+    </div>
+    
     <n-space justify="end" style="padding: 16px">
       <n-switch 
         :value="modelValue" 
@@ -20,49 +27,22 @@
         <h1>Astrbot 插件市场 <span class="third-party-tag">demo</span></h1>
       </div>
     </div>
-    <div class="search-container">
-      <div class="search-wrapper">
-        <div class="custom-search-box">
-          <n-icon class="search-icon"><search /></n-icon>
-          <input
-            :value="searchQuery"
-            @input="handleSearchInput"
-            placeholder="搜索插件"
-            class="search-input"
-          />
-          <n-icon 
-            v-if="searchQuery"
-            class="clear-icon"
-            @click="handleClearSearch"
-          >
-            <close-circle />
-          </n-icon>
-        </div>
-        <n-select
-          v-model:value="sortBy"
-          :options="sortOptions"
-          @update:value="handleSortChange"
-          size="medium"
-          class="sort-select"
-        />
-      </div>
-    </div>
-    <div class="top-pagination-wrapper" v-if="totalPages > 1">
-      <n-pagination
-        :page="currentPage"
-        @update:page="(page) => $emit('update:currentPage', page)"
-        :page-count="totalPages"
-        :on-update:page="onPageChange"
-        size="small"
-      />
-    </div>
+    <search-toolbar
+      :search-query="searchQuery"
+      :current-page="currentPage"
+      :sort-by="sortBy"
+      @update:search-query="handleSearchQueryChange"
+      @update:current-page="handleCurrentPageChange"
+      @update:sort-by="handleSortByChange"
+    />
   </header>
 </template>
 
 <script setup>
-import { computed, onMounted, nextTick, ref } from 'vue'
-import { NSpace, NSwitch, NInput, NPagination, NIcon, NSelect } from 'naive-ui'
-import { Search, MoonSharp, SunnySharp, CloseCircle } from '@vicons/ionicons5'
+import { computed, onMounted } from 'vue'
+import { NSpace, NSwitch, NIcon } from 'naive-ui'
+import { MoonSharp, SunnySharp } from '@vicons/ionicons5'
+import SearchToolbar from './SearchToolbar.vue'
 
 const props = defineProps({
   modelValue: Boolean,
@@ -78,6 +58,18 @@ const handleThemeChange = (value) => {
   emit('update:modelValue', value)
 }
 
+const handleSearchQueryChange = (value) => {
+  emit('update:searchQuery', value)
+}
+
+const handleCurrentPageChange = (value) => {
+  emit('update:currentPage', value)
+}
+
+const handleSortByChange = (value) => {
+  emit('update:sortBy', value)
+}
+
 const railStyle = ({ focused, checked }) => {
   const style = {}
   if (checked) {
@@ -91,46 +83,22 @@ const railStyle = ({ focused, checked }) => {
   return style
 }
 
-const sortOptions = [
-  { label: '默认排序', value: 'default' },
-  { label: '按更新时间', value: 'updated' },
-  { label: '按 Star 数量', value: 'stars' }
-]
-
-const sortBy = ref(props.sortBy)
-
-const handleSortChange = (value) => {
-  emit('update:sortBy', value)
-}
-
-const onPageChange = (page) => {
-  emit('update:currentPage', page)
-  window.scrollTo({ top: 0, behavior: 'instant' })
-}
-
-const handleSearchInput = (e) => {
-  const value = e.target.value
-  emit('update:searchQuery', value)
-  // 如果当前页不是第一页，自动重置到第一页
-  if (props.currentPage > 1) {
-    emit('update:currentPage', 1)
-  }
-}
-
-const handleClearSearch = () => {
-  emit('update:searchQuery', '')
-  // 重置到第一页
-  if (props.currentPage > 1) {
-    emit('update:currentPage', 1)
-  }
-}
-
 onMounted(() => {
   // 移除了下拉菜单样式的动态更新
 })
 </script>
 
 <style scoped>
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+}
+
 @keyframes header-slide-down {
   0% {
     opacity: 0;
@@ -170,12 +138,57 @@ onMounted(() => {
   pointer-events: none;
 }
 
+/* 背景装饰 */
+.header-bg-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.circle-1 {
+  width: 200px;
+  height: 200px;
+  top: -100px;
+  right: -50px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.circle-2 {
+  width: 150px;
+  height: 150px;
+  bottom: -75px;
+  left: -30px;
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+.circle-3 {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  right: 10%;
+  animation: pulse 4s ease-in-out infinite;
+}
+
 .header-title {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 35px;
   gap: 16px;
+  position: relative;
+  z-index: 2;
 }
 
 .header-logo {
@@ -238,6 +251,8 @@ onMounted(() => {
   --n-loading-color: var(--primary-color);
   width: 50px !important;
   height: 24px !important;
+  position: relative;
+  z-index: 3;
 }
 
 :deep(.n-switch .n-switch__rail) {
@@ -253,225 +268,6 @@ onMounted(() => {
 :deep(.n-switch .n-switch__button-icon) {
   font-size: 14px;
   color: var(--primary-color);
-}
-
-/* 搜索框容器 */
-.search-container {
-  display: flex;
-  justify-content: center;
-  max-width: 800px;
-  margin: 0 auto 16px;
-  position: relative;
-  z-index: 1;
-}
-
-.search-wrapper {
-  display: flex;
-  width: 100%;
-  gap: 12px;
-  align-items: center;
-}
-
-/* 排序选择器样式 */
-.sort-select {
-  width: 140px;
-  flex-shrink: 0;
-}
-
-:deep(.sort-select .n-base-selection) {
-  background: transparent !important;
-  border: none !important;
-  transition: all 0.3s ease !important;
-  height: 44px !important;
-  border-radius: 30px !important;
-  box-shadow: var(--shadow-sm) !important;
-  padding: 0 0px !important;
-}
-
-:deep(.sort-select .n-base-selection-overlay) {
-  background: var(--input-bg) !important;
-  border-radius: 30px !important;
-  box-shadow: var(--shadow-sm) !important;
-  transition: all 0.3s ease !important;
-}
-
-:deep(.sort-select .n-base-selection-overlay:hover) {
-  background: var(--input-bg-hover) !important;
-  box-shadow: var(--shadow-md) !important;
-}
-
-:deep(.sort-select .n-base-selection:focus-within .n-base-selection-overlay) {
-  background: var(--input-bg-focus) !important;
-  box-shadow: var(--shadow-md), 0 0 0 3px rgba(96, 165, 250, 0.2) !important;
-}
-
-:deep(.sort-select .n-base-selection-label) {
-  color: var(--input-text) !important;
-  height: 44px !important;
-  display: flex !important;
-  align-items: center !important;
-  padding: 0 0px !important;
-  font-weight: 500 !important;
-  opacity: 0.6;
-}
-
-:deep(.sort-select .n-base-selection-placeholder) {
-  color: var(--input-placeholder) !important;
-  font-weight: 400 !important;
-}
-
-:deep(.sort-select .n-base-selection__border) {
-  display: none !important;
-}
-
-:deep(.sort-select .n-base-selection__state-border) {
-  display: none !important;
-}
-
-/* 下拉菜单样式统一 */
-:deep(.n-base-select-menu) {
-  border-radius: 16px !important;
-  padding: 8px !important;
-  box-shadow: var(--shadow-lg) !important;
-  border: none !important;
-  background: var(--input-bg) !important;
-  color: var(--input-text) !important;
-}
-
-:deep(.n-base-select-option) {
-  border-radius: 12px !important;
-  margin: 2px 0 !important;
-  padding: 8px 12px !important;
-  transition: all 0.2s ease !important;
-  color: var(--input-text) !important;
-}
-
-:deep(.n-base-select-option:hover) {
-  background: var(--input-bg-hover) !important;
-}
-
-/* 自定义搜索框 - 简洁的单层结构 */
-.custom-search-box {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 44px;
-  background: var(--input-bg);
-  border: 0px solid var(--input-border);
-  border-radius: 30px;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.3s ease;
-  overflow: hidden;
-  padding: 0 16px;
-  gap: 12px;
-}
-
-.custom-search-box:hover {
-  background: var(--input-bg-hover);
-  border-color: var(--input-border-hover, var(--input-border));
-  box-shadow: var(--shadow-md);
-}
-
-.custom-search-box:focus-within {
-  background: var(--input-bg-focus);
-  border-color: var(--primary-color);
-  box-shadow: var(--shadow-md), 0 0 0 3px rgba(96, 165, 250, 0.2);
-}
-
-/* 搜索图标 */
-.search-icon {
-  color: var(--input-text);
-  font-size: 18px;
-  flex-shrink: 0;
-  opacity: 0.7;
-}
-
-.custom-search-box:focus-within .search-icon {
-  color: var(--primary-color);
-  opacity: 1;
-}
-
-/* 清除按钮 */
-.clear-icon {
-  color: var(--input-text);
-  font-size: 18px;
-  flex-shrink: 0;
-  opacity: 0.5;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.clear-icon:hover {
-  opacity: 0.8;
-  transform: scale(1.1);
-}
-
-.clear-icon:active {
-  opacity: 1;
-  transform: scale(0.95);
-}
-
-/* 搜索输入框 */
-.search-input {
-  flex: 1;
-  height: 100%;
-  border: none;
-  outline: none;
-  background: transparent;
-  color: var(--input-text);
-  font-size: 16px;
-  font-weight: 500;
-  padding: 0;
-  margin: 0;
-}
-
-.search-input::placeholder {
-  color: var(--input-placeholder);
-  font-weight: 400;
-}
-
-/* 顶部分页样式 */
-.top-pagination-wrapper {
-  display: flex;
-  justify-content: center;
-  padding: 0 20px;
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 1;
-}
-
-:deep(.top-pagination-wrapper .n-pagination) {
-  gap: 4px;
-}
-
-:deep(.top-pagination-wrapper .n-pagination-item) {
-  color: rgba(255, 255, 255, 0.85) !important;
-  background-color: rgba(255, 255, 255, 0.08) !important;
-  border: none !important;
-  transition: all 0.3s ease !important;
-  backdrop-filter: blur(8px);
-  min-width: 32px;
-  height: 32px;
-  border-radius: 6px;
-  font-weight: 500;
-}
-
-:deep(.top-pagination-wrapper .n-pagination-item--active) {
-  color: white !important;
-  background-color: rgba(255, 255, 255, 0.25) !important;
-  font-weight: 600;
-}
-
-:deep(.top-pagination-wrapper .n-pagination-item--clickable:hover) {
-  color: white !important;
-  background-color: rgba(255, 255, 255, 0.18) !important;
-}
-
-:deep(.top-pagination-wrapper .n-pagination-prefix),
-:deep(.top-pagination-wrapper .n-pagination-suffix) {
-  color: rgba(255, 255, 255, 0.85) !important;
-  font-size: 14px;
-  margin: 0 8px;
 }
 
 /* ===== 响应式设计优化 ===== */
@@ -498,17 +294,6 @@ onMounted(() => {
   .title-wrapper {
     height: 54px;
   }
-  
-  /* 顶部分页器平板优化 */
-  .top-pagination-wrapper {
-    padding: 0 16px;
-  }
-  
-  :deep(.top-pagination-wrapper .n-pagination-item) {
-    min-width: 30px;
-    height: 30px;
-    font-size: 13px;
-  }
 }
 
 /* 平板和手机通用样式 (最大 768px) */
@@ -523,28 +308,29 @@ onMounted(() => {
     max-width: 90%;
     margin: 0 auto 12px;
   }
+  
+  .circle-1 {
+    width: 120px;
+    height: 120px;
+    top: -60px;
+    right: -30px;
+  }
+  
+  .circle-2 {
+    width: 100px;
+    height: 100px;
+    bottom: -50px;
+    left: -20px;
+  }
+  
+  .circle-3 {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 /* 仅手机设备 (最大 480px) */
 @media (max-width: 480px) {
-  .search-wrapper {
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
-  }
-
-  .sort-select {
-    width: 100%;
-  }
-
-  :deep(.sort-select .n-base-selection) {
-    height: 40px !important;
-    max-width: 120px;
-  }
-
-  :deep(.sort-select .n-base-selection-label) {
-    height: 40px !important;
-  }
   .app-header {
     margin-bottom: 24px;
     padding: 20px 16px;
@@ -580,26 +366,6 @@ onMounted(() => {
     padding: 3px 6px;
     margin-left: 3px;
     transform: translateY(-2px);
-  }
-  
-  /* 搜索框优化 */
-  .search-container {
-    padding: 0 8px;
-    margin-bottom: 12px;
-  }
-  
-  .custom-search-box {
-    height: 40px;
-    padding: 0 14px;
-    gap: 10px;
-  }
-  
-  .search-icon {
-    font-size: 16px;
-  }
-  
-  .search-input {
-    font-size: 15px;
   }
   
   /* 分页优化 */
@@ -679,6 +445,15 @@ onMounted(() => {
   :deep(.n-switch .n-switch__button-icon) {
     font-size: 12px;
   }
+  
+  .circle-1, .circle-2 {
+    display: none;
+  }
+  
+  .circle-3 {
+    width: 60px;
+    height: 60px;
+  }
 }
 
 /* 小屏手机设备 (最大 480px) */
@@ -703,33 +478,6 @@ onMounted(() => {
     padding: 2px 5px;
     border-radius: 8px;
   }
-  
-  .search-container {
-    padding: 0;
-    max-width: 85%;
-  }
-  
-  .custom-search-box {
-    height: 38px;
-    padding: 0 12px;
-    border-radius: 25px;
-  }
-  
-  .search-input {
-    font-size: 14px;
-  }
-  
-  /* 分页在小屏幕上的特殊处理 */
-  :deep(.top-pagination-wrapper .n-pagination) {
-    transform: scale(0.95);
-    transform-origin: center;
-  }
-  
-  :deep(.top-pagination-wrapper .n-pagination-item) {
-    min-width: 28px !important;
-    height: 28px !important;
-    font-size: 12px !important;
-  }
 }
 
 /* 超小屏幕设备 (最大 360px) */
@@ -745,36 +493,6 @@ onMounted(() => {
   .header-logo {
     width: 50px;
     height: 50px;
-  }
-
-  .search-container {
-    max-width: 80%;
-  }
-  
-  .custom-search-box {
-    height: 36px;
-    padding: 0 10px;
-    gap: 8px;
-  }
-  
-  .search-icon {
-    font-size: 15px;
-  }
-  
-  .search-input {
-    font-size: 13px;
-  }
-  
-  /* 进一步缩小顶部分页 */
-  :deep(.top-pagination-wrapper .n-pagination) {
-    transform: scale(0.9);
-    transform-origin: center;
-  }
-  
-  :deep(.top-pagination-wrapper .n-pagination-item) {
-    min-width: 26px !important;
-    height: 26px !important;
-    font-size: 11px !important;
   }
 }
 
@@ -798,40 +516,14 @@ onMounted(() => {
     width: 32px;
     height: 32px;
   }
-  
-  .custom-search-box {
-    height: 36px;
-  }
 }
 
 /* 触摸设备优化 */
 @media (hover: none) and (pointer: coarse) {
-  .custom-search-box:hover {
-    background: var(--input-bg);
-    border-color: var(--input-border);
-    box-shadow: var(--shadow-sm);
-  }
-  
   /* 增加触摸目标大小 */
   :deep(.n-switch) {
     min-width: 50px !important;
     min-height: 30px !important;
-  }
-  
-  /* 顶部分页器触摸优化 */
-  :deep(.top-pagination-wrapper .n-pagination-item) {
-    min-width: 40px !important;
-    min-height: 40px !important;
-  }
-  
-  :deep(.top-pagination-wrapper .n-pagination-item--clickable:hover) {
-    transform: none !important;
-    box-shadow: 0 2px 12px rgba(255, 255, 255, 0.2) !important;
-  }
-  
-  :deep(.top-pagination-wrapper .n-pagination-item--clickable:active) {
-    transform: scale(0.95) !important;
-    background-color: rgba(255, 255, 255, 0.2) !important;
   }
 }
 
@@ -841,9 +533,10 @@ onMounted(() => {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
   }
-  
-  .custom-search-box {
-    border-width: 0.5px;
-  }
+}
+
+/* 暗色主题适配 */
+:global(.dark) .floating-circle {
+  background: rgba(90, 155, 212, 0.1);
 }
 </style>
