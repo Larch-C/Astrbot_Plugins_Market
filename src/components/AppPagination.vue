@@ -73,12 +73,24 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+@keyframes pagination-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .pagination-wrapper {
   display: flex;
   justify-content: center;
   margin: 2rem auto;
   padding: 0;
   position: relative;
+  animation: pagination-fade-in 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .pagination-container {
@@ -93,37 +105,58 @@ onUnmounted(() => {
   width: fit-content;
   min-width: 300px;
   box-shadow: var(--shadow-sm);
+  will-change: transform, opacity;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    background: var(--pagination-bg-hover, rgba(255, 255, 255, 0.08));
+    transform: translateY(-2px);
+  }
 }
 
 /* 基础分页样式 */
 :deep(.n-pagination) {
   gap: 4px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+  
+  &:hover .n-pagination-item:not(:hover):not(.n-pagination-item--active) {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
 }
 
 :deep(.n-pagination .n-pagination-item) {
   color: var(--pagination-text, rgba(0, 0, 0, 0.85)) !important;
   background: var(--pagination-item-bg, rgba(255, 255, 255, 0.08)) !important;
   border: none !important;
-  transition: all 0.3s ease !important;
   backdrop-filter: blur(8px);
   min-width: 32px;
   height: 32px;
   border-radius: 6px;
   font-weight: 500;
-  transition: all 0.3s ease !important;
   min-width: 32px;
   height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  will-change: transform, background-color, color;
+  transform-origin: center;
+}
+
+@keyframes page-num-scale {
+  0% { transform: scale(0.9); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 :deep(.n-pagination .n-pagination-item--clickable:hover) {
   color: var(--primary-color) !important;
   background-color: var(--primary-light) !important;
   border-color: var(--primary-color) !important;
-  transform: translateY(-1px);
+  transform: translateY(-1px) scale(1.05);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -133,6 +166,7 @@ onUnmounted(() => {
   border-color: var(--primary-color) !important;
   font-weight: 600 !important;
   box-shadow: 0 2px 12px rgba(96, 165, 250, 0.3);
+  animation: page-num-scale 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 :deep(.n-pagination .n-pagination-prefix),

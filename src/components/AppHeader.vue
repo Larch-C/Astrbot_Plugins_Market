@@ -99,16 +99,35 @@ onMounted(() => {
   50% { opacity: 0.8; }
 }
 
-@keyframes header-slide-down {
+@keyframes circle-appear {
   0% {
     opacity: 0;
-    transform: translateY(-100%);
-  }
-  30% {
-    opacity: 0;
+    transform: scale(0.6);
   }
   100% {
     opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes content-fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes header-slide-down {
+  0% {
+    clip-path: inset(0 0 100% 0 round 0 0 32px 32px);
+    transform: translateY(-20px);
+  }
+  100% {
+    clip-path: inset(0 0 0 0 round 0 0 32px 32px);
     transform: translateY(0);
   }
 }
@@ -119,12 +138,12 @@ onMounted(() => {
   padding: 32px 20px;
   background: var(--header-gradient);
   border-radius: 0 0 32px 32px;
-  box-shadow: var(--shadow-lg);
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
-  animation: header-slide-down 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  animation: header-slide-down 0.6s cubic-bezier(0.33, 1, 0.68, 1) forwards;
   transform-origin: top;
+  will-change: transform, clip-path;
+  contain: paint layout;
 }
 
 .app-header::before {
@@ -155,6 +174,7 @@ onMounted(() => {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
+  opacity: 0;
 }
 
 .circle-1 {
@@ -162,15 +182,21 @@ onMounted(() => {
   height: 200px;
   top: -100px;
   right: -50px;
-  animation: float 6s ease-in-out infinite;
+  animation: 
+    float 6s ease-in-out infinite,
+    circle-appear 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards 0.5s;
+  will-change: transform, opacity;
 }
 
 .circle-2 {
   width: 150px;
   height: 150px;
-  bottom: -75px;
-  left: -30px;
-  animation: float 8s ease-in-out infinite reverse;
+  bottom: -40px;  /* 调整位置，确保不会超出圆角 */
+  left: 20px;     /* 向右移动，避免超出左侧 */
+  animation: 
+    float 8s ease-in-out infinite reverse,
+    circle-appear 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards 0.6s;
+  will-change: transform, opacity;
 }
 
 .circle-3 {
@@ -178,7 +204,10 @@ onMounted(() => {
   height: 100px;
   top: 50%;
   right: 10%;
-  animation: pulse 4s ease-in-out infinite;
+  animation: 
+    pulse 4s ease-in-out infinite,
+    circle-appear 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards 0.7s;
+  will-change: transform, opacity;
 }
 
 .header-title {
@@ -189,12 +218,16 @@ onMounted(() => {
   gap: 16px;
   position: relative;
   z-index: 2;
+  animation: content-fade-up 0.5s cubic-bezier(0.33, 1, 0.68, 1) forwards 0.4s;
+  opacity: 0;
+  will-change: transform, opacity;
 }
 
 .header-logo {
   width: 48px;
   height: 48px;
   object-fit: contain;
+  transform-origin: center;
 }
 
 .title-wrapper {
