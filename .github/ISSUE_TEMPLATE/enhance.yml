@@ -52,7 +52,7 @@ body:
       label: 提交前检查 ✅
       options:
         - label: 我确认此功能未在现有页面中实现
-        - label: 我已在 [Issue 区](https://github.com/IGCrystal-NEO/Astrbot-Plugins-Market/issues) 搜索，未发现重复建议
+        - label: 我已在 [Issue 区](https://github.com/IGCrystal-NEO/Astrbot_Plugins_Market/issues) 搜索，未发现重复建议
         - label: 我愿意在有时间的情况下协助实现这个功能
         - label: 我知道功能开发可能需要时间，会耐心等待♡
 
