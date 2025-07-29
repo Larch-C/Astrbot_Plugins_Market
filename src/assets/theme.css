@@ -48,6 +48,56 @@
   --dropdown-bg: #ffffff;
   --dropdown-text: #0f172a;
   --dropdown-border: #e2e8f0;
+
+  /* 滚动条变量 */
+  --scrollbar-track: transparent;
+  --scrollbar-thumb: rgba(203, 213, 225, 0.3);
+  --scrollbar-thumb-hover: rgba(148, 163, 184, 0.5);
+  --scrollbar-width: 6px;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+  height: var(--scrollbar-width);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Firefox 滚动条样式 */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Firefox 暗色模式滚动条 */
+.dark * {
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Webkit 暗色模式滚动条 */
+.dark ::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
 }
 
 /* 暗色主题 */
@@ -99,4 +149,9 @@
   --dropdown-bg: #1e293b;
   --dropdown-text: #f8fafc;
   --dropdown-border: #334155;
+  
+  /* 滚动条变量 */
+  --scrollbar-track: transparent;
+  --scrollbar-thumb: rgba(255, 255, 255, 0.2);
+  --scrollbar-thumb-hover: rgba(90, 155, 212, 0.5);
 }

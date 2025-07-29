@@ -1,5 +1,11 @@
 <template>
-  <n-card class="plugin-card" :bordered="false" :style="{ borderRadius: '16px' }" :content-style="{ padding: '20px' }">
+  <n-card 
+    class="plugin-card" 
+    :bordered="false" 
+    :style="{ borderRadius: '16px' }" 
+    :content-style="{ padding: '20px' }"
+    @click="showDetails"
+  >
     <template #header>
       <div class="card-header">
         <div class="plugin-name-container" ref="nameContainer">
@@ -46,7 +52,7 @@
             type="primary"
             secondary
             size="small"
-            @click="openUrl(plugin.repo)"
+            @click="(e) => openUrl(plugin.repo, e)"
             class="main-button"
           >
             查看仓库
@@ -78,7 +84,7 @@
                   secondary
                   size="small"
                   circle
-                  @click="openUrl(plugin.social_link)"
+                  @click="(e) => openUrl(plugin.social_link, e)"
                 >
                   <n-icon size="18">
                     <person-outline />
@@ -92,6 +98,12 @@
       </div>
     </n-space>
   </n-card>
+
+  <!-- 插件详情模态框 -->
+  <plugin-details
+    v-model:show="showPluginDetails"
+    :plugin="plugin"
+  />
 </template>
 
 <script setup>
@@ -106,7 +118,9 @@ import {
   NTooltip
 } from 'naive-ui'
 import { StarSharp, LinkOutline, PersonOutline, CheckmarkOutline } from '@vicons/ionicons5'
+import PluginDetails from './PluginDetails.vue'
 
+const showPluginDetails = ref(false)
 const props = defineProps({
   plugin: {
     type: Object,
@@ -187,13 +201,8 @@ onUnmounted(() => {
 const message = useMessage()
 const isCopied = ref(false)
 
-const openUrl = (url) => {
-  if (url) {
-    window.open(url, '_blank')
-  }
-}
-
-const copyRepoUrl = async () => {
+const copyRepoUrl = async (e) => {
+  e.stopPropagation() // 阻止事件冒泡
   if (props.plugin.repo) {
     try {
       await navigator.clipboard.writeText(props.plugin.repo)
@@ -205,6 +214,17 @@ const copyRepoUrl = async () => {
       message.error('复制失败，请手动复制')
     }
   }
+}
+
+const openUrl = (url, e) => {
+  e?.stopPropagation() // 阻止事件冒泡
+  if (url) {
+    window.open(url, '_blank')
+  }
+}
+
+const showDetails = () => {
+  showPluginDetails.value = true
 }
 </script>
 
