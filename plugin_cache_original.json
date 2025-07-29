@@ -171,8 +171,8 @@
       "拟人"
     ],
     "social_link": "https://github.com/advent259141",
-    "stars": 13,
-    "updated_at": "2025-07-29T13:16:35Z",
+    "stars": 14,
+    "updated_at": "2025-07-29T15:10:52Z",
     "version": "1.2.0"
   },
   "cngal_search": {
@@ -331,8 +331,8 @@
       "主动回复",
       "沉浸式"
     ],
-    "stars": 10,
-    "updated_at": "2025-07-27T14:58:46Z",
+    "stars": 11,
+    "updated_at": "2025-07-29T15:10:50Z",
     "version": "1.4.5"
   },
   "astrbot_plugin_choulaopo": {
@@ -344,8 +344,8 @@
       "工具",
       "娱乐"
     ],
-    "stars": 2,
-    "updated_at": "2025-07-22T09:38:46Z",
+    "stars": 3,
+    "updated_at": "2025-07-29T15:10:46Z",
     "version": "v1.0.3"
   },
   "astrbot_plugin_file": {
@@ -821,8 +821,8 @@
       "调教"
     ],
     "social_link": "https://github.com/oyxning",
-    "stars": 16,
-    "updated_at": "2025-07-28T05:49:42Z",
+    "stars": 17,
+    "updated_at": "2025-07-29T15:13:36Z",
     "version": "v3.0.0"
   },
   "astrbot_plugin_alistfile": {
@@ -1383,8 +1383,8 @@
     "desc": "给聊天增加了当前时间提示词，让模型有一定的时间观念，还会让模型知道你们上一次对话间隔了多久[可在插件配置选择是否开启，默认开启]",
     "repo": "https://github.com/wuyan1003/time_prompt",
     "tags": [],
-    "stars": 6,
-    "updated_at": "2025-07-15T01:53:33Z",
+    "stars": 7,
+    "updated_at": "2025-07-29T15:17:50Z",
     "version": "v1.0.0"
   },
   "astrbot_plugin_seiadetect": {
@@ -1404,8 +1404,8 @@
       "RAG",
       "知识库"
     ],
-    "stars": 43,
-    "updated_at": "2025-07-29T12:28:12Z",
+    "stars": 44,
+    "updated_at": "2025-07-29T15:19:14Z",
     "version": "v0.5.8"
   },
   "astrbot_uptime_kuma_webhook_plugin": {
@@ -1604,8 +1604,8 @@
     "tags": [
       "戳"
     ],
-    "stars": 2,
-    "updated_at": "2025-05-24T14:54:02Z",
+    "stars": 3,
+    "updated_at": "2025-07-29T15:20:25Z",
     "version": "v1.1"
   },
   "astrbot_plugin_sql_history": {
@@ -1761,8 +1761,8 @@
       "戳一戳"
     ],
     "social_link": "https://github.com/Zhalslar",
-    "stars": 14,
-    "updated_at": "2025-07-20T23:23:47Z",
+    "stars": 15,
+    "updated_at": "2025-07-29T15:22:27Z",
     "version": "v1.0.8"
   },
   "astrbot_plugin_jm_cosmos": {
@@ -2099,8 +2099,8 @@
     "repo": "https://github.com/tinkerbellqwq/astrbot_plugin_help",
     "social_link": "https://github.com/tinkerbellqwq",
     "tags": [],
-    "stars": 15,
-    "updated_at": "2025-06-12T10:33:05Z",
+    "stars": 16,
+    "updated_at": "2025-07-29T15:20:16Z",
     "version": "v1.1.2"
   },
   "astrbot_qqemotionreply": {
@@ -2297,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-29T13:45:37Z",
+    "updated_at": "2025-07-29T14:29:05Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
