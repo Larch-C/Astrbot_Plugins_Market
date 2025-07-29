@@ -2297,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-29T20:29:14Z",
+    "updated_at": "2025-07-29T21:25:18Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3947,8 +3947,8 @@
       "webui",
       "图床"
     ],
-    "stars": 67,
-    "updated_at": "2025-07-29T15:34:47Z",
+    "stars": 68,
+    "updated_at": "2025-07-29T21:27:41Z",
     "version": "v3.13"
   },
   "mccloud_command": {
