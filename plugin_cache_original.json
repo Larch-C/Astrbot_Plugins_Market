@@ -120,8 +120,8 @@
       "服务器",
       "监控"
     ],
-    "stars": 1,
-    "updated_at": "2025-07-26T18:48:30Z",
+    "stars": 2,
+    "updated_at": "2025-07-29T09:49:39Z",
     "version": "v1.1"
   },
   "astrbot_plugin_scheduler": {
@@ -877,7 +877,7 @@
     "social_link": "https://xingyu.ink",
     "tags": [],
     "stars": 0,
-    "updated_at": "2025-06-13T16:06:10Z",
+    "updated_at": "2025-07-29T10:07:58Z",
     "version": "1.0.0"
   },
   "astrbot_plugin_wbank": {
@@ -1133,8 +1133,8 @@
       "Steam"
     ],
     "social_link": "https://github.com/Maoer233",
-    "stars": 3,
-    "updated_at": "2025-06-11T10:03:12Z",
+    "stars": 4,
+    "updated_at": "2025-07-29T10:01:48Z",
     "version": "1.0.0"
   },
   "astrbot_plugin_xiaoxue": {
@@ -1684,8 +1684,8 @@
       "fish"
     ],
     "stars": 25,
-    "updated_at": "2025-07-27T16:49:12Z",
-    "version": "1.4.5"
+    "updated_at": "2025-07-29T10:20:31Z",
+    "version": "1.4.6"
   },
   "astrbot_plugin_bilibili_live": {
     "author": "Raven95676",
@@ -2297,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-29T08:35:09Z",
+    "updated_at": "2025-07-29T09:31:19Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3067,7 +3067,7 @@
       "英语"
     ],
     "stars": 5,
-    "updated_at": "2025-07-18T17:19:13Z",
+    "updated_at": "2025-07-29T09:35:40Z",
     "version": "v1.1.2"
   },
   "astrbot_plugin_weather_wttr_in": {
