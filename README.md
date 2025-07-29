@@ -5,7 +5,7 @@
 ## 提交插件
 
 > [!NOTE]
-> 请点击链接前往 AstrBot 主仓库提交插件：[🥳 发布插件](https://github.com/Soulter/AstrBot/issues/new?template=PLUGIN_PUBLISH.yml)
+> 请点击链接前往 AstrBot 主仓库提交插件：[🥳 发布插件](https://github.com/AstrBotDevs/AstrBot/issues/new?template=PLUGIN_PUBLISH.yml)
 
 
 ## Action 类别
