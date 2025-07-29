@@ -247,7 +247,7 @@ const showDetails = () => {
   border: 3px solid var(--border-base);
   box-shadow: var(--shadow-sm);
   background-color: var(--bg-card);
-  height: 495px;
+  min-height: 495px;
   display: flex;
   flex-direction: column;
   min-width: 100%;
