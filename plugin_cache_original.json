@@ -6,8 +6,8 @@
     "tags": "文件解析",
     "social_link": "https://qm.qq.com/q/d4lwUp9ap4",
     "stars": 0,
-    "updated_at": "2025-07-27T17:06:12Z",
-    "version": "v1.0.0"
+    "updated_at": "2025-07-29T08:30:46Z",
+    "version": "v1.0.1"
   },
   "astrbot_plugin_img_rev_seacher": {
     "desc": "图片反搜项目，以图搜图，找出处",
@@ -2297,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-29T07:28:27Z",
+    "updated_at": "2025-07-29T08:35:09Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
