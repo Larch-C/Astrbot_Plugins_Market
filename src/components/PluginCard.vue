@@ -5,27 +5,62 @@
     :style="{ borderRadius: '16px' }" 
     :content-style="{ padding: '20px' }"
     @click="showDetails"
+    role="article"
+    :aria-label="`插件: ${plugin.name}`"
+    aria-roledescription="插件卡片"
+    :aria-expanded="showPluginDetails"
+    tabindex="0"
   >
     <template #header>
-      <div class="card-header">
-        <div class="plugin-name-container" ref="nameContainer">
+      <div 
+        class="card-header" 
+        role="banner" 
+        aria-labelledby="plugin-header-content"
+      >
+        <div 
+          id="plugin-header-content"
+          class="plugin-name-container" 
+          ref="nameContainer" 
+          role="heading" 
+          aria-level="2"
+          aria-label="插件卡片标题区域"
+        >
           <h3 
             class="plugin-name" 
             :class="{ 'marquee': isTextOverflow }"
             ref="pluginNameEl"
+            role="heading"
+            aria-level="3"
+            :aria-label="plugin.name"
+            :aria-description="`插件：${plugin.name}，版本 ${plugin.version}`"
           >
-            <span class="plugin-name-text" ref="nameTextEl">{{ plugin.name }}</span>
+            <span 
+              class="plugin-name-text" 
+              ref="nameTextEl"
+              :aria-hidden="isTextOverflow"
+            >{{ plugin.name }}</span>
           </h3>
         </div>
-        <n-tag type="success" size="small" :bordered="false" class="version-tag">
+        <n-tag 
+          type="success" 
+          size="small" 
+          :bordered="false" 
+          class="version-tag"
+          role="text"
+          :aria-label="`版本号：${plugin.version.startsWith('v') ? plugin.version : 'v' + plugin.version}`"
+        >
           {{ plugin.version.startsWith('v') ? plugin.version : 'v' + plugin.version }}
         </n-tag>
       </div>
     </template>
     <n-space vertical class="card-content">
-      <p class="description">{{ plugin.desc }}</p>
-      <div class="tags-container">
-        <n-space class="tags-space">
+      <p class="description" role="contentinfo" aria-label="插件描述">{{ plugin.desc }}</p>
+      <div 
+        class="tags-container" 
+        role="region" 
+        aria-label="插件标签区域"
+      >
+        <n-space class="tags-space" role="list" aria-label="标签列表">
           <n-tag
             v-for="tag in plugin.tags"
             :key="tag"
@@ -33,31 +68,37 @@
             :bordered="false"
             type="info"
             class="plugin-tag"
+            role="listitem"
+            :aria-label="`标签：${tag}`"
           >
             {{ tag }}
           </n-tag>
         </n-space>
       </div>
-      <div class="plugin-meta">
-        <span class="author">作者: {{ plugin.author }}</span>
-        <n-space align="center" class="stars">
-          <n-icon><star-sharp /></n-icon>
-          <span>{{ plugin.stars }}</span>
+      <div class="plugin-meta" role="group" aria-label="插件元数据">
+        <span class="author" role="text" :aria-label="`作者: ${plugin.author}`">作者: {{ plugin.author }}</span>
+        <n-space align="center" class="stars" role="group" aria-label="星标数">
+          <n-icon aria-hidden="true"><star-sharp /></n-icon>
+          <span role="text">{{ plugin.stars }}</span>
         </n-space>
       </div>
       <!-- 优化后的按钮区域 -->
-      <div class="plugin-links">
-        <div class="button-group">
+      <div class="plugin-links" role="toolbar" aria-label="插件操作区">
+        <div class="button-group" role="group" aria-label="插件链接操作">
           <n-button
             type="primary"
             secondary
             size="small"
             @click="(e) => openUrl(plugin.repo, e)"
             class="main-button"
+            role="link"
+            :aria-label="`查看 ${plugin.name} 的仓库`"
+            aria-haspopup="true"
+            aria-expanded="false"
           >
             查看仓库
           </n-button>
-          <div class="icon-buttons">
+          <div class="icon-buttons" role="group" aria-label="快捷操作按钮组">
             <n-tooltip placement="top" trigger="hover">
               <template #trigger>
                 <n-button
@@ -65,8 +106,12 @@
                   size="small"
                   circle
                   @click="copyRepoUrl"
+                  role="button"
+                  :aria-label="`复制 ${plugin.name} 的仓库链接`"
+                  :aria-pressed="isCopied"
+                  aria-live="polite"
                 >
-                  <n-icon size="18">
+                  <n-icon size="18" aria-hidden="true">
                     <template v-if="isCopied">
                       <checkmark-outline />
                     </template>
@@ -76,7 +121,7 @@
                   </n-icon>
                 </n-button>
               </template>
-              {{ isCopied ? '已复制链接！' : '复制仓库链接' }}
+              <span role="tooltip">{{ isCopied ? '已复制链接！' : '复制仓库链接' }}</span>
             </n-tooltip>
             <n-tooltip v-if="plugin.social_link" placement="top" trigger="hover">
               <template #trigger>
@@ -85,13 +130,17 @@
                   size="small"
                   circle
                   @click="(e) => openUrl(plugin.social_link, e)"
+                  role="link"
+                  :aria-label="`访问${plugin.author}的主页`"
+                  aria-haspopup="true"
+                  aria-expanded="false"
                 >
-                  <n-icon size="18">
+                  <n-icon size="18" aria-hidden="true">
                     <person-outline />
                   </n-icon>
                 </n-button>
               </template>
-              访问作者主页
+              <span role="tooltip">访问作者主页</span>
             </n-tooltip>
           </div>
         </div>

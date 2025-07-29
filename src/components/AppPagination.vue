@@ -9,13 +9,26 @@
         :show-size-picker="false"
         :show-quick-jumper="showQuickJumper"
         :page-slot="pageSlot"
-      />
+        aria-label="页面导航"
+        ref="paginationRef"
+      >
+        <template #goto>
+          <label 
+            id="pagination-goto-label" 
+            class="sr-only" 
+            :for="quickJumperId"
+          >跳转到</label>
+        </template>
+        <template #goto-icon>
+          <span class="sr-only">确认跳转</span>
+        </template>
+      </n-pagination>
     </div>
   </footer>
 </template>
 
 <script setup>
-import { computed, ref, onMounted, onUnmounted } from 'vue'
+import { computed, ref, onMounted, onUnmounted, nextTick } from 'vue'
 import { NPagination } from 'naive-ui'
 
 const props = defineProps({
@@ -31,6 +44,24 @@ const props = defineProps({
     type: String,
     default: 'medium'
   }
+})
+
+const paginationRef = ref(null)
+const quickJumperId = ref('pagination-quick-jumper-' + Math.random().toString(36).substr(2, 9))
+
+// 在组件挂载后设置输入框的无障碍属性
+onMounted(() => {
+  nextTick(() => {
+    const input = paginationRef.value?.$el?.querySelector('.n-pagination-quick-jumper input')
+    if (input) {
+      input.setAttribute('id', quickJumperId.value)
+      input.setAttribute('aria-labelledby', 'pagination-goto-label')
+      input.setAttribute('role', 'spinbutton')
+      input.setAttribute('aria-valuemin', '1')
+      input.setAttribute('aria-valuemax', props.totalPages.toString())
+      input.setAttribute('aria-valuenow', props.modelValue.toString())
+    }
+  })
 })
 
 const emit = defineEmits(['update:modelValue'])
@@ -179,6 +210,9 @@ onUnmounted(() => {
 /* 快速跳转输入框样式 */
 :deep(.n-pagination .n-pagination-quick-jumper) {
   margin-left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 :deep(.n-pagination .n-pagination-quick-jumper .n-input) {
@@ -188,6 +222,19 @@ onUnmounted(() => {
 :deep(.n-pagination .n-pagination-quick-jumper .n-input .n-input__input-el) {
   text-align: center;
   font-size: 13px !important;
+}
+
+/* 屏幕阅读器专用样式 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* ===== 响应式优化 ===== */

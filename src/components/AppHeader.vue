@@ -12,17 +12,20 @@
         :value="modelValue" 
         @update:value="handleThemeChange"
         :rail-style="railStyle"
+        :aria-label="modelValue ? '切换到浅色主题' : '切换到深色主题'"
+        :aria-checked="modelValue"
+        role="switch"
       >
         <template #checked>
-          <n-icon><moon-sharp /></n-icon>
+          <n-icon aria-hidden="true"><moon-sharp /></n-icon>
         </template>
         <template #unchecked>
-          <n-icon><sunny-sharp /></n-icon>
+          <n-icon aria-hidden="true"><sunny-sharp /></n-icon>
         </template>
       </n-switch>
     </n-space>
     <div class="header-title">
-      <img src="/logo.png" alt="Astrbot Logo" class="header-logo">
+      <img src="/logo.webp" alt="Astrbot Logo" class="header-logo">
       <div class="title-wrapper">
         <h1>Astrbot 插件市场 <span class="third-party-tag">demo</span></h1>
       </div>
