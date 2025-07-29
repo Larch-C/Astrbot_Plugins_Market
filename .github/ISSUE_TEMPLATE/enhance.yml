@@ -1,0 +1,58 @@
+name: ✨ 功能请求
+description: 建议一个新的功能或改进点。
+title: "[Feat] "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        谢谢你愿意为我们的网站提供新点子
+        请详细填写下面的内容，这样我们就能认真考虑并规划实现
+
+  - type: input
+    id: summary
+    attributes:
+      label: 功能名称 / 简述
+      placeholder: 例如：支持暗色模式，添加快捷键导航
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: 功能动机 / 为什么需要这个功能？
+      placeholder: |
+        例如：现在白天和晚上切换页面太刺眼，影响使用体验。
+        添加快捷键可以提升效率。
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 你理想中这个功能应该怎么实现？
+      description: 可以简单说说你的设计思路、界面交互或者相关细节。
+      placeholder: |
+        例如：新增一个「主题切换」按钮，自动记住用户偏好；
+        或者：按下 `ctrl + k` 打开命令面板。
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 你是否考虑过替代方案？
+      placeholder: 例如：也可以通过浏览器插件解决，但不够通用。
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 提交前检查 ✅
+      options:
+        - label: 我确认此功能未在现有页面中实现
+        - label: 我已在 [Issue 区](https://github.com/IGCrystal-NEO/Astrbot-Plugins-Market/issues) 搜索，未发现重复建议
+        - label: 我愿意在有时间的情况下协助实现这个功能
+        - label: 我知道功能开发可能需要时间，会耐心等待♡
+
