@@ -134,7 +134,6 @@ onUnmounted(() => {
   background: var(--pagination-bg, rgba(255, 255, 255, 0.05));
   backdrop-filter: blur(10px);
   width: fit-content;
-  min-width: 300px;
   box-shadow: var(--shadow-sm);
   will-change: transform, opacity;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -351,7 +350,7 @@ onUnmounted(() => {
   }
 }
 
-/* 超小屏幕设备 (最大 360px) */
+  /* 超小屏幕设备 (最大 360px) */
 @media (max-width: 360px) {
   .pagination-wrapper {
     margin: 0.75rem 0;
@@ -359,21 +358,28 @@ onUnmounted(() => {
   }
   
   :deep(.n-pagination) {
-    --n-item-size: 32px;
-    --n-item-font-size: 12px;
-    gap: 3px;
+    --n-item-size: 28px;
+    --n-item-font-size: 11px;
+    gap: 2px;
+    flex-wrap: nowrap;
   }
   
   :deep(.n-pagination .n-pagination-item) {
-    min-width: 32px;
-    height: 32px;
-    min-height: 32px;
-    padding: 0 6px !important;
+    min-width: 28px;
+    height: 28px;
+    min-height: 28px;
+    padding: 0 4px !important;
   }
   
   /* 超小屏幕下的紧凑布局 */
   :deep(.n-pagination .n-pagination-item--button) {
-    padding: 0 6px !important;
+    padding: 0 4px !important;
+  }
+  
+  /* 压缩省略号的间距 */
+  :deep(.n-pagination .n-pagination-item--disabled) {
+    min-width: 20px;
+    padding: 0 2px !important;
   }
 }
 
