@@ -1,0 +1,36 @@
+name: 📦 插件提交
+description: 欢迎发布插件到插件市场！
+title: "[插件提交] "
+labels: [plugin]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        欢迎你来发布插件到插件市场喵！请根据下方提示填写插件信息。
+
+  - type: textarea
+    id: plugin-info
+    attributes:
+      label: 插件基本信息（请填写 JSON 格式）
+      description: 请将插件信息填写到下方 JSON 区块中。`tags` 和 `social_link` 是可选字段。
+      placeholder: |
+        {
+          "name": "插件名",
+          "desc": "插件介绍",
+          "author": "作者名",
+          "repo": "插件仓库链接",
+          "tags": [],
+          "social_link": ""
+        }
+      render: json
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 提交前检查 ✅
+      options:
+        - label: 我的插件经过完整的测试
+        - label: 我的插件不包含恶意代码
+        - label: 我已阅读并同意遵守该项目的 [行为准则](https://docs.github.com/zh/site-policy/github-terms/github-community-code-of-conduct)。
