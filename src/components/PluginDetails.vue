@@ -168,7 +168,7 @@ async function fetchReadme() {
 
 <style scoped>
 .plugin-details {
-  --modal-padding: 24px;
+  --modal-padding: 24px !important;
 }
 
 .plugin-details :deep(.n-modal) {
@@ -193,7 +193,7 @@ async function fetchReadme() {
 .plugin-details__content {
   padding: var(--modal-padding) 0;
   padding-right: 16px;
-  margin-right: -8px;
+  margin-right: 4px;
   overflow-y: auto;
   max-height: calc(80vh - 180px);
 }
