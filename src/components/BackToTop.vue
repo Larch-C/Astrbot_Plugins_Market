@@ -17,6 +17,7 @@
         </div>
       </div>
     </transition>
+    <submit-plugin-button />
     <help-button />
   </div>
 </template>
@@ -26,6 +27,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { NIcon } from 'naive-ui'
 import { ChevronUp } from '@vicons/ionicons5'
 import HelpButton from './HelpButton.vue'
+import SubmitPluginButton from './SubmitPluginButton.vue'
 
 const show = ref(false)
 const scrollThreshold = 300

@@ -1,39 +1,13 @@
 <template>
-  <n-config-provider :theme="theme" :theme-overrides="isDarkMode ? darkThemeOverrides : lightThemeOverrides">
+  <n-config-provider 
+    :theme="theme" 
+    :theme-overrides="isDarkMode ? darkThemeOverrides : lightThemeOverrides"
+    :hljs="highlightConfig.hljs"
+  >
     <n-message-provider>
       <div class="app-container" :class="{ dark: isDarkMode }">
-        <back-to-top />
-        <n-layout class="main-layout">
-          <app-header
-            v-model="isDarkMode"
-            v-model:search-query="searchQuery"
-            v-model:selected-tag="selectedTag"
-            v-model:current-page="currentPage"
-            v-model:sort-by="sortBy"
-            :tag-options="tagOptions"
-            :total-pages="totalPages"
-          />
-        <app-pagination
-          v-if="totalPages > 1"
-          v-model="currentPage"
-          :total-pages="totalPages"
-          class="top-pagination"
-        />
-          <main class="plugins-grid">
-            <plugin-card
-              v-for="(plugin, index) in paginatedPlugins"
-              :key="`${plugin.name}-${filterKey}`"
-              :plugin="plugin"
-              :index="index"
-            />
-          </main>
-          <app-pagination
-            v-if="totalPages > 1"
-            v-model="currentPage"
-            :total-pages="totalPages"
-          />
-          <app-footer />
-        </n-layout>
+        <back-to-top v-if="!isSubmitPage" />
+        <router-view />
       </div>
     </n-message-provider>
   </n-config-provider>
@@ -41,13 +15,13 @@
 
 <script setup>
 import { computed, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 import { storeToRefs } from 'pinia'
 import { darkTheme, NConfigProvider, NMessageProvider, NLayout } from 'naive-ui'
-import AppHeader from './components/AppHeader.vue'
-import PluginCard from './components/PluginCard.vue'
-import AppPagination from './components/AppPagination.vue'
+import { highlightConfig } from './plugins/highlight'
+
 import BackToTop from './components/BackToTop.vue'
-import AppFooter from './components/AppFooter.vue'
+
 import { lightThemeOverrides } from './config/lightTheme'
 import { darkThemeOverrides } from './config/darkTheme'
 import { usePluginStore } from './stores/plugins'
@@ -66,8 +40,13 @@ const {
   paginatedPlugins
 } = storeToRefs(store)
 
+const route = useRoute()
+
 // 计算属性
 const theme = computed(() => (isDarkMode.value ? darkTheme : null))
+
+// 判断是否在提交插件页面
+const isSubmitPage = computed(() => route.path === '/submit')
 
 // 创建筛选键，当筛选条件改变时这个值也会改变，强制Vue重新创建组件
 const filterKey = computed(() => {

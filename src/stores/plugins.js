@@ -21,6 +21,11 @@ export const usePluginStore = defineStore('plugins', () => {
     localStorage.setItem('theme-preference', newValue ? 'dark' : 'light')
   })
 
+  // 切换主题的方法
+  const toggleTheme = () => {
+    isDarkMode.value = !isDarkMode.value
+  }
+
   // 计算属性
   const allTags = computed(() => {
     const tags = new Set()
@@ -155,6 +160,7 @@ export const usePluginStore = defineStore('plugins', () => {
     setSearchQuery,
     setSelectedTag,
     setCurrentPage,
-    setSortBy
+    setSortBy,
+    toggleTheme
   }
 })
