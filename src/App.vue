@@ -17,7 +17,7 @@
 import { computed, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { storeToRefs } from 'pinia'
-import { darkTheme, NConfigProvider, NMessageProvider, NLayout } from 'naive-ui'
+import { darkTheme, NConfigProvider, NMessageProvider } from 'naive-ui'
 import { highlightConfig } from './plugins/highlight'
 
 import BackToTop from './components/BackToTop.vue'
@@ -35,9 +35,6 @@ const {
   selectedTag,
   currentPage,
   sortBy,
-  tagOptions,
-  totalPages,
-  paginatedPlugins
 } = storeToRefs(store)
 
 const route = useRoute()
@@ -52,12 +49,6 @@ const isSubmitPage = computed(() => route.path === '/submit')
 const filterKey = computed(() => {
   return `${searchQuery.value}-${selectedTag.value}-${sortBy.value}-${currentPage.value}`
 })
-
-// 方法
-const handlePageChange = (page) => {
-  currentPage.value = page
-  window.scrollTo({ top: 0, behavior: 'instant' })
-}
 
 // 生命周期钩子
 onMounted(() => {

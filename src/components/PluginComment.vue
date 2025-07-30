@@ -11,7 +11,6 @@
 
 <script setup>
 import { ref, onMounted, watch, nextTick } from 'vue'
-import { NH3 } from 'naive-ui'
 
 const props = defineProps({
   repo: {

@@ -240,8 +240,6 @@ onUnmounted(() => {
   }
 }
 
-/* 移除深色模式的硬编码样式，使用CSS变量 */
-
 /* 减少动画的可访问性支持 */
 @media (prefers-reduced-motion: reduce) {
   .back-to-top__inner,
