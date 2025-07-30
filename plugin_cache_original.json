@@ -29,8 +29,8 @@
     ],
     "social_link": "https://astrbot.uk",
     "stars": 2,
-    "updated_at": "2025-07-24T09:47:56Z",
-    "version": "v1.0"
+    "updated_at": "2025-07-30T03:38:34Z",
+    "version": "v1.0.2"
   },
   "astrbot_proactive_reply": {
     "desc": "一个支持聊天附带用户信息和定时主动发送消息的 AstrBot 插件",
@@ -1221,8 +1221,8 @@
       "音乐"
     ],
     "social_link": "https://github.com/Zhalslar",
-    "stars": 36,
-    "updated_at": "2025-07-22T12:01:46Z",
+    "stars": 37,
+    "updated_at": "2025-07-30T03:27:30Z",
     "version": "v1.0.2"
   },
   "astrbot_plugin_renjian": {
@@ -1473,7 +1473,7 @@
     ],
     "social_link": "https://space.bilibili.com/447591776",
     "stars": 2,
-    "updated_at": "2025-07-29T02:09:50Z",
+    "updated_at": "2025-07-30T02:15:42Z",
     "version": "v1.1.2"
   },
   "astrbot_plugin_embedding_adapter": {
@@ -1774,8 +1774,8 @@
       "禁漫"
     ],
     "social_link": "https://github.com/GEMILUXVII",
-    "stars": 19,
-    "updated_at": "2025-07-29T17:40:44Z",
+    "stars": 20,
+    "updated_at": "2025-07-30T02:01:13Z",
     "version": "1.0.7"
   },
   "astrbot_plugin_combine-messages": {
@@ -2227,8 +2227,8 @@
       "信息",
       "监控面板"
     ],
-    "stars": 1,
-    "updated_at": "2025-06-12T01:22:52Z",
+    "stars": 2,
+    "updated_at": "2025-07-30T03:36:55Z",
     "version": "1.0.0"
   },
   "astrbot_plugin_tarot": {
@@ -2297,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-29T23:25:08Z",
+    "updated_at": "2025-07-30T02:09:34Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3435,8 +3435,8 @@
       "功能"
     ],
     "social_link": "https://github.com/Zhalslar/astrbot_plugin_box",
-    "stars": 36,
-    "updated_at": "2025-07-24T13:11:41Z",
+    "stars": 37,
+    "updated_at": "2025-07-30T03:28:16Z",
     "version": "v1.1.4"
   },
   "astrbot_plugin_yuafeng": {
