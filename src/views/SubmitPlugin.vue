@@ -50,7 +50,7 @@
           <div v-if="currentStep === 1" class="form-section" key="step1">
             <n-card title="基本信息" class="form-card">
               <n-form ref="formRef" :model="formData" :rules="rules">
-                <n-grid :x-gap="24" :cols="1" :item-responsive="true">
+                <n-grid :x-gap="12" :cols="1" :item-responsive="true">
                   <n-grid-item>
                     <n-form-item label="插件名称" path="name" class="form-item-animated">
                       <n-input v-model:value="formData.name" placeholder="请输入插件名称" />
@@ -530,7 +530,7 @@ const submitPlugin = () => {
   }
   
   .step-title {
-    color: var(--text-color-1);
+    color: var(--text-primary);
   }
 }
 
@@ -619,7 +619,7 @@ const submitPlugin = () => {
 .form-card,
 .json-card,
 .guide-card {
-  margin-bottom: 50px;
+  margin-bottom: calc(var(--action-bar-height) + 60px);
 }
 
 .json-preview-section {
