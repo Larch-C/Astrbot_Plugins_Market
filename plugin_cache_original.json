@@ -378,7 +378,7 @@
     "repo": "https://github.com/mmyddd/astrbot_plugin_group_sign",
     "tags": [],
     "stars": 0,
-    "updated_at": "2025-07-10T16:45:39Z",
+    "updated_at": "2025-07-30T00:51:48Z",
     "version": "v1.0.0"
   },
   "astrbot_plugin_balance": {
@@ -900,8 +900,8 @@
       "接歌词"
     ],
     "desc": "歌词接龙插件，当你发送一句歌词，机器人会回复下一句。",
-    "stars": 1,
-    "updated_at": "2025-07-21T07:34:55Z",
+    "stars": 2,
+    "updated_at": "2025-07-30T01:07:22Z",
     "version": "v1.2.2"
   },
   "astrbot_plugin_redstone": {
@@ -2297,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 15,
-    "updated_at": "2025-07-29T22:25:32Z",
+    "updated_at": "2025-07-29T23:25:08Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3319,8 +3319,8 @@
     ],
     "social_link": "https://github.com/Zhalslar/astrbot_plugin_memelite",
     "repo": "https://github.com/Zhalslar/astrbot_plugin_memelite",
-    "stars": 42,
-    "updated_at": "2025-07-28T15:04:24Z",
+    "stars": 43,
+    "updated_at": "2025-07-30T01:36:57Z",
     "version": "v1.0.8"
   },
   "astrbot_plugin_saris_economic": {
@@ -3844,8 +3844,8 @@
       "主动回复"
     ],
     "repo": "https://github.com/23q3/astrbot_plugin_SpectreCore",
-    "stars": 57,
-    "updated_at": "2025-07-29T15:33:16Z",
+    "stars": 58,
+    "updated_at": "2025-07-30T01:48:25Z",
     "version": "v2.1.4"
   },
   "astrbot_plugin_steamshot": {
