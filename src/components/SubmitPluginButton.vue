@@ -1,25 +1,34 @@
 <template>
-  <div class="float-button submit-plugin">
-    <div 
-      class="float-button__inner submit-plugin__inner"
-      @click="navigateToSubmit"
-      role="button"
-      aria-label="提交插件"
-    >
-      <n-icon size="22" class="float-button__icon">
-        <add-circle />
-      </n-icon>
-      <div class="float-button__ripple"></div>
+  <div class="submit-button-container" @mouseenter="showTipText = true" @mouseleave="showTipText = false">
+    <div class="text-container">
+      <div class="tip-text" :class="{ 'tip-text--show': showTipText }">
+        来提交你的插件吧！
+      </div>
+    </div>
+    <div class="float-button submit-plugin">
+      <div 
+        class="float-button__inner submit-plugin__inner"
+        @click="navigateToSubmit"
+        role="button"
+        aria-label="提交插件"
+      >
+        <n-icon size="22" class="float-button__icon">
+          <add-circle />
+        </n-icon>
+        <div class="float-button__ripple"></div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import { NIcon } from 'naive-ui'
 import { AddCircle } from '@vicons/ionicons5'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
+const showTipText = ref(false)
 
 const navigateToSubmit = () => {
   router.push('/submit')
@@ -73,6 +82,59 @@ const navigateToSubmit = () => {
   pointer-events: none;
 }
 
+.submit-button-container {
+  display: flex;
+  align-items: center;
+}
+
+.text-container {
+  height: 56px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  margin: 0 -8px;
+}
+
+.tip-text {
+  background: var(--bg-card);
+  padding: 0 12px;
+  border: 2px solid transparent;
+  border-radius: 28px;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  color: var(--text-tag);
+  white-space: nowrap;
+  margin-right: -56px;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
+  background-clip: padding-box;
+  position: relative;
+}
+
+.tip-text::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  background: var(--header-gradient);
+  border-radius: inherit;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+  opacity: 0.6;
+}
+
+.tip-text--show {
+  transform: translateX(0);
+  opacity: 1;
+  margin-right: 16px;
+}
+
 .submit-plugin__inner {
   background: var(--primary-color);
 }
@@ -83,6 +145,28 @@ const navigateToSubmit = () => {
 
 .submit-plugin:active .submit-plugin__ripple {
   animation: ripple 0.6s ease-out;
+}
+
+@media (max-width: 768px) {
+  .text-container {
+    height: 48px;
+  }
+  .tip-text {
+    height: 36px;
+    line-height: 36px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-container {
+    height: 44px;
+  }
+  .tip-text {
+    height: 32px;
+    line-height: 32px;
+    font-size: 12px;
+  }
 }
 
 @keyframes ripple {
