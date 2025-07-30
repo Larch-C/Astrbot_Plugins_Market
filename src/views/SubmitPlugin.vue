@@ -24,142 +24,182 @@
     </n-layout-header>
 
     <div class="steps-section">
-      <n-steps
-        :current="currentStep"
-        :status="stepStatus"
-        class="submit-steps"
-      >
-        <n-step title="填写信息" description="填写插件基本信息" />
-        <n-step title="生成JSON" description="生成并复制JSON" />
-        <n-step title="提交" description="提交到GitHub" />
-      </n-steps>
+      <div class="custom-steps">
+        <div 
+          v-for="(step, index) in steps" 
+          :key="index"
+          class="step-item"
+          :class="{
+            'step-current': currentStep === index + 1,
+            'step-finished': currentStep > index + 1
+          }"
+        >
+          <div class="step-indicator">{{ index + 1 }}</div>
+          <div class="step-content">
+            <div class="step-title">{{ step.title }}</div>
+            <div class="step-description">{{ step.description }}</div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="page-content">
       <div class="main-section">
         <!-- 步骤1：表单 -->
-        <div v-show="currentStep === 1" class="form-section">
-          <n-card title="基本信息" class="form-card">
-            <n-form ref="formRef" :model="formData" :rules="rules">
-              <n-grid :x-gap="24" :cols="1" :item-responsive="true">
-                <n-grid-item>
-                  <n-form-item label="插件名称" path="name">
-                    <n-input v-model:value="formData.name" placeholder="请输入插件名称" />
-                  </n-form-item>
-                </n-grid-item>
-                <n-grid-item>
-                  <n-form-item label="插件描述" path="desc">
-                    <n-input 
-                      v-model:value="formData.desc" 
-                      type="textarea" 
-                      placeholder="请输入插件描述"
-                    />
-                  </n-form-item>
-                </n-grid-item>
-                <n-grid-item>
-                  <n-form-item label="作者" path="author">
-                    <n-input v-model:value="formData.author" placeholder="请输入作者名称" />
-                  </n-form-item>
-                </n-grid-item>
-                <n-grid-item>
-                  <n-form-item label="仓库地址" path="repo">
-                    <n-input v-model:value="formData.repo" placeholder="请输入GitHub仓库地址" />
-                  </n-form-item>
-                </n-grid-item>
-                <n-grid-item>
-                  <n-form-item label="标签（可选，按回车添加）" path="tags">
-                    <n-dynamic-tags v-model:value="formData.tags" />
-                  </n-form-item>
-                </n-grid-item>
-                <n-grid-item>
-                  <n-form-item label="社交链接（可选）" path="social_link">
-                    <n-input 
-                      v-model:value="formData.social_link" 
-                      placeholder="请输入社交链接，如个人主页、Twitter等" 
-                    />
-                  </n-form-item>
-                </n-grid-item>
-              </n-grid>
-            </n-form>
-          </n-card>
-        </div>
+        <transition name="step-slide">
+          <div v-if="currentStep === 1" class="form-section" key="step1">
+            <n-card title="基本信息" class="form-card">
+              <n-form ref="formRef" :model="formData" :rules="rules">
+                <n-grid :x-gap="24" :cols="1" :item-responsive="true">
+                  <n-grid-item>
+                    <n-form-item label="插件名称" path="name" class="form-item-animated">
+                      <n-input v-model:value="formData.name" placeholder="请输入插件名称" />
+                    </n-form-item>
+                  </n-grid-item>
+                  <n-grid-item>
+                    <n-form-item label="插件描述" path="desc" class="form-item-animated">
+                      <n-input 
+                        v-model:value="formData.desc" 
+                        type="textarea" 
+                        placeholder="请输入插件描述"
+                      />
+                    </n-form-item>
+                  </n-grid-item>
+                  <n-grid-item>
+                    <n-form-item label="作者" path="author" class="form-item-animated">
+                      <n-input v-model:value="formData.author" placeholder="请输入作者名称" />
+                    </n-form-item>
+                  </n-grid-item>
+                  <n-grid-item>
+                    <n-form-item label="仓库地址" path="repo" class="form-item-animated">
+                      <n-input v-model:value="formData.repo" placeholder="请输入GitHub仓库地址" />
+                    </n-form-item>
+                  </n-grid-item>
+                  <n-grid-item>
+                    <n-form-item label="标签（可选，按回车添加）" path="tags" class="form-item-animated">
+                      <n-dynamic-tags v-model:value="formData.tags" />
+                    </n-form-item>
+                  </n-grid-item>
+                  <n-grid-item>
+                    <n-form-item label="社交链接（可选）" path="social_link" class="form-item-animated">
+                      <n-input 
+                        v-model:value="formData.social_link" 
+                        placeholder="请输入社交链接，如个人主页、Twitter等" 
+                      />
+                    </n-form-item>
+                  </n-grid-item>
+                </n-grid>
+              </n-form>
+            </n-card>
+          </div>
+        </transition>
 
         <!-- 步骤2：JSON预览 -->
-        <div v-show="currentStep === 2" class="json-preview-section">
-          <n-card title="JSON预览" class="json-card">
-            <template #header-extra>
-              <n-button @click="copyJSON" type="primary" ghost :disabled="!generatedJSON">
-                <template #icon>
-                  <n-icon><copy /></n-icon>
-                </template>
-                复制JSON
-              </n-button>
-            </template>
-            <n-code
-              :code="generatedJSON || '点击生成按钮生成JSON'"
-              language="json"
-              :word-wrap="true"
-            />
-          </n-card>
-        </div>
+        <transition name="step-slide">
+          <div v-if="currentStep === 2" class="json-preview-section" key="step2">
+            <n-card title="JSON预览" class="json-card">
+              <template #header-extra>
+                <n-button @click="copyJSON" type="primary" ghost :disabled="!generatedJSON" class="copy-button">
+                  <template #icon>
+                    <n-icon><copy /></n-icon>
+                  </template>
+                  复制JSON
+                </n-button>
+              </template>
+              <div class="json-content">
+                <n-code
+                  :code="generatedJSON || '点击生成按钮生成JSON'"
+                  language="json"
+                  :word-wrap="true"
+                />
+              </div>
+            </n-card>
+          </div>
+        </transition>
 
         <!-- 步骤3：提交指南 -->
-        <div v-show="currentStep === 3" class="submit-guide-section">
-          <n-card title="提交指南" class="guide-card">
-            <n-timeline>
-              <n-timeline-item title="复制JSON" :color="stepChecks.copied ? 'green' : 'grey'">
-                确保已复制生成的JSON内容
-              </n-timeline-item>
-              <n-timeline-item title="打开Issue页面" :color="stepChecks.issueOpened ? 'green' : 'grey'">
-                即将在新标签页中打开GitHub Issue模板
-              </n-timeline-item>
-              <n-timeline-item title="粘贴并提交" color="grey">
-                将JSON粘贴到指定位置并提交Issue
-              </n-timeline-item>
-            </n-timeline>
-          </n-card>
-        </div>
+        <transition name="step-slide">
+          <div v-if="currentStep === 3" class="submit-guide-section" key="step3">
+            <n-card title="提交指南" class="guide-card">
+              <n-timeline>
+                <n-timeline-item 
+                  title="复制JSON" 
+                  :color="stepChecks.copied ? 'green' : 'grey'"
+                  class="timeline-item"
+                >
+                  确保已复制生成的JSON内容
+                </n-timeline-item>
+                <n-timeline-item 
+                  title="打开Issue页面" 
+                  :color="stepChecks.issueOpened ? 'green' : 'grey'"
+                  class="timeline-item"
+                >
+                  即将在新标签页中打开GitHub Issue模板
+                </n-timeline-item>
+                <n-timeline-item 
+                  title="粘贴并提交" 
+                  color="grey"
+                  class="timeline-item"
+                >
+                  将JSON粘贴到指定位置并提交Issue
+                </n-timeline-item>
+              </n-timeline>
+            </n-card>
+          </div>
+        </transition>
       </div>
 
       <!-- 底部操作栏 -->
       <n-card class="action-bar">
         <div class="action-content">
           <div class="action-left">
-            <n-button 
-              v-if="currentStep > 1" 
-              @click="prevStep"
-              quaternary
-            >
-              <template #icon>
-                <n-icon><arrow-back /></n-icon>
-              </template>
-              上一步
-            </n-button>
+            <transition name="action-button" mode="out-in">
+              <n-button 
+                v-if="currentStep > 1" 
+                @click="prevStep"
+                quaternary
+                key="prev"
+                class="action-button-item"
+              >
+                <template #icon>
+                  <n-icon><arrow-back /></n-icon>
+                </template>
+                上一步
+              </n-button>
+            </transition>
           </div>
           <div class="action-right">
-            <n-button 
-              v-if="currentStep === 1"
-              type="primary"
-              @click="validateAndGenerateJSON"
-              :disabled="!formData.name"
-            >
-              下一步
-            </n-button>
-            <n-button 
-              v-else-if="currentStep === 2"
-              type="primary"
-              @click="nextStep"
-              :disabled="!generatedJSON"
-            >
-              下一步
-            </n-button>
-            <n-button 
-              v-else
-              type="primary"
-              @click="submitPlugin"
-            >
-              提交到GitHub
-            </n-button>
+            <transition name="action-button" mode="out-in">
+              <n-button 
+                v-if="currentStep === 1"
+                type="primary"
+                @click="validateAndGenerateJSON"
+                :disabled="!formData.name"
+                key="next1"
+                class="action-button-item"
+              >
+                下一步
+              </n-button>
+              <n-button 
+                v-else-if="currentStep === 2"
+                type="primary"
+                @click="nextStep"
+                :disabled="!generatedJSON"
+                key="next2"
+                class="action-button-item"
+              >
+                下一步
+              </n-button>
+              <n-button 
+                v-else
+                type="primary"
+                @click="submitPlugin"
+                key="submit"
+                class="action-button-item"
+              >
+                提交到GitHub
+              </n-button>
+            </transition>
           </div>
         </div>
       </n-card>
@@ -173,8 +213,6 @@ import { storeToRefs } from 'pinia'
 import { useRouter } from 'vue-router'
 import { 
   NLayoutHeader,
-  NSteps,
-  NStep,
   NTimeline,
   NTimelineItem,
   NGrid,
@@ -203,7 +241,20 @@ const store = usePluginStore()
 const formRef = ref(null)
 const generatedJSON = ref('')
 const currentStep = ref(1)
-const stepStatus = ref('process')
+const steps = [
+  {
+    title: '填写信息',
+    description: '填写插件基本信息'
+  },
+  {
+    title: '生成JSON',
+    description: '生成并复制JSON'
+  },
+  {
+    title: '提交',
+    description: '提交到GitHub'
+  }
+]
 
 // 从 store 中获取暗色模式状态
 const { isDarkMode } = storeToRefs(store)
@@ -386,12 +437,155 @@ const submitPlugin = () => {
   border-bottom: 1px solid var(--border-color);
 }
 
-.submit-steps {
+.custom-steps {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
   padding: 0 16px;
   box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+}
+
+.step-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  gap: 8px;
+  width: 120px; /* 固定宽度确保均匀间距 */
+  
+  @media (min-width: 426px) {
+    &:first-child {
+      margin-right: auto;
+    }
+    
+    &:last-child {
+      margin-left: auto;
+    }
+  }
+}
+
+.step-indicator {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  background: var(--bg-base);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
+}
+
+.step-content {
+  text-align: center;
+  min-width: 100px;
+  padding: 0 8px;
+}
+
+.step-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+  transition: color 0.3s;
+}
+
+.step-description {
+  font-size: 12px;
+  color: var(--text-secondary);
+  transition: color 0.3s;
+}
+
+.step-current {
+  .step-indicator {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+  }
+  
+  .step-title {
+    color: var(--primary-color);
+  }
+  
+  .step-description {
+    color: var(--text-secondary);
+  }
+}
+
+.step-finished {
+  .step-indicator {
+    background: var(--success-color);
+    border-color: var(--success-color);
+    color: var(--text-primary);
+  }
+  
+  .step-title {
+    color: var(--text-color-1);
+  }
+}
+
+@media (max-width: 768px) {
+  .steps-section {
+    padding: 16px 0;
+  }
+  
+  .custom-steps {
+    padding: 0 24px;
+  }
+  
+  .step-content {
+    min-width: 80px;
+  }
+  
+  .step-description {
+    display: none;
+  }
+}
+
+@media (max-width: 425px) {
+  .custom-steps {
+    justify-content: center;
+  }
+  
+  .step-item {
+    display: none;
+    width: auto;
+    
+    &.step-current {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      
+      .step-indicator {
+        flex: 0 0 32px; /* 防止圆圈被压缩 */
+      }
+      
+      .step-content {
+        text-align: left;
+      }
+      
+      .step-description {
+        display: block;
+      }
+    }
+  }
+  
+  .step-line {
+    display: none;
+  }
 }
 
 .page-content {
@@ -418,17 +612,39 @@ const submitPlugin = () => {
   flex-direction: column;
   gap: 24px;
   box-sizing: border-box;
+  position: relative;
+  min-height: 400px;
 }
 
 .form-card,
 .json-card,
 .guide-card {
-  margin-bottom: 24px;
+  margin-bottom: 50px;
 }
 
 .json-preview-section {
   :deep(.n-code) {
     border-radius: 8px;
+    background: var(--bg-base);
+  }
+}
+
+.json-content {
+  position: relative;
+  opacity: 0;
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+}
+
+.copy-button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  &:active {
+    transform: translateY(0);
   }
 }
 
@@ -459,6 +675,18 @@ const submitPlugin = () => {
   align-items: center;
 }
 
+.action-button-item {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
 :deep(.n-form-item) {
   margin-bottom: 24px;
 }
@@ -471,45 +699,120 @@ const submitPlugin = () => {
   padding: 16px;
 }
 
-/* 添加过渡动画 */
-.fade-slide-enter-active,
-.fade-slide-leave-active {
+.timeline-item {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.fade-slide-enter-from {
-  opacity: 0;
-  transform: translateX(20px);
+/* 步骤切换动画 */
+.step-slide-enter-active,
+.step-slide-leave-active {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  width: 100%;
 }
 
-.fade-slide-leave-to {
+.step-slide-enter-from {
   opacity: 0;
-  transform: translateX(-20px);
+  transform: translateX(50px);
 }
 
-/* 优化卡片过渡效果 */
-.n-card {
+.step-slide-leave-to {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+/* 表单项动画 */
+.form-item-animated {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: formItemFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.form-item-animated:nth-child(1) { animation-delay: 0.1s; }
+.form-item-animated:nth-child(2) { animation-delay: 0.2s; }
+.form-item-animated:nth-child(3) { animation-delay: 0.3s; }
+.form-item-animated:nth-child(4) { animation-delay: 0.4s; }
+.form-item-animated:nth-child(5) { animation-delay: 0.5s; }
+.form-item-animated:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes formItemFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 操作按钮动画 */
+.action-button-enter-active {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 按钮过渡效果 */
-.n-button {
+.action-button-leave-active {
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Steps组件过渡 */
-.submit-steps :deep(.n-steps-content) {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.action-button-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
 }
 
-/* Timeline项目过渡 */
-.n-timeline-item {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.action-button-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
 }
 
-/* 表单项过渡 */
+/* 关键帧动画 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 卡片进入动画 */
+.form-card,
+.json-card,
+.guide-card {
+  animation: slideInRight 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 按钮悬停效果增强 */
+.n-button {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  &:active {
+    transform: translateY(0);
+    transition-duration: 0.1s;
+  }
+}
+
+/* 表单项动画增强 */
 :deep(.n-form-item) {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    transform: translateX(2px);
+  }
 }
 
 @media (max-width: 768px) {
@@ -525,36 +828,13 @@ const submitPlugin = () => {
     padding: 16px 0;
   }
 
-  .submit-steps {
-    padding: 0 16px;
-    
-    :deep(.n-step) {
-      flex: 1;
-      min-width: 0;
-    }
-    
-    :deep(.n-step-header) {
-      flex-wrap: wrap;
-      min-width: 0;
-    }
-    
-    :deep(.n-step-content__description) {
-      display: none;
-    }
-    
-    :deep(.n-step-splitor) {
-      width: 24px;
-      min-width: 24px;
-    }
-  }
-
   .submit-plugin-page {
     --action-bar-height: 64px;
   }
 }
 
 @media (max-width: 425px) {
-  .submit-steps {
+    .submit-steps {
     :deep(.n-step) {
       display: none;
       

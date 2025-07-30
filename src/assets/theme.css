@@ -19,6 +19,7 @@
   --text-tag: #ffffff;
   --text-n-tag: #0277bd;
   --pagination-text: #000;
+  --success-color: var(--primary-color);
 
   /* 边框颜色 */
   --border-base: #e2e8f0;
