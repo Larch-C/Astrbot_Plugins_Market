@@ -156,6 +156,14 @@ const navigateToSubmit = () => {
     line-height: 36px;
     font-size: 13px;
   }
+  .float-button {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .float-button__icon {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -166,6 +174,10 @@ const navigateToSubmit = () => {
     height: 32px;
     line-height: 32px;
     font-size: 12px;
+  }
+  .float-button {
+    width: 44px;
+    height: 44px;
   }
 }
 
