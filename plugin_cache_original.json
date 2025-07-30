@@ -17,7 +17,7 @@
       "图片反搜"
     ],
     "stars": 0,
-    "updated_at": "2025-07-28T18:01:19Z",
+    "updated_at": "2025-07-30T14:17:13Z",
     "version": "2.3"
   },
   "astrbot_plugin_LLMTempBan": {
@@ -211,8 +211,8 @@
       "健康",
       "娱乐"
     ],
-    "stars": 1,
-    "updated_at": "2025-07-26T01:38:42Z",
+    "stars": 2,
+    "updated_at": "2025-07-30T14:11:32Z",
     "version": "v1.2"
   },
   "astrbot_plugin_pet": {
@@ -2297,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 17,
-    "updated_at": "2025-07-30T13:27:19Z",
+    "updated_at": "2025-07-30T13:44:16Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3807,8 +3807,8 @@
     "social_link": "https://space.bilibili.com/11874232",
     "tags": [],
     "stars": 3,
-    "updated_at": "2025-06-22T15:42:44Z",
-    "version": "v1.1.4"
+    "updated_at": "2025-07-30T14:16:53Z",
+    "version": "v1.1.5"
   },
   "astrbot_plugin_server_status": {
     "desc": "实时监控服务器资源使用情况，支持多平台运行，提供清晰的系统状态报告。",
