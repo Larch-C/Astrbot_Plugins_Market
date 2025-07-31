@@ -1222,7 +1222,7 @@
     ],
     "social_link": "https://github.com/Zhalslar",
     "stars": 38,
-    "updated_at": "2025-07-30T04:08:13Z",
+    "updated_at": "2025-07-31T12:35:54Z",
     "version": "v1.0.2"
   },
   "astrbot_plugin_renjian": {
@@ -1810,7 +1810,7 @@
     ],
     "social_link": "https://github.com/Zhalslar/astrbot_plugin_nobot",
     "stars": 6,
-    "updated_at": "2025-07-31T09:55:01Z",
+    "updated_at": "2025-07-31T12:11:22Z",
     "version": "v1.0.3"
   },
   "astrbot_plugin_mcgetter": {
@@ -2297,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 17,
-    "updated_at": "2025-07-31T10:28:46Z",
+    "updated_at": "2025-07-31T11:22:46Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -2804,8 +2804,8 @@
       "QQ群管"
     ],
     "stars": 33,
-    "updated_at": "2025-07-31T10:19:47Z",
-    "version": "v3.0.7"
+    "updated_at": "2025-07-31T12:14:44Z",
+    "version": "v3.0.8"
   },
   "astrbot_plugin_liars_bar": {
     "desc": "本插件是为 AstrBot 框架开发的游戏插件，实现了一个骗子酒馆",
