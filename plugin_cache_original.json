@@ -1404,8 +1404,8 @@
       "RAG",
       "知识库"
     ],
-    "stars": 44,
-    "updated_at": "2025-07-29T15:19:14Z",
+    "stars": 45,
+    "updated_at": "2025-07-31T08:45:06Z",
     "version": "v0.5.8"
   },
   "astrbot_uptime_kuma_webhook_plugin": {
@@ -1774,8 +1774,8 @@
       "禁漫"
     ],
     "social_link": "https://github.com/GEMILUXVII",
-    "stars": 21,
-    "updated_at": "2025-07-31T02:26:44Z",
+    "stars": 22,
+    "updated_at": "2025-07-31T08:52:03Z",
     "version": "1.0.7"
   },
   "astrbot_plugin_combine-messages": {
@@ -2090,8 +2090,8 @@
     ],
     "social_link": "https://github.com/Zhalslar/astrbot_plugin_apis",
     "stars": 54,
-    "updated_at": "2025-07-31T08:25:00Z",
-    "version": "v1.0.7"
+    "updated_at": "2025-07-31T09:08:56Z",
+    "version": "v1.0.8"
   },
   "astrbot_plugin_help": {
     "author": "tinker",
@@ -2297,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 17,
-    "updated_at": "2025-07-31T07:27:55Z",
+    "updated_at": "2025-07-31T08:35:34Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
