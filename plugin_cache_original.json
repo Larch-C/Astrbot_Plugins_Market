@@ -106,8 +106,8 @@
       "aiocqhttp"
     ],
     "social_link": "https://github.com/qa296/",
-    "stars": 0,
-    "updated_at": "2025-07-23T06:58:22Z",
+    "stars": 1,
+    "updated_at": "2025-07-31T04:48:56Z",
     "version": "1.0.0"
   },
   "astrbot_plugin_server_status_nickname": {
@@ -4570,8 +4570,8 @@
     "author": "lxfight",
     "repo": "https://github.com/lxfight/astrbot_plugin_mnemosyne",
     "tags": [],
-    "stars": 108,
-    "updated_at": "2025-07-30T04:32:14Z",
+    "stars": 109,
+    "updated_at": "2025-07-31T05:04:36Z",
     "version": "v0.5.1"
   },
   "FateTrial_img_identify": {
