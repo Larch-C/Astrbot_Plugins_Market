@@ -387,8 +387,8 @@
     "repo": "https://github.com/Chris95743/astrbot_plugin_balance",
     "tags": [],
     "stars": 3,
-    "updated_at": "2025-07-19T02:40:33Z",
-    "version": "v1.1.0"
+    "updated_at": "2025-07-31T10:55:50Z",
+    "version": "v1.3.0"
   },
   "astrbot_plugin_mp": {
     "desc": "一个适用于最新版本 MoviePilot 的小工具，支持搜索、订阅、消息转发等功能",
@@ -2297,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 17,
-    "updated_at": "2025-07-31T09:31:29Z",
+    "updated_at": "2025-07-31T10:28:46Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
