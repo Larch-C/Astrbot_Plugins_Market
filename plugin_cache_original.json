@@ -368,8 +368,8 @@
     ],
     "author": null,
     "stars": 7,
-    "updated_at": "2025-07-31T16:13:50Z",
-    "version": "2.2.1--fix"
+    "updated_at": "2025-07-31T18:23:26Z",
+    "version": "2.2.2--refix"
   },
   "astrbot_plugin_group_sign": {
     "name": "group_sign",
@@ -387,8 +387,8 @@
     "repo": "https://github.com/Chris95743/astrbot_plugin_balance",
     "tags": [],
     "stars": 3,
-    "updated_at": "2025-07-31T10:55:50Z",
-    "version": "v1.3.0"
+    "updated_at": "2025-07-31T17:56:24Z",
+    "version": "v1.4.0"
   },
   "astrbot_plugin_mp": {
     "desc": "一个适用于最新版本 MoviePilot 的小工具，支持搜索、订阅、消息转发等功能",
@@ -2297,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 17,
-    "updated_at": "2025-07-31T16:33:28Z",
+    "updated_at": "2025-07-31T17:24:29Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
