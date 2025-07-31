@@ -1637,8 +1637,8 @@
       "贴表情"
     ],
     "social_link": "https://github.com/Zhalslar",
-    "stars": 7,
-    "updated_at": "2025-07-15T16:02:05Z",
+    "stars": 8,
+    "updated_at": "2025-07-31T14:14:52Z",
     "version": "v1.0.1"
   },
   "astrbot_plugin_pock_mini": {
@@ -2297,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 17,
-    "updated_at": "2025-07-31T12:54:14Z",
+    "updated_at": "2025-07-31T13:41:26Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3471,8 +3471,8 @@
       "实用工具"
     ],
     "stars": 11,
-    "updated_at": "2025-07-31T07:29:32Z",
-    "version": "v2.0"
+    "updated_at": "2025-07-31T13:53:24Z",
+    "version": "v2.0.0"
   },
   "astrbot_plugin_pokecheck": {
     "desc": "[仅QQ可用]一个检测“戳”关键词的插件",
