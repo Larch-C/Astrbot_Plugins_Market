@@ -889,8 +889,8 @@
     ],
     "social_link": "https://github.com/Zhalslar",
     "desc": "动态词库，自定义回复词",
-    "stars": 4,
-    "updated_at": "2025-07-07T16:17:11Z",
+    "stars": 5,
+    "updated_at": "2025-07-31T14:29:34Z",
     "version": "v1.0.3"
   },
   "astrbot_plugin_lyricnext": {
@@ -2297,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 17,
-    "updated_at": "2025-07-31T13:41:26Z",
+    "updated_at": "2025-07-31T14:26:45Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
