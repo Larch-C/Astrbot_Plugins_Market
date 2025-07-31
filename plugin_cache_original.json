@@ -368,8 +368,8 @@
     ],
     "author": null,
     "stars": 7,
-    "updated_at": "2025-07-31T07:32:06Z",
-    "version": "2.2.0--webui"
+    "updated_at": "2025-07-31T16:13:50Z",
+    "version": "2.2.1--fix"
   },
   "astrbot_plugin_group_sign": {
     "name": "group_sign",
@@ -2297,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 17,
-    "updated_at": "2025-07-31T14:26:45Z",
+    "updated_at": "2025-07-31T15:27:54Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
