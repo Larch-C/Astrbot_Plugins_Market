@@ -3,7 +3,7 @@
     class="plugin-card" 
     :bordered="false" 
     :style="{ borderRadius: '16px' }" 
-    :content-style="{ padding: '20px' }"
+    :content-style="{ padding: '12px 16px' }"
     @click="showDetails"
     role="article"
     :aria-label="`插件: ${plugin.name}`"
@@ -296,7 +296,7 @@ const showDetails = () => {
   border: 3px solid var(--border-base);
   box-shadow: var(--shadow-sm);
   background-color: var(--bg-card);
-  min-height: 495px;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   min-width: 100%;
@@ -315,11 +315,11 @@ const showDetails = () => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 12px 16px;
   border-bottom: 1px solid var(--border-base);
   background: var(--bg-card);
   border-radius: 15px 15px 0 0;
-  min-height: 70px;
+  min-height: 50px;
 }
 
 @font-face {
@@ -339,7 +339,7 @@ const showDetails = () => {
 }
 
 .plugin-name-container {
-  max-width: 70%;
+  max-width: 75%;
   overflow: hidden;
   position: relative;
 }
@@ -404,7 +404,7 @@ const showDetails = () => {
 /* 媒体查询优化不同屏幕尺寸 */
 @media (max-width: 768px) {
   .plugin-name-container {
-    max-width: 65%;
+    max-width: 70%;
   }
   
   @keyframes marqueeSlide {
@@ -428,7 +428,7 @@ const showDetails = () => {
 
 @media (max-width: 480px) {
   .plugin-name-container {
-    max-width: 60%;
+    max-width: 65%;
   }
   
   .card-header h3 {
@@ -449,26 +449,26 @@ const showDetails = () => {
   display: flex;
   flex-direction: column;
   height: 100%;
-  min-height: 280px;
+  min-height: 120px;
 }
 
 .description {
-  margin: 12px 0;
-  line-height: 1.7;
-  font-size: 0.95em;
-  height: 5.1em;
+  margin: 6px 0;
+  line-height: 1.5;
+  font-size: 0.9em;
+  height: 2.7em;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
   text-overflow: ellipsis;
   color: var(--text-secondary);
 }
 
 .tags-container {
-  margin: 12px 0;
-  min-height: 40px;
+  margin: 4px 0;
+  min-height: 28px;
   display: flex;
   align-items: flex-start;
 }
@@ -496,12 +496,12 @@ const showDetails = () => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.9em;
-  padding: 12px 0;
+  font-size: 0.85em;
+  padding: 6px 0;
   margin: 0px 0;
   border-top: 1px solid var(--border-base);
   color: var(--text-tertiary);
-  min-height: 50px;
+  min-height: 32px;
 }
 
 .author {
@@ -522,8 +522,8 @@ const showDetails = () => {
 
 /* 优化后的按钮区域样式 */
 .plugin-links {
-  margin-top: 8px;
-  min-height: 40px;
+  margin-top: 4px;
+  min-height: 32px;
   display: flex;
 }
 
@@ -541,16 +541,16 @@ const showDetails = () => {
 
 .button-group :deep(.main-button) {
   border-radius: 8px;
-  height: 32px;
-  padding: 0 16px;
+  height: 28px;
+  padding: 0 12px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .icon-buttons :deep(.n-button) {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   padding: 0;
   display: flex;
   align-items: center;
@@ -603,7 +603,7 @@ const showDetails = () => {
 .tags-container:empty::before {
   content: '';
   display: block;
-  height: 40px;
+  height: 28px;
 }
 
 /* 添加预加载动画优化 */

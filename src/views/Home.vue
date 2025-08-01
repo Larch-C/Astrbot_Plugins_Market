@@ -82,10 +82,10 @@ onMounted(() => {
 
 .plugins-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  max-width: 1400px;
+  gap: 24px;
   padding: 20px;
-  max-width: 100%;
   min-height: calc(100vh - 64px); /* 减去头部高度 */
   margin: 0 auto;
   flex: 1;
