@@ -1613,8 +1613,8 @@
     "desc": "MySQL存储聊天记录",
     "repo": "https://github.com/LWWD/astrbot_plugin_sql_history",
     "tags": [],
-    "stars": 2,
-    "updated_at": "2025-06-27T06:27:54Z",
+    "stars": 3,
+    "updated_at": "2025-08-01T13:02:12Z",
     "version": "v1.0"
   },
   "astrbot_plugin_error_notice": {
@@ -2297,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 17,
-    "updated_at": "2025-08-01T11:22:36Z",
+    "updated_at": "2025-08-01T12:54:57Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
