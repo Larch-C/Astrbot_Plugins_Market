@@ -526,7 +526,7 @@ const submitPlugin = () => {
   .step-indicator {
     background: var(--success-color);
     border-color: var(--success-color);
-    color: var(--text-primary);
+    color: var(--text-tag);
   }
   
   .step-title {
