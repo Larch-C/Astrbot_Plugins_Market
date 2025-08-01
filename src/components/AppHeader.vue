@@ -27,7 +27,7 @@
     <div class="header-title">
       <img src="/logo.webp" alt="Astrbot Logo" class="header-logo">
       <div class="title-wrapper">
-        <h1>Astrbot 插件市场 <span class="third-party-tag">demo</span></h1>
+        <h1>Astrbot 插件市场</h1>
       </div>
     </div>
     <search-toolbar
@@ -239,21 +239,6 @@ onMounted(() => {
   height: 48px;  /* 与 logo 高度一致 */
 }
 
-.third-party-tag {
-  display: inline-block;
-  background: var(--primary-color);
-  padding: 4px 8px;
-  border-radius: 10px;
-  font-size: 14px;
-  color: var(--text-tag);
-  font-weight: 600;
-  text-shadow: none;
-  margin-left: 5px;
-  transform: translateY(-4px);
-  vertical-align: middle;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 @font-face {
   font-family: 'Lexend';
   src: url('/font/lexend.woff2') format('woff2');
@@ -413,13 +398,6 @@ onMounted(() => {
     letter-spacing: -0.3px;
   }
   
-  .third-party-tag {
-    font-size: 12px;
-    padding: 3px 6px;
-    margin-left: 3px;
-    transform: translateY(-2px);
-  }
-  
   /* 分页优化 */
   .top-pagination-wrapper {
     padding: 0 12px;
@@ -523,12 +501,6 @@ onMounted(() => {
   .header-logo {
     width: 60px;
     height: 60px;
-  }
-
-  .third-party-tag {
-    font-size: 11px;
-    padding: 2px 5px;
-    border-radius: 8px;
   }
 }
 
