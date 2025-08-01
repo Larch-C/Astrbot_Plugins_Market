@@ -250,8 +250,8 @@
       "实用"
     ],
     "social_link": "https://magstic.art/",
-    "stars": 1,
-    "updated_at": "2025-07-28T05:30:52Z",
+    "stars": 2,
+    "updated_at": "2025-08-01T06:02:09Z",
     "version": "1.0.1"
   },
   "astrbot_plugin_eat_history": {
@@ -1404,8 +1404,8 @@
       "RAG",
       "知识库"
     ],
-    "stars": 45,
-    "updated_at": "2025-07-31T08:45:06Z",
+    "stars": 46,
+    "updated_at": "2025-08-01T06:11:32Z",
     "version": "v0.5.8"
   },
   "astrbot_uptime_kuma_webhook_plugin": {
@@ -2297,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 17,
-    "updated_at": "2025-08-01T04:16:25Z",
+    "updated_at": "2025-08-01T05:34:23Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
