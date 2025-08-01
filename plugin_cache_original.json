@@ -876,8 +876,8 @@
     "desc": "SCP：SL 服务器查询插件，仿照 server_Qchat 功能",
     "social_link": "https://xingyu.ink",
     "tags": [],
-    "stars": 0,
-    "updated_at": "2025-07-29T10:07:58Z",
+    "stars": 1,
+    "updated_at": "2025-08-01T13:57:58Z",
     "version": "1.0.0"
   },
   "astrbot_plugin_wbank": {
@@ -2297,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 17,
-    "updated_at": "2025-08-01T12:54:57Z",
+    "updated_at": "2025-08-01T13:40:59Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
