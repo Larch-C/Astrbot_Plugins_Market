@@ -2297,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 17,
-    "updated_at": "2025-08-01T06:40:22Z",
+    "updated_at": "2025-08-01T07:30:46Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -2378,8 +2378,8 @@
       "pixiv"
     ],
     "stars": 19,
-    "updated_at": "2025-07-26T16:06:54Z",
-    "version": "1.2.6"
+    "updated_at": "2025-08-01T08:25:09Z",
+    "version": "1.2.7"
   },
   "astrbot_plugin_gotify": {
     "repo": "https://github.com/BetaCatX/astrbot_plugin_gotify",
