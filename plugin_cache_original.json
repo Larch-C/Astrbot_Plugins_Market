@@ -159,8 +159,8 @@
     ],
     "social_link": "https://github.com/zhewang448",
     "stars": 7,
-    "updated_at": "2025-07-31T07:07:50Z",
-    "version": "v1.1.0"
+    "updated_at": "2025-08-01T03:12:10Z",
+    "version": "v1.1.1"
   },
   "astrbot_plugin_Heartflow": {
     "desc": "基于简单的心流机制的群聊主动回复插件，带来更生动的主动回复体验",
@@ -649,8 +649,8 @@
     "repo": "https://github.com/sa1guu/astrbot_plugin_touchi",
     "tags": [],
     "stars": 23,
-    "updated_at": "2025-07-23T00:38:44Z",
-    "version": "v2.5.4"
+    "updated_at": "2025-08-01T03:22:20Z",
+    "version": "v2.5.5"
   },
   "astrbot_plugin_Astrsupermarket": {
     "author": "和泉智宏本人",
@@ -1222,7 +1222,7 @@
     ],
     "social_link": "https://github.com/Zhalslar",
     "stars": 38,
-    "updated_at": "2025-07-31T12:35:54Z",
+    "updated_at": "2025-08-01T02:50:28Z",
     "version": "v1.0.2"
   },
   "astrbot_plugin_renjian": {
@@ -2297,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 17,
-    "updated_at": "2025-07-31T23:25:01Z",
+    "updated_at": "2025-08-01T02:26:00Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3917,8 +3917,8 @@
       "功能",
       "搬史"
     ],
-    "stars": 283,
-    "updated_at": "2025-07-31T22:53:34Z",
+    "stars": 284,
+    "updated_at": "2025-08-01T03:32:54Z",
     "version": "v0.912"
   },
   "astrbot_plugin_superpoke": {
