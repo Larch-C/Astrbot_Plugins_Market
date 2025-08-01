@@ -1365,8 +1365,8 @@
       "工具"
     ],
     "social_link": "https://github.com/Angus-fw",
-    "stars": 14,
-    "updated_at": "2025-07-22T15:54:55Z",
+    "stars": 15,
+    "updated_at": "2025-08-01T11:43:40Z",
     "version": "v1.1.4"
   },
   "astrbot_plugin_timetask": {
@@ -2297,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 17,
-    "updated_at": "2025-08-01T10:28:26Z",
+    "updated_at": "2025-08-01T11:22:36Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3422,8 +3422,8 @@
     "tags": [
       "nsfw"
     ],
-    "stars": 10,
-    "updated_at": "2025-05-28T15:35:53Z",
+    "stars": 11,
+    "updated_at": "2025-08-01T11:46:49Z",
     "version": "v1.3"
   },
   "astrbot_plugin_Translation": {
@@ -3855,8 +3855,8 @@
       "主动回复"
     ],
     "repo": "https://github.com/23q3/astrbot_plugin_SpectreCore",
-    "stars": 58,
-    "updated_at": "2025-07-30T01:48:25Z",
+    "stars": 59,
+    "updated_at": "2025-08-01T12:09:11Z",
     "version": "v2.1.4"
   },
   "astrbot_plugin_steamshot": {
@@ -4030,8 +4030,8 @@
     "author": "榛子小猹猹",
     "repo": "https://github.com/Hazellol/astrbot_plugin_sauceno",
     "tags": [],
-    "stars": 14,
-    "updated_at": "2025-07-16T13:41:35Z",
+    "stars": 15,
+    "updated_at": "2025-08-01T11:44:15Z",
     "version": "v1.0.0"
   },
   "lottery": {
