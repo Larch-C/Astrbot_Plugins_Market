@@ -2374,8 +2374,8 @@
       "工具"
     ],
     "social_link": "https://wenturc.com/",
-    "stars": 17,
-    "updated_at": "2025-08-02T13:33:45Z",
+    "stars": 18,
+    "updated_at": "2025-08-02T14:22:54Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3108,8 +3108,8 @@
       "工具"
     ],
     "stars": 0,
-    "updated_at": "2025-04-25T14:46:59Z",
-    "version": "v1.0.1"
+    "updated_at": "2025-08-02T14:12:08Z",
+    "version": "v2.0.0"
   },
   "astrbot_plugin_answerbook": {
     "desc": "一个简单的答案之书插件,发送 答案之书+问题 即可使用",
