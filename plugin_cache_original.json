@@ -443,7 +443,7 @@
     ],
     "author": null,
     "stars": 8,
-    "updated_at": "2025-08-02T16:25:41Z",
+    "updated_at": "2025-08-02T18:24:44Z",
     "version": "2.2.3--img"
   },
   "astrbot_plugin_group_sign": {
@@ -2168,8 +2168,8 @@
     ],
     "social_link": "https://github.com/Zhalslar/astrbot_plugin_apis",
     "stars": 56,
-    "updated_at": "2025-08-02T08:14:31Z",
-    "version": "v1.0.8"
+    "updated_at": "2025-08-02T18:24:01Z",
+    "version": "v1.0.9"
   },
   "astrbot_plugin_help": {
     "author": "tinker",
@@ -2375,7 +2375,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 18,
-    "updated_at": "2025-08-02T17:22:24Z",
+    "updated_at": "2025-08-02T18:34:26Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
