@@ -648,8 +648,8 @@
     "desc": "三角洲鼠鼠偷吃模拟器（简易）",
     "repo": "https://github.com/sa1guu/astrbot_plugin_touchi",
     "tags": [],
-    "stars": 23,
-    "updated_at": "2025-08-01T03:22:20Z",
+    "stars": 24,
+    "updated_at": "2025-08-02T00:10:04Z",
     "version": "v2.5.5"
   },
   "astrbot_plugin_Astrsupermarket": {
@@ -2297,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 17,
-    "updated_at": "2025-08-01T22:24:43Z",
+    "updated_at": "2025-08-01T23:24:58Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -4562,8 +4562,8 @@
     "repo": "https://github.com/zgojin/astrbot_plugin_AW",
     "tags": [],
     "stars": 7,
-    "updated_at": "2025-07-31T13:22:43Z",
-    "version": "v1.5.1"
+    "updated_at": "2025-08-02T01:38:07Z",
+    "version": "v1.5.2"
   },
   "astrbot_plugin_mnemosyne": {
     "desc": "一个长期记忆插件，基于milvus数据库实现，详情请见README.md",
