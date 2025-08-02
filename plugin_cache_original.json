@@ -406,8 +406,8 @@
       "主动回复",
       "沉浸式"
     ],
-    "stars": 11,
-    "updated_at": "2025-07-29T15:10:50Z",
+    "stars": 12,
+    "updated_at": "2025-08-02T10:13:58Z",
     "version": "1.4.5"
   },
   "astrbot_plugin_choulaopo": {
@@ -2375,7 +2375,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 17,
-    "updated_at": "2025-08-02T09:27:11Z",
+    "updated_at": "2025-08-02T10:25:34Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3207,7 +3207,7 @@
     "social_link": "https://github.com/xiewoc",
     "tags": [],
     "stars": 3,
-    "updated_at": "2025-06-11T03:41:38Z",
+    "updated_at": "2025-08-02T10:29:43Z",
     "version": "v1.0.1"
   },
   "encrypt-and-decrypt": {
