@@ -1,9 +1,84 @@
 {
+  "astrbot_plugin_image_censor": {
+    "desc": "AstrBot 图片审查插件",
+    "author": "Omnisch",
+    "repo": "https://github.com/Omnisch/astrbot_plugin_image_censor",
+    "tags": [],
+    "stars": 0,
+    "updated_at": "2025-07-31T19:38:14Z",
+    "version": "v1.1.0"
+  },
+  "astrbot_plugin_3dmapi": {
+    "desc": "3dmmod 搜索插件，支持在 3dmgame Mod 站搜索相关 Mod 内容",
+    "author": "--sora--",
+    "repo": "https://github.com/sora-yyds/astrbot_plugin_3dmapi",
+    "tags": [
+      "3DM",
+      "Mod"
+    ],
+    "stars": 0,
+    "updated_at": "2025-07-29T18:11:34Z",
+    "version": "v1.0"
+  },
+  "astrbot_plugin_ragecoop": {
+    "desc": "GTAV RageCoop 服务器查询插件",
+    "author": "--sora--",
+    "repo": "https://github.com/sora-yyds/astrbot_plugin_ragecoop",
+    "tags": [
+      "GTAV",
+      "RageCoop",
+      "IP"
+    ],
+    "stars": 0,
+    "updated_at": "2025-07-29T19:35:32Z",
+    "version": "v1.0"
+  },
+  "astrbot_plugin_TurtleSoup": {
+    "desc": "海龟汤互动解谜游戏，支持 LLM 自动判题和自定义海龟汤预设题库",
+    "author": "anchor",
+    "repo": "https://github.com/anchorAnc/astrbot_plugin_TurtleSoup",
+    "tags": [
+      "海龟汤"
+    ],
+    "stars": 0,
+    "updated_at": "2025-07-29T13:41:02Z",
+    "version": "v1.0.0"
+  },
+  "astrbot_plugin_update_manager": {
+    "desc": "一个用于一键更新所有 AstrBot 插件的工具，支持定时检查。",
+    "author": "bushikq",
+    "repo": "https://github.com/zhewang448/astrbot_plugin_update_manager",
+    "tags": [
+      "工具",
+      "实用",
+      "定时任务"
+    ],
+    "social_link": "https://github.com/zhewang448",
+    "stars": 0,
+    "updated_at": "2025-08-01T03:27:26Z",
+    "version": "v1.0.0"
+  },
+  "astrbot_plugins_canvas": {
+    "desc": "基于 Gemini AI 模型的画图改图插件，可通过指令或自然语言调用。",
+    "author": "长安某",
+    "repo": "https://github.com/zgojin/AstrBot_Plugins_Canvas",
+    "tags": [
+      "画图",
+      "图像编辑",
+      "工具"
+    ],
+    "social_link": "https://astrbot.uk",
+    "stars": 1,
+    "updated_at": "2025-07-27T05:22:25Z",
+    "version": "v1.2"
+  },
   "astrbot_plugin_lanzoucloud": {
     "desc": "蓝奏云文件解析插件，支持自动检测和手动解析蓝奏云分享链接",
     "author": "BB0813",
     "repo": "https://github.com/BB0813/astrbot_plugin_lanzoucloud",
-    "tags": "文件解析",
+    "tags": [
+      "文件解析"
+    ],
     "social_link": "https://qm.qq.com/q/d4lwUp9ap4",
     "stars": 0,
     "updated_at": "2025-07-29T08:30:46Z",
@@ -367,8 +442,8 @@
       "文件处理"
     ],
     "author": null,
-    "stars": 7,
-    "updated_at": "2025-07-31T18:23:26Z",
+    "stars": 8,
+    "updated_at": "2025-08-02T09:11:08Z",
     "version": "2.2.2--refix"
   },
   "astrbot_plugin_group_sign": {
@@ -391,11 +466,14 @@
     "version": "v1.4.0"
   },
   "astrbot_plugin_mp": {
-    "desc": "一个适用于最新版本 MoviePilot 的小工具，支持搜索、订阅、消息转发等功能",
+    "desc": "一个适用于最新版本moviepilot的小工具，支持搜索、订阅、消息转发等功能",
     "author": "EWEDL",
-    "repo": "https://github.com/EWEDLCM/astrbot_plugin/tree/master/astrbot_plugin_mp",
+    "repo": "https://github.com/EWEDLCM/astrbot_plugin_mp",
     "tags": [
-      "MoviePilot"
+      "MP",
+      "工具",
+      "转发",
+      "交互"
     ],
     "stars": 0,
     "updated_at": "2025-07-08T02:01:03Z",
@@ -1365,8 +1443,8 @@
       "工具"
     ],
     "social_link": "https://github.com/Angus-fw",
-    "stars": 15,
-    "updated_at": "2025-08-01T11:43:40Z",
+    "stars": 16,
+    "updated_at": "2025-08-02T08:28:11Z",
     "version": "v1.1.4"
   },
   "astrbot_plugin_timetask": {
@@ -1516,9 +1594,9 @@
     "repo": "https://github.com/Zhalslar/astrbot_plugin_search_video",
     "social_link": "https://github.com/Zhalslar",
     "tags": [],
-    "stars": 17,
-    "updated_at": "2025-08-02T03:35:54Z",
-    "version": "v1.0.4"
+    "stars": 18,
+    "updated_at": "2025-08-02T09:56:03Z",
+    "version": "v1.0.6"
   },
   "astrbot_plugin_zt": {
     "author": "Zhalslar",
@@ -1593,8 +1671,8 @@
     "tags": [
       "Galgame"
     ],
-    "stars": 1,
-    "updated_at": "2025-05-24T15:48:12Z",
+    "stars": 2,
+    "updated_at": "2025-08-02T08:10:45Z",
     "version": "v1.3"
   },
   "astrbot_plugin_llm_poke": {
@@ -1683,8 +1761,8 @@
       "game",
       "fish"
     ],
-    "stars": 26,
-    "updated_at": "2025-08-02T01:40:23Z",
+    "stars": 28,
+    "updated_at": "2025-08-02T09:44:03Z",
     "version": "1.4.6"
   },
   "astrbot_plugin_bilibili_live": {
@@ -1761,8 +1839,8 @@
       "戳一戳"
     ],
     "social_link": "https://github.com/Zhalslar",
-    "stars": 15,
-    "updated_at": "2025-07-29T15:22:27Z",
+    "stars": 16,
+    "updated_at": "2025-08-02T08:13:43Z",
     "version": "v1.0.8"
   },
   "astrbot_plugin_jm_cosmos": {
@@ -1774,8 +1852,8 @@
       "禁漫"
     ],
     "social_link": "https://github.com/GEMILUXVII",
-    "stars": 22,
-    "updated_at": "2025-07-31T08:52:03Z",
+    "stars": 23,
+    "updated_at": "2025-08-02T08:12:35Z",
     "version": "1.0.7"
   },
   "astrbot_plugin_combine-messages": {
@@ -2089,8 +2167,8 @@
       "api"
     ],
     "social_link": "https://github.com/Zhalslar/astrbot_plugin_apis",
-    "stars": 55,
-    "updated_at": "2025-07-31T20:13:48Z",
+    "stars": 56,
+    "updated_at": "2025-08-02T08:14:31Z",
     "version": "v1.0.8"
   },
   "astrbot_plugin_help": {
@@ -2297,7 +2375,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 17,
-    "updated_at": "2025-08-02T06:34:54Z",
+    "updated_at": "2025-08-02T09:27:11Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -2377,8 +2455,8 @@
     "tags": [
       "pixiv"
     ],
-    "stars": 19,
-    "updated_at": "2025-08-02T01:43:26Z",
+    "stars": 21,
+    "updated_at": "2025-08-02T09:36:33Z",
     "version": "1.2.8"
   },
   "astrbot_plugin_gotify": {
@@ -2730,8 +2808,8 @@
     "repo": "https://github.com/ttq7/doro_ending",
     "social_link": "https://github.com/ttq7/doro_ending",
     "tags": [],
-    "stars": 4,
-    "updated_at": "2025-05-08T10:58:58Z",
+    "stars": 5,
+    "updated_at": "2025-08-02T08:18:23Z",
     "version": "v1.0.0"
   },
   "astrbot_plugin_get_weather_msg": {
@@ -3052,8 +3130,8 @@
       "抽卡"
     ],
     "social_link": "https://github.com/Futureppo",
-    "stars": 13,
-    "updated_at": "2025-07-29T15:31:16Z",
+    "stars": 14,
+    "updated_at": "2025-08-02T08:30:20Z",
     "version": "v1.0.12"
   },
   "astrbot_plugin_litematic": {
@@ -3238,8 +3316,8 @@
       "番剧"
     ],
     "repo": "https://github.com/xco2/astrbot_plugin_anime_gacha",
-    "stars": 5,
-    "updated_at": "2025-04-27T09:15:23Z",
+    "stars": 6,
+    "updated_at": "2025-08-02T08:36:54Z",
     "version": "v1.1.0"
   },
   "astrbot_plugin_nachoneko": {
@@ -3606,8 +3684,8 @@
       "bilibili"
     ],
     "social_link": "https://github.com/miaoxutao123/",
-    "stars": 27,
-    "updated_at": "2025-07-31T03:54:24Z",
+    "stars": 28,
+    "updated_at": "2025-08-02T08:07:36Z",
     "version": "v0.2.8"
   },
   "astrbot_plugin_sjzb": {
@@ -3855,8 +3933,8 @@
       "主动回复"
     ],
     "repo": "https://github.com/23q3/astrbot_plugin_SpectreCore",
-    "stars": 59,
-    "updated_at": "2025-08-01T12:09:11Z",
+    "stars": 60,
+    "updated_at": "2025-08-02T08:18:51Z",
     "version": "v2.1.4"
   },
   "astrbot_plugin_steamshot": {
@@ -3917,8 +3995,8 @@
       "功能",
       "搬史"
     ],
-    "stars": 285,
-    "updated_at": "2025-08-01T11:15:56Z",
+    "stars": 284,
+    "updated_at": "2025-08-02T08:44:32Z",
     "version": "v0.912"
   },
   "astrbot_plugin_superpoke": {
@@ -4183,8 +4261,8 @@
     "author": "Flartiny & Soulter",
     "repo": "https://github.com/Soulter/astrbot_plugin_bilibili",
     "tags": [],
-    "stars": 27,
-    "updated_at": "2025-07-28T10:46:05Z",
+    "stars": 28,
+    "updated_at": "2025-08-02T08:25:31Z",
     "version": "v1.4.9"
   },
   "astrbot_plugin_leetcode": {
