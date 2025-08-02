@@ -1683,8 +1683,8 @@
       "game",
       "fish"
     ],
-    "stars": 25,
-    "updated_at": "2025-07-29T10:20:31Z",
+    "stars": 26,
+    "updated_at": "2025-08-02T01:40:23Z",
     "version": "1.4.6"
   },
   "astrbot_plugin_bilibili_live": {
@@ -2297,7 +2297,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 17,
-    "updated_at": "2025-08-01T23:24:58Z",
+    "updated_at": "2025-08-02T02:03:43Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -2378,8 +2378,8 @@
       "pixiv"
     ],
     "stars": 19,
-    "updated_at": "2025-08-01T08:25:09Z",
-    "version": "1.2.7"
+    "updated_at": "2025-08-02T01:43:26Z",
+    "version": "1.2.8"
   },
   "astrbot_plugin_gotify": {
     "repo": "https://github.com/BetaCatX/astrbot_plugin_gotify",
