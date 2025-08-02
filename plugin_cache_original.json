@@ -443,8 +443,8 @@
     ],
     "author": null,
     "stars": 8,
-    "updated_at": "2025-08-02T09:11:08Z",
-    "version": "2.2.2--refix"
+    "updated_at": "2025-08-02T16:25:41Z",
+    "version": "2.2.3--img"
   },
   "astrbot_plugin_group_sign": {
     "name": "group_sign",
@@ -2375,7 +2375,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 18,
-    "updated_at": "2025-08-02T15:25:14Z",
+    "updated_at": "2025-08-02T16:29:57Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
