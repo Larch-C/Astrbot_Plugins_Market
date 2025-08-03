@@ -1378,8 +1378,8 @@
     "desc": "明日方舟抽卡查询",
     "repo": "https://github.com/R1ckyQaQ/astrbot_plugin_mrfz_haunting_query",
     "tags": [],
-    "stars": 5,
-    "updated_at": "2025-07-16T20:53:15Z",
+    "stars": 6,
+    "updated_at": "2025-08-03T18:15:37Z",
     "version": "v1.1"
   },
   "astrbot_plugin_deepwiki": {
@@ -2167,8 +2167,8 @@
       "api"
     ],
     "social_link": "https://github.com/Zhalslar/astrbot_plugin_apis",
-    "stars": 56,
-    "updated_at": "2025-08-03T04:06:52Z",
+    "stars": 57,
+    "updated_at": "2025-08-03T17:41:15Z",
     "version": "v1.0.9"
   },
   "astrbot_plugin_help": {
@@ -2375,7 +2375,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 18,
-    "updated_at": "2025-08-03T17:22:21Z",
+    "updated_at": "2025-08-03T18:35:06Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
