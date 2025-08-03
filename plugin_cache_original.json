@@ -5,8 +5,8 @@
     "repo": "https://github.com/Omnisch/astrbot_plugin_image_censor",
     "tags": [],
     "stars": 0,
-    "updated_at": "2025-07-31T19:38:14Z",
-    "version": "v1.1.0"
+    "updated_at": "2025-08-03T07:07:21Z",
+    "version": "v1.1.1"
   },
   "astrbot_plugin_3dmapi": {
     "desc": "3dmmod 搜索插件，支持在 3dmgame Mod 站搜索相关 Mod 内容",
@@ -2375,7 +2375,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 18,
-    "updated_at": "2025-08-03T06:35:42Z",
+    "updated_at": "2025-08-03T07:23:42Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
