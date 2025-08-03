@@ -2375,7 +2375,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 18,
-    "updated_at": "2025-08-03T09:25:38Z",
+    "updated_at": "2025-08-03T10:25:42Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -2662,8 +2662,8 @@
     ],
     "social_link": "https://docs.sayu-bot.com/",
     "stars": 15,
-    "updated_at": "2025-07-18T14:35:08Z",
-    "version": "v0.3"
+    "updated_at": "2025-08-03T10:12:00Z",
+    "version": "v0.4"
   },
   "astrbot_plugin_xyzw": {
     "author": "四郎",
@@ -3948,8 +3948,8 @@
       "数据查询",
       "图片"
     ],
-    "stars": 9,
-    "updated_at": "2025-06-30T11:15:20Z",
+    "stars": 10,
+    "updated_at": "2025-08-03T10:27:36Z",
     "version": "v1.8.6"
   },
   "astrbot_plugin_GGAC_Messenger": {
