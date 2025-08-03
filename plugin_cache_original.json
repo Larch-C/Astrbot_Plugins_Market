@@ -443,7 +443,7 @@
     ],
     "author": null,
     "stars": 9,
-    "updated_at": "2025-08-02T18:39:02Z",
+    "updated_at": "2025-08-03T03:05:27Z",
     "version": "2.2.3--img"
   },
   "astrbot_plugin_group_sign": {
@@ -2168,7 +2168,7 @@
     ],
     "social_link": "https://github.com/Zhalslar/astrbot_plugin_apis",
     "stars": 56,
-    "updated_at": "2025-08-02T18:42:48Z",
+    "updated_at": "2025-08-03T04:06:52Z",
     "version": "v1.0.9"
   },
   "astrbot_plugin_help": {
@@ -2375,7 +2375,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 18,
-    "updated_at": "2025-08-03T02:24:28Z",
+    "updated_at": "2025-08-03T04:11:46Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3995,8 +3995,8 @@
       "功能",
       "搬史"
     ],
-    "stars": 284,
-    "updated_at": "2025-08-02T08:44:32Z",
+    "stars": 285,
+    "updated_at": "2025-08-03T03:50:58Z",
     "version": "v0.912"
   },
   "astrbot_plugin_superpoke": {
