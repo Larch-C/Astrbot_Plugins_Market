@@ -92,8 +92,8 @@
       "图片反搜"
     ],
     "stars": 0,
-    "updated_at": "2025-07-30T17:35:15Z",
-    "version": "2.3"
+    "updated_at": "2025-08-04T19:17:56Z",
+    "version": "3.1"
   },
   "astrbot_plugin_LLMTempBan": {
     "desc": "让 Bot 学会主动拉黑或者通过管理员指令拉黑。",
@@ -2375,7 +2375,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 18,
-    "updated_at": "2025-08-04T18:38:47Z",
+    "updated_at": "2025-08-04T19:23:30Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
