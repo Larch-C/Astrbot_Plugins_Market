@@ -442,8 +442,8 @@
       "文件处理"
     ],
     "author": null,
-    "stars": 9,
-    "updated_at": "2025-08-03T03:05:27Z",
+    "stars": 10,
+    "updated_at": "2025-08-04T16:12:02Z",
     "version": "2.2.3--img"
   },
   "astrbot_plugin_group_sign": {
@@ -2375,7 +2375,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 18,
-    "updated_at": "2025-08-04T15:29:48Z",
+    "updated_at": "2025-08-04T16:35:21Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
