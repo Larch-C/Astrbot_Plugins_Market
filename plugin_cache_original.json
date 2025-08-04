@@ -40,8 +40,8 @@
     "tags": [
       "海龟汤"
     ],
-    "stars": 0,
-    "updated_at": "2025-07-29T13:41:02Z",
+    "stars": 1,
+    "updated_at": "2025-08-04T09:39:12Z",
     "version": "v1.0.0"
   },
   "astrbot_plugin_update_manager": {
@@ -1761,8 +1761,8 @@
       "game",
       "fish"
     ],
-    "stars": 28,
-    "updated_at": "2025-08-02T09:44:03Z",
+    "stars": 29,
+    "updated_at": "2025-08-04T08:57:36Z",
     "version": "1.4.6"
   },
   "astrbot_plugin_bilibili_live": {
@@ -2375,7 +2375,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 18,
-    "updated_at": "2025-08-04T08:36:41Z",
+    "updated_at": "2025-08-04T09:36:58Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
