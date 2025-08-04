@@ -92,7 +92,7 @@
       "图片反搜"
     ],
     "stars": 0,
-    "updated_at": "2025-08-04T19:17:56Z",
+    "updated_at": "2025-08-04T20:12:55Z",
     "version": "3.1"
   },
   "astrbot_plugin_LLMTempBan": {
@@ -802,8 +802,8 @@
       "Kook",
       "平台适配器"
     ],
-    "stars": 5,
-    "updated_at": "2025-06-25T10:25:04Z",
+    "stars": 6,
+    "updated_at": "2025-08-04T20:06:33Z",
     "version": "v0.0.3"
   },
   "astrbot_plugin_deepresearch": {
@@ -2375,7 +2375,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 18,
-    "updated_at": "2025-08-04T19:23:30Z",
+    "updated_at": "2025-08-04T20:29:39Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
