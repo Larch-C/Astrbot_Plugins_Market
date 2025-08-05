@@ -7,7 +7,6 @@
 > [!NOTE]
 > 请点击链接前往 AstrBot 主仓库提交插件：[🥳 发布插件](https://github.com/AstrBotDevs/AstrBot/issues/new?template=PLUGIN_PUBLISH.yml)
 
-
 ## Action 类别
 
 1. `sync.yml` (不推荐， 上游服务存在数据丢失)
