@@ -33,7 +33,6 @@ const giscusRef = ref(null)
 function loadGiscus() {
   if (!giscusRef.value) return
 
-  // 移除现有的 giscus 框架（如果存在）
   const iframe = giscusRef.value.querySelector('iframe')
   if (iframe) {
     iframe.remove()
@@ -60,12 +59,10 @@ function loadGiscus() {
   giscusRef.value.appendChild(script)
 }
 
-// 监听主题变化
 watch(() => props.theme, () => {
   loadGiscus()
 })
 
-// 添加主题切换消息监听
 const updateGiscusTheme = (theme) => {
   const iframe = document.querySelector('.giscus-frame')
   if (!iframe) return
@@ -83,7 +80,6 @@ onMounted(() => {
   loadGiscus()
 })
 
-// 监听主题变化时，向 iframe 发送消息
 watch(() => props.theme, (newTheme) => {
   nextTick(() => {
     updateGiscusTheme(newTheme)

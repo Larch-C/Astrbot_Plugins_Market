@@ -330,7 +330,6 @@ const handleClearSearch = () => {
   }
 }
 
-/* 触摸设备优化 */
 @media (hover: none) and (pointer: coarse) {
   .custom-search-box:hover {
     background: var(--input-bg);

@@ -126,14 +126,12 @@ export const usePluginStore = defineStore('plugins', () => {
     return filteredPlugins.value.slice(start, end)
   })
 
-  // 动作
   async function loadPlugins() {
     isLoading.value = true
     try {
       const response = await axios.get('https://api.wenturc.com/astrbot/plugins/')
       const data = response.data
       plugins.value = Object.entries(data).map(([name, details]) => {
-        // 确保 tags 始终是数组
         const tags = details.tags ? 
           (Array.isArray(details.tags) ? details.tags : [details.tags]) 
           : []
@@ -170,15 +168,12 @@ export const usePluginStore = defineStore('plugins', () => {
 
   function setSortBy(value) {
     sortBy.value = value
-    // 随机排序时生成一次稳定种子，直到下次切换才变化
     if (value === 'random') {
       randomSeed.value = Math.random()
     }
-    // 重置到第一页
     currentPage.value = 1
   }
 
-  // 刷新随机顺序（保持当前为随机排序时生效）
   function refreshRandomOrder() {
     if (sortBy.value === 'random') {
       randomSeed.value = Math.random()
