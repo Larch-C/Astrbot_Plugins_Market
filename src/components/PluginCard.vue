@@ -168,7 +168,8 @@ import {
   NTooltip
 } from 'naive-ui'
 import { StarSharp, LinkOutline, PersonOutline, CheckmarkOutline } from '@vicons/ionicons5'
-import PluginDetails from './PluginDetails.vue'
+import { defineAsyncComponent } from 'vue'
+const PluginDetails = defineAsyncComponent(() => import('./PluginDetails.vue'))
 
 const showPluginDetails = ref(false)
 const props = defineProps({
@@ -305,6 +306,7 @@ const showDetails = () => {
 .plugin-card {
   position: relative;
   overflow: visible;
+  contain: content;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   border: 3px solid var(--border-base);
   box-shadow: var(--shadow-sm);
@@ -345,21 +347,7 @@ const showDetails = () => {
   padding-bottom: 6px !important;
 }
 
-@font-face {
-  font-family: 'Lexend';
-  src: url('/font/lexend.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Lexend';
-  src: url('/font/lexend-v25-latin-600.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
+/* 字体在全局 theme.css 中声明，避免重复定义 */
 
 .plugin-name-container {
   max-width: 75%;

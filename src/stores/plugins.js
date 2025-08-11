@@ -1,6 +1,6 @@
 import { ref, computed, watch } from 'vue'
 import { defineStore } from 'pinia'
-import axios from 'axios'
+// 用原生 fetch 降低依赖体积
 
 export const usePluginStore = defineStore('plugins', () => {
   // 从 localStorage 获取主题偏好
@@ -129,8 +129,8 @@ export const usePluginStore = defineStore('plugins', () => {
   async function loadPlugins() {
     isLoading.value = true
     try {
-      const response = await axios.get('https://api.wenturc.com/astrbot/plugins/')
-      const data = response.data
+      const response = await fetch('https://api.wenturc.com/astrbot/plugins/', { cache: 'no-store' })
+      const data = await response.json()
       plugins.value = Object.entries(data).map(([name, details]) => {
         const tags = details.tags ? 
           (Array.isArray(details.tags) ? details.tags : [details.tags]) 
