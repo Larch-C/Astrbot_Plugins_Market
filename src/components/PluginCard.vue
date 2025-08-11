@@ -315,7 +315,6 @@ const showDetails = () => {
   flex-direction: column;
   min-width: 100%;
   animation: cardAppear 0.5s cubic-bezier(0.23, 1, 0.32, 1) backwards;
-  /* 在 header 动画进行到一半时开始加载卡片，每个卡片间隔 0.08s */
   animation-delay: calc(0.4s + (var(--card-index, 0) * 0.08s));
 }
 
@@ -406,7 +405,6 @@ const showDetails = () => {
   animation-play-state: paused;
 }
 
-/* 优化后的走马灯动画 */
 @keyframes marqueeSlide {
   0% {
     transform: translateX(0);
@@ -425,7 +423,6 @@ const showDetails = () => {
   }
 }
 
-/* 媒体查询优化不同屏幕尺寸 */
 @media (max-width: 768px) {
   .plugin-name-container {
     max-width: 70%;
@@ -480,7 +477,7 @@ const showDetails = () => {
   margin: 4px 0;
   line-height: 1.5;
   font-size: 0.9em;
-  height: 3em; /* 两行 * 1.5 行高，避免第二行被裁切 */
+  height: 3em; 
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -499,7 +496,6 @@ const showDetails = () => {
   position: relative;
 }
 
-/* 右侧渐隐，提示还有更多标签 */
 .tags-container::after {
   content: '';
   position: absolute;
@@ -563,7 +559,6 @@ const showDetails = () => {
   gap: 6px;
 }
 
-/* 优化后的按钮区域样式 */
 .plugin-links {
   margin-top: 2px;
   min-height: 28px;
@@ -612,7 +607,6 @@ const showDetails = () => {
   transform: translateY(-1px);
 }
 
-/* 响应式按钮布局 */
 @media (max-width: 480px) {
   .button-group :deep(.n-button) {
     font-size: 0.9em;
@@ -649,12 +643,10 @@ const showDetails = () => {
   height: 28px;
 }
 
-/* 添加预加载动画优化 */
 .plugin-name-text {
   will-change: transform;
 }
 
-/* 减少动画时的性能消耗 */
 .plugin-name.marquee .plugin-name-text {
   backface-visibility: hidden;
   perspective: 1000px;
