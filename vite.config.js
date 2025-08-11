@@ -11,6 +11,17 @@ export default defineConfig({
       '@': resolve(__dirname, './src')
     }
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['vue', 'pinia', 'naive-ui'],
+          icons: ['@vicons/ionicons5'],
+          markdown: ['marked']
+        }
+      }
+    }
+  },
   server: {
     host: '0.0.0.0',  // 允许局域网访问
     port: 3000  // 指定端口号

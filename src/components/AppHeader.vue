@@ -24,8 +24,8 @@
         </template>
       </n-switch>
     </n-space>
-    <div class="header-title">
-      <img src="/logo.webp" alt="Astrbot Logo" class="header-logo" width="48" height="48">
+      <div class="header-title">
+        <img src="/logo.webp" alt="Astrbot Logo" class="header-logo" width="48" height="48" decoding="async" fetchpriority="high">
       <div class="title-wrapper">
         <h1>Astrbot 插件市场</h1>
       </div>
