@@ -1,0 +1,38 @@
+export const darkThemeOverrides = {
+  'common': { 
+    duration: '0.2s',
+    borderRadius: '8px',
+    primaryColor: '#3b82f6',
+    primaryColorHover: '#60a5fa',
+    primaryColorPressed: '#2563eb',
+    baseColor: '#1e293b',
+    textColor2: '#f1f5f9',
+    textColor3: '#cbd5e1'
+  },
+  'Pagination': {
+    itemTextColor: '#fff',
+    itemColorHover: 'rgba(255, 255, 255, 0.1)',
+    itemColorPressed: 'rgba(255, 255, 255, 0.2)',
+    itemColorActive: 'rgba(255, 255, 255, 0.2)',
+    itemBorderRadius: '6px'
+  },
+  'Button': {
+    borderRadius: '8px',
+    paddingMedium: '0 18px',
+    heightMedium: '34px',
+    textColorPrimary: '#ffffff',
+    textColorHoverPrimary: '#ffffff'
+  },
+  'Tag': {
+    borderRadius: '6px'
+  },
+  'Input': {
+    borderHover: '#60a5fa',
+    borderFocus: '#3b82f6'
+  },
+  'Card': {
+    borderRadius: '16px',
+    color: '#1e293b',
+    colorModal: '#1e293b'
+  }
+}
