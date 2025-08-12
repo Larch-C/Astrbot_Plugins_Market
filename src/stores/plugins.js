@@ -32,7 +32,7 @@ export const usePluginStore = defineStore('plugins', () => {
     if (raw) userProfile.value = JSON.parse(raw)
   } catch (_) {}
 
-  function persistProfile() {
+  const persistProfile = () => {
     try { localStorage.setItem('pm_user_profile', JSON.stringify(userProfile.value)) } catch(_) {}
   }
   
@@ -54,7 +54,7 @@ export const usePluginStore = defineStore('plugins', () => {
   }
 
   // 简单稳定哈希：基于名字与种子生成稳定的“随机分数”
-  function stableHash(input, seedNumber) {
+  const stableHash = (input, seedNumber) => {
     let h = (Math.floor(seedNumber * 1e9) ^ 5381) >>> 0
     for (let i = 0; i < input.length; i += 1) {
       h = (((h << 5) + h) + input.charCodeAt(i)) >>> 0 // h * 33 + c
@@ -99,7 +99,7 @@ export const usePluginStore = defineStore('plugins', () => {
   })
 
   // 计算推荐得分（0-1）
-  function computeScore(plugin) {
+  const computeScore = (plugin) => {
     const s = stats.value
     // 热度
     const starsNorm = Math.min(1, (plugin.stars || 0) / s.maxStars)
@@ -197,7 +197,7 @@ export const usePluginStore = defineStore('plugins', () => {
   })
 
   // 相关推荐：基于标签 Jaccard + 作者加成
-  function getSimilarPlugins(target, k = 6) {
+  const getSimilarPlugins = (target, k = 6) => {
     if (!target) return []
     const tagsA = new Set(Array.isArray(target.tags) ? target.tags : [])
     const list = (plugins.value || []).filter(p => p.name !== target.name)
@@ -231,7 +231,7 @@ export const usePluginStore = defineStore('plugins', () => {
     return filteredPlugins.value.slice(start, end)
   })
 
-  async function loadPlugins() {
+  const loadPlugins = async () => {
     isLoading.value = true
     try {
       const response = await fetch('https://api.wenturc.com/astrbot/plugins/', { cache: 'no-store' })
@@ -256,7 +256,7 @@ export const usePluginStore = defineStore('plugins', () => {
   }
 
   // 记录交互，更新用户画像
-  function trackInteraction(type, plugin) {
+  const trackInteraction = (type, plugin) => {
     if (!plugin) return
     const weights = { impression: 0.2, open: 1.0, detail: 1.2, copy: 1.5, social: 1.0, favorite: 2.0 }
     const w = weights[type] || 0.5
@@ -272,7 +272,7 @@ export const usePluginStore = defineStore('plugins', () => {
   }
 
   // 记录搜索关键词
-  function trackSearch(query) {
+  const trackSearch = (query) => {
     if (!query) return
     const tokens = String(query).toLowerCase().split(/[^a-z0-9\u4e00-\u9fa5]+/).filter(t => t && t.length >= 2)
     if (!tokens.length) return
@@ -281,23 +281,15 @@ export const usePluginStore = defineStore('plugins', () => {
     persistProfile()
   }
 
-  function setDarkMode(value) {
-    isDarkMode.value = value
-  }
+  const setDarkMode = (value) => { isDarkMode.value = value }
 
-  function setSearchQuery(query) {
-    searchQuery.value = query
-  }
+  const setSearchQuery = (query) => { searchQuery.value = query }
 
-  function setSelectedTag(tag) {
-    selectedTag.value = tag
-  }
+  const setSelectedTag = (tag) => { selectedTag.value = tag }
 
-  function setCurrentPage(page) {
-    currentPage.value = page
-  }
+  const setCurrentPage = (page) => { currentPage.value = page }
 
-  function setSortBy(value) {
+  const setSortBy = (value) => {
     sortBy.value = value
     if (value === 'random') {
       randomSeed.value = Math.random()
@@ -305,7 +297,7 @@ export const usePluginStore = defineStore('plugins', () => {
     currentPage.value = 1
   }
 
-  function refreshRandomOrder() {
+  const refreshRandomOrder = () => {
     if (sortBy.value === 'random') {
       randomSeed.value = Math.random()
     }
