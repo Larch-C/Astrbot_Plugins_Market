@@ -168,10 +168,12 @@ import {
   NTooltip
 } from 'naive-ui'
 import { StarSharp, LinkOutline, PersonOutline, CheckmarkOutline } from '@vicons/ionicons5'
+import { usePluginStore } from '@/stores/plugins'
 import { defineAsyncComponent } from 'vue'
 const PluginDetails = defineAsyncComponent(() => import('./PluginDetails.vue'))
 
 const showPluginDetails = ref(false)
+const store = usePluginStore()
 const props = defineProps({
   plugin: {
     type: Object,
@@ -269,6 +271,7 @@ const copyRepoUrl = async (e) => {
   if (props.plugin.repo) {
     try {
       await navigator.clipboard.writeText(props.plugin.repo)
+      store.trackInteraction('copy', props.plugin)
       isCopied.value = true
       setTimeout(() => {
         isCopied.value = false
@@ -282,11 +285,13 @@ const copyRepoUrl = async (e) => {
 const openUrl = (url, e) => {
   e?.stopPropagation() // 阻止事件冒泡
   if (url) {
+    store.trackInteraction('open', props.plugin)
     window.open(url, '_blank')
   }
 }
 
 const showDetails = () => {
+  store.trackInteraction('detail', props.plugin)
   showPluginDetails.value = true
 }
 </script>

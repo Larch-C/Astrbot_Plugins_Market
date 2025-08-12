@@ -29,9 +29,10 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { NSelect, NIcon } from 'naive-ui'
 import { Search, CloseCircle } from '@vicons/ionicons5'
+import { usePluginStore } from '@/stores/plugins'
 
 const props = defineProps({
   searchQuery: String,
@@ -49,6 +50,7 @@ const sortOptions = [
 ]
 
 const sortBy = ref(props.sortBy)
+const store = usePluginStore()
 
 const handleSortChange = (value) => {
   emit('update:sortBy', value)
@@ -57,6 +59,8 @@ const handleSortChange = (value) => {
 const handleSearchInput = (e) => {
   const value = e.target.value
   emit('update:searchQuery', value)
+  // 记录搜索关键词（节流后可移到上层）
+  store.trackSearch(value)
   // 如果当前页不是第一页，自动重置到第一页
   if (props.currentPage > 1) {
     emit('update:currentPage', 1)

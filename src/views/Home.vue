@@ -9,14 +9,7 @@
       :tag-options="tagOptions"
       :total-pages="totalPages"
     />
-    <div class="top-pagination-wrapper">
-      <app-pagination
-        v-if="totalPages > 1"
-        v-model="currentPage"
-        :total-pages="totalPages"
-        class="top-pagination"
-      />
-    </div>
+    
 
     <!-- 随机排序时的工具条 -->
     <div v-if="sortBy === 'random'" class="grid-toolbar">
@@ -29,6 +22,31 @@
           换一换
         </n-button>
       </div>
+    </div>
+
+    <!-- 为你推荐（基于本地画像） -->
+    <section v-if="recommendedForYou && recommendedForYou.length" class="recommend-for-you">
+      <div class="section-header">
+        <h2 class="section-title">为你推荐</h2>
+      </div>
+      <div class="recommend-grid">
+        <plugin-card
+          v-for="(plugin, index) in recommendedForYou.slice(0, 4)"
+          :key="`recfy-${plugin.name}-${index}`"
+          :plugin="plugin"
+          :index="index"
+        />
+      </div>
+    </section>
+
+    <!-- 将分页器放到为你推荐下面 -->
+    <div class="top-pagination-wrapper">
+      <app-pagination
+        v-if="totalPages > 1"
+        v-model="currentPage"
+        :total-pages="totalPages"
+        class="top-pagination"
+      />
     </div>
 
     <main class="plugins-grid">
@@ -107,7 +125,8 @@ const {
   paginatedPlugins,
   isLoading,
   filteredPlugins,
-  randomSeed
+  randomSeed,
+  recommendedForYou
 } = storeToRefs(store)
 
 // 计算属性
@@ -155,6 +174,42 @@ onMounted(() => {
 .toolbar-tip {
   color: var(--text-tertiary);
   font-size: 13px;
+}
+
+/* 为你推荐样式 */
+.recommend-for-you {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px 8px;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 0 12px;
+}
+.section-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.recommend-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 1024px) {
+  .recommend-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .recommend-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
   .plugins-grid {

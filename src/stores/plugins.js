@@ -17,6 +17,24 @@ export const usePluginStore = defineStore('plugins', () => {
   const sortBy = ref('default') // 默认使用原始顺序
   // 随机排序用的稳定种子，避免每次计算都重新打乱
   const randomSeed = ref(0)
+
+  // 用户画像（本地个性化）：标签/作者/关键词偏好
+  const userProfile = ref({
+    tagCount: {},
+    authorCount: {},
+    keywordCount: {},
+    totalInteractions: 0
+  })
+
+  // 从 localStorage 读取画像
+  try {
+    const raw = localStorage.getItem('pm_user_profile')
+    if (raw) userProfile.value = JSON.parse(raw)
+  } catch (_) {}
+
+  function persistProfile() {
+    try { localStorage.setItem('pm_user_profile', JSON.stringify(userProfile.value)) } catch(_) {}
+  }
   
   // 监听主题变化并保存到 localStorage
   watch(isDarkMode, (newValue) => {
@@ -60,6 +78,57 @@ export const usePluginStore = defineStore('plugins', () => {
   const tagOptions = computed(() => 
     allTags.value.map(tag => ({ label: tag, value: tag }))
   )
+
+  // 统计信息用于归一化
+  const stats = computed(() => {
+    const list = plugins.value || []
+    let maxStars = 1
+    let newestTs = 0
+    let oldestTs = Date.now()
+    list.forEach(p => {
+      if (p.stars) maxStars = Math.max(maxStars, p.stars)
+      const ts = p.updated_at ? new Date(p.updated_at).getTime() : 0
+      if (ts) {
+        newestTs = Math.max(newestTs, ts)
+        oldestTs = Math.min(oldestTs, ts)
+      }
+    })
+    if (!newestTs) { newestTs = Date.now(); oldestTs = newestTs - 1000 * 3600 * 24 * 365 }
+    const span = Math.max(1, newestTs - oldestTs)
+    return { maxStars, newestTs, oldestTs, span }
+  })
+
+  // 计算推荐得分（0-1）
+  function computeScore(plugin) {
+    const s = stats.value
+    // 热度
+    const starsNorm = Math.min(1, (plugin.stars || 0) / s.maxStars)
+    // 新鲜度（越近越高）
+    const ts = plugin.updated_at ? new Date(plugin.updated_at).getTime() : 0
+    const recencyNorm = ts ? (1 - (s.newestTs - ts) / s.span) : 0
+    // 标签匹配
+    const tags = Array.isArray(plugin.tags) ? plugin.tags : []
+    const tagCount = userProfile.value.tagCount || {}
+    let tagScore = 0
+    tags.forEach(t => { tagScore += (tagCount[t] || 0) })
+    const tagDen = Math.max(1, userProfile.value.totalInteractions)
+    const tagMatchNorm = Math.min(1, tagScore / tagDen)
+    // 作者偏好
+    const authorCnt = (userProfile.value.authorCount || {})[plugin.author] || 0
+    const authorPref = Math.min(1, authorCnt / tagDen)
+    // 关键词匹配（搜索/历史关键词）
+    const kwCount = userProfile.value.keywordCount || {}
+    let kwScore = 0
+    const text = `${plugin.name || ''} ${plugin.desc || ''}`.toLowerCase()
+    Object.keys(kwCount).forEach(k => {
+      if (!k || k.length < 2) return
+      if (text.includes(k)) kwScore += kwCount[k]
+    })
+    const textMatchNorm = Math.min(1, kwScore / tagDen)
+    // 组合权重（可微调）
+    const score = 0.30 * starsNorm + 0.20 * recencyNorm + 0.30 * tagMatchNorm + 0.10 * authorPref + 0.10 * textMatchNorm
+    return score
+  }
 
   const filteredPlugins = computed(() => {
     if (!plugins.value) return []
@@ -109,6 +178,42 @@ export const usePluginStore = defineStore('plugins', () => {
     return filtered
   })
 
+  // 为你推荐（Top K）
+  const recommendedForYou = computed(() => {
+    const list = (plugins.value || []).slice()
+    if (!list.length) return []
+    // 冷启动：交互过少时按 stars/new 更新混排
+    const cold = (userProfile.value.totalInteractions || 0) < 3
+    if (cold) {
+      return list
+        .sort((a,b)=>((b.stars||0)-(a.stars||0)) || (new Date(b.updated_at||0)-new Date(a.updated_at||0)))
+        .slice(0, 6)
+    }
+    return list
+      .map(p => ({ p, score: computeScore(p) }))
+      .sort((a,b) => b.score - a.score)
+      .slice(0, 6)
+      .map(x => x.p)
+  })
+
+  // 相关推荐：基于标签 Jaccard + 作者加成
+  function getSimilarPlugins(target, k = 6) {
+    if (!target) return []
+    const tagsA = new Set(Array.isArray(target.tags) ? target.tags : [])
+    const list = (plugins.value || []).filter(p => p.name !== target.name)
+    const scored = list.map(p => {
+      const tagsB = new Set(Array.isArray(p.tags) ? p.tags : [])
+      let inter = 0
+      tagsB.forEach(t => { if (tagsA.has(t)) inter += 1 })
+      const union = Math.max(1, tagsA.size + tagsB.size - inter)
+      const jaccard = inter / union
+      const authorBonus = p.author && target.author && p.author === target.author ? 0.2 : 0
+      const hot = Math.min(1, (p.stars || 0) / Math.max(1, stats.value.maxStars)) * 0.1
+      return { p, s: jaccard + authorBonus + hot }
+    })
+    return scored.sort((a,b)=>b.s-a.s).slice(0,k).map(x=>x.p)
+  }
+
   const totalPages = computed(() => {
     if (sortBy.value === 'random') {
       return filteredPlugins.value.length > 0 ? 1 : 0
@@ -148,6 +253,32 @@ export const usePluginStore = defineStore('plugins', () => {
     } finally {
       isLoading.value = false
     }
+  }
+
+  // 记录交互，更新用户画像
+  function trackInteraction(type, plugin) {
+    if (!plugin) return
+    const weights = { impression: 0.2, open: 1.0, detail: 1.2, copy: 1.5, social: 1.0, favorite: 2.0 }
+    const w = weights[type] || 0.5
+    userProfile.value.totalInteractions += w
+    // 标签
+    const tags = Array.isArray(plugin.tags) ? plugin.tags : []
+    tags.forEach(t => { userProfile.value.tagCount[t] = (userProfile.value.tagCount[t] || 0) + w })
+    // 作者
+    if (plugin.author) {
+      userProfile.value.authorCount[plugin.author] = (userProfile.value.authorCount[plugin.author] || 0) + w
+    }
+    persistProfile()
+  }
+
+  // 记录搜索关键词
+  function trackSearch(query) {
+    if (!query) return
+    const tokens = String(query).toLowerCase().split(/[^a-z0-9\u4e00-\u9fa5]+/).filter(t => t && t.length >= 2)
+    if (!tokens.length) return
+    tokens.forEach(t => { userProfile.value.keywordCount[t] = (userProfile.value.keywordCount[t] || 0) + 1 })
+    userProfile.value.totalInteractions += 0.5
+    persistProfile()
   }
 
   function setDarkMode(value) {
@@ -190,12 +321,14 @@ export const usePluginStore = defineStore('plugins', () => {
     sortBy,
     isLoading,
     randomSeed,
+    userProfile,
     // 计算属性
     allTags,
     tagOptions,
     filteredPlugins,
     totalPages,
     paginatedPlugins,
+    recommendedForYou,
     // 动作
     loadPlugins,
     setDarkMode,
@@ -204,6 +337,9 @@ export const usePluginStore = defineStore('plugins', () => {
     setCurrentPage,
     setSortBy,
     toggleTheme,
-    refreshRandomOrder
+    refreshRandomOrder,
+    trackInteraction,
+    getSimilarPlugins,
+    trackSearch
   }
 })
