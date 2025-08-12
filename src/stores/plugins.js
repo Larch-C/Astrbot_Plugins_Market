@@ -126,8 +126,11 @@ export const usePluginStore = defineStore('plugins', () => {
     })
     const textMatchNorm = Math.min(1, kwScore / tagDen)
     // 组合权重（可微调）
-    const score = 0.30 * starsNorm + 0.20 * recencyNorm + 0.30 * tagMatchNorm + 0.10 * authorPref + 0.10 * textMatchNorm
-    return score
+    return 0.30 * starsNorm
+      + 0.20 * recencyNorm
+      + 0.30 * tagMatchNorm
+      + 0.10 * authorPref
+      + 0.10 * textMatchNorm
   }
 
   const filteredPlugins = computed(() => {
