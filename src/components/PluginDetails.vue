@@ -140,60 +140,60 @@ async function fetchReadme() {
   error.value = false
   
   try {
-    // 假设仓库地址格式为 https://github.com/owner/repo
     const [owner, repo] = props.plugin.repo.split('/').slice(-2)
-    
-    let response
+
     let readmeText = ''
-    
-    // 先尝试 main 分支
-    console.log(`尝试获取 main 分支的 README: ${owner}/${repo}`)
+
     try {
-      response = await fetch(`https://github.wenturc.com/${owner}/${repo}/main/README.md`, {
+      const apiResp = await fetch(`https://api.github.com/repos/${owner}/${repo}/readme`, {
         method: 'GET',
         headers: {
-          'Accept': 'text/plain',
+          'Accept': 'application/vnd.github.v3.raw'
         },
         timeout: 10000
       })
-      
-      if (response.ok) {
-        readmeText = await response.text()
-        console.log(`成功从 main 分支获取 README: ${owner}/${repo}`)
+
+      if (apiResp.ok) {
+        readmeText = await apiResp.text()
       } else {
-        console.log(`main 分支返回状态: ${response.status}`)
-        throw new Error(`Main branch returned ${response.status}`)
+        throw new Error(`GitHub API /readme returned ${apiResp.status}`)
       }
-    } catch (mainError) {
-      console.log(`main 分支失败，尝试 master 分支: ${mainError.message}`)
-      
-      // 如果 main 分支失败，尝试 master 分支
-      try {
-        response = await fetch(`https://github.wenturc.com/${owner}/${repo}/master/README.md`, {
-          method: 'GET',
-          headers: {
-            'Accept': 'text/plain',
-          },
-          timeout: 10000
-        })
-        
-        if (response.ok) {
-          readmeText = await response.text()
-          console.log(`成功从 master 分支获取 README: ${owner}/${repo}`)
-        } else {
-          console.log(`master 分支返回状态: ${response.status}`)
-          throw new Error(`Master branch returned ${response.status}`)
+    } catch (apiErr) {
+      const branches = ['main', 'master']
+      const candidates = ['README.md', 'Readme.md', 'readme.md', 'README.MD', 'README']
+
+      let found = false
+      for (const branch of branches) {
+        for (const filename of candidates) {
+          try {
+            const resp = await fetch(`https://github.wenturc.com/${owner}/${repo}/${branch}/${filename}`, {
+              method: 'GET',
+              headers: {
+                'Accept': 'text/plain'
+              },
+              timeout: 10000
+            })
+            if (resp.ok) {
+              readmeText = await resp.text()
+              found = true
+              break
+            }
+          } catch (_) {
+            // 忽略，尝试下一个候选
+          }
         }
-      } catch (masterError) {
-        console.log(`master 分支也失败: ${masterError.message}`)
-        throw new Error(`无法从 main 和 master 分支获取 README: ${mainError.message}, ${masterError.message}`)
+        if (found) break
+      }
+
+      if (!found) {
+        throw new Error('无法获取 README（API 与镜像均失败）')
       }
     }
-    
+
     if (!readmeText) {
       throw new Error('README 内容为空')
     }
-    
+
     readmeHtml.value = marked(readmeText)
   } catch (err) {
     console.error('Error fetching README:', err)
