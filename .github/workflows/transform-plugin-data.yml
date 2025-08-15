@@ -579,29 +579,29 @@ jobs:
           jq -r 'to_entries[] | select(.value.status == "redirected") | "  - " + .key' repo_info.json
         fi
 
-    - name: Pull latest changes before checking
+    - name: Pull latest changes before checking (rebase with autostash)
       run: |
-        echo "🔄 拉取 origin/main 并使用 rebase..."
-        # 确保能拉到远程 main
+        set -e
         git fetch origin main --depth=1
 
-        # 切换到 main 分支（如果当前不是 main，会创建并指向 origin/main）
-        # 这样可以在 actions 的 detached HEAD 情况下也能工作
+        # 在 Actions 的 detached HEAD 下也能切换到 main
         if git rev-parse --abbrev-ref HEAD | grep -q '^HEAD$'; then
           git checkout -B main origin/main
         else
-          # 如果已经在某个分支，尝试切换到 main（若不存在则新建）
           git checkout main 2>/dev/null || git checkout -b main origin/main
         fi
 
-        # 保证使用非交互方式，rebase 失败时退出（CI 中通常希望失败以便人工干预）
-        if ! git pull --rebase origin main; then
-          echo "❌ git pull --rebase 失败（可能有冲突）。工作流将退出以便人工检查。"
-          # 如果发生冲突，尝试中止 rebase（保险起见）
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config user.name "github-actions[bot]"
+
+        # 使用 autostash 自动 stash 未暂存更改，rebase 完成后会自动 pop
+        if git pull --rebase --autostash origin main; then
+          echo "✅ pull --rebase --autostash 成功"
+        else
+          echo "❌ pull --rebase --autostash 失败，工作流将退出以便人工检查"
           git rebase --abort 2>/dev/null || true
           exit 1
         fi
-
     
     - name: Check for changes
       if: steps.fetch-data.outputs.should_update == 'true'
