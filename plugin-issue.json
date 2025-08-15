@@ -1,0 +1,285 @@
+{
+  "updated_at": "2025-08-15T11:45:41.890Z",
+  "total_plugins": 20,
+  "plugins": [
+    {
+      "name": "aolastar",
+      "desc": "通过Aolarhapsody后端 API 解析奥拉星游戏内容",
+      "author": "vmoranv",
+      "repo": "https://github.com/vmoranv/astrbot_plugin_aolastar",
+      "tags": [
+        "奥拉星"
+      ],
+      "social_link": "https://github.com/vmoranv",
+      "issue_number": 2423,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2423",
+      "created_at": "2025-08-13T09:41:13Z",
+      "updated_at": "2025-08-13T09:49:08Z"
+    },
+    {
+      "name": "asbot_plugin_furry_jtwzbq",
+      "desc": "监听文字表情时重复发送",
+      "author": "furryhm",
+      "repo": "https://github.com/furryHM-mrz/asbot_plugin_furry_jtwzbq",
+      "tags": [],
+      "social_link": "",
+      "issue_number": 2390,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2390",
+      "created_at": "2025-08-11T10:38:37Z",
+      "updated_at": "2025-08-15T04:52:23Z"
+    },
+    {
+      "name": "asbot_plugin_furry_mzxyy",
+      "desc": "毛主席一言",
+      "author": "furryhm",
+      "repo": "https://github.com/furryHM-mrz/asbot_plugin_furry_mzxyy",
+      "tags": [],
+      "social_link": "",
+      "issue_number": 2394,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2394",
+      "created_at": "2025-08-11T11:37:39Z",
+      "updated_at": "2025-08-11T11:38:10Z"
+    },
+    {
+      "name": "asbot_plugin_furry-API",
+      "desc": "调用趣绮梦云黑API查询用户的插件",
+      "author": "furryhm",
+      "repo": "https://github.com/furryHM-mrz/asbot_plugin_furry-API-",
+      "tags": [],
+      "social_link": "",
+      "issue_number": 2396,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2396",
+      "created_at": "2025-08-11T11:39:23Z",
+      "updated_at": "2025-08-11T11:40:10Z"
+    },
+    {
+      "name": "asbot_plugin_furry-API-hy",
+      "desc": "调用趣绮梦云黑API的群黑云查询踢出还有进群自动检测黑云有问题自动踢出的插件",
+      "author": "furryhm",
+      "repo": "https://github.com/furryHM-mrz/asbot_plugin_furry-API-hy",
+      "tags": [],
+      "social_link": "",
+      "issue_number": 2397,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2397",
+      "created_at": "2025-08-11T11:39:59Z",
+      "updated_at": "2025-08-12T01:37:27Z"
+    },
+    {
+      "name": "astrbot_plugin_bangumi",
+      "desc": "一个用于查询 Bangumi条目的插件",
+      "author": "Amatsutsumi",
+      "repo": "https://github.com/Amatsutsumi/astrbot_plugin_bangumi",
+      "tags": [
+        "bangumi"
+      ],
+      "social_link": "https://github.com/Amatsutsumi/astrbot_plugin_bangumi",
+      "issue_number": 2417,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2417",
+      "created_at": "2025-08-13T03:02:58Z",
+      "updated_at": "2025-08-14T14:51:35Z"
+    },
+    {
+      "name": "astrbot_plugin_image_summary",
+      "desc": "[仅aiocqhttp] 图片外显插件, 将群外显示的“图片”二字替换成更丰富的句子",
+      "author": "Zhalslar",
+      "repo": "https://github.com/Zhalslar/astrbot_plugin_image_summary",
+      "tags": [
+        "图片外显"
+      ],
+      "social_link": "https://github.com/Zhalslar",
+      "issue_number": 2431,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2431",
+      "created_at": "2025-08-13T20:15:15Z",
+      "updated_at": "2025-08-15T06:39:56Z"
+    },
+    {
+      "name": "astrbot_plugin_lark_send_patcher",
+      "desc": "通过猴子补丁的方式，优化了飞书Lark适配器下，机器人发送的消息引用太频繁的问题。现在飞书下所有的机器人回复从引用消息变更为直接发送。插件可能会随着astrbot本体版本更新，涉及到lark_adapter和lark_event重大更新时失效。",
+      "author": "天各一方",
+      "repo": "https://github.com/Catfish872/lark_send_patcher",
+      "tags": [],
+      "social_link": "",
+      "issue_number": 2184,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2184",
+      "created_at": "2025-07-20T18:10:28Z",
+      "updated_at": "2025-07-21T08:09:38Z"
+    },
+    {
+      "name": "astrbot_plugin_message_tester",
+      "desc": "使用 logger 完整打印消息结构",
+      "author": "drdon1234",
+      "repo": "https://github.com/drdon1234/astrbot_plugin_message_tester",
+      "tags": [
+        "调试"
+      ],
+      "social_link": "",
+      "issue_number": 2317,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2317",
+      "created_at": "2025-08-04T16:41:42Z",
+      "updated_at": "2025-08-04T16:43:27Z"
+    },
+    {
+      "name": "astrbot_plugin_stock",
+      "desc": "基于AkShare和Binance的股市行情查询插件，支持数字货币、A股、港股、美股及指数的实时行情、历史数据和K线图表",
+      "author": "anchor",
+      "repo": "https://github.com/anchorAnc/astrbot_plugin_stock",
+      "tags": [
+        "股市",
+        "虚拟货币"
+      ],
+      "social_link": "",
+      "issue_number": 2125,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2125",
+      "created_at": "2025-07-14T09:21:46Z",
+      "updated_at": "2025-07-16T05:18:31Z"
+    },
+    {
+      "name": "astrbot_plugin_voice_to_text",
+      "desc": "语音转文字智能回复插件(新用户一定要看README.md)，支持OpenAI、Groq、Deepgram、Azure等多种兼容OpenAI格式的STT服务提供商",
+      "author": "NickMo",
+      "repo": "https://github.com/NickCharlie/Astrbot-Voice-To-Text-Plugin",
+      "tags": [
+        "语音",
+        "语音识别",
+        "STT",
+        "LLM",
+        "语音转文本",
+        "语音转文字"
+      ],
+      "social_link": "",
+      "issue_number": 2420,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2420",
+      "created_at": "2025-08-13T03:55:05Z",
+      "updated_at": "2025-08-15T11:27:47Z"
+    },
+    {
+      "name": "astrbot_plugin_wakepro",
+      "desc": "更强大的唤醒增强插件：提及唤醒、唤醒延长、话题相关性唤醒、答疑唤醒、无聊唤醒、闭嘴机制、被骂沉默机制",
+      "author": "Zhalslar",
+      "repo": "https://github.com/Zhalslar/astrbot_plugin_wakepro",
+      "tags": [
+        "唤醒增强"
+      ],
+      "social_link": "https://github.com/Zhalslar",
+      "issue_number": 2444,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2444",
+      "created_at": "2025-08-15T06:46:37Z",
+      "updated_at": "2025-08-15T08:07:43Z"
+    },
+    {
+      "name": "astrbot_plugin_zfile",
+      "desc": "基于 ZFile 的 AstrBot 插件，实现文件列表查看、上传、下载、短链生成等远程管理功能。",
+      "author": "shskjw",
+      "repo": "https://github.com/shskjw/astrbot_plugin_zfile",
+      "version": "1.0.0",
+      "issue_number": 2193,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2193",
+      "created_at": "2025-07-21T13:07:53Z",
+      "updated_at": "2025-07-25T11:05:11Z",
+      "tags": [],
+      "social_link": ""
+    },
+    {
+      "name": "astrobot_plugin_who_at_me",
+      "desc": "谁艾特我?监听@消息，便于快速查找自己被@时说了什么。",
+      "author": "长安某",
+      "repo": "https://github.com/zgojin/astrobot_plugin_who_at_me",
+      "tags": [
+        "工具"
+      ],
+      "social_link": "astrbot.uk",
+      "issue_number": 2443,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2443",
+      "created_at": "2025-08-14T19:32:39Z",
+      "updated_at": "2025-08-14T20:15:17Z"
+    },
+    {
+      "name": "gemini_tokens_limit",
+      "desc": "通过tokens计算来丢弃对话，适用于Gemini",
+      "author": "ctrlkk",
+      "repo": "https://github.com/ctrlkk/astrbot_plugin_gemini_tokens_limit",
+      "tags": [
+        "tokens",
+        "对话裁切"
+      ],
+      "issue_number": 2374,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2374",
+      "created_at": "2025-08-10T03:15:28Z",
+      "updated_at": "2025-08-14T14:40:52Z",
+      "social_link": ""
+    },
+    {
+      "name": "jav_info",
+      "desc": "获取车牌对应数据",
+      "author": "棒棒糖",
+      "repo": "https://github.com/zhoufan47/astrbot_plugin_jav_info",
+      "tags": [
+        "车牌"
+      ],
+      "social_link": "",
+      "issue_number": 2402,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2402",
+      "created_at": "2025-08-12T07:21:01Z",
+      "updated_at": "2025-08-12T07:42:43Z"
+    },
+    {
+      "name": "keyword_monitor",
+      "desc": "这是一个插件用来提醒我群里出现了我所标记的关键词",
+      "author": "NMpancake",
+      "repo": "https://github.com/NMpancake/astrbot_plugin_keyword_monitor",
+      "tags": [
+        "工具",
+        "关键词监控"
+      ],
+      "social_link": "2461248172@qq.com",
+      "issue_number": 2442,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2442",
+      "created_at": "2025-08-14T14:09:16Z",
+      "updated_at": "2025-08-14T15:36:27Z"
+    },
+    {
+      "name": "server_status_monitor",
+      "desc": "Linux服务器状态监控插件，持续监控服务器状态，并可在服务器状态到达阈值时提醒",
+      "author": "AoiInazuma",
+      "repo": "https://github.com/gerfind/astrbot_plugin_server_monitor",
+      "tags": [
+        "监控",
+        "服务",
+        "状态"
+      ],
+      "social_link": "",
+      "issue_number": 2204,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2204",
+      "created_at": "2025-07-22T08:45:51Z",
+      "updated_at": "2025-07-25T11:11:11Z"
+    },
+    {
+      "name": "WealthAndContract",
+      "desc": "集签到、契约与经济系统于一体的群聊插件",
+      "author": "HINS(原长安某)",
+      "repo": "https://github.com/WUHINS/astrbot_plugin_WealthAndContract",
+      "tags": [
+        "市场",
+        "交易",
+        "社会"
+      ],
+      "social_link": "https://t.me/astrbot_plugin_HINS",
+      "issue_number": 2398,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2398",
+      "created_at": "2025-08-11T11:40:05Z",
+      "updated_at": "2025-08-14T15:54:47Z"
+    },
+    {
+      "name": "老九网盘链接管理系统插件",
+      "desc": "为 [老九网盘数据库系统](https://github.com/ctwj/urldb) 设计的AstrBot插件，支持被@时搜索功能。",
+      "author": "老九",
+      "repo": "https://github.com/ctwj/astrbot_plugin_urldb",
+      "tags": [],
+      "social_link": "https://pan.l9.lc",
+      "issue_number": 2436,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2436",
+      "created_at": "2025-08-14T10:24:41Z",
+      "updated_at": "2025-08-15T01:00:27Z"
+    }
+  ]
+}
