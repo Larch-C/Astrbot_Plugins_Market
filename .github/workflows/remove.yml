@@ -1,71 +1,33 @@
 name: Remove action@github.com commits
 
 on:
-  workflow_dispatch:
-    inputs:
-      dry_run:
-        description: 'true = do not push, only analyze (default: false)'
-        required: false
-        default: 'false'
-
-permissions:
-  contents: write
+  workflow_dispatch:  # 手动触发
 
 jobs:
   remove-commits:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository (full history)
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-          persist-credentials: true
-          fetch-tags: true
-
-      - name: Fetch all refs (ensure all branches/tags present)
-        run: |
-          git fetch --prune origin '+refs/heads/*:refs/heads/*' '+refs/tags/*:refs/tags/*'
+          fetch-depth: 0  # 必须拉取完整历史
 
       - name: Install git-filter-repo
         run: |
-          python3 -m pip install --upgrade pip
-          python3 -m pip install git-filter-repo
+          sudo apt-get update
+          sudo apt-get install -y python3
+          curl -L https://github.com/newren/git-filter-repo/raw/main/git-filter-repo -o git-filter-repo
+          chmod +x git-filter-repo
+          sudo mv git-filter-repo /usr/local/bin/
 
-      - name: Create commit-callback script
+      - name: Remove commits by action@github.com
         run: |
-          cat > remove_by_author.py <<'PY'
-          def commit_callback(commit, metadata):
-              # 删除 author 或 committer email 为 action@github.com 的提交
-              if commit.author_email == b"action@github.com" or commit.committer_email == b"action@github.com":
+          git filter-repo --commit-callback '
+              if commit.author_email == b"action@github.com":
                   commit.skip()
-          PY
+          '
 
-      - name: Run git-filter-repo (rewrite history)
-        id: filter_run
+      - name: Force push updated history
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
-            echo "DRY RUN: analyze only (no push)"
-            # --analyze 会生成统计信息而不修改 refs（保守检查）
-            git filter-repo --force --commit-callback remove_by_author.py --analyze
-            exit 0
-          fi
-
-          # 真正执行重写历史
-          git filter-repo --force --commit-callback remove_by_author.py
-
-      - name: Fetch all refs (safe into remotes)
-        run: |
-          # 把远端 heads 拉到 refs/remotes/origin/*，tags 拉到 refs/tags/*
-          git fetch --prune origin '+refs/heads/*:refs/remotes/origin/*' '+refs/tags/*:refs/tags/*'
-
-          # 从 remotes/origin 创建或强制更新对应的本地分支（跳过 HEAD）
-          for remote in $(git for-each-ref --format='%(refname:short)' refs/remotes/origin); do
-            branch=${remote#origin/}
-            if [ "$branch" != "HEAD" ]; then
-              git branch --force "$branch" "refs/remotes/origin/$branch" || true
-            fi
-          done
-
+          git push origin --force --all
+          git push origin --force --tags
