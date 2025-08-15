@@ -1,0 +1,8 @@
+# 临时数据文件
+existing_cache.json
+original_plugins.json
+repo_info.json
+temp_api_headers_*.txt
+temp_plugin_cache_original.json
+temp_response.txt
+temp_headers.txt
