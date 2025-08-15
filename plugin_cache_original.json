@@ -9,8 +9,8 @@
     ],
     "social_link": "https://github.com/xiewoc",
     "stars": 0,
-    "updated_at": "2025-08-14T01:29:57Z",
-    "version": "v1.0.0"
+    "updated_at": "2025-08-15T17:01:13Z",
+    "version": "v1.0.1"
   },
   "astrbot_plugin_aolastar": {
     "desc": "通过Aolarhapsody后端 API 解析奥拉星游戏内容",
@@ -65,8 +65,8 @@
     ],
     "social_link": "https://github.com/Zhalslar",
     "stars": 4,
-    "updated_at": "2025-08-15T12:53:40Z",
-    "version": "v1.0.0"
+    "updated_at": "2025-08-15T16:49:00Z",
+    "version": "v1.0.1"
   },
   "astrbot_plugin_record_converter": {
     "desc": "QQ 语音转化插件，包括语音转文件，文件转语音，克服了 QQ 语音无法转发的问题",
@@ -527,8 +527,8 @@
     "tags": [
       "战地风云"
     ],
-    "stars": 5,
-    "updated_at": "2025-08-14T11:41:55Z",
+    "stars": 6,
+    "updated_at": "2025-08-15T16:48:59Z",
     "version": "v1.0.8"
   },
   "astrbot_plugin_SteamSaleTracker": {
@@ -2683,7 +2683,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-15T16:29:59Z",
+    "updated_at": "2025-08-15T17:21:25Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
