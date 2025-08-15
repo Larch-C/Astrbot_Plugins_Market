@@ -56,16 +56,16 @@ jobs:
           # 真正执行重写历史
           git filter-repo --force --commit-callback remove_by_author.py
 
-      - name: Push rewritten refs (branches and tags)
-        if: ${{ github.event.inputs.dry_run != 'true' }}
+      - name: Fetch all refs (safe into remotes)
         run: |
-          # push each branch with force
-          for ref in $(git for-each-ref --format='%(refname)' refs/heads); do
-            echo "Pushing $ref ..."
-            git push origin +${ref}:refs/heads/${ref#refs/heads/} || {
-              echo "Push failed for $ref (maybe protected)"; 
-            }
+          # 把远端 heads 拉到 refs/remotes/origin/*，tags 拉到 refs/tags/*
+          git fetch --prune origin '+refs/heads/*:refs/remotes/origin/*' '+refs/tags/*:refs/tags/*'
+
+          # 从 remotes/origin 创建或强制更新对应的本地分支（跳过 HEAD）
+          for remote in $(git for-each-ref --format='%(refname:short)' refs/remotes/origin); do
+            branch=${remote#origin/}
+            if [ "$branch" != "HEAD" ]; then
+              git branch --force "$branch" "refs/remotes/origin/$branch" || true
+            fi
           done
 
-          # push tags
-          git push origin --tags --force || echo "Tag push failed"
