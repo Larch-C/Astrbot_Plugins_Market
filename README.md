@@ -1,13 +1,13 @@
-# [AstrBot 插件市场](https://plugins.astrbot.app/)
+# [AstrBot Plugin Marketplace](https://plugins.astrbot.app/)
 
-一个简单的 AstrBot 插件市场页面，用于展示 AstrBot 框架的插件。
+A simple AstrBot plugin marketplace page for showcasing plugins for the AstrBot framework.
 
-## 功能特点
+## Features
 
-- 📦 浏览所有可用的 AstrBot 插件
-- 🔍 搜索特定插件
-- 🌓 支持深色/浅色主题切换
+* 📦 Browse all available AstrBot plugins
+* 🔍 Search for specific plugins
+* 🌓 Support for dark/light theme switching
 
-## 部署
+## Deployment
 
-项目使用 GitHub Actions 自动部署到 GitHub Pages。每次推送到 `astrbot-plugins-market` 分支时会自动触发构建和部署流程。
+The project uses GitHub Actions to automatically deploy to GitHub Pages. Each push to the `astrbot-plugins-market` branch will automatically trigger the build and deployment process.
