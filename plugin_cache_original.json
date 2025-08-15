@@ -4,7 +4,8 @@
     "author": "xiewoc",
     "repo": "https://github.com/xiewoc/astrbot_plugin_index_tts",
     "tags": [
-      "TTS","文字转语音"
+      "TTS",
+      "文字转语音"
     ],
     "social_link": "https://github.com/xiewoc",
     "stars": 0,
@@ -2682,7 +2683,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-15T14:23:38Z",
+    "updated_at": "2025-08-15T15:25:23Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
