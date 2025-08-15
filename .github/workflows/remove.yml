@@ -1,0 +1,105 @@
+name: Remove action@github.com commits
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Target branch to clean'
+        required: true
+        default: 'main'
+      author_email:
+        description: 'Email to remove (author or committer)'
+        required: true
+        default: 'action@github.com'
+      apply:
+        description: '是否实际替换远端分支（true 会强推），默认 false（dry-run）'
+        required: true
+        default: 'false'
+
+permissions:
+  contents: write
+
+jobs:
+  remove-commits:
+    runs-on: ubuntu-latest
+    env:
+      BRANCH: ${{ github.event.inputs.branch }}
+      TARGET_EMAIL: ${{ github.event.inputs.author_email }}
+      APPLY: ${{ github.event.inputs.apply }}
+    steps:
+      - name: Checkout (full history)
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          fetch-depth: 0
+
+      - name: Ensure on target branch (create if detached)
+        run: |
+          set -e
+          git fetch origin $BRANCH --depth=1 || true
+          if git rev-parse --abbrev-ref HEAD | grep -q '^HEAD$'; then
+            # detached HEAD in actions; create local branch tracking origin/$BRANCH if available
+            git checkout -B $BRANCH origin/$BRANCH || git checkout -B $BRANCH
+          else
+            git checkout $BRANCH 2>/dev/null || git checkout -B $BRANCH origin/$BRANCH || git checkout -B $BRANCH
+          fi
+          git status --porcelain || true
+
+      - name: Create backup branch (safe copy)
+        run: |
+          set -e
+          ts=$(date -u +%Y%m%dT%H%M%SZ)
+          backup_branch="backup/remove-commits-${BRANCH}-${ts}"
+          git branch -f "$backup_branch" HEAD
+          git push origin "$backup_branch"
+          echo "Created backup branch: $backup_branch"
+
+      - name: Install git-filter-repo
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install git-filter-repo
+
+      - name: Run filter to skip commits by the email (local rewrite)
+        run: |
+          set -e
+          echo "Target branch: $BRANCH"
+          echo "Removing commits authored/committed by: $TARGET_EMAIL"
+          # Run git-filter-repo on this branch only (--refs)
+          # The commit-callback tests both author_email and committer_email and skips matching commits.
+          git filter-repo --force --refs "refs/heads/$BRANCH" \
+            --commit-callback '
+if commit.author_email == b"%s" or commit.committer_email == b"%s":
+    commit.skip()
+' 2>/dev/null || true
+##
+# Note: because we embed variables into the shell, replace them with actual bytes.
+# We'll re-run with substituted email if the previous command failed to interpolate.
+          run_email="$(printf '%s' "$TARGET_EMAIL" | sed "s/'/'\\\\''/g")"
+          # Re-run properly with email substitution
+          git filter-repo --force --refs "refs/heads/$BRANCH" \
+            --commit-callback "if commit.author_email == b'${run_email}' or commit.committer_email == b'${run_email}':\n    commit.skip()"
+
+      - name: Show resulting history (top 20 commits)
+        run: |
+          echo "---- new history (top 20) ----"
+          git --no-pager log --pretty=format:'%h %ad %an <%ae> %s' --date=short -n 20
+          echo "------------------------------"
+
+      - name: Dry-run push to preview branch (default)
+        if: env.APPLY != 'true'
+        run: |
+          set -e
+          preview_branch="${BRANCH}-filtered-preview"
+          # push preview branch so you can inspect changes in PR or web UI
+          git push --force origin HEAD:refs/heads/"${preview_branch}"
+          echo "Dry-run complete. Preview pushed to branch: ${preview_branch}"
+          echo "If OK, re-run this workflow with input `apply=true` to actually overwrite ${BRANCH}."
+
+      - name: Apply: force-push cleaned history to target branch
+        if: env.APPLY == 'true'
+        run: |
+          set -e
+          echo "!!! APPLY MODE: will force-push cleaned history to origin/${BRANCH} !!!"
+          # Optional: create a tag marking the pre-clean state (already made backup branch)
+          git push --force --no-verify origin "HEAD:refs/heads/${BRANCH}"
+          echo "Force-pushed cleaned history to origin/${BRANCH}"
