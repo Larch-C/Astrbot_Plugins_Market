@@ -3,17 +3,9 @@ name: Remove action@github.com commits
 on:
   workflow_dispatch:
     inputs:
-      branch:
-        description: 'Target branch to clean'
-        required: true
-        default: 'main'
-      author_email:
-        description: 'Email to remove (author or committer)'
-        required: true
-        default: 'action@github.com'
-      apply:
-        description: '是否实际替换远端分支（true 会强推），默认 false（dry-run）'
-        required: true
+      dry_run:
+        description: 'true = do not push, only analyze (default: false)'
+        required: false
         default: 'false'
 
 permissions:
@@ -22,83 +14,58 @@ permissions:
 jobs:
   remove-commits:
     runs-on: ubuntu-latest
-    env:
-      BRANCH: ${{ github.event.inputs.branch }}
-      TARGET_EMAIL: ${{ github.event.inputs.author_email }}
-      APPLY: ${{ github.event.inputs.apply }}
     steps:
-      - name: Checkout (full history)
+      - name: Checkout repository (full history)
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.PAT_TOKEN }}
           fetch-depth: 0
+          persist-credentials: true
+          fetch-tags: true
 
-      - name: Ensure on target branch (create if detached)
+      - name: Fetch all refs (ensure all branches/tags present)
         run: |
-          set -e
-          git fetch origin "$BRANCH" --depth=1 || true
-          if git rev-parse --abbrev-ref HEAD | grep -q '^HEAD$'; then
-            git checkout -B "$BRANCH" origin/"$BRANCH" || git checkout -B "$BRANCH"
-          else
-            git checkout "$BRANCH" 2>/dev/null || git checkout -B "$BRANCH" origin/"$BRANCH" || git checkout -B "$BRANCH"
+          git fetch --prune origin '+refs/heads/*:refs/heads/*' '+refs/tags/*:refs/tags/*'
+
+      - name: Install git-filter-repo
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install git-filter-repo
+
+      - name: Create commit-callback script
+        run: |
+          cat > remove_by_author.py <<'PY'
+          def commit_callback(commit, metadata):
+              # 删除 author 或 committer email 为 action@github.com 的提交
+              if commit.author_email == b"action@github.com" or commit.committer_email == b"action@github.com":
+                  commit.skip()
+          PY
+
+      - name: Run git-filter-repo (rewrite history)
+        id: filter_run
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            echo "DRY RUN: analyze only (no push)"
+            # --analyze 会生成统计信息而不修改 refs（保守检查）
+            git filter-repo --force --commit-callback remove_by_author.py --analyze
+            exit 0
           fi
-          git status --porcelain || true
 
-      - name: Create backup branch (safe copy)
+          # 真正执行重写历史
+          git filter-repo --force --commit-callback remove_by_author.py
+
+      - name: Push rewritten refs (branches and tags)
+        if: ${{ github.event.inputs.dry_run != 'true' }}
         run: |
-          set -e
-          ts=$(date -u +%Y%m%dT%H%M%SZ)
-          backup_branch="backup/remove-commits-${BRANCH}-${ts}"
-          git branch -f "$backup_branch" HEAD
-          git push origin "$backup_branch"
-          echo "Created backup branch: $backup_branch"
+          # push each branch with force
+          for ref in $(git for-each-ref --format='%(refname)' refs/heads); do
+            echo "Pushing $ref ..."
+            git push origin +${ref}:refs/heads/${ref#refs/heads/} || {
+              echo "Push failed for $ref (maybe protected)"; 
+            }
+          done
 
-      - name: Run filter to skip commits by the email (local rewrite)
-        run: |
-          set -e
-          echo "Target branch: ${BRANCH}"
-          echo "Removing commits authored/committed by: ${TARGET_EMAIL}"
-
-          # 确保在目标分支上
-          git checkout "${BRANCH}"
-
-          # 导出变量供 filter-branch 使用
-          export TARGET_EMAIL="${TARGET_EMAIL}"
-
-          # 使用 git filter-branch 在指定分支上跳过匹配 author/committer email 的提交
-          # 说明：
-          # - 使用 --force 覆盖临时 refs
-          # - 使用 --commit-filter 并引用环境变量 TARGET_EMAIL（避免复杂的引号嵌套）
-          # - 限定为 refs/heads/${BRANCH}，避免影响其他分支
-          git filter-branch --force --commit-filter '
-if [ "$GIT_COMMITTER_EMAIL" = "$TARGET_EMAIL" ] || [ "$GIT_AUTHOR_EMAIL" = "$TARGET_EMAIL" ]; then
-  skip_commit "$@"
-else
-  git commit-tree "$@"
-fi
-' -- refs/heads/"${BRANCH}"
-
-          echo "Filter complete."
-
-      - name: Show resulting history (top 20 commits)
-        run: |
-          echo "---- new history (top 20) ----"
-          git --no-pager log --pretty=format:'%h %ad %an <%ae> %s' --date=short -n 20
-          echo "------------------------------"
-
-      - name: Dry-run push to preview branch (default)
-        if: env.APPLY != 'true'
-        run: |
-          set -e
-          preview_branch="${BRANCH}-filtered-preview"
-          git push --force origin HEAD:refs/heads/"${preview_branch}"
-          echo "Dry-run complete. Preview pushed to branch: ${preview_branch}"
-          echo "If OK, re-run this workflow with input `apply=true` to actually overwrite ${BRANCH}."
-
-      - name: Apply: force-push cleaned history to target branch
-        if: env.APPLY == 'true'
-        run: |
-          set -e
-          echo "!!! APPLY MODE: will force-push cleaned history to origin/${BRANCH} !!!"
-          git push --force --no-verify origin "HEAD:refs/heads/${BRANCH}"
-          echo "Force-pushed cleaned history to origin/${BRANCH}"
+          # push tags
+          git push origin --tags --force || echo "Tag push failed"
