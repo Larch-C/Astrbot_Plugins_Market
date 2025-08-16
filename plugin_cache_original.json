@@ -739,7 +739,7 @@
     "tags": [],
     "stars": 5,
     "updated_at": "2025-08-04T06:10:43Z",
-    "version": "1.0.0"
+    "version": "v1.2.0"
   },
   "astrobot_plugin_code_executor": {
     "name": "astrobot_plugin_code_executor",
@@ -819,8 +819,8 @@
     ],
     "author": "Hina-Chat",
     "social_link": "https://magstic.art/",
-    "stars": 1,
-    "updated_at": "2025-07-09T11:54:44Z",
+    "stars": 0,
+    "updated_at": "2025-08-16T18:21:45Z",
     "version": "v1.0.1"
   },
   "astrbot_plugin_market": {
@@ -2475,8 +2475,8 @@
       "api"
     ],
     "social_link": "https://github.com/Zhalslar/astrbot_plugin_apis",
-    "stars": 66,
-    "updated_at": "2025-08-14T08:35:02Z",
+    "stars": 67,
+    "updated_at": "2025-08-16T17:29:32Z",
     "version": "v2.0.0"
   },
   "astrbot_plugin_help": {
@@ -2683,7 +2683,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-16T17:18:42Z",
+    "updated_at": "2025-08-16T18:31:22Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
