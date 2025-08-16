@@ -1,6 +1,6 @@
 {
-  "updated_at": "2025-08-15T11:45:41.890Z",
-  "total_plugins": 20,
+  "updated_at": "2025-08-16T03:15:53.650Z",
+  "total_plugins": 23,
   "plugins": [
     {
       "name": "aolastar",
@@ -30,7 +30,7 @@
     },
     {
       "name": "asbot_plugin_furry_mzxyy",
-      "desc": "一言",
+      "desc": "毛主席一言",
       "author": "furryhm",
       "repo": "https://github.com/furryHM-mrz/asbot_plugin_furry_mzxyy",
       "tags": [],
@@ -63,6 +63,25 @@
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2397",
       "created_at": "2025-08-11T11:39:59Z",
       "updated_at": "2025-08-12T01:37:27Z"
+    },
+    {
+      "name": "astrabot_plugin_tts_emotion_router",
+      "desc": "按情绪路由到不同音色与语速的 TTS 插件（硅基流动 API，OpenAI 语音接口风格），支持隐藏标记与启发式情绪识别、概率/长度/冷却门控与会话开关。",
+      "author": "木有知",
+      "repo": "https://github.com/muyouzhi6/astrabot_plugin_tts_emotion_router",
+      "tags": [
+        "AstrBot",
+        "TTS",
+        "Emotion",
+        "SiliconFlow",
+        "OpenAI-Style",
+        "Audio"
+      ],
+      "social_link": "https://github.com/muyouzhi6",
+      "issue_number": 2446,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2446",
+      "created_at": "2025-08-15T13:59:11Z",
+      "updated_at": "2025-08-15T17:50:55Z"
     },
     {
       "name": "astrbot_plugin_bangumi",
@@ -119,6 +138,20 @@
       "updated_at": "2025-08-04T16:43:27Z"
     },
     {
+      "name": "astrbot_plugin_outputpro",
+      "desc": "输出增强插件：报错拦截、文本清洗、随机@、随机引用",
+      "author": "Zhalslar",
+      "repo": "https://github.com/Zhalslar/astrbot_plugin_outputpro",
+      "tags": [
+        "输出增强"
+      ],
+      "social_link": "https://github.com/Zhalslar",
+      "issue_number": 2445,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2445",
+      "created_at": "2025-08-15T13:58:29Z",
+      "updated_at": "2025-08-15T13:58:48Z"
+    },
+    {
       "name": "astrbot_plugin_stock",
       "desc": "基于AkShare和Binance的股市行情查询插件，支持数字货币、A股、港股、美股及指数的实时行情、历史数据和K线图表",
       "author": "anchor",
@@ -154,7 +187,7 @@
     },
     {
       "name": "astrbot_plugin_wakepro",
-      "desc": "更强大的唤醒增强插件：提及唤醒、唤醒延长、话题相关性唤醒、答疑唤醒、无聊唤醒、闭嘴机制、被骂沉默机制",
+      "desc": "更强大的唤醒增强插件：提及唤醒、唤醒延长、空@唤醒、话题相关性唤醒、答疑唤醒、无聊唤醒、闭嘴机制、被骂沉默机制",
       "author": "Zhalslar",
       "repo": "https://github.com/Zhalslar/astrbot_plugin_wakepro",
       "tags": [
@@ -164,7 +197,7 @@
       "issue_number": 2444,
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2444",
       "created_at": "2025-08-15T06:46:37Z",
-      "updated_at": "2025-08-15T08:07:43Z"
+      "updated_at": "2025-08-15T16:04:31Z"
     },
     {
       "name": "astrbot_plugin_zfile",
@@ -238,6 +271,22 @@
       "updated_at": "2025-08-14T15:36:27Z"
     },
     {
+      "name": "kikoeru_search",
+      "desc": "查询本地和远程ASMR kikoeru资源库数据",
+      "author": "棒棒糖",
+      "repo": "https://github.com/zhoufan47/astrbot_plugin_kikoeru_search",
+      "tags": [
+        "ASMR",
+        "kikoeru",
+        "neokikoeru"
+      ],
+      "social_link": "",
+      "issue_number": 2450,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2450",
+      "created_at": "2025-08-15T18:18:32Z",
+      "updated_at": "2025-08-15T18:32:20Z"
+    },
+    {
       "name": "server_status_monitor",
       "desc": "Linux服务器状态监控插件，持续监控服务器状态，并可在服务器状态到达阈值时提醒",
       "author": "AoiInazuma",
@@ -274,7 +323,7 @@
       "desc": "为 [老九网盘数据库系统](https://github.com/ctwj/urldb) 设计的AstrBot插件，支持被@时搜索功能。",
       "author": "老九",
       "repo": "https://github.com/ctwj/astrbot_plugin_urldb",
-      "tags": ["实用"],
+      "tags": [],
       "social_link": "https://pan.l9.lc",
       "issue_number": 2436,
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2436",
