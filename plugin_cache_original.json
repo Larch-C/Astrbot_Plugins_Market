@@ -76,8 +76,8 @@
       "语音转化"
     ],
     "social_link": "https://github.com/Zhalslar",
-    "stars": 0,
-    "updated_at": "2025-08-14T11:27:52Z",
+    "stars": 1,
+    "updated_at": "2025-08-16T10:25:42Z",
     "version": "v1.0.1"
   },
   "astrbot_plugin_spark_tts": {
@@ -2683,7 +2683,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-16T09:23:45Z",
+    "updated_at": "2025-08-16T10:22:50Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
