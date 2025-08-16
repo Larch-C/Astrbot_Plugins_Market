@@ -739,7 +739,7 @@
     "tags": [],
     "stars": 5,
     "updated_at": "2025-08-04T06:10:43Z",
-    "version": "v1.2.0"
+    "version": "1.0.0"
   },
   "astrobot_plugin_code_executor": {
     "name": "astrobot_plugin_code_executor",
@@ -2683,7 +2683,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-16T16:27:34Z",
+    "updated_at": "2025-08-16T17:18:42Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3190,7 +3190,7 @@
       "QQ群管"
     ],
     "stars": 36,
-    "updated_at": "2025-08-15T12:52:04Z",
+    "updated_at": "2025-08-16T17:11:58Z",
     "version": "v3.0.9"
   },
   "astrbot_plugin_liars_bar": {
