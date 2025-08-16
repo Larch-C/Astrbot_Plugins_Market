@@ -1,17 +1,26 @@
-# AstrBot Plugins Actions
+# AstrBot Plugin Marketplace
 
-> The `main` branch is used to store JSON files and run the plugin information collection action. For the frontend part of the plugin marketplace, please switch to the `astrbot-plugins-market` branch.
+👉 [Visit the live site](https://plugins.astrbot.app/)
 
-# [AstrBot Plugin Marketplace](https://plugins.astrbot.app/)
+A simple marketplace for showcasing plugins built for the AstrBot framework.
 
-A simple AstrBot plugin marketplace page for showcasing plugins for the AstrBot framework.
+## Branch Structure
+
+- **`main`**  
+  Stores JSON files and runs the plugin information collection action.
+
+- **`astrbot-plugins-market`**  
+  Contains the frontend code for the plugin marketplace.
 
 ## Features
 
-* 📦 Browse all available AstrBot plugins
-* 🔍 Search for specific plugins
-* 🌓 Support for dark/light theme switching
+- 📦 Browse all available AstrBot plugins  
+- 🔍 Search for specific plugins  
+- 🌓 Dark/Light theme support  
 
 ## Deployment
 
-The project uses GitHub Actions to automatically deploy to GitHub Pages and Vercel. Each push to the `astrbot-plugins-market` branch will automatically trigger the build and deployment process. But some configuration issues require manual deployment on Vercel.
+This project uses **GitHub Actions** for automated deployments to both **GitHub Pages** and **Vercel**.  
+Each push to the `astrbot-plugins-market` branch triggers the build and deployment process.  
+
+⚠️ Due to certain configuration limitations, manual deployment on Vercel may sometimes be required.
