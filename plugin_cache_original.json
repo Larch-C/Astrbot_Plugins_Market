@@ -43,8 +43,8 @@
       "表白墙"
     ],
     "social_link": "https://github.com/Zhalslar",
-    "stars": 3,
-    "updated_at": "2025-08-16T04:32:10Z",
+    "stars": 4,
+    "updated_at": "2025-08-17T08:23:25Z",
     "version": "v1.0.2"
   },
   "astrbot_plugin_matchreminder": {
@@ -608,8 +608,8 @@
       "宠物"
     ],
     "stars": 5,
-    "updated_at": "2025-08-05T17:44:15Z",
-    "version": "v1.1"
+    "updated_at": "2025-08-17T08:15:18Z",
+    "version": "v1.2"
   },
   "astrbot_plugin_error_monitor": {
     "desc": "捕获 Immersive Error 抛出的异常，并提供 SMTP 邮件通知进行报告。",
@@ -1607,8 +1607,8 @@
       "音乐"
     ],
     "social_link": "https://github.com/Zhalslar",
-    "stars": 42,
-    "updated_at": "2025-08-15T12:53:48Z",
+    "stars": 43,
+    "updated_at": "2025-08-17T08:31:36Z",
     "version": "v1.0.2"
   },
   "astrbot_plugin_renjian": {
@@ -2683,7 +2683,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-17T07:21:32Z",
+    "updated_at": "2025-08-17T08:30:33Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
