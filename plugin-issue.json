@@ -1,6 +1,6 @@
 {
-  "updated_at": "2025-08-16T03:15:53.650Z",
-  "total_plugins": 23,
+  "updated_at": "2025-08-17T03:27:09.388Z",
+  "total_plugins": 25,
   "plugins": [
     {
       "name": "aolastar",
@@ -81,7 +81,7 @@
       "issue_number": 2446,
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2446",
       "created_at": "2025-08-15T13:59:11Z",
-      "updated_at": "2025-08-15T17:50:55Z"
+      "updated_at": "2025-08-16T13:05:04Z"
     },
     {
       "name": "astrbot_plugin_bangumi",
@@ -98,6 +98,21 @@
       "updated_at": "2025-08-14T14:51:35Z"
     },
     {
+      "name": "astrbot_plugin_iearning_style",
+      "desc": "使机器人可以从聊天中学习他人说话方式",
+      "author": "qa296",
+      "repo": "https://github.com/qa296/astrbot_plugin_iearning_style",
+      "tags": [
+        "学习",
+        "拟人"
+      ],
+      "social_link": "https://github.com/qa296",
+      "issue_number": 2453,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2453",
+      "created_at": "2025-08-16T10:08:20Z",
+      "updated_at": "2025-08-16T10:11:10Z"
+    },
+    {
       "name": "astrbot_plugin_image_summary",
       "desc": "[仅aiocqhttp] 图片外显插件, 将群外显示的“图片”二字替换成更丰富的句子",
       "author": "Zhalslar",
@@ -110,6 +125,20 @@
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2431",
       "created_at": "2025-08-13T20:15:15Z",
       "updated_at": "2025-08-15T06:39:56Z"
+    },
+    {
+      "name": "astrbot_plugin_jrysprpr",
+      "desc": "今日运势查询，会生成一张图片，包含今日运势、宜忌、吉时等信息。",
+      "author": "ominus",
+      "repo": "https://github.com/NINIYOYYO/astrbot_plugin_jrys",
+      "tags": [
+        "今日运势查询"
+      ],
+      "social_link": "",
+      "issue_number": 2456,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2456",
+      "created_at": "2025-08-16T15:06:29Z",
+      "updated_at": "2025-08-16T15:10:09Z"
     },
     {
       "name": "astrbot_plugin_lark_send_patcher",
@@ -183,7 +212,7 @@
       "issue_number": 2420,
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2420",
       "created_at": "2025-08-13T03:55:05Z",
-      "updated_at": "2025-08-15T11:27:47Z"
+      "updated_at": "2025-08-16T07:40:39Z"
     },
     {
       "name": "astrbot_plugin_wakepro",
@@ -284,7 +313,7 @@
       "issue_number": 2450,
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2450",
       "created_at": "2025-08-15T18:18:32Z",
-      "updated_at": "2025-08-15T18:32:20Z"
+      "updated_at": "2025-08-16T07:54:21Z"
     },
     {
       "name": "server_status_monitor",
