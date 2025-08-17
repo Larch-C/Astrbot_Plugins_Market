@@ -2683,7 +2683,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-17T19:18:38Z",
+    "updated_at": "2025-08-17T20:26:05Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3867,7 +3867,7 @@
     "tags": [],
     "stars": 5,
     "updated_at": "2025-04-20T03:11:34Z",
-    "version": "v1.1"
+    "version": "1.0.0"
   },
   "astrbot_plugin_MultiAI_PollPad": {
     "desc": "轮询调用配置的大语言模型输出多个结果。同时将结果拷贝至在线文本编辑器，以便用户复制。需额外安装依赖，见帮助",
