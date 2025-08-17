@@ -203,8 +203,8 @@
     "tags": [
       "海龟汤"
     ],
-    "stars": 4,
-    "updated_at": "2025-08-13T05:30:28Z",
+    "stars": 5,
+    "updated_at": "2025-08-17T01:58:39Z",
     "version": "v1.0.2"
   },
   "astrbot_plugin_typst_render": {
@@ -2058,7 +2058,7 @@
     "social_link": "https://github.com/orchidsziyou/astrbot_plugins_JMPlugins",
     "tags": [],
     "stars": 2,
-    "updated_at": "2025-08-09T10:05:23Z",
+    "updated_at": "2025-08-17T01:22:25Z",
     "version": "v1.3"
   },
   "astrbot_plugin_fishing2": {
@@ -2311,8 +2311,8 @@
     "repo": "https://github.com/monbed/astrbot_plugin_animewifex",
     "tags": [],
     "stars": 1,
-    "updated_at": "2025-05-25T15:32:44Z",
-    "version": "v1.5.4"
+    "updated_at": "2025-08-17T02:23:14Z",
+    "version": "v1.5.5"
   },
   "astrbot_plugin_emojimix": {
     "author": "Flartiny",
@@ -2683,7 +2683,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-16T23:21:22Z",
+    "updated_at": "2025-08-17T02:07:04Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
