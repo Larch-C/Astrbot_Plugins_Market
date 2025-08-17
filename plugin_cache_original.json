@@ -554,8 +554,8 @@
     ],
     "social_link": "https://github.com/advent259141",
     "pinned": true,
-    "stars": 24,
-    "updated_at": "2025-08-14T09:03:45Z",
+    "stars": 25,
+    "updated_at": "2025-08-17T20:54:41Z",
     "version": "1.2.0"
   },
   "cngal_search": {
@@ -714,8 +714,8 @@
       "主动回复",
       "沉浸式"
     ],
-    "stars": 15,
-    "updated_at": "2025-08-12T18:54:42Z",
+    "stars": 16,
+    "updated_at": "2025-08-17T20:54:38Z",
     "version": "1.4.6"
   },
   "astrbot_plugin_choulaopo": {
@@ -1790,8 +1790,8 @@
       "RAG",
       "知识库"
     ],
-    "stars": 52,
-    "updated_at": "2025-08-15T12:53:46Z",
+    "stars": 53,
+    "updated_at": "2025-08-17T20:54:36Z",
     "version": "v0.5.8"
   },
   "astrbot_uptime_kuma_webhook_plugin": {
@@ -2683,7 +2683,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-17T20:26:05Z",
+    "updated_at": "2025-08-17T21:21:37Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3867,7 +3867,7 @@
     "tags": [],
     "stars": 5,
     "updated_at": "2025-04-20T03:11:34Z",
-    "version": "1.0.0"
+    "version": "v1.1"
   },
   "astrbot_plugin_MultiAI_PollPad": {
     "desc": "轮询调用配置的大语言模型输出多个结果。同时将结果拷贝至在线文本编辑器，以便用户复制。需额外安装依赖，见帮助",
