@@ -100,7 +100,7 @@
     "repo": "https://github.com/caqingtgas/astrbot_plugin_identity_strategy",
     "tags": [],
     "stars": 0,
-    "updated_at": "2025-08-13T08:05:25Z",
+    "updated_at": "2025-08-18T10:43:53Z",
     "version": "1.0.0"
   },
   "astrbot_plugin_qzone": {
@@ -169,8 +169,8 @@
     "repo": "https://github.com/caqingtgas/astrbot_plugin_provider_ark",
     "tags": [],
     "stars": 0,
-    "updated_at": "2025-08-13T14:19:32Z",
-    "version": "1.0.1"
+    "updated_at": "2025-08-18T10:42:42Z",
+    "version": "1.0.2"
   },
   "astrbot_plugin_Mirecraft_motd": {
     "desc": "基于 AstrBot 的 motd 探测服务器插件",
@@ -2753,7 +2753,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-18T10:28:13Z",
+    "updated_at": "2025-08-18T11:21:44Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
