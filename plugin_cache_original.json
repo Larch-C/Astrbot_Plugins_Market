@@ -273,8 +273,8 @@
     "tags": [
       "海龟汤"
     ],
-    "stars": 5,
-    "updated_at": "2025-08-17T01:58:39Z",
+    "stars": 6,
+    "updated_at": "2025-08-18T08:40:46Z",
     "version": "v1.0.2"
   },
   "astrbot_plugin_typst_render": {
@@ -2753,7 +2753,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-18T08:35:07Z",
+    "updated_at": "2025-08-18T09:30:27Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
