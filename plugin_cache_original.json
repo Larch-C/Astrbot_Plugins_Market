@@ -1,4 +1,74 @@
 {
+  "astrbot_plugin_memora_connect": {
+    "desc": "一个模仿人类记忆方式的记忆插件。",
+    "author": "qa296",
+    "repo": "https://github.com/qa296/astrbot_plugin_memora_connect",
+    "tags": [
+      "拟人",
+      "记忆"
+    ],
+    "social_link": "https://github.com/qa296/",
+    "stars": 1,
+    "updated_at": "2025-08-17T16:14:59Z",
+    "version": "v0.1.0"
+  },
+  "astrbot_plugin_outputpro": {
+    "desc": "输出增强插件：报错拦截、文本清洗、随机@、随机引用",
+    "author": "Zhalslar",
+    "repo": "https://github.com/Zhalslar/astrbot_plugin_outputpro",
+    "tags": [
+      "输出增强"
+    ],
+    "social_link": "https://github.com/Zhalslar",
+    "stars": 1,
+    "updated_at": "2025-08-17T14:57:11Z",
+    "version": "v1.0.0"
+  },
+  "astrbot_plugin_image_summary": {
+    "desc": "[仅aiocqhttp] 图片外显插件, 将群外显示的“图片”二字替换成更丰富的句子",
+    "author": "Zhalslar",
+    "repo": "https://github.com/Zhalslar/astrbot_plugin_image_summary",
+    "tags": [
+      "图片外显"
+    ],
+    "social_link": "https://github.com/Zhalslar",
+    "stars": 4,
+    "updated_at": "2025-08-15T16:01:33Z",
+    "version": "v1.0.2"
+  },
+  "astrbot_plugin_voice_to_text": {
+    "desc": "语音转文字智能回复插件(新用户看README.md)，支持 OpenAI、Groq、Deepgram、Azure 等多种兼容OpenAI格式的STT服务提供商",
+    "author": "NickMo",
+    "repo": "https://github.com/NickCharlie/Astrbot-Voice-To-Text-Plugin",
+    "tags": [
+      "STT",
+      "语音转文字"
+    ],
+    "stars": 2,
+    "updated_at": "2025-08-16T07:29:36Z",
+    "version": "1.2.0"
+  },
+  "astrbot_plugin_bangumi": {
+    "desc": "一个用于查询 Bangumi条目的插件",
+    "author": "Amatsutsumi",
+    "repo": "https://github.com/Amatsutsumi/astrbot_plugin_bangumi",
+    "tags": [
+      "bangumi"
+    ],
+    "social_link": "https://github.com/Amatsutsumi/astrbot_plugin_bangumi",
+    "stars": 1,
+    "updated_at": "2025-08-13T03:07:11Z",
+    "version": "v1.0"
+  },
+  "asbot_plugin_furry_jtwzbq": {
+    "desc": "[QQ] 监听文字表情时重复发送",
+    "author": "furryhm",
+    "repo": "https://github.com/furryHM-mrz/asbot_plugin_furry_jtwzbq",
+    "tags": [],
+    "stars": 1,
+    "updated_at": "2025-08-16T16:39:23Z",
+    "version": "v2.0.0"
+  },
   "astrbot_plugin_index_tts": {
     "desc": "基于index-tts对AstrBot的语音转文字(TTS)补充",
     "author": "xiewoc",
@@ -255,7 +325,7 @@
       "初音未来 缤纷舞台"
     ],
     "stars": 4,
-    "updated_at": "2025-08-16T15:28:18Z",
+    "updated_at": "2025-08-18T01:09:25Z",
     "version": "v1.1.3"
   },
   "astrbot_plugin_screenctrl": {
@@ -2683,7 +2753,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-17T23:22:31Z",
+    "updated_at": "2025-08-18T02:07:31Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3106,8 +3176,8 @@
     "tags": [
       "DeepSeek"
     ],
-    "stars": 8,
-    "updated_at": "2025-07-07T08:09:09Z",
+    "stars": 9,
+    "updated_at": "2025-08-18T00:50:13Z",
     "version": "v0.1"
   },
   "astrbot_plugin_doro_ending": {
@@ -4077,8 +4147,8 @@
       "功能",
       "推送"
     ],
-    "stars": 12,
-    "updated_at": "2025-07-31T23:13:02Z",
+    "stars": 13,
+    "updated_at": "2025-08-18T02:28:55Z",
     "version": "v2.0"
   },
   "astrbot_plugin_gemini_exp": {
