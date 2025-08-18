@@ -2581,8 +2581,8 @@
       "ai绘图",
       "llm tool"
     ],
-    "stars": 6,
-    "updated_at": "2025-07-23T05:10:16Z",
+    "stars": 7,
+    "updated_at": "2025-08-18T12:23:58Z",
     "version": "v0.0.2"
   },
   "astrbot_plugin_mcqq": {
@@ -2753,7 +2753,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-18T11:21:44Z",
+    "updated_at": "2025-08-18T12:53:41Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -4062,8 +4062,8 @@
       "bilibili"
     ],
     "social_link": "https://github.com/miaoxutao123/",
-    "stars": 33,
-    "updated_at": "2025-08-15T12:53:51Z",
+    "stars": 34,
+    "updated_at": "2025-08-18T12:23:40Z",
     "version": "v0.2.8"
   },
   "astrbot_plugin_sjzb": {
@@ -4577,7 +4577,7 @@
     "repo": "https://github.com/kjqwer/astrbot_plugin_sy",
     "tags": [],
     "stars": 17,
-    "updated_at": "2025-08-17T17:58:14Z",
+    "updated_at": "2025-08-18T12:36:26Z",
     "version": "v1.2.2"
   },
   "ai_memory": {
