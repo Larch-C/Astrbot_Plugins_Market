@@ -839,8 +839,8 @@
     "author": "Chris",
     "repo": "https://github.com/Chris95743/astrbot_plugin_balance",
     "tags": [],
-    "stars": 4,
-    "updated_at": "2025-08-08T03:55:35Z",
+    "stars": 5,
+    "updated_at": "2025-08-18T08:12:30Z",
     "version": "v1.4.0"
   },
   "astrbot_plugin_mp": {
@@ -1345,8 +1345,8 @@
     ],
     "social_link": "https://github.com/Zhalslar",
     "desc": "动态词库，自定义回复词",
-    "stars": 6,
-    "updated_at": "2025-08-12T17:25:51Z",
+    "stars": 7,
+    "updated_at": "2025-08-18T08:24:42Z",
     "version": "v1.0.3"
   },
   "astrbot_plugin_lyricnext": {
@@ -2753,7 +2753,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-18T07:26:53Z",
+    "updated_at": "2025-08-18T08:35:07Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -5171,7 +5171,7 @@
     "repo": "https://github.com/zhuiye8/astrbot_plugin_txsc",
     "tags": [],
     "stars": 4,
-    "updated_at": "2025-08-18T06:50:47Z",
+    "updated_at": "2025-08-18T07:54:12Z",
     "version": "v2.0.0"
   },
   "astrbot_plugin_keyword_reply": {
