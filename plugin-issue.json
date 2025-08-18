@@ -1,33 +1,7 @@
 {
-  "updated_at": "2025-08-17T03:27:09.388Z",
-  "total_plugins": 25,
+  "updated_at": "2025-08-18T03:40:30.511Z",
+  "total_plugins": 23,
   "plugins": [
-    {
-      "name": "aolastar",
-      "desc": "通过Aolarhapsody后端 API 解析奥拉星游戏内容",
-      "author": "vmoranv",
-      "repo": "https://github.com/vmoranv/astrbot_plugin_aolastar",
-      "tags": [
-        "奥拉星"
-      ],
-      "social_link": "https://github.com/vmoranv",
-      "issue_number": 2423,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2423",
-      "created_at": "2025-08-13T09:41:13Z",
-      "updated_at": "2025-08-13T09:49:08Z"
-    },
-    {
-      "name": "asbot_plugin_furry_jtwzbq",
-      "desc": "监听文字表情时重复发送",
-      "author": "furryhm",
-      "repo": "https://github.com/furryHM-mrz/asbot_plugin_furry_jtwzbq",
-      "tags": [],
-      "social_link": "",
-      "issue_number": 2390,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2390",
-      "created_at": "2025-08-11T10:38:37Z",
-      "updated_at": "2025-08-15T04:52:23Z"
-    },
     {
       "name": "asbot_plugin_furry_mzxyy",
       "desc": "毛主席一言",
@@ -66,7 +40,7 @@
     },
     {
       "name": "astrabot_plugin_tts_emotion_router",
-      "desc": "按情绪路由到不同音色与语速的 TTS 插件（硅基流动 API，OpenAI 语音接口风格），支持隐藏标记与启发式情绪识别、概率/长度/冷却门控与会话开关。",
+      "desc": "按情绪路由到不同音色与语速的 TTS 插件（硅基流动 API，其他OpenAI语音接口api同样适配），支持隐藏标记与启发式情绪识别、概率/长度/冷却门控与会话开关。",
       "author": "木有知",
       "repo": "https://github.com/muyouzhi6/astrabot_plugin_tts_emotion_router",
       "tags": [
@@ -81,21 +55,7 @@
       "issue_number": 2446,
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2446",
       "created_at": "2025-08-15T13:59:11Z",
-      "updated_at": "2025-08-16T13:05:04Z"
-    },
-    {
-      "name": "astrbot_plugin_bangumi",
-      "desc": "一个用于查询 Bangumi条目的插件",
-      "author": "Amatsutsumi",
-      "repo": "https://github.com/Amatsutsumi/astrbot_plugin_bangumi",
-      "tags": [
-        "bangumi"
-      ],
-      "social_link": "https://github.com/Amatsutsumi/astrbot_plugin_bangumi",
-      "issue_number": 2417,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2417",
-      "created_at": "2025-08-13T03:02:58Z",
-      "updated_at": "2025-08-14T14:51:35Z"
+      "updated_at": "2025-08-17T16:13:48Z"
     },
     {
       "name": "astrbot_plugin_iearning_style",
@@ -110,21 +70,7 @@
       "issue_number": 2453,
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2453",
       "created_at": "2025-08-16T10:08:20Z",
-      "updated_at": "2025-08-16T10:11:10Z"
-    },
-    {
-      "name": "astrbot_plugin_image_summary",
-      "desc": "[仅aiocqhttp] 图片外显插件, 将群外显示的“图片”二字替换成更丰富的句子",
-      "author": "Zhalslar",
-      "repo": "https://github.com/Zhalslar/astrbot_plugin_image_summary",
-      "tags": [
-        "图片外显"
-      ],
-      "social_link": "https://github.com/Zhalslar",
-      "issue_number": 2431,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2431",
-      "created_at": "2025-08-13T20:15:15Z",
-      "updated_at": "2025-08-15T06:39:56Z"
+      "updated_at": "2025-08-17T06:00:38Z"
     },
     {
       "name": "astrbot_plugin_jrysprpr",
@@ -153,6 +99,32 @@
       "updated_at": "2025-07-21T08:09:38Z"
     },
     {
+      "name": "astrbot_plugin_loveegg",
+      "desc": "提供一个tool用于控制跳蛋",
+      "author": "Futureppo",
+      "repo": "https://github.com/Futureppo/astrbot_plugin_loveegg",
+      "tags": "跳蛋",
+      "social_link": "https://github.com/Futureppo",
+      "issue_number": 2472,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2472",
+      "created_at": "2025-08-17T09:55:58Z",
+      "updated_at": "2025-08-17T09:56:43Z"
+    },
+    {
+      "name": "astrbot_plugin_meme_generator",
+      "desc": "高性能表情包生成器 - 支持多种模板和智能参数识别，具备头像缓存、用户冷却、超时控制等高级功能",
+      "author": "SodaSizzle",
+      "repo": "https://github.com/SodaSizzle/astrbot_plugin_meme_generator",
+      "tags": [
+        "表情包"
+      ],
+      "social_link": "https://github.com/SodaSizzle",
+      "issue_number": 2476,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2476",
+      "created_at": "2025-08-17T12:55:53Z",
+      "updated_at": "2025-08-17T12:57:00Z"
+    },
+    {
       "name": "astrbot_plugin_message_tester",
       "desc": "使用 logger 完整打印消息结构",
       "author": "drdon1234",
@@ -167,18 +139,21 @@
       "updated_at": "2025-08-04T16:43:27Z"
     },
     {
-      "name": "astrbot_plugin_outputpro",
-      "desc": "输出增强插件：报错拦截、文本清洗、随机@、随机引用",
-      "author": "Zhalslar",
-      "repo": "https://github.com/Zhalslar/astrbot_plugin_outputpro",
+      "name": "astrbot_plugin_self_learning",
+      "desc": "智能自学习对话插件 - 通过实时消息捕获、多维度数据分析、渐进式学习机制和动态人格更新，使聊天机器人能够模仿特定用户的对话，实现更自然、个性化的交互",
+      "author": "NickMo",
+      "repo": "https://github.com/NickCharlie/astrabot_plugin_self_learning",
       "tags": [
-        "输出增强"
+        "模仿",
+        "学习",
+        "伪人",
+        "人格"
       ],
-      "social_link": "https://github.com/Zhalslar",
-      "issue_number": 2445,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2445",
-      "created_at": "2025-08-15T13:58:29Z",
-      "updated_at": "2025-08-15T13:58:48Z"
+      "social_link": "https://github.com/NickCharlie",
+      "issue_number": 2470,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2470",
+      "created_at": "2025-08-17T04:06:31Z",
+      "updated_at": "2025-08-17T05:03:41Z"
     },
     {
       "name": "astrbot_plugin_stock",
@@ -194,25 +169,6 @@
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2125",
       "created_at": "2025-07-14T09:21:46Z",
       "updated_at": "2025-07-16T05:18:31Z"
-    },
-    {
-      "name": "astrbot_plugin_voice_to_text",
-      "desc": "语音转文字智能回复插件(新用户一定要看README.md)，支持OpenAI、Groq、Deepgram、Azure等多种兼容OpenAI格式的STT服务提供商",
-      "author": "NickMo",
-      "repo": "https://github.com/NickCharlie/Astrbot-Voice-To-Text-Plugin",
-      "tags": [
-        "语音",
-        "语音识别",
-        "STT",
-        "LLM",
-        "语音转文本",
-        "语音转文字"
-      ],
-      "social_link": "",
-      "issue_number": 2420,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2420",
-      "created_at": "2025-08-13T03:55:05Z",
-      "updated_at": "2025-08-16T07:40:39Z"
     },
     {
       "name": "astrbot_plugin_wakepro",
@@ -334,18 +290,35 @@
     {
       "name": "WealthAndContract",
       "desc": "集签到、契约与经济系统于一体的群聊插件",
-      "author": "HINS(原长安某)",
+      "author": "HINS",
       "repo": "https://github.com/WUHINS/astrbot_plugin_WealthAndContract",
       "tags": [
+        "经济",
+        "奴隶",
         "市场",
-        "交易",
-        "社会"
+        "签到"
       ],
       "social_link": "https://t.me/astrbot_plugin_HINS",
-      "issue_number": 2398,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2398",
-      "created_at": "2025-08-11T11:40:05Z",
-      "updated_at": "2025-08-14T15:54:47Z"
+      "issue_number": 2473,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2473",
+      "created_at": "2025-08-17T10:08:08Z",
+      "updated_at": "2025-08-17T13:32:41Z"
+    },
+    {
+      "name": "百度OCR文字识别",
+      "desc": "使用百度智能云的文字识别服务，新用户有千次的免费调用次数，适合轻度使用",
+      "author": "Yuki Soffd",
+      "repo": "https://github.com/Soffd/astrbot_plugin_baiduocr",
+      "tags": [
+        "工具",
+        "OCR",
+        "图片识别"
+      ],
+      "social_link": "",
+      "issue_number": 2474,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2474",
+      "created_at": "2025-08-17T10:18:39Z",
+      "updated_at": "2025-08-17T10:19:27Z"
     },
     {
       "name": "老九网盘链接管理系统插件",
