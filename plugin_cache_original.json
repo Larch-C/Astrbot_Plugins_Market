@@ -20,8 +20,8 @@
       "输出增强"
     ],
     "social_link": "https://github.com/Zhalslar",
-    "stars": 1,
-    "updated_at": "2025-08-17T14:57:11Z",
+    "stars": 2,
+    "updated_at": "2025-08-18T09:52:53Z",
     "version": "v1.0.0"
   },
   "astrbot_plugin_image_summary": {
@@ -33,7 +33,7 @@
     ],
     "social_link": "https://github.com/Zhalslar",
     "stars": 4,
-    "updated_at": "2025-08-15T16:01:33Z",
+    "updated_at": "2025-08-18T10:29:36Z",
     "version": "v1.0.2"
   },
   "astrbot_plugin_voice_to_text": {
@@ -624,8 +624,8 @@
     ],
     "social_link": "https://github.com/advent259141",
     "pinned": true,
-    "stars": 25,
-    "updated_at": "2025-08-17T20:54:41Z",
+    "stars": 26,
+    "updated_at": "2025-08-18T10:08:45Z",
     "version": "1.2.0"
   },
   "cngal_search": {
@@ -2381,8 +2381,8 @@
     "repo": "https://github.com/monbed/astrbot_plugin_animewifex",
     "tags": [],
     "stars": 1,
-    "updated_at": "2025-08-17T02:23:14Z",
-    "version": "v1.5.5"
+    "updated_at": "2025-08-18T10:28:12Z",
+    "version": "v1.5.6"
   },
   "astrbot_plugin_emojimix": {
     "author": "Flartiny",
@@ -2753,7 +2753,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-18T09:30:27Z",
+    "updated_at": "2025-08-18T10:28:13Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -4121,8 +4121,8 @@
     "tags": [
       "主动对话"
     ],
-    "stars": 3,
-    "updated_at": "2025-08-08T02:56:56Z",
+    "stars": 4,
+    "updated_at": "2025-08-18T10:10:53Z",
     "version": "v2.3.0"
   },
   "astrbot_plugin_sensoji": {
