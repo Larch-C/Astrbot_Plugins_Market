@@ -1860,8 +1860,8 @@
       "RAG",
       "知识库"
     ],
-    "stars": 54,
-    "updated_at": "2025-08-18T03:36:26Z",
+    "stars": 55,
+    "updated_at": "2025-08-18T06:31:26Z",
     "version": "v0.5.8"
   },
   "astrbot_uptime_kuma_webhook_plugin": {
@@ -2753,7 +2753,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-18T05:27:51Z",
+    "updated_at": "2025-08-18T06:39:49Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -5171,8 +5171,8 @@
     "repo": "https://github.com/zhuiye8/astrbot_plugin_txsc",
     "tags": [],
     "stars": 4,
-    "updated_at": "2025-08-12T09:53:38Z",
-    "version": "v1.2"
+    "updated_at": "2025-08-18T06:50:47Z",
+    "version": "v2.0.0"
   },
   "astrbot_plugin_keyword_reply": {
     "author": "腾讯元宝 & Meguminlove",
