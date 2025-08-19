@@ -9,8 +9,8 @@
     ],
     "social_link": "https://github.com/qa296/",
     "stars": 1,
-    "updated_at": "2025-08-19T04:24:03Z",
-    "version": "v0.1.0"
+    "updated_at": "2025-08-19T04:57:20Z",
+    "version": "v0.2.0"
   },
   "astrbot_plugin_outputpro": {
     "desc": "输出增强插件：报错拦截、文本清洗、随机@、随机引用",
@@ -2753,7 +2753,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-19T04:27:44Z",
+    "updated_at": "2025-08-19T05:23:03Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3786,8 +3786,8 @@
     ],
     "social_link": "https://github.com/Zhalslar/astrbot_plugin_memelite",
     "repo": "https://github.com/Zhalslar/astrbot_plugin_memelite",
-    "stars": 44,
-    "updated_at": "2025-08-14T01:47:28Z",
+    "stars": 45,
+    "updated_at": "2025-08-19T05:18:59Z",
     "version": "v1.0.8"
   },
   "astrbot_plugin_saris_economic": {
