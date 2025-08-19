@@ -962,7 +962,7 @@
     "repo": "https://github.com/Chris95743/astrbot_plugin_balance",
     "tags": [],
     "stars": 5,
-    "updated_at": "2025-08-18T08:12:30Z",
+    "updated_at": "2025-08-19T11:20:28Z",
     "version": "v1.4.0"
   },
   "astrbot_plugin_mp": {
@@ -2875,7 +2875,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-19T10:25:42Z",
+    "updated_at": "2025-08-19T11:19:28Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -5293,7 +5293,7 @@
     "repo": "https://github.com/zhuiye8/astrbot_plugin_txsc",
     "tags": [],
     "stars": 4,
-    "updated_at": "2025-08-18T07:54:12Z",
+    "updated_at": "2025-08-19T11:28:22Z",
     "version": "v2.0.0"
   },
   "astrbot_plugin_keyword_reply": {
