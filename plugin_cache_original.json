@@ -58,8 +58,8 @@
       "社交"
     ],
     "social_link": "https://t.me/astrbot_plugin_HINS",
-    "stars": 0,
-    "updated_at": "2025-08-18T18:56:56Z",
+    "stars": 1,
+    "updated_at": "2025-08-19T09:29:57Z",
     "version": "v1.0.0"
   },
   "astrbot_plugin_xfbank": {
@@ -1983,7 +1983,7 @@
       "知识库"
     ],
     "stars": 55,
-    "updated_at": "2025-08-19T08:42:23Z",
+    "updated_at": "2025-08-19T09:57:29Z",
     "version": "v0.5.8"
   },
   "astrbot_uptime_kuma_webhook_plugin": {
@@ -2875,7 +2875,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-19T09:25:37Z",
+    "updated_at": "2025-08-19T10:25:42Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
