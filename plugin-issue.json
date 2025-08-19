@@ -1,6 +1,6 @@
 {
-  "updated_at": "2025-08-18T03:40:30.511Z",
-  "total_plugins": 23,
+  "updated_at": "2025-08-19T03:11:38.719Z",
+  "total_plugins": 28,
   "plugins": [
     {
       "name": "asbot_plugin_furry_mzxyy",
@@ -139,8 +139,20 @@
       "updated_at": "2025-08-04T16:43:27Z"
     },
     {
+      "name": "astrbot_plugin_provider_ark_ResponsesAPI",
+      "desc": "将火山方舟(Volcengine Ark)的上下文缓存API(Responses API)注册为 AstrBot 的对话服务提供商(Provider)(支持/provider、缓存命中统计、Function Calling)",
+      "author": "CaQing ＆ GPT-5 Thinking",
+      "repo": "https://github.com/caqingtgas/astrbot_plugin_provider_ark_ResponsesAPI",
+      "tags": [],
+      "social_link": "",
+      "issue_number": 2486,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2486",
+      "created_at": "2025-08-18T12:19:09Z",
+      "updated_at": "2025-08-19T01:57:06Z"
+    },
+    {
       "name": "astrbot_plugin_self_learning",
-      "desc": "智能自学习对话插件 - 通过实时消息捕获、多维度数据分析、渐进式学习机制和动态人格更新，使聊天机器人能够模仿特定用户的对话，实现更自然、个性化的交互",
+      "desc": "智能自学习对话插件 - 通过实时消息捕获、多维度数据分析、渐进式学习机制和动态人格更新以及社交关系网络，使聊天机器人能够模仿特定用户的对话，实现更自然、个性化的交互",
       "author": "NickMo",
       "repo": "https://github.com/NickCharlie/astrabot_plugin_self_learning",
       "tags": [
@@ -153,7 +165,7 @@
       "issue_number": 2470,
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2470",
       "created_at": "2025-08-17T04:06:31Z",
-      "updated_at": "2025-08-17T05:03:41Z"
+      "updated_at": "2025-08-19T02:41:53Z"
     },
     {
       "name": "astrbot_plugin_stock",
@@ -272,6 +284,20 @@
       "updated_at": "2025-08-16T07:54:21Z"
     },
     {
+      "name": "qftp",
+      "desc": "一个基于 astrbot 的文件管理插件，支持文件下载、搜索等功能。只在napcat+linux下尝试",
+      "author": "。。。",
+      "repo": "https://github.com/idk114-514/astrbot_plugins_qftp",
+      "tags": [
+        "文件管理"
+      ],
+      "social_link": "",
+      "issue_number": 2490,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2490",
+      "created_at": "2025-08-18T15:26:13Z",
+      "updated_at": "2025-08-18T15:33:09Z"
+    },
+    {
       "name": "server_status_monitor",
       "desc": "Linux服务器状态监控插件，持续监控服务器状态，并可在服务器状态到达阈值时提醒",
       "author": "AoiInazuma",
@@ -296,6 +322,44 @@
         "经济",
         "奴隶",
         "市场",
+        "签到",
+        "社交",
+        "约会"
+      ],
+      "social_link": "https://t.me/astrbot_plugin_HINS",
+      "issue_number": 2488,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2488",
+      "created_at": "2025-08-18T14:34:24Z",
+      "updated_at": "2025-08-18T14:35:30Z"
+    },
+    {
+      "name": "WealthAndContract",
+      "desc": "集签到、契约与经济系统于一体的群聊插件",
+      "author": "HINS",
+      "repo": "https://github.com/WUHINS/astrbot_plugin_WealthAndContract",
+      "tags": [
+        "经济",
+        "奴隶",
+        "市场",
+        "签到",
+        "社交",
+        "约会"
+      ],
+      "social_link": "https://t.me/astrbot_plugin_HINS",
+      "issue_number": 2487,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2487",
+      "created_at": "2025-08-18T13:34:20Z",
+      "updated_at": "2025-08-18T13:36:43Z"
+    },
+    {
+      "name": "WealthAndContract",
+      "desc": "集签到、契约与经济系统于一体的群聊插件",
+      "author": "HINS",
+      "repo": "https://github.com/WUHINS/astrbot_plugin_WealthAndContract",
+      "tags": [
+        "经济",
+        "奴隶",
+        "市场",
         "签到"
       ],
       "social_link": "https://t.me/astrbot_plugin_HINS",
@@ -303,6 +367,20 @@
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2473",
       "created_at": "2025-08-17T10:08:08Z",
       "updated_at": "2025-08-17T13:32:41Z"
+    },
+    {
+      "name": "xfbank",
+      "desc": "一个简易的银行插件",
+      "author": "XiaoFu1025",
+      "repo": "https://github.com/XiaoFu1025/astrbot_plugin_xfbank",
+      "tags": [
+        "Bank"
+      ],
+      "social_link": "",
+      "issue_number": 2479,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2479",
+      "created_at": "2025-08-18T07:11:51Z",
+      "updated_at": "2025-08-18T07:15:46Z"
     },
     {
       "name": "百度OCR文字识别",
