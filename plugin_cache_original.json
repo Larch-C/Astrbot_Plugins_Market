@@ -81,7 +81,7 @@
       "运势"
     ],
     "stars": 3,
-    "updated_at": "2025-08-19T08:36:43Z",
+    "updated_at": "2025-08-19T15:22:28Z",
     "version": "v1.0.0"
   },
   "astrbot_plugin_wakepro": {
@@ -235,8 +235,8 @@
       "表白墙"
     ],
     "social_link": "https://github.com/Zhalslar",
-    "stars": 7,
-    "updated_at": "2025-08-17T22:20:43Z",
+    "stars": 8,
+    "updated_at": "2025-08-19T14:41:58Z",
     "version": "v1.0.2"
   },
   "astrbot_plugin_matchreminder": {
@@ -346,8 +346,8 @@
       "增强"
     ],
     "stars": 8,
-    "updated_at": "2025-08-19T12:53:16Z",
-    "version": "2.8.1"
+    "updated_at": "2025-08-19T15:18:19Z",
+    "version": "2.8.2"
   },
   "astrbot_plugin_Group-Verification_PRO": {
     "desc": "一个强大的 QQ 群成员入群验证插件。新成员需回答动态生成的 100 以内加减法问题方可入群。支持完全自定义的提示消息（成功、失败、超时警告、踢出等）和时间控制（验证超时、警告时机、踢出延迟）。当用户回答错误时，会自动生成新题目并重置验证时间，有效防止机器人账号。",
@@ -1235,8 +1235,8 @@
     "repo": "https://github.com/0d00-Ciallo-0721/astrbot_plugin_Astrsupermarket",
     "desc": "一款专为 AstrBot 打造的高互动性 QQ 群聊插件，融合经济、社交、冒险等玩法",
     "tags": [],
-    "stars": 1,
-    "updated_at": "2025-07-01T11:08:21Z",
+    "stars": 2,
+    "updated_at": "2025-08-19T14:46:21Z",
     "version": "v1.1"
   },
   "astrbot_plugin_gameinfo": {
@@ -2875,7 +2875,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-19T14:23:19Z",
+    "updated_at": "2025-08-19T15:25:49Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -4536,8 +4536,8 @@
       "webui",
       "图床"
     ],
-    "stars": 73,
-    "updated_at": "2025-08-11T05:18:40Z",
+    "stars": 74,
+    "updated_at": "2025-08-19T14:49:42Z",
     "version": "v3.13"
   },
   "mccloud_command": {
