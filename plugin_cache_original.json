@@ -59,7 +59,7 @@
     ],
     "social_link": "https://t.me/astrbot_plugin_HINS",
     "stars": 1,
-    "updated_at": "2025-08-19T19:58:38Z",
+    "updated_at": "2025-08-20T02:58:38Z",
     "version": "v1.1.0"
   },
   "astrbot_plugin_xfbank": {
@@ -2875,7 +2875,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-20T01:52:48Z",
+    "updated_at": "2025-08-20T03:11:22Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -4243,8 +4243,8 @@
     "tags": [
       "主动对话"
     ],
-    "stars": 4,
-    "updated_at": "2025-08-18T10:10:53Z",
+    "stars": 5,
+    "updated_at": "2025-08-20T03:10:51Z",
     "version": "v2.3.0"
   },
   "astrbot_plugin_sensoji": {
