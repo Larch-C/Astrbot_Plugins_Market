@@ -346,8 +346,8 @@
       "增强"
     ],
     "stars": 8,
-    "updated_at": "2025-08-19T17:06:52Z",
-    "version": "2.8.3"
+    "updated_at": "2025-08-20T10:23:07Z",
+    "version": "4.4.0"
   },
   "astrbot_plugin_Group-Verification_PRO": {
     "desc": "一个强大的 QQ 群成员入群验证插件。新成员需回答动态生成的 100 以内加减法问题方可入群。支持完全自定义的提示消息（成功、失败、超时警告、踢出等）和时间控制（验证超时、警告时机、踢出延迟）。当用户回答错误时，会自动生成新题目并重置验证时间，有效防止机器人账号。",
@@ -2875,7 +2875,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-20T09:26:09Z",
+    "updated_at": "2025-08-20T10:25:45Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -4495,8 +4495,8 @@
       "功能",
       "搬史"
     ],
-    "stars": 289,
-    "updated_at": "2025-08-14T10:06:39Z",
+    "stars": 287,
+    "updated_at": "2025-08-20T10:03:20Z",
     "version": "v0.912"
   },
   "astrbot_plugin_superpoke": {
