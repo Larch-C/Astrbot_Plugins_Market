@@ -106,7 +106,7 @@
     ],
     "social_link": "https://github.com/qa296/",
     "stars": 2,
-    "updated_at": "2025-08-20T12:35:42Z",
+    "updated_at": "2025-08-20T16:09:18Z",
     "version": "v0.2.0"
   },
   "astrbot_plugin_iearning_style": {
@@ -167,7 +167,7 @@
       "语音转文字"
     ],
     "stars": 2,
-    "updated_at": "2025-08-20T10:36:12Z",
+    "updated_at": "2025-08-20T16:27:09Z",
     "version": "1.2.2"
   },
   "astrbot_plugin_bangumi": {
@@ -434,8 +434,8 @@
       "文转图"
     ],
     "stars": 2,
-    "updated_at": "2025-08-15T03:07:01Z",
-    "version": "v1.1.2"
+    "updated_at": "2025-08-20T15:56:38Z",
+    "version": "v1.1.3"
   },
   "pjsk_guess_song": {
     "desc": "PJSK 猜歌游戏插件",
@@ -2240,8 +2240,8 @@
     ],
     "social_link": "https://github.com/Putarku",
     "stars": 0,
-    "updated_at": "2025-07-23T15:04:13Z",
-    "version": "v1.3"
+    "updated_at": "2025-08-20T16:03:05Z",
+    "version": "v1.4"
   },
   "astrbot_plugins_JMPlugins": {
     "author": "orchidsziyou",
@@ -2677,8 +2677,8 @@
     "repo": "https://github.com/tinkerbellqwq/astrbot_plugin_help",
     "social_link": "https://github.com/tinkerbellqwq",
     "tags": [],
-    "stars": 20,
-    "updated_at": "2025-08-14T01:48:02Z",
+    "stars": 21,
+    "updated_at": "2025-08-20T16:17:44Z",
     "version": "v1.1.2"
   },
   "astrbot_qqemotionreply": {
@@ -2875,7 +2875,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-20T15:25:40Z",
+    "updated_at": "2025-08-20T16:28:51Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
