@@ -1,6 +1,6 @@
 {
-  "updated_at": "2025-08-19T03:11:38.719Z",
-  "total_plugins": 28,
+  "updated_at": "2025-08-20T03:09:41.446Z",
+  "total_plugins": 20,
   "plugins": [
     {
       "name": "asbot_plugin_furry_mzxyy",
@@ -55,36 +55,23 @@
       "issue_number": 2446,
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2446",
       "created_at": "2025-08-15T13:59:11Z",
-      "updated_at": "2025-08-17T16:13:48Z"
+      "updated_at": "2025-08-19T05:55:47Z"
     },
     {
-      "name": "astrbot_plugin_iearning_style",
-      "desc": "使机器人可以从聊天中学习他人说话方式",
-      "author": "qa296",
-      "repo": "https://github.com/qa296/astrbot_plugin_iearning_style",
+      "name": "astrbot_plugin_ctx_trimmer",
+      "desc": "按照token丢弃对话的插件",
+      "author": "xunxiing&gpt5",
+      "repo": "https://github.com/xunxiing/astrbot_plugin_ctx_trimmer",
       "tags": [
-        "学习",
-        "拟人"
-      ],
-      "social_link": "https://github.com/qa296",
-      "issue_number": 2453,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2453",
-      "created_at": "2025-08-16T10:08:20Z",
-      "updated_at": "2025-08-17T06:00:38Z"
-    },
-    {
-      "name": "astrbot_plugin_jrysprpr",
-      "desc": "今日运势查询，会生成一张图片，包含今日运势、宜忌、吉时等信息。",
-      "author": "ominus",
-      "repo": "https://github.com/NINIYOYYO/astrbot_plugin_jrys",
-      "tags": [
-        "今日运势查询"
+        "context ",
+        "token",
+        "llm"
       ],
       "social_link": "",
-      "issue_number": 2456,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2456",
-      "created_at": "2025-08-16T15:06:29Z",
-      "updated_at": "2025-08-16T15:10:09Z"
+      "issue_number": 2497,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2497",
+      "created_at": "2025-08-19T10:00:25Z",
+      "updated_at": "2025-08-19T10:09:12Z"
     },
     {
       "name": "astrbot_plugin_lark_send_patcher",
@@ -111,20 +98,6 @@
       "updated_at": "2025-08-17T09:56:43Z"
     },
     {
-      "name": "astrbot_plugin_meme_generator",
-      "desc": "高性能表情包生成器 - 支持多种模板和智能参数识别，具备头像缓存、用户冷却、超时控制等高级功能",
-      "author": "SodaSizzle",
-      "repo": "https://github.com/SodaSizzle/astrbot_plugin_meme_generator",
-      "tags": [
-        "表情包"
-      ],
-      "social_link": "https://github.com/SodaSizzle",
-      "issue_number": 2476,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2476",
-      "created_at": "2025-08-17T12:55:53Z",
-      "updated_at": "2025-08-17T12:57:00Z"
-    },
-    {
       "name": "astrbot_plugin_message_tester",
       "desc": "使用 logger 完整打印消息结构",
       "author": "drdon1234",
@@ -137,35 +110,6 @@
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2317",
       "created_at": "2025-08-04T16:41:42Z",
       "updated_at": "2025-08-04T16:43:27Z"
-    },
-    {
-      "name": "astrbot_plugin_provider_ark_ResponsesAPI",
-      "desc": "将火山方舟(Volcengine Ark)的上下文缓存API(Responses API)注册为 AstrBot 的对话服务提供商(Provider)(支持/provider、缓存命中统计、Function Calling)",
-      "author": "CaQing ＆ GPT-5 Thinking",
-      "repo": "https://github.com/caqingtgas/astrbot_plugin_provider_ark_ResponsesAPI",
-      "tags": [],
-      "social_link": "",
-      "issue_number": 2486,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2486",
-      "created_at": "2025-08-18T12:19:09Z",
-      "updated_at": "2025-08-19T01:57:06Z"
-    },
-    {
-      "name": "astrbot_plugin_self_learning",
-      "desc": "智能自学习对话插件 - 通过实时消息捕获、多维度数据分析、渐进式学习机制和动态人格更新以及社交关系网络，使聊天机器人能够模仿特定用户的对话，实现更自然、个性化的交互",
-      "author": "NickMo",
-      "repo": "https://github.com/NickCharlie/astrabot_plugin_self_learning",
-      "tags": [
-        "模仿",
-        "学习",
-        "伪人",
-        "人格"
-      ],
-      "social_link": "https://github.com/NickCharlie",
-      "issue_number": 2470,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2470",
-      "created_at": "2025-08-17T04:06:31Z",
-      "updated_at": "2025-08-19T02:41:53Z"
     },
     {
       "name": "astrbot_plugin_stock",
@@ -183,20 +127,6 @@
       "updated_at": "2025-07-16T05:18:31Z"
     },
     {
-      "name": "astrbot_plugin_wakepro",
-      "desc": "更强大的唤醒增强插件：提及唤醒、唤醒延长、空@唤醒、话题相关性唤醒、答疑唤醒、无聊唤醒、闭嘴机制、被骂沉默机制",
-      "author": "Zhalslar",
-      "repo": "https://github.com/Zhalslar/astrbot_plugin_wakepro",
-      "tags": [
-        "唤醒增强"
-      ],
-      "social_link": "https://github.com/Zhalslar",
-      "issue_number": 2444,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2444",
-      "created_at": "2025-08-15T06:46:37Z",
-      "updated_at": "2025-08-15T16:04:31Z"
-    },
-    {
       "name": "astrbot_plugin_zfile",
       "desc": "基于 ZFile 的 AstrBot 插件，实现文件列表查看、上传、下载、短链生成等远程管理功能。",
       "author": "shskjw",
@@ -208,20 +138,6 @@
       "updated_at": "2025-07-25T11:05:11Z",
       "tags": [],
       "social_link": ""
-    },
-    {
-      "name": "astrobot_plugin_who_at_me",
-      "desc": "谁艾特我?监听@消息，便于快速查找自己被@时说了什么。",
-      "author": "长安某",
-      "repo": "https://github.com/zgojin/astrobot_plugin_who_at_me",
-      "tags": [
-        "工具"
-      ],
-      "social_link": "astrbot.uk",
-      "issue_number": 2443,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2443",
-      "created_at": "2025-08-14T19:32:39Z",
-      "updated_at": "2025-08-14T20:15:17Z"
     },
     {
       "name": "gemini_tokens_limit",
@@ -314,89 +230,40 @@
       "updated_at": "2025-07-25T11:11:11Z"
     },
     {
-      "name": "WealthAndContract",
-      "desc": "集签到、契约与经济系统于一体的群聊插件",
-      "author": "HINS",
-      "repo": "https://github.com/WUHINS/astrbot_plugin_WealthAndContract",
-      "tags": [
-        "经济",
-        "奴隶",
-        "市场",
-        "签到",
-        "社交",
-        "约会"
-      ],
-      "social_link": "https://t.me/astrbot_plugin_HINS",
-      "issue_number": 2488,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2488",
-      "created_at": "2025-08-18T14:34:24Z",
-      "updated_at": "2025-08-18T14:35:30Z"
+      "name": "steam_topsellers",
+      "desc": "获取Steam热销榜前5名游戏",
+      "author": "danfong1104",
+      "repo": "https://github.com/danfong1104/astrbot_plugin_steam_topsellers",
+      "tags": [],
+      "social_link": "https://github.com/danfong1104/astrbot_plugin_steam_topsellers.git",
+      "issue_number": 2489,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2489",
+      "created_at": "2025-08-18T14:54:22Z",
+      "updated_at": "2025-08-20T01:24:10Z"
     },
     {
-      "name": "WealthAndContract",
-      "desc": "集签到、契约与经济系统于一体的群聊插件",
-      "author": "HINS",
-      "repo": "https://github.com/WUHINS/astrbot_plugin_WealthAndContract",
-      "tags": [
-        "经济",
-        "奴隶",
-        "市场",
-        "签到",
-        "社交",
-        "约会"
-      ],
-      "social_link": "https://t.me/astrbot_plugin_HINS",
-      "issue_number": 2487,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2487",
-      "created_at": "2025-08-18T13:34:20Z",
-      "updated_at": "2025-08-18T13:36:43Z"
-    },
-    {
-      "name": "WealthAndContract",
-      "desc": "集签到、契约与经济系统于一体的群聊插件",
-      "author": "HINS",
-      "repo": "https://github.com/WUHINS/astrbot_plugin_WealthAndContract",
-      "tags": [
-        "经济",
-        "奴隶",
-        "市场",
-        "签到"
-      ],
-      "social_link": "https://t.me/astrbot_plugin_HINS",
-      "issue_number": 2473,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2473",
-      "created_at": "2025-08-17T10:08:08Z",
-      "updated_at": "2025-08-17T13:32:41Z"
-    },
-    {
-      "name": "xfbank",
-      "desc": "一个简易的银行插件",
-      "author": "XiaoFu1025",
-      "repo": "https://github.com/XiaoFu1025/astrbot_plugin_xfbank",
-      "tags": [
-        "Bank"
-      ],
+      "name": "群聊检测刷屏",
+      "desc": "群聊检测刷屏（防止机器人后台爆炸）",
+      "author": "宵夜awa",
+      "repo": "https://github.com/XY6678/QQ-bot-plugin",
+      "tags": [],
       "social_link": "",
-      "issue_number": 2479,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2479",
-      "created_at": "2025-08-18T07:11:51Z",
-      "updated_at": "2025-08-18T07:15:46Z"
+      "issue_number": 2502,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2502",
+      "created_at": "2025-08-20T00:28:07Z",
+      "updated_at": "2025-08-20T00:28:11Z"
     },
     {
-      "name": "百度OCR文字识别",
-      "desc": "使用百度智能云的文字识别服务，新用户有千次的免费调用次数，适合轻度使用",
-      "author": "Yuki Soffd",
-      "repo": "https://github.com/Soffd/astrbot_plugin_baiduocr",
-      "tags": [
-        "工具",
-        "OCR",
-        "图片识别"
-      ],
+      "name": "群聊检测刷屏",
+      "desc": "检查刷屏（数值可以通过指令来调整）如果检测违规刷屏机器人可以直接退群，这样可以保证后台不被炸（就是因为作者经历过 所以才做这个插件）",
+      "author": "宵夜awa",
+      "repo": "https://github.com/XY6678/QQ-bot-plugin",
+      "tags": [],
       "social_link": "",
-      "issue_number": 2474,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2474",
-      "created_at": "2025-08-17T10:18:39Z",
-      "updated_at": "2025-08-17T10:19:27Z"
+      "issue_number": 2501,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2501",
+      "created_at": "2025-08-20T00:25:32Z",
+      "updated_at": "2025-08-20T00:25:38Z"
     },
     {
       "name": "老九网盘链接管理系统插件",
