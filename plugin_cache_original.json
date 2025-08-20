@@ -167,7 +167,7 @@
       "语音转文字"
     ],
     "stars": 2,
-    "updated_at": "2025-08-19T13:58:05Z",
+    "updated_at": "2025-08-20T01:36:13Z",
     "version": "1.2.1"
   },
   "astrbot_plugin_bangumi": {
@@ -746,8 +746,8 @@
     ],
     "social_link": "https://github.com/advent259141",
     "pinned": true,
-    "stars": 26,
-    "updated_at": "2025-08-18T10:08:45Z",
+    "stars": 27,
+    "updated_at": "2025-08-20T01:31:38Z",
     "version": "1.2.0"
   },
   "cngal_search": {
@@ -2875,7 +2875,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-19T23:21:37Z",
+    "updated_at": "2025-08-20T01:52:48Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -5293,7 +5293,7 @@
     "repo": "https://github.com/zhuiye8/astrbot_plugin_txsc",
     "tags": [],
     "stars": 4,
-    "updated_at": "2025-08-19T11:28:22Z",
+    "updated_at": "2025-08-20T01:24:46Z",
     "version": "v2.0.0"
   },
   "astrbot_plugin_keyword_reply": {
