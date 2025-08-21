@@ -1,6 +1,6 @@
 {
-  "updated_at": "2025-08-20T03:09:41.446Z",
-  "total_plugins": 20,
+  "updated_at": "2025-08-21T03:08:46.748Z",
+  "total_plugins": 24,
   "plugins": [
     {
       "name": "asbot_plugin_furry_mzxyy",
@@ -37,25 +37,6 @@
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2397",
       "created_at": "2025-08-11T11:39:59Z",
       "updated_at": "2025-08-12T01:37:27Z"
-    },
-    {
-      "name": "astrabot_plugin_tts_emotion_router",
-      "desc": "按情绪路由到不同音色与语速的 TTS 插件（硅基流动 API，其他OpenAI语音接口api同样适配），支持隐藏标记与启发式情绪识别、概率/长度/冷却门控与会话开关。",
-      "author": "木有知",
-      "repo": "https://github.com/muyouzhi6/astrabot_plugin_tts_emotion_router",
-      "tags": [
-        "AstrBot",
-        "TTS",
-        "Emotion",
-        "SiliconFlow",
-        "OpenAI-Style",
-        "Audio"
-      ],
-      "social_link": "https://github.com/muyouzhi6",
-      "issue_number": 2446,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2446",
-      "created_at": "2025-08-15T13:59:11Z",
-      "updated_at": "2025-08-19T05:55:47Z"
     },
     {
       "name": "astrbot_plugin_ctx_trimmer",
@@ -112,6 +93,45 @@
       "updated_at": "2025-08-04T16:43:27Z"
     },
     {
+      "name": "astrbot_plugin_Mirecraft_motd",
+      "desc": "基于Astrbot的motd探测服务器的插件",
+      "author": "ChuranNeko",
+      "repo": "https://github.com/ChuranNeko/astrbot_plugin_Mirecraft_motd",
+      "tags": [],
+      "social_link": "",
+      "issue_number": 2516,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2516",
+      "created_at": "2025-08-20T21:57:22Z",
+      "updated_at": "2025-08-20T21:58:03Z"
+    },
+    {
+      "name": "astrbot_plugin_pic_search",
+      "desc": "爬取bing的图片搜索结果，再使用VLM进行选择处理",
+      "author": "RC-CHN",
+      "repo": "https://github.com/RC-CHN/astrbot_plugin_pic_search",
+      "issue_number": 2506,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2506",
+      "created_at": "2025-08-20T07:18:48Z",
+      "updated_at": "2025-08-20T08:25:47Z",
+      "tags": [],
+      "social_link": ""
+    },
+    {
+      "name": "astrbot_plugin_spaghetti_concrete",
+      "desc": "一本正经胡说八道生成器 —— 基于“意大利面混凝土理论”，输出跨领域因果谬误文案。",
+      "author": "KONpiGG",
+      "repo": "https://github.com/KONpiGG/spaghetti_concrete",
+      "tags": [
+        "胡说八道",
+        "娱乐"
+      ],
+      "social_link": "",
+      "issue_number": 2504,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2504",
+      "created_at": "2025-08-20T06:14:51Z",
+      "updated_at": "2025-08-20T06:19:09Z"
+    },
+    {
       "name": "astrbot_plugin_stock",
       "desc": "基于AkShare和Binance的股市行情查询插件，支持数字货币、A股、港股、美股及指数的实时行情、历史数据和K线图表",
       "author": "anchor",
@@ -125,6 +145,25 @@
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2125",
       "created_at": "2025-07-14T09:21:46Z",
       "updated_at": "2025-07-16T05:18:31Z"
+    },
+    {
+      "name": "astrbot_plugin_tts_emotion_router",
+      "desc": "按情绪路由到不同音色与语速的 TTS 插件（硅基流动 API，其他OpenAI语音接口api同样适配），支持隐藏标记与启发式情绪识别、概率/长度/冷却门控与会话开关。",
+      "author": "木有知",
+      "repo": "https://github.com/muyouzhi6/astrbot_plugin_tts_emotion_router",
+      "tags": [
+        "AstrBot",
+        "TTS",
+        "Emotion",
+        "SiliconFlow",
+        "OpenAI-Style",
+        "Audio"
+      ],
+      "social_link": "https://github.com/muyouzhi6",
+      "issue_number": 2446,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2446",
+      "created_at": "2025-08-15T13:59:11Z",
+      "updated_at": "2025-08-21T02:48:47Z"
     },
     {
       "name": "astrbot_plugin_zfile",
@@ -153,6 +192,27 @@
       "created_at": "2025-08-10T03:15:28Z",
       "updated_at": "2025-08-14T14:40:52Z",
       "social_link": ""
+    },
+    {
+      "name": "HuaEr聊天bot",
+      "desc": "基于SiliconFlow API的多组群聊天插件，支持人格设定、markdown显示、联网搜索、检索增强生成（RAG）等功能",
+      "author": "HuaEr DevGroup",
+      "repo": "https://github.com/suizoe-cosine/astrbot-plugin-huaer-bot",
+      "tags": [
+        {
+          "label": "LLM",
+          "color": "#0583b3"
+        },
+        {
+          "label": "RAG",
+          "color": "#00ff4d"
+        }
+      ],
+      "social_link": "",
+      "issue_number": 2511,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2511",
+      "created_at": "2025-08-20T11:45:25Z",
+      "updated_at": "2025-08-20T13:02:27Z"
     },
     {
       "name": "jav_info",
