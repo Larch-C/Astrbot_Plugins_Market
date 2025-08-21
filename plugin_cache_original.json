@@ -31,7 +31,7 @@
     ],
     "social_link": "https://github.com/NickCharlie",
     "stars": 5,
-    "updated_at": "2025-08-20T07:03:37Z",
+    "updated_at": "2025-08-21T06:20:24Z",
     "version": "1.0.0"
   },
   "astrbot_plugin_baiduocr": {
@@ -106,8 +106,8 @@
     ],
     "social_link": "https://github.com/qa296/",
     "stars": 2,
-    "updated_at": "2025-08-20T16:09:18Z",
-    "version": "v0.2.0"
+    "updated_at": "2025-08-21T05:36:26Z",
+    "version": "v0.2.1"
   },
   "astrbot_plugin_iearning_style": {
     "desc": "使机器人可以从聊天中学习他人说话方式",
@@ -302,8 +302,8 @@
       "Mirecraft"
     ],
     "stars": 2,
-    "updated_at": "2025-08-21T03:51:26Z",
-    "version": "v1.3.0"
+    "updated_at": "2025-08-21T05:58:21Z",
+    "version": "v1.4.0"
   },
   "astrbot_plugin_daily_reminder": {
     "desc": "让机器人支持定时消息",
@@ -2667,8 +2667,8 @@
       "api"
     ],
     "social_link": "https://github.com/Zhalslar/astrbot_plugin_apis",
-    "stars": 67,
-    "updated_at": "2025-08-16T17:29:32Z",
+    "stars": 68,
+    "updated_at": "2025-08-21T05:57:10Z",
     "version": "v2.0.0"
   },
   "astrbot_plugin_help": {
@@ -2875,7 +2875,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-21T05:23:38Z",
+    "updated_at": "2025-08-21T06:44:33Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -5293,7 +5293,7 @@
     "repo": "https://github.com/zhuiye8/astrbot_plugin_txsc",
     "tags": [],
     "stars": 5,
-    "updated_at": "2025-08-20T06:22:06Z",
+    "updated_at": "2025-08-21T06:56:09Z",
     "version": "v2.0.0"
   },
   "astrbot_plugin_keyword_reply": {
