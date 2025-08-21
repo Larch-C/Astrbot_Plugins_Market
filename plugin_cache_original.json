@@ -2875,7 +2875,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-21T09:26:02Z",
+    "updated_at": "2025-08-21T10:25:12Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -4897,8 +4897,8 @@
     "repo": "https://github.com/cyber-moshen/astrbot_plugin_VITS",
     "tags": [],
     "stars": 6,
-    "updated_at": "2025-05-29T12:46:19Z",
-    "version": "v1.2.0"
+    "updated_at": "2025-08-21T10:32:08Z",
+    "version": "v1.3.0"
   },
   "astrbot_plugin_memes": {
     "desc": "这是能让机器人随机发表情包的插件，可手动添加表情包，表情包路径在AstrBot/data/meme/下",
