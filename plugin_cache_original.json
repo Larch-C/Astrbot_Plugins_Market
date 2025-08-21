@@ -105,8 +105,8 @@
       "记忆"
     ],
     "social_link": "https://github.com/qa296/",
-    "stars": 2,
-    "updated_at": "2025-08-21T05:36:26Z",
+    "stars": 3,
+    "updated_at": "2025-08-21T08:58:19Z",
     "version": "v0.2.1"
   },
   "astrbot_plugin_iearning_style": {
@@ -346,7 +346,7 @@
       "增强"
     ],
     "stars": 9,
-    "updated_at": "2025-08-21T03:34:54Z",
+    "updated_at": "2025-08-21T09:21:48Z",
     "version": "2.6.4"
   },
   "astrbot_plugin_Group-Verification_PRO": {
@@ -746,8 +746,8 @@
     ],
     "social_link": "https://github.com/advent259141",
     "pinned": true,
-    "stars": 27,
-    "updated_at": "2025-08-20T08:42:12Z",
+    "stars": 29,
+    "updated_at": "2025-08-21T09:05:44Z",
     "version": "1.2.1"
   },
   "cngal_search": {
@@ -2678,8 +2678,8 @@
     "social_link": "https://github.com/tinkerbellqwq",
     "tags": [],
     "stars": 21,
-    "updated_at": "2025-08-20T16:17:44Z",
-    "version": "v1.1.2"
+    "updated_at": "2025-08-21T08:53:59Z",
+    "version": "v1.1.3"
   },
   "astrbot_qqemotionreply": {
     "author": "QiChen",
@@ -2875,7 +2875,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-21T08:31:04Z",
+    "updated_at": "2025-08-21T09:26:02Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -4699,8 +4699,8 @@
     "repo": "https://github.com/kjqwer/astrbot_plugin_sy",
     "tags": [],
     "stars": 17,
-    "updated_at": "2025-08-18T12:36:26Z",
-    "version": "v1.2.2"
+    "updated_at": "2025-08-21T09:15:09Z",
+    "version": "v1.2.3"
   },
   "ai_memory": {
     "desc": "一个AI记忆管理插件，可以让ai记住重要的事，记忆读取是ai自己调用的，有时候呆呆的ai不会自己调用，可以多问几次或者人格加上特定提示词,输入 /mem_help 查看记忆管理帮助",
