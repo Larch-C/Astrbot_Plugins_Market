@@ -59,8 +59,8 @@
     ],
     "social_link": "https://t.me/astrbot_plugin_HINS",
     "stars": 2,
-    "updated_at": "2025-08-20T17:03:14Z",
-    "version": "v1.2.0"
+    "updated_at": "2025-08-21T13:25:11Z",
+    "version": "v1.3.0"
   },
   "astrbot_plugin_xfbank": {
     "desc": "一个简易的银行插件",
@@ -2875,7 +2875,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-21T12:49:08Z",
+    "updated_at": "2025-08-21T13:33:44Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
