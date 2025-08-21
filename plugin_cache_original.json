@@ -302,8 +302,8 @@
       "Mirecraft"
     ],
     "stars": 2,
-    "updated_at": "2025-08-21T05:58:21Z",
-    "version": "v1.4.0"
+    "updated_at": "2025-08-21T18:33:32Z",
+    "version": "v1.1.0"
   },
   "astrbot_plugin_daily_reminder": {
     "desc": "让机器人支持定时消息",
@@ -2875,7 +2875,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-21T17:25:46Z",
+    "updated_at": "2025-08-21T18:32:04Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
