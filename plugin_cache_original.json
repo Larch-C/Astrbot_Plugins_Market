@@ -2875,7 +2875,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-22T06:35:09Z",
+    "updated_at": "2025-08-22T07:21:42Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3968,8 +3968,8 @@
       "撤回",
       "禁言"
     ],
-    "stars": 1,
-    "updated_at": "2025-08-04T13:52:31Z",
+    "stars": 2,
+    "updated_at": "2025-08-22T07:00:30Z",
     "version": "v0.1.2"
   },
   "astrbot_plugin_custom_menu": {
