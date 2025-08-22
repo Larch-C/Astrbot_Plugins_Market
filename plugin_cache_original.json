@@ -2503,8 +2503,8 @@
     "repo": "https://github.com/monbed/astrbot_plugin_animewifex",
     "tags": [],
     "stars": 2,
-    "updated_at": "2025-08-22T17:58:24Z",
-    "version": "v1.5.8"
+    "updated_at": "2025-08-22T19:56:02Z",
+    "version": "v1.5.9"
   },
   "astrbot_plugin_emojimix": {
     "author": "Flartiny",
@@ -2875,7 +2875,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-22T19:19:03Z",
+    "updated_at": "2025-08-22T20:25:22Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
