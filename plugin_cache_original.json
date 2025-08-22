@@ -720,8 +720,8 @@
       "战地风云"
     ],
     "stars": 7,
-    "updated_at": "2025-08-17T09:44:27Z",
-    "version": "v1.0.8"
+    "updated_at": "2025-08-22T10:06:50Z",
+    "version": "v1.0.9"
   },
   "astrbot_plugin_SteamSaleTracker": {
     "desc": "这是一个 Steam 游戏价格监控插件",
@@ -747,8 +747,8 @@
     "social_link": "https://github.com/advent259141",
     "pinned": true,
     "stars": 29,
-    "updated_at": "2025-08-21T09:05:44Z",
-    "version": "1.2.1"
+    "updated_at": "2025-08-22T10:13:45Z",
+    "version": "1.3.0"
   },
   "cngal_search": {
     "desc": "CnGal查询",
@@ -2094,8 +2094,8 @@
     "repo": "https://github.com/Zhalslar/astrbot_plugin_search_video",
     "social_link": "https://github.com/Zhalslar",
     "tags": [],
-    "stars": 22,
-    "updated_at": "2025-08-22T06:11:07Z",
+    "stars": 23,
+    "updated_at": "2025-08-22T10:26:13Z",
     "version": "v1.0.6"
   },
   "astrbot_plugin_zt": {
@@ -2875,7 +2875,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-22T09:25:07Z",
+    "updated_at": "2025-08-22T10:24:54Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -4495,8 +4495,8 @@
       "功能",
       "搬史"
     ],
-    "stars": 287,
-    "updated_at": "2025-08-20T10:03:20Z",
+    "stars": 288,
+    "updated_at": "2025-08-22T09:49:33Z",
     "version": "v0.912"
   },
   "astrbot_plugin_superpoke": {
