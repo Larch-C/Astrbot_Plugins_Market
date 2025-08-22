@@ -30,9 +30,9 @@
       "人格"
     ],
     "social_link": "https://github.com/NickCharlie",
-    "stars": 10,
-    "updated_at": "2025-08-22T14:17:46Z",
-    "version": "1.0.1"
+    "stars": 11,
+    "updated_at": "2025-08-22T16:05:45Z",
+    "version": "1.1.0"
   },
   "astrbot_plugin_baiduocr": {
     "desc": "百度智能云的 OCR 文字识别服务。新用户有千次的免费调用次数，适合轻度使用",
@@ -201,8 +201,8 @@
     ],
     "social_link": "https://github.com/xiewoc",
     "stars": 0,
-    "updated_at": "2025-08-16T16:24:14Z",
-    "version": "v1.0.2"
+    "updated_at": "2025-08-22T16:16:34Z",
+    "version": "v1.0.3"
   },
   "astrbot_plugin_aolastar": {
     "desc": "通过Aolarhapsody后端 API 解析奥拉星游戏内容",
@@ -2875,7 +2875,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-22T15:23:55Z",
+    "updated_at": "2025-08-22T16:28:35Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
