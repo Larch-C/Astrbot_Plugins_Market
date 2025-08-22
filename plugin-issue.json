@@ -1,6 +1,6 @@
 {
-  "updated_at": "2025-08-21T03:08:46.748Z",
-  "total_plugins": 24,
+  "updated_at": "2025-08-22T03:09:19.654Z",
+  "total_plugins": 31,
   "plugins": [
     {
       "name": "asbot_plugin_furry_mzxyy",
@@ -55,6 +55,54 @@
       "updated_at": "2025-08-19T10:09:12Z"
     },
     {
+      "name": "astrbot_plugin_furry_cg",
+      "desc": "小茶馆插件",
+      "author": "furryhm",
+      "repo": "https://github.com/furryHM-mrz/astrbot_plugin_furry_cg",
+      "tags": [],
+      "social_link": "",
+      "issue_number": 2522,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2522",
+      "created_at": "2025-08-21T11:36:13Z",
+      "updated_at": "2025-08-21T11:39:57Z"
+    },
+    {
+      "name": "astrbot_plugin_furry_cgsjk",
+      "desc": "小茶馆数据库插件，为小茶馆插件提供数据支持",
+      "author": "furryhm",
+      "repo": "https://github.com/furryHM-mrz/astrbot_plugin_furry_cgsjk",
+      "tags": [],
+      "social_link": "",
+      "issue_number": 2523,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2523",
+      "created_at": "2025-08-21T11:41:44Z",
+      "updated_at": "2025-08-21T11:42:36Z"
+    },
+    {
+      "name": "astrbot_plugin_furry_dsgg",
+      "desc": "[仅aiocqhttp] 广告助手，帮助你向所有群聊定时发送广告",
+      "author": "furryhm",
+      "repo": "https://github.com/furryHM-mrz/astrbot_plugin_furry_dsgg",
+      "tags": [],
+      "social_link": "",
+      "issue_number": 2521,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2521",
+      "created_at": "2025-08-21T11:08:32Z",
+      "updated_at": "2025-08-21T11:09:18Z"
+    },
+    {
+      "name": "astrbot_plugin_immersive_control",
+      "desc": "🎮 给AI植入神奇小玩具的娱乐插件！一键\"遥控\"让AI瞬间害羞结巴，3分钟沉浸式互动体验～",
+      "author": "木有知",
+      "repo": "https://github.com/muyouzhi6/astrbot_plugin_immersive_control",
+      "tags": [],
+      "social_link": "https://github.com/muyouzhi6",
+      "issue_number": 2520,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2520",
+      "created_at": "2025-08-21T07:59:54Z",
+      "updated_at": "2025-08-21T08:25:26Z"
+    },
+    {
       "name": "astrbot_plugin_lark_send_patcher",
       "desc": "通过猴子补丁的方式，优化了飞书Lark适配器下，机器人发送的消息引用太频繁的问题。现在飞书下所有的机器人回复从引用消息变更为直接发送。插件可能会随着astrbot本体版本更新，涉及到lark_adapter和lark_event重大更新时失效。",
       "author": "天各一方",
@@ -65,18 +113,6 @@
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2184",
       "created_at": "2025-07-20T18:10:28Z",
       "updated_at": "2025-07-21T08:09:38Z"
-    },
-    {
-      "name": "astrbot_plugin_loveegg",
-      "desc": "提供一个tool用于控制跳蛋",
-      "author": "Futureppo",
-      "repo": "https://github.com/Futureppo/astrbot_plugin_loveegg",
-      "tags": "跳蛋",
-      "social_link": "https://github.com/Futureppo",
-      "issue_number": 2472,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2472",
-      "created_at": "2025-08-17T09:55:58Z",
-      "updated_at": "2025-08-17T09:56:43Z"
     },
     {
       "name": "astrbot_plugin_message_tester",
@@ -91,6 +127,20 @@
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2317",
       "created_at": "2025-08-04T16:41:42Z",
       "updated_at": "2025-08-04T16:43:27Z"
+    },
+    {
+      "name": "astrbot_plugin_minecraft_motd",
+      "desc": "基于Astrbot的motd探测服务器的插件",
+      "author": "ChuranNeko",
+      "repo": "https://github.com/ChuranNeko/astrbot_plugin_minecraft_motd",
+      "tags": [
+        "Mirecraft"
+      ],
+      "social_link": "",
+      "issue_number": 2527,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2527",
+      "created_at": "2025-08-21T18:57:50Z",
+      "updated_at": "2025-08-21T18:59:19Z"
     },
     {
       "name": "astrbot_plugin_Mirecraft_motd",
@@ -164,6 +214,30 @@
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2446",
       "created_at": "2025-08-15T13:59:11Z",
       "updated_at": "2025-08-21T02:48:47Z"
+    },
+    {
+      "name": "astrbot_plugin_Xiaomi_BandProMax",
+      "desc": "小米手环新用法",
+      "author": "Futureppo",
+      "repo": "https://github.com/Futureppo/astrbot_plugin_Xiaomi_BandProMax",
+      "tags": "小米，小玩具，震动",
+      "social_link": "https://github.com/Futureppo",
+      "issue_number": 2519,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2519",
+      "created_at": "2025-08-21T07:31:16Z",
+      "updated_at": "2025-08-21T07:35:33Z"
+    },
+    {
+      "name": "astrbot_plugin_Xiaomi_BandProMax",
+      "desc": "小米手环新用法",
+      "author": "Futureppo",
+      "repo": "https://github.com/Futureppo/astrbot_plugin_Xiaomi_BandProMax",
+      "tags": "小米，手环，震动",
+      "social_link": "https://github.com/Futureppo",
+      "issue_number": 2472,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2472",
+      "created_at": "2025-08-17T09:55:58Z",
+      "updated_at": "2025-08-21T07:28:30Z"
     },
     {
       "name": "astrbot_plugin_zfile",
@@ -288,6 +362,18 @@
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2204",
       "created_at": "2025-07-22T08:45:51Z",
       "updated_at": "2025-07-25T11:11:11Z"
+    },
+    {
+      "name": "should_I_respond",
+      "desc": "[在aiocqhttp平台测试，需要搭配主动回复功能使用]我要回复这条消息吗？当你打开主动回复的时候，LLM可能傻傻的就部分上下文一直回复。这个插件没准能解决这个问题。",
+      "author": "。。。",
+      "repo": "https://github.com/idk114-514/should_I_respond",
+      "tags": [],
+      "social_link": "",
+      "issue_number": 2524,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2524",
+      "created_at": "2025-08-21T12:23:56Z",
+      "updated_at": "2025-08-21T12:29:11Z"
     },
     {
       "name": "steam_topsellers",
