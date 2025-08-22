@@ -201,7 +201,7 @@
     ],
     "social_link": "https://github.com/xiewoc",
     "stars": 0,
-    "updated_at": "2025-08-22T16:16:34Z",
+    "updated_at": "2025-08-22T17:03:18Z",
     "version": "v1.0.3"
   },
   "astrbot_plugin_aolastar": {
@@ -235,8 +235,8 @@
       "表白墙"
     ],
     "social_link": "https://github.com/Zhalslar",
-    "stars": 9,
-    "updated_at": "2025-08-22T06:35:56Z",
+    "stars": 10,
+    "updated_at": "2025-08-22T17:08:44Z",
     "version": "v1.0.2"
   },
   "astrbot_plugin_matchreminder": {
@@ -256,8 +256,8 @@
       "撤回"
     ],
     "social_link": "https://github.com/Zhalslar",
-    "stars": 5,
-    "updated_at": "2025-08-16T04:32:07Z",
+    "stars": 6,
+    "updated_at": "2025-08-22T17:20:43Z",
     "version": "v1.0.1"
   },
   "astrbot_plugin_record_converter": {
@@ -345,8 +345,8 @@
       "工具",
       "增强"
     ],
-    "stars": 9,
-    "updated_at": "2025-08-21T09:21:48Z",
+    "stars": 10,
+    "updated_at": "2025-08-22T16:39:58Z",
     "version": "2.6.4"
   },
   "astrbot_plugin_Group-Verification_PRO": {
@@ -1503,8 +1503,8 @@
     ],
     "desc": "[仅aiocqhttp]让bot 转人工/转人机，真人客服 接入对话/结束对话",
     "social_link": "https://github.com/Zhalslar",
-    "stars": 14,
-    "updated_at": "2025-08-15T07:57:01Z",
+    "stars": 15,
+    "updated_at": "2025-08-22T17:21:50Z",
     "version": "v1.0.4"
   },
   "astrbot_plugin_reimage": {
@@ -2875,7 +2875,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-22T16:28:35Z",
+    "updated_at": "2025-08-22T17:20:30Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -4402,8 +4402,8 @@
     "author": "waterfeet",
     "repo": "https://github.com/waterfeet/astrbot_plugin_guaguale",
     "tags": [],
-    "stars": 4,
-    "updated_at": "2025-06-11T17:46:31Z",
+    "stars": 3,
+    "updated_at": "2025-08-22T17:19:03Z",
     "version": "v2.0.2"
   },
   "TRPGdice": {
