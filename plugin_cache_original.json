@@ -16,8 +16,8 @@
       "表情包"
     ],
     "social_link": "https://github.com/SodaSizzle",
-    "stars": 4,
-    "updated_at": "2025-08-21T02:57:26Z",
+    "stars": 5,
+    "updated_at": "2025-08-22T00:27:39Z",
     "version": "v1.0.0"
   },
   "astrbot_plugin_self_learning": {
@@ -92,8 +92,8 @@
       "唤醒增强"
     ],
     "social_link": "https://github.com/Zhalslar",
-    "stars": 3,
-    "updated_at": "2025-08-16T15:47:01Z",
+    "stars": 4,
+    "updated_at": "2025-08-22T02:01:42Z",
     "version": "v1.0.2"
   },
   "astrbot_plugin_memora_connect": {
@@ -2062,8 +2062,8 @@
       "embedding"
     ],
     "social_link": "https://github.com/TheAnyan",
-    "stars": 9,
-    "updated_at": "2025-07-30T06:27:07Z",
+    "stars": 10,
+    "updated_at": "2025-08-22T00:59:29Z",
     "version": "v1.1.0"
   },
   "astrbot_plugin_stock": {
@@ -2215,8 +2215,8 @@
       "贴表情"
     ],
     "social_link": "https://github.com/Zhalslar",
-    "stars": 10,
-    "updated_at": "2025-08-15T12:54:08Z",
+    "stars": 11,
+    "updated_at": "2025-08-22T01:52:25Z",
     "version": "v1.0.1"
   },
   "astrbot_plugin_pock_mini": {
@@ -2875,7 +2875,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-21T23:21:22Z",
+    "updated_at": "2025-08-22T01:52:08Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -4698,8 +4698,8 @@
     "author": "kjqwdw",
     "repo": "https://github.com/kjqwer/astrbot_plugin_sy",
     "tags": [],
-    "stars": 17,
-    "updated_at": "2025-08-21T23:21:10Z",
+    "stars": 18,
+    "updated_at": "2025-08-22T00:14:53Z",
     "version": "v1.2.4"
   },
   "ai_memory": {
@@ -5257,8 +5257,8 @@
     "repo": "https://github.com/Raven95676/astrbot_plugin_setu",
     "tags": [],
     "stars": 8,
-    "updated_at": "2025-07-31T23:14:55Z",
-    "version": "v1.2.0"
+    "updated_at": "2025-08-22T00:45:24Z",
+    "version": "v1.2.1"
   },
   "astrbot_plugin_voicevox": {
     "desc": "基于VOICEVOX Engine的日语文本转语音插件",
