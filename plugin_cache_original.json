@@ -1,4 +1,146 @@
 {
+  "should_I_respond": {
+    "desc": "“我要回复这条消息吗？”当打开主动回复时，LLM 可能傻傻的就部分上下文一直回复。这个插件没准能解决这个问题。（在 aiocqhttp 平台测试，需要搭配主动回复功能使用）",
+    "author": "idk114-514",
+    "repo": "https://github.com/idk114-514/should_I_respond",
+    "tags": [],
+    "stars": 0,
+    "updated_at": "2025-08-21T12:28:19Z",
+    "version": "v0.0.1"
+  },
+  "astrbot_plugin_lmarena": {
+    "desc": "对接 LMArena 调用 nano_banana 等模型进行生图，如手办化",
+    "author": "Zhalslar",
+    "repo": "https://github.com/Zhalslar/astrbot_plugin_lmarena",
+    "tags": [
+      "LMArena",
+      "nano_banana",
+      "手办化"
+    ],
+    "social_link": "https://github.com/Zhalslar",
+    "stars": 11,
+    "updated_at": "2025-08-23T07:40:30Z",
+    "version": "v1.0.3"
+  },
+  "astrbot_plugin_Mirecraft_motd": {
+    "desc": "基于 AstrBot 的 motd 探测服务器插件",
+    "author": "ChuranNeko",
+    "repo": "https://github.com/ChuranNeko/astrbot_plugin_Mirecraft_motd",
+    "tags": [
+      "Mirecraft"
+    ],
+    "stars": 2,
+    "updated_at": "2025-08-23T04:46:23Z",
+    "version": "v1.6.0"
+  },
+  "astrbot-plugin-huaer-bot": {
+    "desc": "基于 SiliconFlow API 的多组群聊天插件，支持人格设定、Markdown 显示、联网搜索、检索增强生成（RAG）等功能",
+    "author": "HuaEr DevGroup",
+    "repo": "https://github.com/suizoe-cosine/astrbot-plugin-huaer-bot",
+    "tags": [
+      "ChatBot",
+      "LLM",
+      "RAG"
+    ],
+    "stars": 0,
+    "updated_at": "2025-08-20T11:41:44Z",
+    "version": "2.2.2"
+  },
+  "astrbot_plugin_pic_search": {
+    "desc": "爬取 Bing 的图片搜索结果，再使用 VLM 进行选择处理",
+    "author": "RC-CHN",
+    "repo": "https://github.com/RC-CHN/astrbot_plugin_pic_search",
+    "tags": [],
+    "stars": 2,
+    "updated_at": "2025-08-20T09:59:12Z",
+    "version": "v0.1"
+  },
+  "astrbot_plugin_spaghetti_concrete": {
+    "desc": "一本正经胡说八道生成器 —— 基于“意大利面混凝土理论”，输出跨领域因果谬误文案。",
+    "author": "KONpiGG",
+    "repo": "https://github.com/KONpiGG/spaghetti_concrete",
+    "tags": [
+      "胡说八道",
+      "娱乐"
+    ],
+    "stars": 1,
+    "updated_at": "2025-08-23T10:03:38Z",
+    "version": "v1.0.0"
+  },
+  "astrbot_plugin_ctx_trimmer": {
+    "desc": "按照 Token 丢弃对话的插件",
+    "author": "xunxiing & gpt5",
+    "repo": "https://github.com/xunxiing/astrbot_plugin_ctx_trimmer",
+    "tags": [
+      "对话丢弃",
+      "token",
+      "llm"
+    ],
+    "stars": 0,
+    "updated_at": "2025-08-19T10:07:19Z",
+    "version": "0.1.0"
+  },
+  "astrbot_plugin_steam_topsellers": {
+    "desc": "获取 Steam 热销榜前 5 名游戏",
+    "author": "danfong1104",
+    "repo": "https://github.com/danfong1104/astrbot_plugin_steam_topsellers",
+    "tags": [
+      "Steam"
+    ],
+    "social_link": "https://github.com/danfong1104",
+    "stars": 0,
+    "updated_at": "2025-08-22T03:59:39Z",
+    "version": "v2.0.0"
+  },
+  "astrbot_plugin_tts_emotion_router": {
+    "desc": "按情绪路由到不同音色与语速的 TTS 插件（硅基流动 API，其他OpenAI语音接口api同样适配），支持隐藏标记与启发式情绪识别、概率/长度/冷却门控与会话开关。",
+    "author": "木有知",
+    "repo": "https://github.com/muyouzhi6/astrbot_plugin_tts_emotion_router",
+    "tags": [
+      "TTS",
+      "情绪识别",
+      "SiliconFlow"
+    ],
+    "social_link": "https://github.com/muyouzhi6",
+    "stars": 7,
+    "updated_at": "2025-08-22T08:23:42Z",
+    "version": "0.1.1"
+  },
+  "astrbot_plugin_keyword_monitor": {
+    "desc": "当群里出现关键词时触发自动提醒。",
+    "author": "NMpancake",
+    "repo": "https://github.com/NMpancake/astrbot_plugin_keyword_monitor",
+    "tags": [
+      "工具",
+      "关键词监控"
+    ],
+    "social_link": "mailto://2461248172@qq.com",
+    "stars": 0,
+    "updated_at": "2025-08-20T04:05:01Z",
+    "version": "v1.0.0"
+  },
+  "astrbot_plugin_Xiaomi_BandProMax": {
+    "desc": "小米手环的新用法",
+    "author": "Futureppo",
+    "repo": "https://github.com/Futureppo/astrbot_plugin_Xiaomi_BandProMax",
+    "tags": [
+      "MiBand"
+    ],
+    "social_link": "https://github.com/Futureppo",
+    "stars": 0,
+    "updated_at": "2025-08-21T07:37:51Z",
+    "version": "v1.0.0"
+  },
+  "astrbot_plugin_immersive_control": {
+    "desc": "🎮 给 AI 植入神奇小玩具的娱乐插件，3分钟沉浸式互动体验。",
+    "author": "木有知",
+    "repo": "https://github.com/muyouzhi6/astrbot_plugin_immersive_control",
+    "social_link": "https://github.com/muyouzhi6",
+    "tags": [],
+    "stars": 2,
+    "updated_at": "2025-08-21T12:35:11Z",
+    "version": "1.0.0"
+  },
   "astrbot_plugin_provider_ark_ResponsesAPI": {
     "desc": "将火山方舟(Volcengine Ark)的上下文缓存API(Responses API)注册为 AstrBot 的对话服务提供商(Provider)(支持/provider、缓存命中统计、Function Calling)",
     "author": "CaQing ＆ GPT-5 Thinking",
@@ -293,17 +435,6 @@
     "stars": 0,
     "updated_at": "2025-08-18T10:42:42Z",
     "version": "1.0.2"
-  },
-  "astrbot_plugin_Mirecraft_motd": {
-    "desc": "基于 AstrBot 的 motd 探测服务器插件",
-    "author": "ChuranNeko",
-    "repo": "https://github.com/ChuranNeko/astrbot_plugin_Mirecraft_motd",
-    "tags": [
-      "Mirecraft"
-    ],
-    "stars": 2,
-    "updated_at": "2025-08-23T04:46:23Z",
-    "version": "v1.6.0"
   },
   "astrbot_plugin_daily_reminder": {
     "desc": "让机器人支持定时消息",
@@ -920,8 +1051,8 @@
       "娱乐"
     ],
     "stars": 4,
-    "updated_at": "2025-08-08T21:39:26Z",
-    "version": "v1.0.3"
+    "updated_at": "2025-08-23T09:27:41Z",
+    "version": "v1.2.0"
   },
   "astrbot_plugin_file": {
     "name": "astrbot_plugin_file",
@@ -2875,7 +3006,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-23T08:27:20Z",
+    "updated_at": "2025-08-23T10:22:05Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
