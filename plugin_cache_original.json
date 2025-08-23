@@ -308,8 +308,8 @@
       "STT",
       "语音转文字"
     ],
-    "stars": 2,
-    "updated_at": "2025-08-20T16:27:09Z",
+    "stars": 3,
+    "updated_at": "2025-08-23T14:45:55Z",
     "version": "1.2.2"
   },
   "astrbot_plugin_bangumi": {
@@ -930,8 +930,8 @@
       "趣味",
       "宠物"
     ],
-    "stars": 5,
-    "updated_at": "2025-08-17T08:15:18Z",
+    "stars": 6,
+    "updated_at": "2025-08-23T14:27:06Z",
     "version": "v1.2"
   },
   "astrbot_plugin_error_monitor": {
@@ -3006,7 +3006,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-23T14:19:14Z",
+    "updated_at": "2025-08-23T15:20:46Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
