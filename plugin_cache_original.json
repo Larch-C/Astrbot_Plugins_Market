@@ -1,4 +1,124 @@
 {
+  "command_to_llm": {
+    "desc": "将指令（比如/help）转换为LLM函数（比如 get_help）调用，让AI能够通过LLM函数执行其他插件的指令，支持动态添加和管理指令映射",
+    "author": "kjqwdw",
+    "repo": "https://github.com/kjqwer/astrbot_plugin_command_to_llm",
+    "tags": [
+      "command",
+      "llm",
+      "function"
+    ],
+    "social_link": "https://github.com/kjqwer",
+    "stars": 1,
+    "updated_at": "2025-08-24T05:24:59Z",
+    "version": "v1.0.0"
+  },
+  "astrbot_plugin_lark_send_patcher": {
+    "desc": "通过猴子补丁的方式，优化了飞书Lark适配器下，机器人发送的消息引用太频繁的问题。现在飞书下所有的机器人回复从引用消息变更为直接发送。插件可能会随着astrbot本体版本更新，涉及到lark_adapter和lark_event重大更新时失效。",
+    "author": "天各一方",
+    "repo": "https://github.com/Catfish872/lark_send_patcher",
+    "tags": [],
+    "social_link": "",
+    "stars": 0,
+    "updated_at": "2025-07-20T18:12:13Z",
+    "version": "v1.0.0"
+  },
+  "astrbot_plugin_message_tester": {
+    "desc": "使用 logger 完整打印消息结构",
+    "author": "drdon1234",
+    "repo": "https://github.com/drdon1234/astrbot_plugin_message_tester",
+    "tags": [
+      "调试"
+    ],
+    "social_link": "",
+    "stars": 0,
+    "updated_at": "2025-08-04T16:42:12Z",
+    "version": "1.1"
+  },
+  "asbot_plugin_furry-API": {
+    "desc": "调用趣绮梦云黑API查询用户的插件",
+    "author": "furryhm",
+    "repo": "https://github.com/furryHM-mrz/asbot_plugin_furry-API-",
+    "tags": [],
+    "social_link": "",
+    "stars": 2,
+    "updated_at": "2025-08-20T13:51:01Z",
+    "version": "v2.0"
+  },
+  "asbot_plugin_furry-API-hy": {
+    "desc": "调用趣绮梦云黑API的群黑云查询踢出还有进群自动检测黑云有问题自动踢出的插件",
+    "author": "furryhm",
+    "repo": "https://github.com/furryHM-mrz/asbot_plugin_furry-API-hy",
+    "tags": [],
+    "social_link": "",
+    "stars": 2,
+    "updated_at": "2025-08-20T13:51:21Z",
+    "version": "v3.4"
+  },
+  "astrbot_plugin_urldb": {
+    "desc": "为 [老九网盘数据库系统](https://github.com/ctwj/urldb) 设计的AstrBot插件，支持被@时搜索功能。",
+    "author": "老九",
+    "repo": "https://github.com/ctwj/astrbot_plugin_urldb",
+    "tags": [],
+    "social_link": "https://pan.l9.lc",
+    "stars": 2,
+    "updated_at": "2025-08-19T04:41:29Z",
+    "version": "v0.5"
+  },
+  "astrbot_plugin_furry_cgsjk": {
+    "desc": "小茶馆数据库插件，为小茶馆插件提供数据支持",
+    "author": "furryhm",
+    "repo": "https://github.com/furryHM-mrz/astrbot_plugin_furry_cgsjk",
+    "tags": [],
+    "social_link": "",
+    "stars": 0,
+    "updated_at": "2025-08-21T11:38:42Z",
+    "version": "1.0.0"
+  },
+  "astrbot_plugin_typst_support": {
+    "desc": "添加 typst 渲染支持",
+    "author": "baitwo02",
+    "repo": "https://github.com/baitwo02/astrbot_plugin_typst_support",
+    "tags": [
+      "typst"
+    ],
+    "social_link": "",
+    "stars": 0,
+    "updated_at": "2025-08-22T17:06:40Z",
+    "version": "v1.1.0"
+  },
+  "astrbot_plugin_retry_v2": {
+    "desc": "一个基于事件钩子的、处理空回复和截断等非完整响应的重试插件",
+    "author": "长安某",
+    "repo": "https://github.com/zgojin/astrbot_plugin_retry_v2",
+    "tags": "优化",
+    "social_link": "astrbot.uk",
+    "stars": 0,
+    "updated_at": "2025-08-23T15:21:49Z",
+    "version": "v1.0.0"
+  },
+  "astrbot_plugin_papertrading": {
+    "desc": "基于a股真实数据的模拟炒股插件。支持实时股价、委托交易、持仓管理、群内排行等功能。",
+    "author": "Shiroim",
+    "repo": "https://github.com/Shiroim/astrbot_plugin_papertrading",
+    "tags": [
+      "股市"
+    ],
+    "social_link": "",
+    "stars": 3,
+    "updated_at": "2025-08-24T05:06:52Z",
+    "version": "v1.0.2"
+  },
+  "astrbot_plugin_figurine_workshop": {
+    "desc": "基于gemini生图的手办化,不再需要本地部署。",
+    "author": "长安某",
+    "repo": "https://github.com/zgojin/astrbot_plugin_figurine_workshop",
+    "tags": "娱乐",
+    "social_link": "astrbot.uk",
+    "stars": 0,
+    "updated_at": "2025-08-23T12:09:37Z",
+    "version": "v1.0.0"
+  },
   "should_I_respond": {
     "desc": "“我要回复这条消息吗？”当打开主动回复时，LLM 可能傻傻的就部分上下文一直回复。这个插件没准能解决这个问题。（在 aiocqhttp 平台测试，需要搭配主动回复功能使用）",
     "author": "idk114-514",
@@ -23,15 +143,16 @@
     "version": "v1.0.3"
   },
   "astrbot_plugin_Mirecraft_motd": {
-    "desc": "基于 AstrBot 的 motd 探测服务器插件",
+    "desc": "Minecraft motd 探测服务器的插件",
     "author": "ChuranNeko",
-    "repo": "https://github.com/ChuranNeko/astrbot_plugin_Mirecraft_motd",
+    "repo": "https://github.com/ChuranNeko/astrbot_plugin_mirecraft_motd",
     "tags": [
-      "Mirecraft"
+      "Minecraft",
+      "motd"
     ],
     "stars": 2,
-    "updated_at": "2025-08-23T04:46:23Z",
-    "version": "v1.6.0"
+    "updated_at": "2025-08-24T05:19:47Z",
+    "version": "v1.7.0"
   },
   "astrbot-plugin-huaer-bot": {
     "desc": "基于 SiliconFlow API 的多组群聊天插件，支持人格设定、Markdown 显示、联网搜索、检索增强生成（RAG）等功能",
@@ -173,8 +294,8 @@
     ],
     "social_link": "https://github.com/NickCharlie",
     "stars": 12,
-    "updated_at": "2025-08-24T03:09:42Z",
-    "version": "1.2.1"
+    "updated_at": "2025-08-24T05:18:11Z",
+    "version": "1.2.2"
   },
   "astrbot_plugin_baiduocr": {
     "desc": "百度智能云的 OCR 文字识别服务。新用户有千次的免费调用次数，适合轻度使用",
@@ -990,17 +1111,6 @@
     "updated_at": "2025-08-13T04:50:44Z",
     "version": "v1.0.1"
   },
-  "astrbot_plugin_wwbirthday": {
-    "desc": "鸣潮角色生日播报",
-    "author": "arkina",
-    "repo": "https://github.com/yan3931/astrbot_plugin_wwbirthday",
-    "tags": [
-      "鸣潮"
-    ],
-    "stars": 3,
-    "updated_at": "2025-07-11T07:02:17Z",
-    "version": "v1.1.2"
-  },
   "EmailNotixion": {
     "name": "EmailNotixion",
     "desc": "实时IMAP邮件推送插件",
@@ -1086,6 +1196,17 @@
     "stars": 0,
     "updated_at": "2025-07-30T00:51:48Z",
     "version": "v1.0.0"
+  },
+  "astrbot_plugin_wwbirthday": {
+    "desc": "鸣潮角色生日播报",
+    "author": "arkina",
+    "repo": "https://github.com/yan3931/astrbot_plugin_wwbirthday",
+    "tags": [
+      "鸣潮"
+    ],
+    "stars": 3,
+    "updated_at": "2025-07-11T07:02:17Z",
+    "version": "v1.1.2"
   },
   "astrbot_plugin_balance": {
     "desc": "一个简单的 LLM API 余额查询与 IP 查询小插件, 支持硅基流动，DeepSeek 与 OpenAI 余额查询及 IP 地址查询功能",
@@ -3006,7 +3127,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-24T04:29:29Z",
+    "updated_at": "2025-08-24T05:22:33Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -4316,7 +4437,7 @@
     ],
     "social_link": "https://github.com/miaoxutao123/",
     "stars": 34,
-    "updated_at": "2025-08-24T04:25:58Z",
+    "updated_at": "2025-08-24T04:44:29Z",
     "version": "v0.2.9"
   },
   "astrbot_plugin_sjzb": {
@@ -4830,7 +4951,7 @@
     "repo": "https://github.com/kjqwer/astrbot_plugin_sy",
     "tags": [],
     "stars": 18,
-    "updated_at": "2025-08-22T00:14:53Z",
+    "updated_at": "2025-08-24T05:07:02Z",
     "version": "v1.2.4"
   },
   "ai_memory": {
