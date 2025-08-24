@@ -21,6 +21,12 @@ jobs:
         token: ${{ secrets.PAT_TOKEN }}
         fetch-depth: 0
         
+    - name: Configure Git
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        echo "✅ Git 配置完成"
+        
     - name: Fetch original plugin data
       id: fetch-data
       run: |
@@ -575,9 +581,6 @@ jobs:
           git checkout main 2>/dev/null || git checkout -b main origin/main
         fi
 
-        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git config user.name "github-actions[bot]"
-
         # 使用 autostash 自动 stash 未暂存更改，rebase 完成后会自动 pop
         if git pull --rebase --autostash origin main; then
           echo "✅ pull --rebase --autostash 成功"
@@ -592,10 +595,6 @@ jobs:
       id: git-check
       run: |
         echo "检查文件状态..."
-        
-        # 配置Git（使用PAT_TOKEN进行认证）
-        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
         
         echo "检查远程仓库是否存在 plugin_cache_original.json..."
         if git ls-tree --name-only -r origin/main | grep -q "^plugin_cache_original.json$"; then
@@ -658,8 +657,6 @@ jobs:
     - name: Commit and push changes
       if: steps.fetch-data.outputs.should_update == 'true' && steps.git-check.outputs.has_changes == 'true'
       run: |
-        # Git配置已在上一步设置
-        
         # 验证认证状态
         echo "验证Git认证状态..."
         if git ls-remote origin HEAD > /dev/null 2>&1; then
