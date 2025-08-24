@@ -293,8 +293,8 @@
       "人格"
     ],
     "social_link": "https://github.com/NickCharlie",
-    "stars": 12,
-    "updated_at": "2025-08-24T05:18:11Z",
+    "stars": 13,
+    "updated_at": "2025-08-24T11:31:12Z",
     "version": "1.2.2"
   },
   "astrbot_plugin_baiduocr": {
@@ -355,8 +355,8 @@
       "唤醒增强"
     ],
     "social_link": "https://github.com/Zhalslar",
-    "stars": 6,
-    "updated_at": "2025-08-24T00:36:50Z",
+    "stars": 7,
+    "updated_at": "2025-08-24T11:28:00Z",
     "version": "v1.0.2"
   },
   "astrbot_plugin_memora_connect": {
@@ -368,8 +368,8 @@
       "记忆"
     ],
     "social_link": "https://github.com/qa296/",
-    "stars": 4,
-    "updated_at": "2025-08-24T10:16:25Z",
+    "stars": 5,
+    "updated_at": "2025-08-24T11:27:31Z",
     "version": "v0.2.1"
   },
   "astrbot_plugin_iearning_style": {
@@ -520,7 +520,7 @@
     ],
     "social_link": "https://github.com/Zhalslar",
     "stars": 6,
-    "updated_at": "2025-08-22T17:20:43Z",
+    "updated_at": "2025-08-24T12:16:38Z",
     "version": "v1.0.1"
   },
   "astrbot_plugin_record_converter": {
@@ -3078,8 +3078,8 @@
       "工具"
     ],
     "stars": 3,
-    "updated_at": "2025-08-24T05:38:05Z",
-    "version": "v2.0.0"
+    "updated_at": "2025-08-24T11:47:52Z",
+    "version": "v2.1.1"
   },
   "astrbot_plugin_fuck": {
     "author": "vmoranv",
@@ -3127,7 +3127,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-24T11:17:31Z",
+    "updated_at": "2025-08-24T12:43:58Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
