@@ -20,23 +20,7 @@ jobs:
       with:
         token: ${{ secrets.PAT_TOKEN }}
         fetch-depth: 0
-    
-    - name: Test PAT Token
-      run: |
-        echo "Testing PAT Token permissions..."
-        response=$(curl -L -s -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
-          -H "User-Agent: GitHub-Action-Plugin-Transformer" \
-          "https://api.github.com/user")
         
-        if echo "$response" | jq -e '.login' > /dev/null 2>&1; then
-          username=$(echo "$response" | jq -r '.login')
-          echo "✅ PAT Token authenticated as: $username"
-        else
-          echo "❌ PAT Token authentication failed"
-          echo "Response: $response"
-          exit 1
-        fi
-    
     - name: Fetch original plugin data
       id: fetch-data
       run: |
