@@ -105,8 +105,8 @@
       "股市"
     ],
     "social_link": "",
-    "stars": 4,
-    "updated_at": "2025-08-24T13:08:15Z",
+    "stars": 5,
+    "updated_at": "2025-08-24T16:56:08Z",
     "version": "v1.0.3"
   },
   "astrbot_plugin_figurine_workshop": {
@@ -224,7 +224,7 @@
     ],
     "social_link": "https://github.com/muyouzhi6",
     "stars": 8,
-    "updated_at": "2025-08-24T16:22:08Z",
+    "updated_at": "2025-08-24T17:09:24Z",
     "version": "0.1.1"
   },
   "astrbot_plugin_keyword_monitor": {
@@ -723,8 +723,8 @@
       "屏蔽",
       "轮询"
     ],
-    "stars": 2,
-    "updated_at": "2025-08-15T09:06:09Z",
+    "stars": 3,
+    "updated_at": "2025-08-24T16:31:05Z",
     "version": "v1.2.0"
   },
   "astrbot_plugin_silent": {
@@ -1051,8 +1051,8 @@
       "趣味",
       "宠物"
     ],
-    "stars": 6,
-    "updated_at": "2025-08-23T14:27:06Z",
+    "stars": 5,
+    "updated_at": "2025-08-24T16:50:11Z",
     "version": "v1.2"
   },
   "astrbot_plugin_error_monitor": {
@@ -2325,8 +2325,8 @@
     "tags": [
       "股市"
     ],
-    "stars": 2,
-    "updated_at": "2025-08-05T17:45:34Z",
+    "stars": 1,
+    "updated_at": "2025-08-24T16:50:05Z",
     "version": "v1.2.2"
   },
   "astrbot_plugin_kfc_thursday": {
@@ -3127,7 +3127,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-24T16:26:38Z",
+    "updated_at": "2025-08-24T17:18:37Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
