@@ -18,8 +18,8 @@
       "手办化"
     ],
     "social_link": "https://github.com/Zhalslar",
-    "stars": 14,
-    "updated_at": "2025-08-23T15:52:36Z",
+    "stars": 15,
+    "updated_at": "2025-08-24T02:59:04Z",
     "version": "v1.0.3"
   },
   "astrbot_plugin_Mirecraft_motd": {
@@ -172,8 +172,8 @@
       "人格"
     ],
     "social_link": "https://github.com/NickCharlie",
-    "stars": 11,
-    "updated_at": "2025-08-23T07:06:00Z",
+    "stars": 12,
+    "updated_at": "2025-08-24T03:09:42Z",
     "version": "1.2.1"
   },
   "astrbot_plugin_baiduocr": {
@@ -1051,8 +1051,8 @@
       "娱乐"
     ],
     "stars": 4,
-    "updated_at": "2025-08-24T01:54:44Z",
-    "version": "v1.2.0"
+    "updated_at": "2025-08-24T02:51:20Z",
+    "version": "v2.0.0"
   },
   "astrbot_plugin_file": {
     "name": "astrbot_plugin_file",
@@ -3006,7 +3006,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-24T02:02:54Z",
+    "updated_at": "2025-08-24T03:49:25Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -4316,8 +4316,8 @@
     ],
     "social_link": "https://github.com/miaoxutao123/",
     "stars": 34,
-    "updated_at": "2025-08-19T13:41:05Z",
-    "version": "v0.2.8"
+    "updated_at": "2025-08-24T03:41:41Z",
+    "version": "v0.2.9"
   },
   "astrbot_plugin_sjzb": {
     "desc": "随机生成《绝地潜兵2》游戏中一组 4 个战备配置",
