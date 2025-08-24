@@ -1,7 +1,19 @@
 {
-  "updated_at": "2025-08-23T03:03:26.170Z",
-  "total_plugins": 34,
+  "updated_at": "2025-08-24T03:20:24.199Z",
+  "total_plugins": 23,
   "plugins": [
+    {
+      "name": "AI_Memory_KG",
+      "desc": "一个为 AstrBot 打造的次世代记忆插件，让 AI 不仅能“记住”，更能“理解”对话中的复杂关系和事件，构建一个动态增长的、专属于每个用户的个人知识图谱。",
+      "author": "天各一方",
+      "repo": "https://github.com/Catfish872/astrbot_plugin_ai_memory_KG",
+      "tags": [],
+      "social_link": "",
+      "issue_number": 2538,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2538",
+      "created_at": "2025-08-23T03:54:57Z",
+      "updated_at": "2025-08-23T03:56:46Z"
+    },
     {
       "name": "asbot_plugin_furry_mzxyy",
       "desc": "毛主席一言",
@@ -39,20 +51,16 @@
       "updated_at": "2025-08-12T01:37:27Z"
     },
     {
-      "name": "astrbot_plugin_ctx_trimmer",
-      "desc": "按照token丢弃对话的插件",
-      "author": "xunxiing&gpt5",
-      "repo": "https://github.com/xunxiing/astrbot_plugin_ctx_trimmer",
-      "tags": [
-        "context ",
-        "token",
-        "llm"
-      ],
-      "social_link": "",
-      "issue_number": 2497,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2497",
-      "created_at": "2025-08-19T10:00:25Z",
-      "updated_at": "2025-08-19T10:09:12Z"
+      "name": "astrbot_plugin_figurine_workshop",
+      "desc": "基于gemini生图的手办化,不再需要本地部署。",
+      "author": "长安某",
+      "repo": "https://github.com/zgojin/astrbot_plugin_figurine_workshop",
+      "tags": "娱乐",
+      "social_link": "astrbot.uk",
+      "issue_number": 2543,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2543",
+      "created_at": "2025-08-23T12:09:42Z",
+      "updated_at": "2025-08-23T20:19:08Z"
     },
     {
       "name": "astrbot_plugin_furry_cg",
@@ -91,18 +99,6 @@
       "updated_at": "2025-08-21T11:09:18Z"
     },
     {
-      "name": "astrbot_plugin_immersive_control",
-      "desc": "🎮 给AI植入神奇小玩具的娱乐插件！一键\"遥控\"让AI瞬间害羞结巴，3分钟沉浸式互动体验～",
-      "author": "木有知",
-      "repo": "https://github.com/muyouzhi6/astrbot_plugin_immersive_control",
-      "tags": [],
-      "social_link": "https://github.com/muyouzhi6",
-      "issue_number": 2520,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2520",
-      "created_at": "2025-08-21T07:59:54Z",
-      "updated_at": "2025-08-21T08:25:26Z"
-    },
-    {
       "name": "astrbot_plugin_lark_send_patcher",
       "desc": "通过猴子补丁的方式，优化了飞书Lark适配器下，机器人发送的消息引用太频繁的问题。现在飞书下所有的机器人回复从引用消息变更为直接发送。插件可能会随着astrbot本体版本更新，涉及到lark_adapter和lark_event重大更新时失效。",
       "author": "天各一方",
@@ -113,22 +109,6 @@
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2184",
       "created_at": "2025-07-20T18:10:28Z",
       "updated_at": "2025-07-21T08:09:38Z"
-    },
-    {
-      "name": "astrbot_plugin_lmarena",
-      "desc": "对接lmarena调用nano_banana等模型进行生图，如手办化",
-      "author": "Zhalslar",
-      "repo": "https://github.com/Zhalslar/astrbot_plugin_lmarena",
-      "tags": [
-        "lmarena",
-        "nano_banana",
-        "手办化"
-      ],
-      "social_link": "https://github.com/Zhalslar",
-      "issue_number": 2533,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2533",
-      "created_at": "2025-08-22T13:21:15Z",
-      "updated_at": "2025-08-22T13:27:09Z"
     },
     {
       "name": "astrbot_plugin_message_tester",
@@ -145,73 +125,30 @@
       "updated_at": "2025-08-04T16:43:27Z"
     },
     {
-      "name": "astrbot_plugin_minecraft_motd",
-      "desc": "基于Astrbot的motd探测服务器的插件",
-      "author": "ChuranNeko",
-      "repo": "https://github.com/ChuranNeko/astrbot_plugin_minecraft_motd",
+      "name": "astrbot_plugin_papertrading",
+      "desc": "基于a股真实数据的模拟炒股插件。支持实时股价、委托交易、持仓管理、群内排行等功能。",
+      "author": "Shiroim",
+      "repo": "https://github.com/Shiroim/astrbot_plugin_papertrading",
       "tags": [
-        "Mirecraft"
+        "股市"
       ],
       "social_link": "",
-      "issue_number": 2527,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2527",
-      "created_at": "2025-08-21T18:57:50Z",
-      "updated_at": "2025-08-21T18:59:19Z"
+      "issue_number": 2541,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2541",
+      "created_at": "2025-08-23T07:38:45Z",
+      "updated_at": "2025-08-23T10:15:52Z"
     },
     {
-      "name": "astrbot_plugin_Mirecraft_motd",
-      "desc": "基于Astrbot的motd探测服务器的插件",
-      "author": "ChuranNeko",
-      "repo": "https://github.com/ChuranNeko/astrbot_plugin_Mirecraft_motd",
-      "tags": [],
-      "social_link": "",
-      "issue_number": 2516,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2516",
-      "created_at": "2025-08-20T21:57:22Z",
-      "updated_at": "2025-08-20T21:58:03Z"
-    },
-    {
-      "name": "astrbot_plugin_pic_search",
-      "desc": "爬取bing的图片搜索结果，再使用VLM进行选择处理",
-      "author": "RC-CHN",
-      "repo": "https://github.com/RC-CHN/astrbot_plugin_pic_search",
-      "issue_number": 2506,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2506",
-      "created_at": "2025-08-20T07:18:48Z",
-      "updated_at": "2025-08-20T08:25:47Z",
-      "tags": [],
-      "social_link": ""
-    },
-    {
-      "name": "astrbot_plugin_spaghetti_concrete",
-      "desc": "一本正经胡说八道生成器 —— 基于“意大利面混凝土理论”，输出跨领域因果谬误文案。",
-      "author": "KONpiGG",
-      "repo": "https://github.com/KONpiGG/spaghetti_concrete",
-      "tags": [
-        "胡说八道",
-        "娱乐"
-      ],
-      "social_link": "",
-      "issue_number": 2504,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2504",
-      "created_at": "2025-08-20T06:14:51Z",
-      "updated_at": "2025-08-20T06:19:09Z"
-    },
-    {
-      "name": "astrbot_plugin_steam_topsellers",
-      "desc": "一个获取Steam热销榜排名,支持定时发送的astrbot插件。",
-      "author": "bushikq&danfong1104",
-      "repo": "https://github.com/danfong1104/astrbot_plugin_steam_topsellers",
-      "tags": [
-        "steam",
-        "游戏",
-        "定时"
-      ],
-      "social_link": "https://github.com/zhewang448",
-      "issue_number": 2528,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2528",
-      "created_at": "2025-08-22T03:11:51Z",
-      "updated_at": "2025-08-22T03:25:50Z"
+      "name": "astrbot_plugin_retry_v2",
+      "desc": "一个基于事件钩子的、处理空回复和截断等非完整响应的重试插件",
+      "author": "长安某",
+      "repo": "https://github.com/zgojin/astrbot_plugin_retry_v2",
+      "tags": "优化",
+      "social_link": "astrbot.uk",
+      "issue_number": 2540,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2540",
+      "created_at": "2025-08-23T07:07:48Z",
+      "updated_at": "2025-08-23T07:25:03Z"
     },
     {
       "name": "astrbot_plugin_stock",
@@ -229,25 +166,6 @@
       "updated_at": "2025-07-16T05:18:31Z"
     },
     {
-      "name": "astrbot_plugin_tts_emotion_router",
-      "desc": "按情绪路由到不同音色与语速的 TTS 插件（硅基流动 API，其他OpenAI语音接口api同样适配），支持隐藏标记与启发式情绪识别、概率/长度/冷却门控与会话开关。",
-      "author": "木有知",
-      "repo": "https://github.com/muyouzhi6/astrbot_plugin_tts_emotion_router",
-      "tags": [
-        "AstrBot",
-        "TTS",
-        "Emotion",
-        "SiliconFlow",
-        "OpenAI-Style",
-        "Audio"
-      ],
-      "social_link": "https://github.com/muyouzhi6",
-      "issue_number": 2446,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2446",
-      "created_at": "2025-08-15T13:59:11Z",
-      "updated_at": "2025-08-21T02:48:47Z"
-    },
-    {
       "name": "astrbot_plugin_typst_support",
       "desc": "添加 typst 渲染支持",
       "author": "baitwo02",
@@ -260,18 +178,6 @@
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2534",
       "created_at": "2025-08-22T17:11:06Z",
       "updated_at": "2025-08-22T17:13:51Z"
-    },
-    {
-      "name": "astrbot_plugin_Xiaomi_BandProMax",
-      "desc": "小米手环新用法",
-      "author": "Futureppo",
-      "repo": "https://github.com/Futureppo/astrbot_plugin_Xiaomi_BandProMax",
-      "tags": "小米，小玩具，震动",
-      "social_link": "https://github.com/Futureppo",
-      "issue_number": 2519,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2519",
-      "created_at": "2025-08-21T07:31:16Z",
-      "updated_at": "2025-08-21T07:35:33Z"
     },
     {
       "name": "astrbot_plugin_zfile",
@@ -302,27 +208,6 @@
       "social_link": ""
     },
     {
-      "name": "HuaEr聊天bot",
-      "desc": "基于SiliconFlow API的多组群聊天插件，支持人格设定、markdown显示、联网搜索、检索增强生成（RAG）等功能",
-      "author": "HuaEr DevGroup",
-      "repo": "https://github.com/suizoe-cosine/astrbot-plugin-huaer-bot",
-      "tags": [
-        {
-          "label": "LLM",
-          "color": "#0583b3"
-        },
-        {
-          "label": "RAG",
-          "color": "#00ff4d"
-        }
-      ],
-      "social_link": "",
-      "issue_number": 2511,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2511",
-      "created_at": "2025-08-20T11:45:25Z",
-      "updated_at": "2025-08-20T13:02:27Z"
-    },
-    {
       "name": "jav_info",
       "desc": "获取车牌对应数据",
       "author": "棒棒糖",
@@ -335,21 +220,6 @@
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2402",
       "created_at": "2025-08-12T07:21:01Z",
       "updated_at": "2025-08-12T07:42:43Z"
-    },
-    {
-      "name": "keyword_monitor",
-      "desc": "这是一个插件用来提醒我群里出现了我所标记的关键词",
-      "author": "NMpancake",
-      "repo": "https://github.com/NMpancake/astrbot_plugin_keyword_monitor",
-      "tags": [
-        "工具",
-        "关键词监控"
-      ],
-      "social_link": "2461248172@qq.com",
-      "issue_number": 2442,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2442",
-      "created_at": "2025-08-14T14:09:16Z",
-      "updated_at": "2025-08-14T15:36:27Z"
     },
     {
       "name": "kikoeru_search",
@@ -398,30 +268,6 @@
       "updated_at": "2025-07-25T11:11:11Z"
     },
     {
-      "name": "should_I_respond",
-      "desc": "[在aiocqhttp平台测试，需要搭配主动回复功能使用]我要回复这条消息吗？当你打开主动回复的时候，LLM可能傻傻的就部分上下文一直回复。这个插件没准能解决这个问题。",
-      "author": "。。。",
-      "repo": "https://github.com/idk114-514/should_I_respond",
-      "tags": [],
-      "social_link": "",
-      "issue_number": 2524,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2524",
-      "created_at": "2025-08-21T12:23:56Z",
-      "updated_at": "2025-08-21T12:29:11Z"
-    },
-    {
-      "name": "steam_topsellers",
-      "desc": "获取Steam热销榜前5名游戏",
-      "author": "danfong1104",
-      "repo": "https://github.com/danfong1104/astrbot_plugin_steam_topsellers",
-      "tags": [],
-      "social_link": "https://github.com/danfong1104/astrbot_plugin_steam_topsellers.git",
-      "issue_number": 2489,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2489",
-      "created_at": "2025-08-18T14:54:22Z",
-      "updated_at": "2025-08-20T01:24:10Z"
-    },
-    {
       "name": "群聊检测刷屏",
       "desc": "群聊检测刷屏（防止机器人后台爆炸）",
       "author": "宵夜awa",
@@ -431,19 +277,7 @@
       "issue_number": 2502,
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2502",
       "created_at": "2025-08-20T00:28:07Z",
-      "updated_at": "2025-08-20T00:28:11Z"
-    },
-    {
-      "name": "群聊检测刷屏",
-      "desc": "检查刷屏（数值可以通过指令来调整）如果检测违规刷屏机器人可以直接退群，这样可以保证后台不被炸（就是因为作者经历过 所以才做这个插件）",
-      "author": "宵夜awa",
-      "repo": "https://github.com/XY6678/QQ-bot-plugin",
-      "tags": [],
-      "social_link": "",
-      "issue_number": 2501,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2501",
-      "created_at": "2025-08-20T00:25:32Z",
-      "updated_at": "2025-08-20T00:25:38Z"
+      "updated_at": "2025-08-23T09:21:04Z"
     },
     {
       "name": "老九网盘链接管理系统插件",
