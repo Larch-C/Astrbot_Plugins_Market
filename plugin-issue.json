@@ -1,6 +1,6 @@
 {
-  "updated_at": "2025-08-24T03:20:24.199Z",
-  "total_plugins": 23,
+  "updated_at": "2025-08-25T03:16:42.218Z",
+  "total_plugins": 17,
   "plugins": [
     {
       "name": "AI_Memory_KG",
@@ -12,7 +12,7 @@
       "issue_number": 2538,
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2538",
       "created_at": "2025-08-23T03:54:57Z",
-      "updated_at": "2025-08-23T03:56:46Z"
+      "updated_at": "2025-08-24T04:15:26Z"
     },
     {
       "name": "asbot_plugin_furry_mzxyy",
@@ -24,43 +24,7 @@
       "issue_number": 2394,
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2394",
       "created_at": "2025-08-11T11:37:39Z",
-      "updated_at": "2025-08-11T11:38:10Z"
-    },
-    {
-      "name": "asbot_plugin_furry-API",
-      "desc": "调用趣绮梦云黑API查询用户的插件",
-      "author": "furryhm",
-      "repo": "https://github.com/furryHM-mrz/asbot_plugin_furry-API-",
-      "tags": [],
-      "social_link": "",
-      "issue_number": 2396,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2396",
-      "created_at": "2025-08-11T11:39:23Z",
-      "updated_at": "2025-08-11T11:40:10Z"
-    },
-    {
-      "name": "asbot_plugin_furry-API-hy",
-      "desc": "调用趣绮梦云黑API的群黑云查询踢出还有进群自动检测黑云有问题自动踢出的插件",
-      "author": "furryhm",
-      "repo": "https://github.com/furryHM-mrz/asbot_plugin_furry-API-hy",
-      "tags": [],
-      "social_link": "",
-      "issue_number": 2397,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2397",
-      "created_at": "2025-08-11T11:39:59Z",
-      "updated_at": "2025-08-12T01:37:27Z"
-    },
-    {
-      "name": "astrbot_plugin_figurine_workshop",
-      "desc": "基于gemini生图的手办化,不再需要本地部署。",
-      "author": "长安某",
-      "repo": "https://github.com/zgojin/astrbot_plugin_figurine_workshop",
-      "tags": "娱乐",
-      "social_link": "astrbot.uk",
-      "issue_number": 2543,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2543",
-      "created_at": "2025-08-23T12:09:42Z",
-      "updated_at": "2025-08-23T20:19:08Z"
+      "updated_at": "2025-08-24T04:34:41Z"
     },
     {
       "name": "astrbot_plugin_furry_cg",
@@ -72,19 +36,7 @@
       "issue_number": 2522,
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2522",
       "created_at": "2025-08-21T11:36:13Z",
-      "updated_at": "2025-08-21T11:39:57Z"
-    },
-    {
-      "name": "astrbot_plugin_furry_cgsjk",
-      "desc": "小茶馆数据库插件，为小茶馆插件提供数据支持",
-      "author": "furryhm",
-      "repo": "https://github.com/furryHM-mrz/astrbot_plugin_furry_cgsjk",
-      "tags": [],
-      "social_link": "",
-      "issue_number": 2523,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2523",
-      "created_at": "2025-08-21T11:41:44Z",
-      "updated_at": "2025-08-21T11:42:36Z"
+      "updated_at": "2025-08-24T04:21:05Z"
     },
     {
       "name": "astrbot_plugin_furry_dsgg",
@@ -96,59 +48,19 @@
       "issue_number": 2521,
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2521",
       "created_at": "2025-08-21T11:08:32Z",
-      "updated_at": "2025-08-21T11:09:18Z"
+      "updated_at": "2025-08-24T04:23:45Z"
     },
     {
-      "name": "astrbot_plugin_lark_send_patcher",
-      "desc": "通过猴子补丁的方式，优化了飞书Lark适配器下，机器人发送的消息引用太频繁的问题。现在飞书下所有的机器人回复从引用消息变更为直接发送。插件可能会随着astrbot本体版本更新，涉及到lark_adapter和lark_event重大更新时失效。",
-      "author": "天各一方",
-      "repo": "https://github.com/Catfish872/lark_send_patcher",
+      "name": "astrbot_plugin_ms_aiimg",
+      "desc": "接入魔搭社区文生图模型",
+      "author": "竹和木",
+      "repo": "https://github.com/3451996649/astrbot_plugin_ms_aiimg",
       "tags": [],
       "social_link": "",
-      "issue_number": 2184,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2184",
-      "created_at": "2025-07-20T18:10:28Z",
-      "updated_at": "2025-07-21T08:09:38Z"
-    },
-    {
-      "name": "astrbot_plugin_message_tester",
-      "desc": "使用 logger 完整打印消息结构",
-      "author": "drdon1234",
-      "repo": "https://github.com/drdon1234/astrbot_plugin_message_tester",
-      "tags": [
-        "调试"
-      ],
-      "social_link": "",
-      "issue_number": 2317,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2317",
-      "created_at": "2025-08-04T16:41:42Z",
-      "updated_at": "2025-08-04T16:43:27Z"
-    },
-    {
-      "name": "astrbot_plugin_papertrading",
-      "desc": "基于a股真实数据的模拟炒股插件。支持实时股价、委托交易、持仓管理、群内排行等功能。",
-      "author": "Shiroim",
-      "repo": "https://github.com/Shiroim/astrbot_plugin_papertrading",
-      "tags": [
-        "股市"
-      ],
-      "social_link": "",
-      "issue_number": 2541,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2541",
-      "created_at": "2025-08-23T07:38:45Z",
-      "updated_at": "2025-08-23T10:15:52Z"
-    },
-    {
-      "name": "astrbot_plugin_retry_v2",
-      "desc": "一个基于事件钩子的、处理空回复和截断等非完整响应的重试插件",
-      "author": "长安某",
-      "repo": "https://github.com/zgojin/astrbot_plugin_retry_v2",
-      "tags": "优化",
-      "social_link": "astrbot.uk",
-      "issue_number": 2540,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2540",
-      "created_at": "2025-08-23T07:07:48Z",
-      "updated_at": "2025-08-23T07:25:03Z"
+      "issue_number": 2549,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2549",
+      "created_at": "2025-08-24T08:05:13Z",
+      "updated_at": "2025-08-24T08:08:24Z"
     },
     {
       "name": "astrbot_plugin_stock",
@@ -166,18 +78,18 @@
       "updated_at": "2025-07-16T05:18:31Z"
     },
     {
-      "name": "astrbot_plugin_typst_support",
-      "desc": "添加 typst 渲染支持",
-      "author": "baitwo02",
-      "repo": "https://github.com/baitwo02/astrbot_plugin_typst_support",
+      "name": "astrbot_plugin_vtb_adapter",
+      "desc": "用于连接 AstrBot 与 Open LLM Vtuber，除安装插件外还需要修改Open LLM Vtuber中的相关文件",
+      "author": "YakumoAki",
+      "repo": "https://github.com/murphys7017/astrbot_plugin_vtb_adapter",
       "tags": [
-        "typst"
+        "适配器"
       ],
       "social_link": "",
-      "issue_number": 2534,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2534",
-      "created_at": "2025-08-22T17:11:06Z",
-      "updated_at": "2025-08-22T17:13:51Z"
+      "issue_number": 2547,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2547",
+      "created_at": "2025-08-24T06:52:26Z",
+      "updated_at": "2025-08-24T06:57:43Z"
     },
     {
       "name": "astrbot_plugin_zfile",
@@ -191,6 +103,23 @@
       "updated_at": "2025-07-25T11:05:11Z",
       "tags": [],
       "social_link": ""
+    },
+    {
+      "name": "daily_checkin",
+      "desc": "一个签到插件，包含签文系统、商店系统、人物养成系统、装备系统、强化系统、抽奖系统、PVP系统。",
+      "author": "FisherNotFool",
+      "repo": "https://github.com/FisherNotFool/astrbot_plugin_daily_checkin",
+      "tags": [
+        "签到",
+        "养成",
+        "战斗",
+        "抽奖"
+      ],
+      "social_link": "",
+      "issue_number": 2551,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2551",
+      "created_at": "2025-08-24T14:17:00Z",
+      "updated_at": "2025-08-24T14:17:05Z"
     },
     {
       "name": "gemini_tokens_limit",
@@ -235,7 +164,7 @@
       "issue_number": 2450,
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2450",
       "created_at": "2025-08-15T18:18:32Z",
-      "updated_at": "2025-08-16T07:54:21Z"
+      "updated_at": "2025-08-24T04:45:20Z"
     },
     {
       "name": "qftp",
@@ -249,7 +178,7 @@
       "issue_number": 2490,
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2490",
       "created_at": "2025-08-18T15:26:13Z",
-      "updated_at": "2025-08-18T15:33:09Z"
+      "updated_at": "2025-08-24T04:26:00Z"
     },
     {
       "name": "server_status_monitor",
@@ -268,6 +197,21 @@
       "updated_at": "2025-07-25T11:11:11Z"
     },
     {
+      "name": "xfbank",
+      "desc": "一个简易的银行插件",
+      "author": "XiaoFu1025",
+      "repo": "https://github.com/XiaoFu1025/astrbot_plugin_xfbank",
+      "tags": [
+        "Bank",
+        "虚拟银行"
+      ],
+      "social_link": "",
+      "issue_number": 2554,
+      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2554",
+      "created_at": "2025-08-24T16:01:36Z",
+      "updated_at": "2025-08-24T16:14:54Z"
+    },
+    {
       "name": "群聊检测刷屏",
       "desc": "群聊检测刷屏（防止机器人后台爆炸）",
       "author": "宵夜awa",
@@ -277,19 +221,7 @@
       "issue_number": 2502,
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2502",
       "created_at": "2025-08-20T00:28:07Z",
-      "updated_at": "2025-08-23T09:21:04Z"
-    },
-    {
-      "name": "老九网盘链接管理系统插件",
-      "desc": "为 [老九网盘数据库系统](https://github.com/ctwj/urldb) 设计的AstrBot插件，支持被@时搜索功能。",
-      "author": "老九",
-      "repo": "https://github.com/ctwj/astrbot_plugin_urldb",
-      "tags": [],
-      "social_link": "https://pan.l9.lc",
-      "issue_number": 2436,
-      "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2436",
-      "created_at": "2025-08-14T10:24:41Z",
-      "updated_at": "2025-08-15T01:00:27Z"
+      "updated_at": "2025-08-24T04:24:53Z"
     },
     {
       "name": "进群禁言",
@@ -304,7 +236,7 @@
       "issue_number": 2535,
       "issue_url": "https://github.com/AstrBotDevs/AstrBot/issues/2535",
       "created_at": "2025-08-22T20:20:01Z",
-      "updated_at": "2025-08-22T20:30:04Z"
+      "updated_at": "2025-08-24T05:58:25Z"
     }
   ]
 }
