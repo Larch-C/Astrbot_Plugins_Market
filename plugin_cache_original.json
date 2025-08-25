@@ -72,7 +72,7 @@
     "tags": [],
     "social_link": "",
     "stars": 0,
-    "updated_at": "2025-08-21T11:38:42Z",
+    "updated_at": "2025-08-25T00:23:38Z",
     "version": "1.0.0"
   },
   "astrbot_plugin_typst_support": {
@@ -115,8 +115,8 @@
     "repo": "https://github.com/zgojin/astrbot_plugin_figurine_workshop",
     "tags": "娱乐",
     "social_link": "astrbot.uk",
-    "stars": 2,
-    "updated_at": "2025-08-24T13:23:56Z",
+    "stars": 3,
+    "updated_at": "2025-08-25T00:20:18Z",
     "version": "v1.0.1"
   },
   "should_I_respond": {
@@ -3127,7 +3127,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-24T23:20:59Z",
+    "updated_at": "2025-08-25T01:56:56Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
