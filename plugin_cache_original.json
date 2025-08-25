@@ -2491,8 +2491,8 @@
       "主动消息",
       "通知"
     ],
-    "stars": 4,
-    "updated_at": "2025-08-04T06:14:18Z",
+    "stars": 5,
+    "updated_at": "2025-08-25T14:51:37Z",
     "version": "v1.0.3"
   },
   "astrbot_plugin_emoji_like": {
@@ -3163,7 +3163,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-25T14:24:27Z",
+    "updated_at": "2025-08-25T15:25:38Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
