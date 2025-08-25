@@ -1,4 +1,47 @@
 {
+  "xfbank": {
+    "desc": "一个简易的银行插件",
+    "author": "XiaoFu1025",
+    "repo": "https://github.com/XiaoFu1025/astrbot_plugin_xfbank",
+    "tags": [
+      "Bank",
+      "虚拟银行"
+    ],
+    "stars": 1,
+    "updated_at": "2025-08-24T16:14:27Z",
+    "version": "v1.1.114514"
+  },
+  "astrbot_plugin_ms_aiimg": {
+    "desc": "接入魔搭社区文生图模型",
+    "author": "竹和木",
+    "repo": "https://github.com/3451996649/astrbot_plugin_ms_aiimg",
+    "tags": [],
+    "stars": 0,
+    "updated_at": "2025-08-24T08:23:58Z",
+    "version": "v1.0"
+  },
+  "asbot_plugin_furry_mzxyy": {
+    "desc": "毛主席一言",
+    "author": "furryhm",
+    "repo": "https://github.com/furryHM-mrz/asbot_plugin_furry_mzxyy",
+    "tags": [],
+    "stars": 1,
+    "updated_at": "2025-08-25T05:26:04Z",
+    "version": "v1.0.0"
+  },
+  "astrbot_plugin_auto_ban_new": {
+    "desc": "在指定群聊中对新入群用户自动禁言并发送欢迎消息，支持多种方式解除监听。帮助群管理员更好地管理新成员，确保新成员先阅读群规再发言。",
+    "author": "糯米茨",
+    "repo": "https://github.com/nuomicici/astrbot_plugin_auto_ban_new",
+    "tags": [
+      "禁言",
+      "群管"
+    ],
+    "social_link": "https://qm.qq.com/q/wMGXYfKKoS",
+    "stars": 2,
+    "updated_at": "2025-08-23T05:16:42Z",
+    "version": "v1.0"
+  },
   "command_to_llm": {
     "desc": "将指令（比如/help）转换为LLM函数（比如 get_help）调用，让AI能够通过LLM函数执行其他插件的指令，支持动态添加和管理指令映射",
     "author": "kjqwdw",
@@ -18,7 +61,6 @@
     "author": "天各一方",
     "repo": "https://github.com/Catfish872/lark_send_patcher",
     "tags": [],
-    "social_link": "",
     "stars": 0,
     "updated_at": "2025-07-20T18:12:13Z",
     "version": "v1.0.0"
@@ -30,7 +72,6 @@
     "tags": [
       "调试"
     ],
-    "social_link": "",
     "stars": 0,
     "updated_at": "2025-08-04T16:42:12Z",
     "version": "1.1"
@@ -40,7 +81,6 @@
     "author": "furryhm",
     "repo": "https://github.com/furryHM-mrz/asbot_plugin_furry-API-",
     "tags": [],
-    "social_link": "",
     "stars": 2,
     "updated_at": "2025-08-20T13:51:01Z",
     "version": "v2.0"
@@ -50,7 +90,6 @@
     "author": "furryhm",
     "repo": "https://github.com/furryHM-mrz/asbot_plugin_furry-API-hy",
     "tags": [],
-    "social_link": "",
     "stars": 2,
     "updated_at": "2025-08-20T13:51:21Z",
     "version": "v3.4"
@@ -59,8 +98,8 @@
     "desc": "为 [老九网盘数据库系统](https://github.com/ctwj/urldb) 设计的AstrBot插件，支持被@时搜索功能。",
     "author": "老九",
     "repo": "https://github.com/ctwj/astrbot_plugin_urldb",
-    "tags": [],
     "social_link": "https://pan.l9.lc",
+    "tags": [],
     "stars": 2,
     "updated_at": "2025-08-19T04:41:29Z",
     "version": "v0.5"
@@ -70,7 +109,6 @@
     "author": "furryhm",
     "repo": "https://github.com/furryHM-mrz/astrbot_plugin_furry_cgsjk",
     "tags": [],
-    "social_link": "",
     "stars": 0,
     "updated_at": "2025-08-25T00:23:38Z",
     "version": "1.0.0"
@@ -82,7 +120,6 @@
     "tags": [
       "typst"
     ],
-    "social_link": "",
     "stars": 0,
     "updated_at": "2025-08-22T17:06:40Z",
     "version": "v1.1.0"
@@ -104,7 +141,6 @@
     "tags": [
       "股市"
     ],
-    "social_link": "",
     "stars": 5,
     "updated_at": "2025-08-24T16:56:08Z",
     "version": "v1.0.3"
@@ -224,7 +260,7 @@
     ],
     "social_link": "https://github.com/muyouzhi6",
     "stars": 8,
-    "updated_at": "2025-08-25T03:10:40Z",
+    "updated_at": "2025-08-25T08:23:09Z",
     "version": "0.1.1"
   },
   "astrbot_plugin_keyword_monitor": {
@@ -3127,7 +3163,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-25T07:23:49Z",
+    "updated_at": "2025-08-25T08:33:40Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
