@@ -151,8 +151,8 @@
     "repo": "https://github.com/zgojin/astrbot_plugin_figurine_workshop",
     "tags": "娱乐",
     "social_link": "astrbot.uk",
-    "stars": 4,
-    "updated_at": "2025-08-25T08:58:09Z",
+    "stars": 5,
+    "updated_at": "2025-08-25T10:17:13Z",
     "version": "v1.0.1"
   },
   "should_I_respond": {
@@ -174,8 +174,8 @@
       "手办化"
     ],
     "social_link": "https://github.com/Zhalslar",
-    "stars": 22,
-    "updated_at": "2025-08-25T04:15:35Z",
+    "stars": 23,
+    "updated_at": "2025-08-25T09:49:10Z",
     "version": "v1.0.4"
   },
   "astrbot_plugin_Mirecraft_motd": {
@@ -391,8 +391,8 @@
       "唤醒增强"
     ],
     "social_link": "https://github.com/Zhalslar",
-    "stars": 8,
-    "updated_at": "2025-08-24T16:23:47Z",
+    "stars": 9,
+    "updated_at": "2025-08-25T10:18:46Z",
     "version": "v1.0.3"
   },
   "astrbot_plugin_memora_connect": {
@@ -1197,8 +1197,8 @@
       "娱乐"
     ],
     "stars": 4,
-    "updated_at": "2025-08-25T09:29:11Z",
-    "version": "v2.0.3"
+    "updated_at": "2025-08-25T10:30:52Z",
+    "version": "v2.0.4"
   },
   "astrbot_plugin_file": {
     "name": "astrbot_plugin_file",
@@ -2087,8 +2087,8 @@
       "音乐"
     ],
     "social_link": "https://github.com/Zhalslar",
-    "stars": 46,
-    "updated_at": "2025-08-23T12:03:37Z",
+    "stars": 47,
+    "updated_at": "2025-08-25T10:21:35Z",
     "version": "v1.0.2"
   },
   "astrbot_plugin_renjian": {
@@ -2202,7 +2202,7 @@
       "函数工具"
     ],
     "stars": 8,
-    "updated_at": "2025-08-08T01:55:46Z",
+    "updated_at": "2025-08-25T10:28:33Z",
     "version": "v1.4.0"
   },
   "astrbot_plugin_dzmm": {
@@ -3163,7 +3163,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-25T09:27:05Z",
+    "updated_at": "2025-08-25T10:26:20Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
