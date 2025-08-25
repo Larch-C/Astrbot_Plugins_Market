@@ -260,8 +260,8 @@
     ],
     "social_link": "https://github.com/muyouzhi6",
     "stars": 10,
-    "updated_at": "2025-08-25T11:36:45Z",
-    "version": "0.2.1"
+    "updated_at": "2025-08-25T18:40:36Z",
+    "version": "0.2.2"
   },
   "astrbot_plugin_keyword_monitor": {
     "desc": "当群里出现关键词时触发自动提醒。",
@@ -358,8 +358,8 @@
     ],
     "social_link": "https://t.me/astrbot_plugin_HINS",
     "stars": 3,
-    "updated_at": "2025-08-23T17:17:28Z",
-    "version": "v1.3.1"
+    "updated_at": "2025-08-25T18:57:08Z",
+    "version": "v1.3.5"
   },
   "astrbot_plugin_xfbank": {
     "desc": "一个简易的银行插件",
@@ -634,8 +634,8 @@
       "增强"
     ],
     "stars": 10,
-    "updated_at": "2025-08-25T11:17:47Z",
-    "version": "2.9.1"
+    "updated_at": "2025-08-25T18:42:06Z",
+    "version": "2.9.3"
   },
   "astrbot_plugin_Group-Verification_PRO": {
     "desc": "一个强大的 QQ 群成员入群验证插件。新成员需回答动态生成的 100 以内加减法问题方可入群。支持完全自定义的提示消息（成功、失败、超时警告、踢出等）和时间控制（验证超时、警告时机、踢出延迟）。当用户回答错误时，会自动生成新题目并重置验证时间，有效防止机器人账号。",
@@ -3163,7 +3163,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-25T18:34:05Z",
+    "updated_at": "2025-08-25T19:18:31Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3670,7 +3670,7 @@
       "QQ群管"
     ],
     "stars": 37,
-    "updated_at": "2025-08-25T18:16:32Z",
+    "updated_at": "2025-08-25T19:03:08Z",
     "version": "v3.0.9"
   },
   "astrbot_plugin_liars_bar": {
