@@ -174,8 +174,8 @@
       "手办化"
     ],
     "social_link": "https://github.com/Zhalslar",
-    "stars": 23,
-    "updated_at": "2025-08-25T09:49:10Z",
+    "stars": 24,
+    "updated_at": "2025-08-25T10:31:16Z",
     "version": "v1.0.4"
   },
   "astrbot_plugin_Mirecraft_motd": {
@@ -634,8 +634,8 @@
       "增强"
     ],
     "stars": 10,
-    "updated_at": "2025-08-23T11:04:20Z",
-    "version": "2.6.4"
+    "updated_at": "2025-08-25T11:17:47Z",
+    "version": "2.9.1"
   },
   "astrbot_plugin_Group-Verification_PRO": {
     "desc": "一个强大的 QQ 群成员入群验证插件。新成员需回答动态生成的 100 以内加减法问题方可入群。支持完全自定义的提示消息（成功、失败、超时警告、踢出等）和时间控制（验证超时、警告时机、踢出延迟）。当用户回答错误时，会自动生成新题目并重置验证时间，有效防止机器人账号。",
@@ -1197,7 +1197,7 @@
       "娱乐"
     ],
     "stars": 4,
-    "updated_at": "2025-08-25T10:30:52Z",
+    "updated_at": "2025-08-25T10:32:20Z",
     "version": "v2.0.4"
   },
   "astrbot_plugin_file": {
@@ -2087,8 +2087,8 @@
       "音乐"
     ],
     "social_link": "https://github.com/Zhalslar",
-    "stars": 47,
-    "updated_at": "2025-08-25T10:21:35Z",
+    "stars": 48,
+    "updated_at": "2025-08-25T10:58:45Z",
     "version": "v1.0.2"
   },
   "astrbot_plugin_renjian": {
@@ -3163,7 +3163,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-25T10:26:20Z",
+    "updated_at": "2025-08-25T11:20:11Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
