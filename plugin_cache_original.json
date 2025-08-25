@@ -151,8 +151,8 @@
     "repo": "https://github.com/zgojin/astrbot_plugin_figurine_workshop",
     "tags": "娱乐",
     "social_link": "astrbot.uk",
-    "stars": 3,
-    "updated_at": "2025-08-25T00:20:18Z",
+    "stars": 4,
+    "updated_at": "2025-08-25T08:58:09Z",
     "version": "v1.0.1"
   },
   "should_I_respond": {
@@ -160,8 +160,8 @@
     "author": "idk114-514",
     "repo": "https://github.com/idk114-514/should_I_respond",
     "tags": [],
-    "stars": 0,
-    "updated_at": "2025-08-21T12:28:19Z",
+    "stars": 1,
+    "updated_at": "2025-08-25T08:57:50Z",
     "version": "v0.0.1"
   },
   "astrbot_plugin_lmarena": {
@@ -259,9 +259,9 @@
       "SiliconFlow"
     ],
     "social_link": "https://github.com/muyouzhi6",
-    "stars": 8,
-    "updated_at": "2025-08-25T08:23:09Z",
-    "version": "0.1.1"
+    "stars": 9,
+    "updated_at": "2025-08-25T09:17:48Z",
+    "version": "0.2.1"
   },
   "astrbot_plugin_keyword_monitor": {
     "desc": "当群里出现关键词时触发自动提醒。",
@@ -1197,8 +1197,8 @@
       "娱乐"
     ],
     "stars": 4,
-    "updated_at": "2025-08-24T12:55:31Z",
-    "version": "v2.0.2"
+    "updated_at": "2025-08-25T09:29:11Z",
+    "version": "v2.0.3"
   },
   "astrbot_plugin_file": {
     "name": "astrbot_plugin_file",
@@ -3163,7 +3163,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-25T08:33:40Z",
+    "updated_at": "2025-08-25T09:27:05Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -3563,9 +3563,9 @@
       "复读"
     ],
     "social_link": "https://github.com/Zhalslar/astrbot_plugin_reread",
-    "stars": 16,
-    "updated_at": "2025-08-24T10:19:56Z",
-    "version": "v1.1.1"
+    "stars": 17,
+    "updated_at": "2025-08-25T09:07:57Z",
+    "version": "v1.1.2"
   },
   "astrbot_plugin_csbaoyan": {
     "desc": "计算机保研院校信息查询、通知订阅插件。数据来源于 GitHub CS-BAOYAN (绿群官方)组织。",
@@ -5419,7 +5419,7 @@
     "repo": "https://github.com/jmt059/DailyWife",
     "tags": [],
     "stars": 5,
-    "updated_at": "2025-07-11T09:11:15Z",
+    "updated_at": "2025-08-25T09:18:48Z",
     "version": "v1.0.1"
   },
   "astrbot_plugin_AW": {
