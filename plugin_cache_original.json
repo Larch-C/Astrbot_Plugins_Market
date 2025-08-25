@@ -210,8 +210,8 @@
     ],
     "social_link": "https://github.com/danfong1104",
     "stars": 0,
-    "updated_at": "2025-08-22T03:59:39Z",
-    "version": "v2.0.0"
+    "updated_at": "2025-08-25T03:48:42Z",
+    "version": "v2.0.1"
   },
   "astrbot_plugin_tts_emotion_router": {
     "desc": "按情绪路由到不同音色与语速的 TTS 插件（硅基流动 API，其他OpenAI语音接口api同样适配），支持隐藏标记与启发式情绪识别、概率/长度/冷却门控与会话开关。",
@@ -224,7 +224,7 @@
     ],
     "social_link": "https://github.com/muyouzhi6",
     "stars": 8,
-    "updated_at": "2025-08-24T17:09:24Z",
+    "updated_at": "2025-08-25T03:10:40Z",
     "version": "0.1.1"
   },
   "astrbot_plugin_keyword_monitor": {
@@ -259,7 +259,7 @@
     "social_link": "https://github.com/muyouzhi6",
     "tags": [],
     "stars": 2,
-    "updated_at": "2025-08-23T11:17:01Z",
+    "updated_at": "2025-08-25T03:11:47Z",
     "version": "1.0.0"
   },
   "astrbot_plugin_provider_ark_ResponsesAPI": {
@@ -3127,7 +3127,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-25T01:56:56Z",
+    "updated_at": "2025-08-25T03:19:14Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
