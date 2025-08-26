@@ -2270,8 +2270,8 @@
       "RAG",
       "知识库"
     ],
-    "stars": 57,
-    "updated_at": "2025-08-25T16:45:44Z",
+    "stars": 58,
+    "updated_at": "2025-08-26T02:26:05Z",
     "version": "v0.5.9"
   },
   "astrbot_uptime_kuma_webhook_plugin": {
@@ -3163,7 +3163,7 @@
     ],
     "social_link": "https://wenturc.com/",
     "stars": 20,
-    "updated_at": "2025-08-26T01:53:07Z",
+    "updated_at": "2025-08-26T03:12:03Z",
     "version": "v1.6.3"
   },
   "astrbot_plugin_status-pro": {
@@ -4771,8 +4771,8 @@
       "功能",
       "定时任务"
     ],
-    "stars": 19,
-    "updated_at": "2025-08-23T09:24:08Z",
+    "stars": 20,
+    "updated_at": "2025-08-26T02:30:02Z",
     "version": "v2.3.4"
   },
   "astrbot_sowing_discord": {
